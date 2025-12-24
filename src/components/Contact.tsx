@@ -42,7 +42,7 @@ const Contact = () => {
             </h2>
             <p className="font-body text-muted-foreground text-base md:text-lg mb-10 leading-relaxed">
               Escríbenos para consultar disponibilidad, resolver cualquier duda
-              o simplemente para saber más sobre Casa Los Olivos. Estaremos
+              o simplemente para saber más sobre La Cabaña de la Lechuza. Estaremos
               encantados de atenderte.
             </p>
 
@@ -56,8 +56,8 @@ const Contact = () => {
                     Ubicación
                   </p>
                   <p className="font-body text-muted-foreground">
-                    Camino de los Olivos s/n<br />
-                    Úbeda, Jaén, España
+                    La Roza, Cabranes<br />
+                    Comarca de la Sidra, Asturias
                   </p>
                 </div>
               </div>
@@ -150,6 +150,7 @@ const Contact = () => {
                 <option value="4">4 huéspedes</option>
                 <option value="5">5 huéspedes</option>
                 <option value="6">6 huéspedes</option>
+                <option value="7">7 huéspedes</option>
               </select>
 
               <textarea

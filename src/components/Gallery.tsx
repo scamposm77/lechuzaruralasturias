@@ -1,19 +1,27 @@
 import { useState } from "react";
+import exteriorHouse from "@/assets/exterior-house.jpg";
 import livingRoom from "@/assets/living-room.jpg";
-import bedroom from "@/assets/bedroom.jpg";
 import kitchen from "@/assets/kitchen.jpg";
-import terrace from "@/assets/terrace.jpg";
-import pool from "@/assets/pool.jpg";
-import heroExterior from "@/assets/hero-exterior.jpg";
+import bedroomDouble from "@/assets/bedroom-double.jpg";
+import bedroomBunk from "@/assets/bedroom-bunk.jpg";
+import bedroomViews from "@/assets/bedroom-views.jpg";
+import officeNook from "@/assets/office-nook.jpg";
+import bathroomShower from "@/assets/bathroom-shower.jpg";
+import bunkViews from "@/assets/bunk-views.jpg";
+import terracePanorama from "@/assets/terrace-panorama.jpg";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  { src: heroExterior, alt: "Exterior de la casa", label: "Exterior" },
-  { src: livingRoom, alt: "Salón con chimenea", label: "Salón" },
-  { src: bedroom, alt: "Dormitorio principal", label: "Dormitorio" },
-  { src: kitchen, alt: "Cocina rústica", label: "Cocina" },
-  { src: terrace, alt: "Terraza con vistas", label: "Terraza" },
-  { src: pool, alt: "Piscina privada", label: "Piscina" },
+  { src: exteriorHouse, alt: "Exterior de la cabaña", label: "Exterior" },
+  { src: livingRoom, alt: "Salón con pared de piedra", label: "Salón" },
+  { src: kitchen, alt: "Cocina equipada", label: "Cocina" },
+  { src: bedroomDouble, alt: "Dormitorio doble", label: "Dormitorio" },
+  { src: bedroomBunk, alt: "Dormitorio con litera", label: "Litera" },
+  { src: bedroomViews, alt: "Dormitorio con vistas", label: "Vistas" },
+  { src: officeNook, alt: "Rincón de trabajo", label: "Oficina" },
+  { src: bathroomShower, alt: "Baño con ducha", label: "Baño" },
+  { src: bunkViews, alt: "Litera con vistas al valle", label: "Valle" },
+  { src: terracePanorama, alt: "Terraza panorámica", label: "Terraza" },
 ];
 
 const Gallery = () => {
@@ -40,29 +48,29 @@ const Gallery = () => {
             Nuestros Espacios
           </p>
           <h2 className="font-display text-foreground text-3xl md:text-5xl font-medium mb-4">
-            Un Hogar Lejos del Hogar
+            Un Refugio en la Naturaleza
           </h2>
           <p className="font-body text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-            Cada rincón de Casa Los Olivos ha sido cuidadosamente diseñado para
-            ofrecerte comodidad y autenticidad en un entorno rural privilegiado.
+            Cada rincón de La Cabaña de la Lechuza ha sido diseñado para
+            ofrecerte confort y autenticidad en el corazón de Asturias.
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {images.map((image, index) => (
             <button
               key={index}
               onClick={() => openLightbox(index)}
               className={`group relative overflow-hidden rounded-sm cursor-pointer ${
-                index === 0 ? "md:col-span-2 md:row-span-2" : ""
+                index === 0 ? "col-span-2 row-span-2" : ""
               }`}
             >
               <img
                 src={image.src}
                 alt={image.alt}
                 className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${
-                  index === 0 ? "h-full min-h-[400px]" : "h-64 lg:h-72"
+                  index === 0 ? "h-full min-h-[300px] md:min-h-[400px]" : "h-48 md:h-56"
                 }`}
               />
               <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-all duration-300 flex items-end">

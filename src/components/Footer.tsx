@@ -8,11 +8,11 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <h3 className="font-display text-background text-2xl font-medium mb-4">
-              Casa Los Olivos
+              La Cabaña de la Lechuza
             </h3>
             <p className="font-body text-background/70 text-sm leading-relaxed mb-6">
-              Un refugio de paz entre olivos centenarios y paisajes mediterráneos.
-              Tu escapada rural perfecta en el corazón de Andalucía.
+              Un refugio de paz entre manzanos y valles asturianos.
+              Tu escapada rural perfecta en la Comarca de la Sidra.
             </p>
             <div className="flex gap-4">
               <a
@@ -60,17 +60,17 @@ const Footer = () => {
               Contacto
             </h4>
             <div className="font-body text-background/70 text-sm space-y-2">
-              <p>Camino de los Olivos s/n</p>
-              <p>Úbeda, Jaén, España</p>
+              <p>La Roza, Cabranes</p>
+              <p>Comarca de la Sidra, Asturias</p>
               <p className="pt-2">+34 600 123 456</p>
-              <p>info@casalosolivos.es</p>
+              <p>info@cabanadellechuza.es</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-body text-background/50 text-sm">
-            © {new Date().getFullYear()} Casa Los Olivos. Todos los derechos reservados.
+            © {new Date().getFullYear()} La Cabaña de la Lechuza. Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
             <a href="#" className="font-body text-background/50 text-sm hover:text-background/70 transition-colors">
