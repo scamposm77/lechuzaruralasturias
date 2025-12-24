@@ -45,10 +45,10 @@ const Hero = () => {
         {/* Property Stats */}
         <div className="mt-16 flex flex-wrap items-center justify-center gap-8 md:gap-16 animate-fade-up opacity-0 delay-500">
           {[
-            { value: "6", label: "Huéspedes" },
+            { value: "7", label: "Huéspedes" },
             { value: "3", label: "Habitaciones" },
             { value: "2", label: "Baños" },
-            { value: "200m²", label: "Superficie" },
+            { value: "140m²", label: "Superficie" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="font-display text-background text-3xl md:text-4xl font-medium">

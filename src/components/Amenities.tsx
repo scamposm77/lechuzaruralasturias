@@ -3,29 +3,29 @@ import {
   Car,
   UtensilsCrossed,
   Flame,
-  Waves,
   TreeDeciduous,
   Mountain,
   Dog,
-  Wind,
   Tv,
   WashingMachine,
   Coffee,
+  Apple,
+  Home,
 } from "lucide-react";
 
 const amenities = [
-  { icon: Waves, label: "Piscina Privada", desc: "Refrescante y exclusiva" },
+  { icon: TreeDeciduous, label: "1.500m² de Terreno", desc: "Jardín y manzanos" },
   { icon: Wifi, label: "WiFi Gratuito", desc: "Conexión de alta velocidad" },
   { icon: Car, label: "Parking Privado", desc: "Amplio y seguro" },
   { icon: Flame, label: "Chimenea", desc: "Noches acogedoras" },
   { icon: UtensilsCrossed, label: "Cocina Equipada", desc: "Todo lo necesario" },
-  { icon: TreeDeciduous, label: "Jardín Privado", desc: "2.000m² de naturaleza" },
-  { icon: Mountain, label: "Vistas Panorámicas", desc: "Olivares y montañas" },
+  { icon: Apple, label: "Manzanos", desc: "Cosecha tu propia manzana" },
+  { icon: Mountain, label: "Vistas al Valle", desc: "Naturaleza asturiana" },
   { icon: Dog, label: "Pet Friendly", desc: "Mascotas bienvenidas" },
-  { icon: Wind, label: "Aire Acondicionado", desc: "Confort todo el año" },
+  { icon: Home, label: "140m² de Casa", desc: "Espacios amplios" },
   { icon: Tv, label: "Smart TV", desc: "Netflix incluido" },
   { icon: WashingMachine, label: "Lavadora", desc: "Para estancias largas" },
-  { icon: Coffee, label: "Cafetera Nespresso", desc: "Desayunos perfectos" },
+  { icon: Coffee, label: "Cafetera", desc: "Desayunos perfectos" },
 ];
 
 const Amenities = () => {
@@ -41,8 +41,8 @@ const Amenities = () => {
             Todo lo que Necesitas
           </h2>
           <p className="font-body text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-            Hemos pensado en cada detalle para que tu estancia sea perfecta.
-            Disfruta de todas las comodidades en un entorno natural único.
+            Hemos pensado en cada detalle para que tu estancia sea perfecta
+            en la Comarca de la Sidra asturiana.
           </p>
         </div>
 
