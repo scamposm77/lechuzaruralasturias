@@ -8,7 +8,7 @@ import bedroomViews from "@/assets/bedroom-views.jpg";
 import officeNook from "@/assets/office-nook.jpg";
 import bathroomShower from "@/assets/bathroom-shower.jpg";
 import bunkViews from "@/assets/bunk-views.jpg";
-import terracePanorama from "@/assets/terrace-panorama.jpg";
+import terrace from "@/assets/terrace.jpg";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
@@ -21,7 +21,7 @@ const images = [
   { src: officeNook, alt: "Rincón de trabajo", label: "Oficina" },
   { src: bathroomShower, alt: "Baño con ducha", label: "Baño" },
   { src: bunkViews, alt: "Litera con vistas al valle", label: "Valle" },
-  { src: terracePanorama, alt: "Terraza panorámica", label: "Terraza" },
+  { src: terrace, alt: "Terraza panorámica", label: "Terraza" },
 ];
 
 const Gallery = () => {
