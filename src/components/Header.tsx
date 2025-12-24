@@ -25,27 +25,27 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-md py-3"
+          ? "bg-background/98 backdrop-blur-lg shadow-lg py-4"
           : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#inicio"
-          className={`font-display text-2xl font-semibold tracking-wide transition-colors ${
+          className={`font-display text-xl md:text-2xl transition-colors ${
             isScrolled ? "text-foreground" : "text-background"
           }`}
         >
-          Casa Los Olivos
+          La Cabaña de la Lechuza
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`font-body text-sm font-medium tracking-wide uppercase transition-all hover:opacity-70 ${
+              className={`font-body text-sm font-medium tracking-wider uppercase transition-all relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all hover:after:w-full ${
                 isScrolled ? "text-foreground" : "text-background"
               }`}
             >
@@ -54,10 +54,10 @@ const Header = () => {
           ))}
           <a
             href="#reservar"
-            className={`px-5 py-2.5 rounded-sm font-body text-sm font-semibold uppercase tracking-wider transition-all ${
+            className={`px-6 py-3 rounded-sm font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 ${
               isScrolled
-                ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                : "bg-background text-foreground hover:bg-background/90"
+                ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg"
+                : "bg-background/95 text-foreground hover:bg-background shadow-lg"
             }`}
           >
             Reservar
@@ -77,14 +77,14 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <nav className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border animate-fade-in">
-          <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+        <nav className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-lg border-b border-border animate-fade-in shadow-xl">
+          <div className="container mx-auto px-6 py-8 flex flex-col gap-2">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="font-body text-foreground text-base font-medium py-2 border-b border-border/50"
+                className="font-body text-foreground text-lg font-medium py-3 border-b border-border/30 hover:text-primary transition-colors"
               >
                 {link.label}
               </a>
@@ -92,7 +92,7 @@ const Header = () => {
             <a
               href="#reservar"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-2 px-5 py-3 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider text-center"
+              className="mt-4 px-6 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider text-center shadow-md"
             >
               Reservar
             </a>

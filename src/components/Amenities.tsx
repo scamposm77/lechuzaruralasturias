@@ -30,17 +30,21 @@ const amenities = [
 
 const Amenities = () => {
   return (
-    <section id="servicios" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="servicios" className="py-28 bg-background relative">
+      {/* Decorative gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-card/50 to-transparent h-32" />
+      
+      <div className="container mx-auto px-6 relative">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <p className="font-body text-primary text-sm uppercase tracking-[0.2em] mb-3">
+        <div className="text-center mb-20">
+          <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
             Servicios y Comodidades
-          </p>
-          <h2 className="font-display text-foreground text-3xl md:text-5xl font-medium mb-4">
-            Todo lo que Necesitas
+          </span>
+          <h2 className="font-display text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
+            Todo lo que
+            <span className="text-primary italic"> Necesitas</span>
           </h2>
-          <p className="font-body text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+          <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
             Hemos pensado en cada detalle para que tu estancia sea perfecta
             en la Comarca de la Sidra asturiana.
           </p>
@@ -53,17 +57,20 @@ const Amenities = () => {
             return (
               <div
                 key={index}
-                className="group p-6 bg-card rounded-sm card-shadow hover:hover-lift transition-all duration-300 text-center"
+                className="group p-8 bg-card rounded-sm card-shadow hover:hover-lift transition-all duration-500 text-center relative overflow-hidden"
               >
-                <div className="w-14 h-14 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-                  <Icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative">
+                  <div className="w-16 h-16 mx-auto mb-5 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors duration-500 group-hover:shadow-lg">
+                    <Icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
+                  </div>
+                  <h3 className="font-display text-foreground text-lg mb-2">
+                    {amenity.label}
+                  </h3>
+                  <p className="font-body text-muted-foreground text-sm">
+                    {amenity.desc}
+                  </p>
                 </div>
-                <h3 className="font-display text-foreground text-base font-medium mb-1">
-                  {amenity.label}
-                </h3>
-                <p className="font-body text-muted-foreground text-sm">
-                  {amenity.desc}
-                </p>
               </div>
             );
           })}

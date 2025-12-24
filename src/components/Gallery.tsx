@@ -40,24 +40,25 @@ const Gallery = () => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <section id="espacios" className="py-24 bg-background">
+    <section id="espacios" className="py-28 bg-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <p className="font-body text-primary text-sm uppercase tracking-[0.2em] mb-3">
+        <div className="text-center mb-20">
+          <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
             Nuestros Espacios
-          </p>
-          <h2 className="font-display text-foreground text-3xl md:text-5xl font-medium mb-4">
-            Un Refugio en la Naturaleza
+          </span>
+          <h2 className="font-display text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
+            Un Refugio en la
+            <span className="text-primary italic"> Naturaleza</span>
           </h2>
-          <p className="font-body text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+          <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
             Cada rincón de La Cabaña de la Lechuza ha sido diseñado para
             ofrecerte confort y autenticidad en el corazón de Asturias.
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
           {images.map((image, index) => (
             <button
               key={index}
@@ -69,12 +70,12 @@ const Gallery = () => {
               <img
                 src={image.src}
                 alt={image.alt}
-                className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${
-                  index === 0 ? "h-full min-h-[300px] md:min-h-[400px]" : "h-48 md:h-56"
+                className={`w-full object-cover transition-all duration-700 group-hover:scale-110 ${
+                  index === 0 ? "h-full min-h-[350px] md:min-h-[450px]" : "h-52 md:h-60"
                 }`}
               />
-              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-all duration-300 flex items-end">
-                <span className="font-body text-background text-sm uppercase tracking-wider p-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/0 to-foreground/0 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end">
+                <span className="font-display text-background text-lg p-5 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   {image.label}
                 </span>
               </div>
@@ -85,41 +86,41 @@ const Gallery = () => {
 
       {/* Lightbox */}
       {lightboxOpen && (
-        <div className="fixed inset-0 z-50 bg-foreground/95 flex items-center justify-center animate-fade-in">
+        <div className="fixed inset-0 z-50 bg-foreground/98 flex items-center justify-center animate-fade-in">
           <button
             onClick={closeLightbox}
-            className="absolute top-6 right-6 text-background/70 hover:text-background transition-colors"
+            className="absolute top-8 right-8 text-background/70 hover:text-background transition-colors"
           >
-            <X size={32} />
+            <X size={36} strokeWidth={1.5} />
           </button>
 
           <button
             onClick={goPrev}
-            className="absolute left-4 md:left-8 text-background/70 hover:text-background transition-colors p-2"
+            className="absolute left-6 md:left-12 text-background/70 hover:text-background transition-colors p-2 hover:bg-background/10 rounded-full"
           >
-            <ChevronLeft size={40} />
+            <ChevronLeft size={48} strokeWidth={1.5} />
           </button>
 
           <img
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
-            className="max-w-[90vw] max-h-[85vh] object-contain rounded-sm"
+            className="max-w-[90vw] max-h-[85vh] object-contain rounded-sm shadow-2xl"
           />
 
           <button
             onClick={goNext}
-            className="absolute right-4 md:right-8 text-background/70 hover:text-background transition-colors p-2"
+            className="absolute right-6 md:right-12 text-background/70 hover:text-background transition-colors p-2 hover:bg-background/10 rounded-full"
           >
-            <ChevronRight size={40} />
+            <ChevronRight size={48} strokeWidth={1.5} />
           </button>
 
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
             {images.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  idx === currentIndex ? "bg-background w-6" : "bg-background/40"
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  idx === currentIndex ? "bg-background w-8" : "bg-background/30 w-2 hover:bg-background/50"
                 }`}
               />
             ))}
