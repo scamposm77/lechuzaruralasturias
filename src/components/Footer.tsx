@@ -113,7 +113,12 @@ const Footer = () => {
             © {new Date().getFullYear()} La Cabaña de la Lechuza. Hecho con <Heart className="w-4 h-4 text-primary fill-primary" /> en Asturias
           </p>
           <div className="flex gap-8">
-            <a href="#" className="font-body text-background/40 text-sm hover:text-background/70 transition-colors">
+            <a 
+              href="/politica-privacidad"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-body text-background/40 text-sm hover:text-background/70 transition-colors"
+            >
               Política de Privacidad
             </a>
             <a 
