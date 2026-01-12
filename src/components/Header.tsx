@@ -42,7 +42,6 @@ const Header = () => {
             isScrolled ? "text-foreground" : "text-background"
           }`}
         >
-          <span>La Cabaña de la Lechuza</span>
           <img
             src={logoLechuza}
             alt="Logo La Cabaña de la Lechuza - Casa rural en Asturias"
@@ -51,6 +50,7 @@ const Header = () => {
               isLogoClicked ? "scale-150" : "hover:scale-110"
             }`}
           />
+          <span>La Cabaña de la Lechuza</span>
         </a>
 
         {/* Desktop Navigation */}
