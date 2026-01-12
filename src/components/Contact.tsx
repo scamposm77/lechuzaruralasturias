@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Send, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Send, ArrowRight, ExternalLink } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -15,11 +15,15 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Construir mensaje de WhatsApp
+    const whatsappMessage = `Hola Susana! Me interesa reservar La Cabaña de la Lechuza.\n\nNombre: ${formData.name}\nEmail: ${formData.email}\nTeléfono: ${formData.phone}\nFechas: ${formData.dates}\nHuéspedes: ${formData.guests}\nMensaje: ${formData.message}`;
+    const whatsappUrl = `https://wa.me/34625081519?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, "_blank");
+    
     toast({
-      title: "¡Mensaje enviado!",
-      description: "Te responderemos lo antes posible. ¡Gracias por tu interés!",
+      title: "¡Redirigiendo a WhatsApp!",
+      description: "Te conectamos con Susana para tu reserva.",
     });
-    setFormData({ name: "", email: "", phone: "", dates: "", guests: "", message: "" });
   };
 
   const handleChange = (
@@ -32,17 +36,20 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Ubicación",
-      lines: ["La Roza, Cabranes", "Comarca de la Sidra, Asturias"],
+      lines: ["Barrio la Roza s/n", "33310 Cabranes, Asturias"],
+      link: "https://maps.google.com/?q=La+Roza+Cabranes+Asturias",
     },
     {
       icon: Phone,
       title: "Teléfono",
-      lines: ["+34 600 123 456"],
+      lines: ["+34 625 08 15 19"],
+      link: "tel:+34625081519",
     },
     {
       icon: Mail,
       title: "Email",
-      lines: ["info@cabanadellechuza.es"],
+      lines: ["info@lechuzaruralasturias.es"],
+      link: "mailto:info@lechuzaruralasturias.es",
     },
   ];
 
@@ -62,32 +69,57 @@ const Contact = () => {
               ¿Listo para
               <span className="text-primary italic"> Desconectar?</span>
             </h2>
-            <p className="font-body text-muted-foreground text-lg mb-12 leading-relaxed">
+            <p className="font-body text-muted-foreground text-lg mb-8 leading-relaxed">
               Escríbenos para consultar disponibilidad, resolver cualquier duda
               o simplemente para saber más sobre La Cabaña de la Lechuza.
+            </p>
+            <p className="font-body text-muted-foreground mb-12">
+              <strong className="text-foreground">Susana</strong>, nuestra anfitriona, estará encantada de atenderte personalmente.
             </p>
 
             <div className="space-y-8">
               {contactInfo.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="flex items-start gap-5 group">
+                  <a 
+                    key={item.title} 
+                    href={item.link}
+                    target={item.link.startsWith("http") ? "_blank" : undefined}
+                    rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="flex items-start gap-5 group cursor-pointer"
+                  >
                     <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors duration-300">
                       <Icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                     </div>
                     <div>
-                      <p className="font-display text-foreground text-xl mb-1">
+                      <p className="font-display text-foreground text-xl mb-1 flex items-center gap-2">
                         {item.title}
+                        <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </p>
                       {item.lines.map((line, idx) => (
-                        <p key={idx} className="font-body text-muted-foreground">
+                        <p key={idx} className="font-body text-muted-foreground group-hover:text-foreground transition-colors">
                           {line}
                         </p>
                       ))}
                     </div>
-                  </div>
+                  </a>
                 );
               })}
+            </div>
+
+            {/* Quick booking button */}
+            <div className="mt-10">
+              <a
+                href="https://www.airbnb.es/rooms/1232063912950498409"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#FF5A5F] text-white rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-[#FF5A5F]/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.001 18.275c-.69 0-1.283-.244-1.752-.708-.469-.469-.703-1.064-.703-1.752 0-.703.244-1.299.703-1.768.469-.469 1.064-.703 1.752-.703.703 0 1.299.234 1.768.703.469.469.703 1.064.703 1.768 0 .688-.234 1.283-.703 1.752-.469.464-1.064.708-1.768.708z"/>
+                </svg>
+                Reservar en Airbnb
+              </a>
             </div>
           </div>
 
@@ -95,9 +127,12 @@ const Contact = () => {
           <div id="reservar" className="bg-background p-10 md:p-12 rounded-sm shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl translate-x-1/2 -translate-y-1/2" />
             
-            <h3 className="font-display text-foreground text-2xl mb-8 relative">
+            <h3 className="font-display text-foreground text-2xl mb-2 relative">
               Solicitar Información
             </h3>
+            <p className="font-body text-muted-foreground text-sm mb-8">
+              Te contactaremos por WhatsApp para resolver todas tus dudas
+            </p>
             <form onSubmit={handleSubmit} className="space-y-6 relative">
               <div className="grid md:grid-cols-2 gap-6">
                 <input
@@ -168,7 +203,7 @@ const Contact = () => {
                 className="w-full group flex items-center justify-center gap-3 px-8 py-5 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 <Send className="w-5 h-5" />
-                Enviar Consulta
+                Enviar por WhatsApp
                 <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </button>
             </form>

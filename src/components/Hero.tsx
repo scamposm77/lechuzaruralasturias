@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="inline-block mb-6 animate-fade-up opacity-0 delay-100">
           <span className="font-body text-background/80 text-xs md:text-sm uppercase tracking-[0.4em] px-4 py-2 border border-background/30 rounded-full backdrop-blur-sm bg-background/5">
-            Comarca de la Sidra · Asturias
+            Comarca de la Sidra · La Roza, Cabranes
           </span>
         </div>
         
@@ -32,16 +32,18 @@ const Hero = () => {
         </h1>
         
         <p className="font-body text-background/85 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-up opacity-0 delay-300">
-          Un refugio de piedra y madera entre manzanos centenarios.
+          Un refugio de piedra y madera entre manzanos centenarios y un tejo milenario.
           Desconecta en el corazón verde de Asturias.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up opacity-0 delay-400">
           <a
-            href="#reservar"
+            href="https://www.airbnb.es/rooms/1232063912950498409"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group px-10 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
           >
-            Reservar Ahora
+            Reservar en Airbnb
           </a>
           <a
             href="#espacios"
@@ -58,7 +60,7 @@ const Hero = () => {
             { value: "3", label: "Habitaciones" },
             { value: "2", label: "Baños" },
             { value: "140m²", label: "Superficie" },
-          ].map((stat, index) => (
+          ].map((stat) => (
             <div key={stat.label} className="text-center group">
               <p className="font-display text-background text-4xl md:text-5xl mb-2 group-hover:text-accent transition-colors duration-300">
                 {stat.value}

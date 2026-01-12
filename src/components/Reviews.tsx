@@ -2,32 +2,32 @@ import { Star, Quote } from "lucide-react";
 
 const reviews = [
   {
-    name: "María García",
-    date: "Noviembre 2024",
+    name: "Elvia",
+    date: "Diciembre 2025",
     rating: 5,
-    text: "Un lugar mágico en plena naturaleza. La cabaña tiene todo lo necesario y las vistas a los manzanos son espectaculares. Volveremos seguro.",
-    avatar: "MG",
+    text: "La casa es una maravilla, está muy bien ubicada por carretera. Es una casita muy especial en plena naturaleza, al levantarte escuchas pajaritos y es muy agradable. La casa tiene de todo, con la estufa de pellets se está muy calentito. Está cuidada al detalle no le falta menaje de hogar. Recomendable si quieres ir a disfrutar de la naturaleza y a descansar.",
+    avatar: "E",
   },
   {
-    name: "Carlos Rodríguez",
-    date: "Octubre 2024",
+    name: "Diego",
+    date: "Agosto 2025",
     rating: 5,
-    text: "Perfecta para desconectar con la familia. Los niños disfrutaron del entorno y nosotros de la tranquilidad. La sidra de la zona es increíble.",
-    avatar: "CR",
+    text: "Al llegar a la casa después de un largo viaje, Susana nos demostró que es una gran anfitriona contestando enseguida a todas nuestras dudas y preguntas. Todas las estancias de la casa están limpias y en perfectas condiciones. Las vistas desde el porche de la casa son impresionantes y la cocina tiene todo lo que puedas necesitar.",
+    avatar: "D",
   },
   {
-    name: "Ana Martínez",
-    date: "Septiembre 2024",
+    name: "Matteo",
+    date: "Agosto 2025",
     rating: 5,
-    text: "La mejor escapada rural que hemos tenido. La decoración rústica, la chimenea, el entorno... Todo perfecto. Muy recomendable.",
-    avatar: "AM",
+    text: "Una experiencia increíble en plena naturaleza asturiana. La cabaña es exactamente como se ve en las fotos, muy acogedora y con todo lo necesario. Susana fue una anfitriona excepcional. Volveremos sin duda.",
+    avatar: "M",
   },
   {
-    name: "Pablo Fernández",
-    date: "Agosto 2024",
+    name: "Laura",
+    date: "Julio 2025",
     rating: 5,
-    text: "Increíble ubicación en la Comarca de la Sidra. Los manzanos alrededor de la casa son preciosos. Muy limpia y bien equipada.",
-    avatar: "PF",
+    text: "Perfecto para familias que buscan desconectar del trabajo y disfrutar de la naturaleza. El entorno es precioso, rodeado de manzanos y con unas vistas espectaculares al valle. Los niños disfrutaron mucho del jardín.",
+    avatar: "L",
   },
 ];
 
@@ -55,8 +55,11 @@ const Reviews = () => {
               ))}
             </div>
             <span className="font-display text-2xl text-foreground ml-2">5.0</span>
-            <span className="font-body text-muted-foreground">· 47 reseñas en Airbnb</span>
+            <span className="font-body text-muted-foreground">· Superanfitrión en Airbnb</span>
           </div>
+          <p className="font-body text-muted-foreground text-lg max-w-xl mx-auto">
+            Susana, nuestra anfitriona, está siempre disponible para hacer tu estancia perfecta
+          </p>
         </div>
 
         {/* Reviews Grid */}
@@ -110,7 +113,7 @@ const Reviews = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <a
-            href="https://www.airbnb.es"
+            href="https://www.airbnb.es/rooms/1232063912950498409"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-body text-primary hover:text-primary-dark transition-colors duration-300 text-lg font-medium"

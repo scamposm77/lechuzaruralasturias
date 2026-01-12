@@ -5,27 +5,35 @@ import {
   Flame,
   TreeDeciduous,
   Mountain,
-  Dog,
   Tv,
   WashingMachine,
   Coffee,
   Apple,
   Home,
+  Droplets,
+  Baby,
+  Utensils,
+  Sofa,
+  Sun,
 } from "lucide-react";
 
 const amenities = [
-  { icon: TreeDeciduous, label: "1.500m² de Terreno", desc: "Jardín y manzanos" },
+  { icon: TreeDeciduous, label: "1.500m² de Terreno", desc: "Jardín con manzanos" },
   { icon: Wifi, label: "WiFi Gratuito", desc: "Conexión de alta velocidad" },
-  { icon: Car, label: "Parking Privado", desc: "Amplio y seguro" },
-  { icon: Flame, label: "Chimenea", desc: "Noches acogedoras" },
-  { icon: UtensilsCrossed, label: "Cocina Equipada", desc: "Todo lo necesario" },
+  { icon: Car, label: "Parking Privado", desc: "Amplio y gratuito" },
+  { icon: Flame, label: "Chimenea Pellets", desc: "Muy calentito en invierno" },
+  { icon: UtensilsCrossed, label: "Cocina Completa", desc: "Vitro, horno, microondas" },
   { icon: Apple, label: "Manzanos", desc: "Cosecha tu propia manzana" },
   { icon: Mountain, label: "Vistas al Valle", desc: "Naturaleza asturiana" },
-  { icon: Dog, label: "Pet Friendly", desc: "Mascotas bienvenidas" },
   { icon: Home, label: "140m² de Casa", desc: "Espacios amplios" },
-  { icon: Tv, label: "Smart TV", desc: "Netflix incluido" },
+  { icon: Tv, label: "Smart TV", desc: "Con Chromecast" },
   { icon: WashingMachine, label: "Lavadora", desc: "Para estancias largas" },
-  { icon: Coffee, label: "Cafetera", desc: "Desayunos perfectos" },
+  { icon: Coffee, label: "Cafetera Manual", desc: "Desayunos perfectos" },
+  { icon: Sun, label: "Porche Cubierto", desc: "Mesa para 10 comensales" },
+  { icon: Droplets, label: "Agua de Manantial", desc: "Directa de montaña" },
+  { icon: Sofa, label: "Salón Acogedor", desc: "Con juegos de mesa" },
+  { icon: Baby, label: "Ideal Familias", desc: "Espacio seguro para niños" },
+  { icon: Utensils, label: "Todo el Menaje", desc: "No falta nada" },
 ];
 
 const Amenities = () => {
@@ -45,8 +53,8 @@ const Amenities = () => {
             <span className="text-primary italic"> Necesitas</span>
           </h2>
           <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
-            Hemos pensado en cada detalle para que tu estancia sea perfecta
-            en la Comarca de la Sidra asturiana.
+            Hemos pensado en cada detalle para que tu estancia sea perfecta.
+            La casa está cuidada al detalle, no le falta menaje de hogar.
           </p>
         </div>
 
@@ -74,6 +82,24 @@ const Amenities = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Important notes */}
+        <div className="mt-16 text-center">
+          <div className="inline-flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-primary rounded-full"></span>
+              Espacio libre de humos en interior
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-primary rounded-full"></span>
+              A 7 km de Villaviciosa
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-primary rounded-full"></span>
+              Cerca de Playa Rodiles
+            </span>
+          </div>
         </div>
       </div>
     </section>
