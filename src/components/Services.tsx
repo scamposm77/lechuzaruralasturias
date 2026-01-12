@@ -10,46 +10,61 @@ import {
   Mountain, 
   Flame, 
   MapPin, 
-  Leaf 
+  Leaf,
+  Wifi,
+  Car,
+  Tv,
+  Droplets,
+  BedDouble,
+  Shirt,
 } from "lucide-react";
 
 const services = [
   {
     icon: UtensilsCrossed,
-    title: "Experiencia rural completa",
-    description: "Cocina totalmente equipada (vitrocerámica, horno, microondas, cafetera manual), wifi gratuito y zonas exteriores para relajarte.",
+    title: "Cocina Completa",
+    description: "Vitrocerámica, horno, microondas, cafetera manual de filtro, nevera y menaje completo (vajilla, cubertería y utensilios) para cocinar como en casa.",
     image: cocinaEquipada,
   },
   {
+    icon: Flame,
+    title: "Salón Acogedor",
+    description: "Chimenea de pellets para el invierno, sofá cama doble, Smart TV con Chromecast y juegos de mesa para disfrutar en familia.",
+    image: salonChimenea,
+  },
+  {
     icon: TreePine,
-    title: "Rincón ajardinado",
-    description: "Relájate en nuestro jardín de 1500m² con vistas a las montañas. Gran porche cubierto para 10 comensales y balancín.",
+    title: "Jardín y Porche",
+    description: "1.500m² de parcela privada con manzanos y tejo centenario. Gran porche cubierto con mesa para 10 comensales y balancín con vistas.",
     image: jardinPorche,
   },
   {
-    icon: Mountain,
-    title: "Actividades y Experiencias",
-    description: "Cercanía a rutas de senderismo (P.R. AS-147, Senda del río Viacaba) y el Camino de Santiago para explorar el entorno.",
-    image: vistaLejana,
-  },
-  {
-    icon: Flame,
-    title: "Confort y Comodidad",
-    description: "Salón con chimenea de pellets, Smart TV con Chromecast, 2 baños (1 completo + 1 aseo). Cada detalle pensado para ti.",
-    image: salonChimenea,
+    icon: BedDouble,
+    title: "3 Dormitorios Dobles",
+    description: "Dormitorio 1: Cama King size. Dormitorio 2: Cama de matrimonio. Dormitorio 3: Litera con cama de matrimonio inferior. Ropa de cama incluida.",
+    image: ventanaVistas,
   },
   {
     icon: MapPin,
     title: "Asesoría Local",
-    description: "Te ayudamos con recomendaciones sobre actividades, restaurantes y sidrerías en la Comarca de la Sidra.",
+    description: "Te ayudamos con recomendaciones sobre actividades, restaurantes y sidrerías en la Comarca de la Sidra. Conocemos cada rincón.",
     image: banoCompleto,
   },
   {
-    icon: Leaf,
-    title: "Entorno Natural Privilegiado",
-    description: "Rodeados de manzanos centenarios, un tejo milenario y la tranquilidad del entorno rural. Ideal para desconectar.",
-    image: ventanaVistas,
+    icon: Mountain,
+    title: "Rutas y Senderismo",
+    description: "Cercanía a P.R. AS-147, Senda del río Viacaba y el Camino de Santiago. Entorno natural privilegiado para explorar Asturias.",
+    image: vistaLejana,
   },
+];
+
+const extras = [
+  { icon: Wifi, label: "WiFi gratuito en toda la casa" },
+  { icon: Car, label: "Parking privado junto a la casa" },
+  { icon: Tv, label: "Smart TV con Chromecast" },
+  { icon: Droplets, label: "Agua potable de manantial" },
+  { icon: Shirt, label: "Ropa de cama y toallas incluidas" },
+  { icon: Leaf, label: "Calefacción con chimenea de pellets" },
 ];
 
 const Services = () => {
@@ -65,7 +80,7 @@ const Services = () => {
             Nuestros <span className="text-primary italic">Servicios</span>
           </h2>
           <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
-            Te ofrecemos todo lo necesario para disfrutar al máximo de tu estancia en Asturias.
+            La casa está completamente equipada para que te sientas como en casa. Disfruta de uso exclusivo de todas las estancias y zonas exteriores.
           </p>
         </div>
 
@@ -98,6 +113,19 @@ const Services = () => {
           ))}
         </div>
 
+        {/* Extras Grid */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {extras.map((extra, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-3 p-4 bg-card rounded-lg card-shadow"
+            >
+              <extra.icon className="w-5 h-5 text-primary flex-shrink-0" />
+              <span className="font-body text-foreground text-sm">{extra.label}</span>
+            </div>
+          ))}
+        </div>
+
         {/* CTA */}
         <div className="mt-20 text-center">
           <div className="inline-block bg-card p-8 md:p-12 rounded-lg card-shadow">
@@ -105,12 +133,10 @@ const Services = () => {
               ¡Reserva tu experiencia rural hoy mismo!
             </h3>
             <p className="font-body text-muted-foreground mb-6">
-              Disfruta de la paz y el encanto de Asturias.
+              Capacidad máxima: 7 personas. Disfruta de la paz y el encanto de Asturias.
             </p>
             <a
-              href="https://www.airbnb.es/rooms/1232063912950498409"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contacto"
               className="inline-block px-10 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               Reservar Ahora
