@@ -117,12 +117,12 @@ const Footer = () => {
               Política de Privacidad
             </a>
             <a 
-              href="https://www.lechuzaruralasturias.es" 
+              href="/aviso-legal"
               target="_blank" 
               rel="noopener noreferrer"
               className="font-body text-background/40 text-sm hover:text-background/70 transition-colors"
             >
-              lechuzaruralasturias.es
+              Aviso Legal
             </a>
           </div>
         </div>
