@@ -25,7 +25,8 @@ import cocina06 from "@/assets/cocina/cocina-06.jpg";
 import bano01 from "@/assets/banos/bano-01.jpg";
 import bano02 from "@/assets/banos/bano-02.jpg";
 
-// Other spaces (placeholder for salon)
+// Salon images
+import salon01 from "@/assets/salon/salon-01.jpg";
 import salonChimenea from "@/assets/salon-chimenea.jpg";
 
 type Space = {
@@ -56,7 +57,7 @@ const spaces: Space[] = [
     name: "Salón",
     description: "Acogedor salón con chimenea de pellets y Smart TV",
     cover: salonChimenea,
-    images: [salonChimenea],
+    images: [salonChimenea, salon01],
   },
   {
     id: "bano",
