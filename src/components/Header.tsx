@@ -16,8 +16,9 @@ const Header = () => {
   const navLinks = [
     { href: "#inicio", label: "Inicio" },
     { href: "#espacios", label: "Espacios" },
-    { href: "#experiencia", label: "La Experiencia" },
+    { href: "#habitaciones", label: "Habitaciones" },
     { href: "#servicios", label: "Servicios" },
+    { href: "#opiniones", label: "Opiniones" },
     { href: "#contacto", label: "Contacto" },
   ];
 
@@ -40,7 +41,7 @@ const Header = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -53,7 +54,9 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="#reservar"
+            href="https://www.airbnb.es/rooms/1232063912950498409"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`px-6 py-3 rounded-sm font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 ${
               isScrolled
                 ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg"
@@ -67,7 +70,7 @@ const Header = () => {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`md:hidden p-2 transition-colors ${
+          className={`lg:hidden p-2 transition-colors ${
             isScrolled ? "text-foreground" : "text-background"
           }`}
         >
@@ -77,7 +80,7 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <nav className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-lg border-b border-border animate-fade-in shadow-xl">
+        <nav className="lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-lg border-b border-border animate-fade-in shadow-xl">
           <div className="container mx-auto px-6 py-8 flex flex-col gap-2">
             {navLinks.map((link) => (
               <a
@@ -90,11 +93,13 @@ const Header = () => {
               </a>
             ))}
             <a
-              href="#reservar"
+              href="https://www.airbnb.es/rooms/1232063912950498409"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
               className="mt-4 px-6 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider text-center shadow-md"
             >
-              Reservar
+              Reservar en Airbnb
             </a>
           </div>
         </nav>

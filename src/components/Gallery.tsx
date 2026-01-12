@@ -1,27 +1,27 @@
 import { useState } from "react";
-import exteriorHouse from "@/assets/exterior-house.jpg";
-import livingRoom from "@/assets/living-room.jpg";
-import kitchen from "@/assets/kitchen.jpg";
-import bedroomDouble from "@/assets/bedroom-double.jpg";
-import bedroomBunk from "@/assets/bedroom-bunk.jpg";
-import bedroomViews from "@/assets/bedroom-views.jpg";
-import officeNook from "@/assets/office-nook.jpg";
-import bathroomShower from "@/assets/bathroom-shower.jpg";
-import bunkViews from "@/assets/bunk-views.jpg";
-import terrace from "@/assets/terrace.jpg";
+import fachadaExterior from "@/assets/fachada-exterior.jpg";
+import salonChimenea from "@/assets/salon-chimenea.jpg";
+import cocinaEquipada from "@/assets/cocina-equipada.jpg";
+import habTejo from "@/assets/hab-tejo.jpg";
+import habPumarada from "@/assets/hab-pumarada.jpg";
+import habLechuza from "@/assets/hab-lechuza.jpg";
+import jardinPorche from "@/assets/jardin-porche.jpg";
+import banoCompleto from "@/assets/bano-completo.jpg";
+import ventanaVistas from "@/assets/ventana-vistas.jpg";
+import panoramica from "@/assets/panoramica.jpg";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  { src: exteriorHouse, alt: "Exterior de la cabaña", label: "Exterior" },
-  { src: livingRoom, alt: "Salón con pared de piedra", label: "Salón" },
-  { src: kitchen, alt: "Cocina equipada", label: "Cocina" },
-  { src: bedroomDouble, alt: "Dormitorio doble", label: "Dormitorio" },
-  { src: bedroomBunk, alt: "Dormitorio con litera", label: "Litera" },
-  { src: bedroomViews, alt: "Dormitorio con vistas", label: "Vistas" },
-  { src: officeNook, alt: "Rincón de trabajo", label: "Oficina" },
-  { src: bathroomShower, alt: "Baño con ducha", label: "Baño" },
-  { src: bunkViews, alt: "Litera con vistas al valle", label: "Valle" },
-  { src: terrace, alt: "Terraza panorámica", label: "Terraza" },
+  { src: fachadaExterior, alt: "Fachada exterior de la casa", label: "Exterior" },
+  { src: salonChimenea, alt: "Salón con chimenea de pellets", label: "Salón" },
+  { src: cocinaEquipada, alt: "Cocina totalmente equipada", label: "Cocina" },
+  { src: habTejo, alt: "Habitación El Tejo - Principal", label: "El Tejo" },
+  { src: habPumarada, alt: "Habitación La Pumarada", label: "La Pumarada" },
+  { src: habLechuza, alt: "Habitación La Lechuza - Literas", label: "La Lechuza" },
+  { src: jardinPorche, alt: "Jardín y porche cubierto", label: "Jardín" },
+  { src: banoCompleto, alt: "Baño completo", label: "Baño" },
+  { src: ventanaVistas, alt: "Vistas desde la ventana", label: "Vistas" },
+  { src: panoramica, alt: "Vista panorámica del entorno", label: "Panorámica" },
 ];
 
 const Gallery = () => {
@@ -45,15 +45,14 @@ const Gallery = () => {
         {/* Section Header */}
         <div className="text-center mb-20">
           <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
-            Nuestros Espacios
+            Descubre cada rincón
           </span>
           <h2 className="font-display text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
-            Un Refugio en la
-            <span className="text-primary italic"> Naturaleza</span>
+            Nuestros <span className="text-primary italic">Espacios</span>
           </h2>
           <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
-            Cada rincón de La Cabaña de la Lechuza ha sido diseñado para
-            ofrecerte confort y autenticidad en el corazón de Asturias.
+            3 habitaciones, un acogedor salón con chimenea y un amplio porche. 
+            El lugar ideal para familias y grupos que buscan desconectar.
           </p>
         </div>
 
