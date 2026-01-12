@@ -27,16 +27,16 @@ const activities = [
 
 const Location = () => {
   return (
-    <section id="ubicacion" className="py-28 bg-background">
+    <section id="ubicacion" aria-label="Ubicación de la casa rural en Cabranes, Asturias" className="py-28 bg-background">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Info */}
           <div>
             <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
-              Cómo llegar
+              Casa rural en La Roza, Cabranes
             </span>
             <h2 className="font-display text-foreground text-4xl md:text-5xl mb-6">
-              <span className="text-primary italic">Ubicación</span> Privilegiada
+              <span className="text-primary italic">Ubicación</span> en la Comarca de la Sidra
             </h2>
             
             <div className="flex items-start gap-4 mb-8">

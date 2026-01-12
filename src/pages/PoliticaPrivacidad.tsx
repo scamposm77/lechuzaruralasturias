@@ -1,8 +1,16 @@
 import { ArrowLeft } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const PoliticaPrivacidad = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <Helmet>
+        <title>Política de Privacidad | La Cabaña de la Lechuza - Casa Rural Asturias</title>
+        <meta name="description" content="Política de privacidad y protección de datos de La Cabaña de la Lechuza, casa rural en Cabranes, Asturias. Información sobre tratamiento de datos según RGPD." />
+        <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://www.lechuzaruralasturias.es/politica-privacidad" />
+      </Helmet>
+      <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="bg-foreground text-background py-6">
         <div className="container mx-auto px-6">
@@ -327,6 +335,7 @@ const PoliticaPrivacidad = () => {
         </div>
       </main>
     </div>
+    </>
   );
 };
 

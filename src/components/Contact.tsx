@@ -61,7 +61,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contacto" className="py-28 bg-card relative overflow-hidden">
+    <section id="contacto" aria-label="Contacto y reservas de la casa rural" className="py-28 bg-card relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
       
@@ -70,15 +70,15 @@ const Contact = () => {
           {/* Contact Info */}
           <div>
             <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
-              Contacto
+              Reserva tu estancia
             </span>
             <h2 className="font-display text-foreground text-4xl md:text-5xl lg:text-6xl mb-8 leading-[1.15]">
-              ¿Listo para
-              <span className="text-primary italic"> Desconectar?</span>
+              ¿Listo para tu
+              <span className="text-primary italic"> Escapada Rural?</span>
             </h2>
             <p className="font-body text-muted-foreground text-lg mb-8 leading-relaxed">
-              Escríbenos para consultar disponibilidad, reservar, resolver cualquier duda
-              o simplemente para saber más sobre La Cabaña de la Lechuza.
+              Reserva tu alojamiento en la Comarca de la Sidra. Consulta disponibilidad para tu escapada rural en Asturias
+              o pregúntanos cualquier duda sobre La Cabaña de la Lechuza.
             </p>
             <p className="font-body text-muted-foreground mb-12">
               <strong className="text-foreground">Susana</strong>, nuestra anfitriona, estará encantada de atenderte personalmente.

@@ -69,20 +69,20 @@ const extras = [
 
 const Services = () => {
   return (
-    <section id="servicios" className="py-28 bg-background">
+    <section id="servicios" aria-label="Servicios y comodidades de la casa rural" className="py-28 bg-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <header className="text-center mb-20">
           <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
-            Todo lo que necesitas
+            Servicios incluidos en tu estancia
           </span>
           <h2 className="font-display text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
             Nuestros <span className="text-primary italic">Servicios</span>
           </h2>
           <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
-            La casa está completamente equipada para que te sientas como en casa. Disfruta de uso exclusivo de todas las estancias y zonas exteriores.
+            Nuestra casa rural en Asturias está completamente equipada con WiFi, chimenea, cocina y parking privado. Disfruta de uso exclusivo del alojamiento y jardín.
           </p>
-        </div>
+        </header>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -94,8 +94,9 @@ const Services = () => {
               <div className="aspect-[16/10] overflow-hidden">
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={`${service.title} - Servicio de casa rural La Cabaña de la Lechuza en Asturias`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/95 via-foreground/50 to-transparent flex flex-col justify-end p-6">
@@ -130,10 +131,10 @@ const Services = () => {
         <div className="mt-20 text-center">
           <div className="inline-block bg-card p-8 md:p-12 rounded-lg card-shadow">
             <h3 className="font-display text-foreground text-2xl md:text-3xl mb-4">
-              ¡Reserva tu experiencia rural hoy mismo!
+              ¡Reserva tu escapada rural en Asturias!
             </h3>
             <p className="font-body text-muted-foreground mb-6">
-              Capacidad máxima: 7 personas. Disfruta de la paz y el encanto de Asturias.
+              Alojamiento para 7 personas en la Comarca de la Sidra. Vive la auténtica experiencia del turismo rural asturiano.
             </p>
             <a
               href="#contacto"

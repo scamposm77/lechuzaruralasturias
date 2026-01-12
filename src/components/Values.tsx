@@ -6,37 +6,40 @@ import { Heart, Leaf, Bed } from "lucide-react";
 const values = [
   {
     icon: Heart,
-    title: "Hospitalidad",
-    description: "Nos esforzamos por hacer que cada huésped se sienta como en casa, ofreciendo un servicio cálido y acogedor.",
+    title: "Hospitalidad Asturiana",
+    description: "Nos esforzamos por hacer que cada huésped se sienta como en casa, ofreciendo un servicio cálido y la auténtica hospitalidad rural asturiana.",
     image: porcheExterior,
+    alt: "Porche de la casa rural con vistas al jardín de manzanos en la Comarca de la Sidra",
   },
   {
     icon: Leaf,
-    title: "Naturaleza",
-    description: "Rodeados de la belleza natural asturiana, promovemos un entorno sostenible y saludable.",
+    title: "Naturaleza en Estado Puro",
+    description: "Rodeados de la belleza natural de la Comarca de la Sidra, ofrecemos un entorno tranquilo para desconectar del estrés urbano.",
     image: naturaleza,
+    alt: "Paisaje natural de Asturias con prados verdes y montañas desde la casa rural",
   },
   {
     icon: Bed,
-    title: "Comodidad",
-    description: "Todos nuestros espacios están diseñados para brindar la máxima comodidad y relajación durante tu estancia.",
+    title: "Confort Rural",
+    description: "Nuestras habitaciones y espacios están diseñados para brindar máximo confort durante tu escapada rural en Asturias.",
     image: habTejo,
+    alt: "Habitación El Tejo con cama king size y decoración rústica en casa rural Asturias",
   },
 ];
 
 const Values = () => {
   return (
-    <section id="valores" className="py-24 bg-card">
+    <section id="valores" aria-label="Valores de La Cabaña de la Lechuza" className="py-24 bg-card">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
-            Nuestra Filosofía
+            Turismo rural con encanto
           </span>
           <h2 className="font-display text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
             Nuestros <span className="text-primary italic">Valores</span>
           </h2>
-        </div>
+        </header>
 
         {/* Values Grid */}
         <div className="grid md:grid-cols-3 gap-8">
@@ -49,8 +52,9 @@ const Values = () => {
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={value.image}
-                  alt={value.title}
+                  alt={value.alt}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-transparent flex flex-col justify-end p-6">
