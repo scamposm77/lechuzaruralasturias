@@ -2,7 +2,7 @@ import { useState } from "react";
 import { X, ChevronLeft, ChevronRight, Images } from "lucide-react";
 
 // Exterior images
-import ext01 from "@/assets/exterior/ext-01.jpg";
+import extPortada from "@/assets/exterior/ext-00-portada.jpg";
 import ext02 from "@/assets/exterior/ext-02.jpg";
 import ext03 from "@/assets/exterior/ext-03.jpg";
 import ext04 from "@/assets/exterior/ext-04.jpg";
@@ -11,6 +11,7 @@ import ext06 from "@/assets/exterior/ext-06.jpg";
 import ext07 from "@/assets/exterior/ext-07.jpg";
 import ext08 from "@/assets/exterior/ext-08.jpg";
 import ext09 from "@/assets/exterior/ext-09.jpg";
+import ext10 from "@/assets/exterior/ext-10.jpg";
 
 // Cocina images
 import cocina01 from "@/assets/cocina/cocina-01.jpg";
@@ -37,8 +38,8 @@ const spaces: Space[] = [
     id: "exterior",
     name: "Exterior y Jardín",
     description: "1.500m² de parcela con porche, balancín y vistas panorámicas",
-    cover: ext09,
-    images: [ext09, ext05, ext06, ext04, ext02, ext03, ext07, ext08, ext01],
+    cover: extPortada,
+    images: [extPortada, ext02, ext03, ext04, ext05, ext06, ext07, ext08, ext09, ext10],
   },
   {
     id: "cocina",
