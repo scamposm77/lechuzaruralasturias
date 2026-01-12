@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logoLechuza from "@/assets/logo-lechuza.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLogoClicked, setIsLogoClicked] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +14,11 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLogoClick = () => {
+    setIsLogoClicked(true);
+    setTimeout(() => setIsLogoClicked(false), 300);
+  };
 
   const navLinks = [
     { href: "#inicio", label: "Inicio", isExternal: false },
@@ -31,11 +38,19 @@ const Header = () => {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#inicio"
-          className={`font-display text-xl md:text-2xl transition-colors ${
+          className={`flex items-center gap-3 font-display text-xl md:text-2xl transition-colors ${
             isScrolled ? "text-foreground" : "text-background"
           }`}
         >
-          La Cabaña de la Lechuza
+          <span>La Cabaña de la Lechuza</span>
+          <img
+            src={logoLechuza}
+            alt="Logo La Cabaña de la Lechuza - Casa rural en Asturias"
+            onClick={handleLogoClick}
+            className={`h-10 md:h-12 w-auto cursor-pointer transition-transform duration-300 ${
+              isLogoClicked ? "scale-150" : "hover:scale-110"
+            }`}
+          />
         </a>
 
         {/* Desktop Navigation */}
