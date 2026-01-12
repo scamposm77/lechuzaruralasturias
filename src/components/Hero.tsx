@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import porcheHero from "@/assets/porche-hero.jpg";
 import heroPaisaje from "@/assets/hero-paisaje.jpg";
 import heroExterior from "@/assets/hero-exterior.jpg";
 import heroPorche from "@/assets/hero-porche.jpg";
 import heroCasa from "@/assets/hero-casa.jpg";
 
 const heroImages = [
-  porcheHero,
   heroCasa,
   heroPorche,
   heroPaisaje,
