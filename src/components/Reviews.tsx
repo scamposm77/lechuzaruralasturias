@@ -60,8 +60,11 @@ const Reviews = () => {
           <p className="font-body text-primary font-semibold mb-4">
             100% clientes satisfechos
           </p>
-          <p className="font-body text-muted-foreground text-lg max-w-xl mx-auto">
-            Susana, nuestra anfitriona, está siempre disponible para hacer tu estancia perfecta
+          <p className="font-body text-muted-foreground text-lg max-w-xl mx-auto italic">
+            "Casa muy bonita y renovada. En un lugar tranquilo y perfecto para relajarse, pero que permite recorrer esta hermosa región y descubrirla con facilidad."
+          </p>
+          <p className="font-body text-muted-foreground text-sm mt-2">
+            — Audrie, Julio 2025
           </p>
         </div>
 

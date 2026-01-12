@@ -3,6 +3,11 @@ import { X, ChevronLeft, ChevronRight, Images, Bed, Mountain, Users } from "luci
 
 // Habitación El Tejo
 import habTejo from "@/assets/hab-tejo.jpg";
+import tejo01 from "@/assets/habitaciones/tejo-01.jpg";
+import tejo02 from "@/assets/habitaciones/tejo-02.jpg";
+import tejo03 from "@/assets/habitaciones/tejo-03.jpg";
+import tejo04 from "@/assets/habitaciones/tejo-04.jpg";
+import tejo05 from "@/assets/habitaciones/tejo-05.jpg";
 
 // Habitación La Pumarada
 import habPumarada from "@/assets/hab-pumarada.jpg";
@@ -29,11 +34,11 @@ const rooms: Room[] = [
   {
     name: "El Tejo",
     subtitle: "Habitación Principal",
-    description: "Cama King size (180x200cm), paredes de piedra natural y ventana con vistas al valle. El dormitorio más espacioso y acogedor.",
+    description: "La habitación más espaciosa de La Cabaña de la Lechuza lleva el nombre del majestuoso tejo centenario que preside nuestro jardín. Este dormitorio principal combina la tradición asturiana con el confort moderno, creando un refugio perfecto para el descanso. Un espacio amplio y luminoso donde las vigas de madera y las paredes de piedra crean una atmósfera que combina tradición y confort. Despertarás con los sonidos de los pájaros y la paz de la naturaleza asturiana. Capacidad: 2 personas. Ideal para parejas que buscan el dormitorio más espacioso y con más privacidad.",
     cover: habTejo,
-    images: [habTejo],
+    images: [habTejo, tejo01, tejo02, tejo03, tejo04, tejo05],
     icon: Mountain,
-    features: ["Cama King 180x200", "Pared de piedra", "Vistas al valle"],
+    features: ["Cama 160x200", "Pared de piedra", "Vistas al valle", "Armario amplio"],
   },
   {
     name: "La Pumarada",
@@ -47,11 +52,11 @@ const rooms: Room[] = [
   {
     name: "La Lechuza",
     subtitle: "Habitación Familiar",
-    description: "Esta habitación lleva el nombre de nuestra cabaña y es el espacio favorito de los más pequeños. Con su litera metálica y su espacio acogedor, es perfecta para que niños y jóvenes disfruten de su propia aventura asturiana. Una habitación luminosa y acogedora que hace las delicias de niños y jóvenes. La litera metálica añade un toque de aventura, mientras que la luz natural crea un ambiente alegre y agradable para el descanso. Con colchón de matrimonio en la parte inferior, espacio luminoso con mucho encanto y decoración pensada para familias.",
+    description: "Esta habitación lleva el nombre de nuestra cabaña y es el espacio favorito de los más pequeños. Con su litera metálica y su espacio acogedor, es perfecta para que niños y jóvenes disfruten de su propia aventura asturiana. Una habitación luminosa y acogedora que hace las delicias de niños y jóvenes. La litera metálica añade un toque de aventura, mientras que la luz natural crea un ambiente alegre y agradable para el descanso. Capacidad: 2 personas. Ideal para niños, jóvenes o huéspedes que prefieren literas.",
     cover: habLechuza,
     images: [habLechuza, lechuza01, lechuza02, lechuza03, lechuza04, lechuza05],
     icon: Users,
-    features: ["Litera metálica", "Colchón matrimonio abajo", "Vistas al valle", "Ideal niños"],
+    features: ["Litera metálica", "Espacio luminoso", "Ideal niños y jóvenes"],
   },
 ];
 

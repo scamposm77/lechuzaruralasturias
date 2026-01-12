@@ -19,7 +19,6 @@ const Header = () => {
     { href: "#habitaciones", label: "Habitaciones" },
     { href: "#servicios", label: "Servicios" },
     { href: "#opiniones", label: "Opiniones" },
-    { href: "#contacto", label: "Contacto" },
   ];
 
   return (
@@ -54,9 +53,7 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="https://www.airbnb.es/rooms/1232063912950498409"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contacto"
             className={`px-6 py-3 rounded-sm font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 ${
               isScrolled
                 ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg"
@@ -93,13 +90,11 @@ const Header = () => {
               </a>
             ))}
             <a
-              href="https://www.airbnb.es/rooms/1232063912950498409"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contacto"
               onClick={() => setIsMobileMenuOpen(false)}
               className="mt-4 px-6 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider text-center shadow-md"
             >
-              Reservar en Airbnb
+              Reservar
             </a>
           </div>
         </nav>
