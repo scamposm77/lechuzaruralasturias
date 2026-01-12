@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Calendar, ArrowLeft, User } from "lucide-react";
+import { Calendar, ArrowLeft, User, Camera } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getPostBySlug, blogPosts } from "@/data/blogPosts";
@@ -62,12 +62,29 @@ const BlogPost = () => {
             </Link>
 
             {/* Cover Image */}
-            <div className="aspect-video rounded-lg overflow-hidden mb-8">
-              <img
-                src={post.coverImage}
-                alt={post.title}
-                className="w-full h-full object-cover"
-              />
+            <div className="mb-8">
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <img
+                  src={post.coverImage}
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {post.imageCredit && (
+                <div className="flex items-center gap-1 mt-2 text-muted-foreground text-xs font-body">
+                  <Camera size={12} />
+                  <span>Foto por </span>
+                  <a 
+                    href={post.imageCredit.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors underline"
+                  >
+                    {post.imageCredit.author}
+                  </a>
+                  <span> en Unsplash</span>
+                </div>
+              )}
             </div>
 
             {/* Header */}
