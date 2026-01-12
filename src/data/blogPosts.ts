@@ -12,6 +12,10 @@ export interface BlogPost {
   excerpt: string;
   content: string; // Soporta HTML
   coverImage: string;
+  imageCredit?: {
+    author: string;
+    url: string;
+  };
   author: string;
   publishedAt: string; // Formato: "2025-01-12"
   tags: string[];
@@ -45,7 +49,11 @@ export const blogPosts: BlogPost[] = [
       <h2>Un nuevo capítulo</h2>
       <p>Hoy, La Cabaña de la Lechuza abre sus puertas a viajeros que buscan desconectar y vivir la auténtica experiencia rural asturiana. Y sí, las lechuzas siguen aquí. Si tienes suerte, podrás escuchar su característico canto al caer la noche.</p>
     `,
-    coverImage: "/assets/hero-casa.jpg",
+    coverImage: "/blog/casa-rural-asturias.jpg",
+    imageCredit: {
+      author: "Jens Behrmann",
+      url: "https://unsplash.com/@jensbehrmann"
+    },
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-12",
     tags: ["historia", "arquitectura", "asturias"]
@@ -88,7 +96,11 @@ export const blogPosts: BlogPost[] = [
       <h2>10. La leyenda del Cuélebre</h2>
       <p>Según la mitología asturiana, en las cuevas cercanas habita el <em>Cuélebre</em>, un dragón alado que custodia tesoros. ¡Los vecinos más ancianos aún cuentan historias sobre él!</p>
     `,
-    coverImage: "/assets/naturaleza-asturias.jpg",
+    coverImage: "/blog/paisaje-verde-asturias.jpg",
+    imageCredit: {
+      author: "Lukasz Szmigiel",
+      url: "https://unsplash.com/@szmigieldesign"
+    },
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-11",
     tags: ["cabranes", "comarca de la sidra", "curiosidades"]
@@ -133,7 +145,11 @@ export const blogPosts: BlogPost[] = [
       
       <p>Durante tu estancia, te animamos a pasear por los pueblos cercanos como Santa Eulalia o Torazo para admirar estos tesoros arquitectónicos que siguen en pie después de siglos.</p>
     `,
-    coverImage: "/assets/fachada-exterior.jpg",
+    coverImage: "/blog/arquitectura-rural.jpg",
+    imageCredit: {
+      author: "Ярослав Алексеенко",
+      url: "https://unsplash.com/@webtechie"
+    },
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-10",
     tags: ["arquitectura", "hórreos", "tradición"]
@@ -169,7 +185,11 @@ export const blogPosts: BlogPost[] = [
       
       <p>Pregúntanos durante tu estancia y te daremos mapas detallados e indicaciones personalizadas según tu nivel.</p>
     `,
-    coverImage: "/assets/panoramica.jpg",
+    coverImage: "/blog/senderismo-montaña.jpg",
+    imageCredit: {
+      author: "Toomas Tartes",
+      url: "https://unsplash.com/@toomastartes"
+    },
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-08",
     tags: ["senderismo", "rutas", "naturaleza"]
@@ -208,7 +228,11 @@ export const blogPosts: BlogPost[] = [
       
       <p>Pregúntanos durante tu estancia y te recomendaremos los mejores restaurantes y sidrerías de la zona.</p>
     `,
-    coverImage: "/assets/cocina-equipada.jpg",
+    coverImage: "/blog/gastronomia-plato.jpg",
+    imageCredit: {
+      author: "Jay Wennington",
+      url: "https://unsplash.com/@jaywennington"
+    },
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-06",
     tags: ["gastronomía", "cocina asturiana", "sidra"]
