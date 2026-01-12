@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Heart } from "lucide-react";
+import { Instagram, Heart, Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -13,22 +13,32 @@ const Footer = () => {
             <h3 className="font-display text-background text-2xl mb-6">
               La Cabaña de la Lechuza
             </h3>
-            <p className="font-body text-background/60 text-sm leading-relaxed mb-8">
+            <p className="font-body text-background/60 text-sm leading-relaxed mb-6">
               Un refugio de paz entre manzanos y valles asturianos.
               Tu escapada rural perfecta en la Comarca de la Sidra.
             </p>
+            <p className="font-body text-background/60 text-sm mb-8">
+              Rehabilitada en 2023 con todo el encanto de la arquitectura tradicional asturiana.
+            </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
-                className="w-12 h-12 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                href="https://www.airbnb.es/rooms/1232063912950498409"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-background/10 rounded-full flex items-center justify-center hover:bg-[#FF5A5F] hover:text-white transition-all duration-300"
+                title="Ver en Airbnb"
               >
-                <Facebook className="w-5 h-5" />
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.001 18.275c-.69 0-1.283-.244-1.752-.708-.469-.469-.703-1.064-.703-1.752 0-.703.244-1.299.703-1.768.469-.469 1.064-.703 1.752-.703.703 0 1.299.234 1.768.703.469.469.703 1.064.703 1.768 0 .688-.234 1.283-.703 1.752-.469.464-1.064.708-1.768.708z"/>
+                </svg>
               </a>
             </div>
           </div>
@@ -44,6 +54,7 @@ const Footer = () => {
                 { href: "#espacios", label: "Espacios" },
                 { href: "#experiencia", label: "La Experiencia" },
                 { href: "#servicios", label: "Servicios" },
+                { href: "#opiniones", label: "Opiniones" },
                 { href: "#contacto", label: "Contacto" },
               ].map((link) => (
                 <a
@@ -62,11 +73,37 @@ const Footer = () => {
             <h4 className="font-display text-background text-lg mb-6">
               Contacto
             </h4>
-            <div className="font-body text-background/60 text-sm space-y-3">
-              <p>La Roza, Cabranes</p>
-              <p>Comarca de la Sidra, Asturias</p>
-              <p className="pt-2">+34 600 123 456</p>
-              <p>info@cabanadellechuza.es</p>
+            <div className="font-body text-background/60 text-sm space-y-4">
+              <a 
+                href="https://maps.google.com/?q=La+Roza+Cabranes+Asturias"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 hover:text-background transition-colors"
+              >
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>Barrio la Roza s/n<br />33310 Cabranes, Asturias</span>
+              </a>
+              <a 
+                href="tel:+34625081519"
+                className="flex items-center gap-3 hover:text-background transition-colors"
+              >
+                <Phone className="w-4 h-4 flex-shrink-0" />
+                <span>+34 625 08 15 19</span>
+              </a>
+              <a 
+                href="mailto:info@lechuzaruralasturias.es"
+                className="flex items-center gap-3 hover:text-background transition-colors"
+              >
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <span>info@lechuzaruralasturias.es</span>
+              </a>
+            </div>
+            
+            <div className="mt-8">
+              <p className="font-body text-background/40 text-xs">
+                A 7 km de Villaviciosa<br />
+                Cerca de Playa Rodiles y Tazones
+              </p>
             </div>
           </div>
         </div>
@@ -79,8 +116,13 @@ const Footer = () => {
             <a href="#" className="font-body text-background/40 text-sm hover:text-background/70 transition-colors">
               Política de Privacidad
             </a>
-            <a href="#" className="font-body text-background/40 text-sm hover:text-background/70 transition-colors">
-              Términos y Condiciones
+            <a 
+              href="https://www.lechuzaruralasturias.es" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-body text-background/40 text-sm hover:text-background/70 transition-colors"
+            >
+              lechuzaruralasturias.es
             </a>
           </div>
         </div>
