@@ -44,7 +44,7 @@ const Reviews = () => {
             Lo Que Dicen
             <span className="text-primary italic"> Nuestros Visitantes</span>
           </h2>
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="flex items-center justify-center gap-2 mb-2">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
                 <Star
@@ -55,7 +55,11 @@ const Reviews = () => {
               ))}
             </div>
             <span className="font-display text-2xl text-foreground ml-2">4.88</span>
+            <span className="font-body text-muted-foreground text-sm">· Airbnb</span>
           </div>
+          <p className="font-body text-primary font-semibold mb-4">
+            100% clientes satisfechos
+          </p>
           <p className="font-body text-muted-foreground text-lg max-w-xl mx-auto">
             Susana, nuestra anfitriona, está siempre disponible para hacer tu estancia perfecta
           </p>
