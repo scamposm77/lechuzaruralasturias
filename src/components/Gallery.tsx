@@ -12,12 +12,16 @@ import ext07 from "@/assets/exterior/ext-07.jpg";
 import ext08 from "@/assets/exterior/ext-08.jpg";
 import ext09 from "@/assets/exterior/ext-09.jpg";
 
-// Placeholder images for other spaces (to be replaced when user uploads)
+// Cocina images
+import cocina01 from "@/assets/cocina/cocina-01.jpg";
+import cocina02 from "@/assets/cocina/cocina-02.jpg";
+import cocina03 from "@/assets/cocina/cocina-03.jpg";
+import cocina04 from "@/assets/cocina/cocina-04.jpg";
+import cocina05 from "@/assets/cocina/cocina-05.jpg";
+import cocina06 from "@/assets/cocina/cocina-06.jpg";
+
+// Other spaces (placeholders for salon and banos)
 import salonChimenea from "@/assets/salon-chimenea.jpg";
-import cocinaEquipada from "@/assets/cocina-equipada.jpg";
-import habTejo from "@/assets/hab-tejo.jpg";
-import habPumarada from "@/assets/hab-pumarada.jpg";
-import habLechuza from "@/assets/hab-lechuza.jpg";
 import banoCompleto from "@/assets/bano-completo.jpg";
 
 type Space = {
@@ -37,39 +41,18 @@ const spaces: Space[] = [
     images: [ext09, ext05, ext06, ext04, ext02, ext03, ext07, ext08, ext01],
   },
   {
+    id: "cocina",
+    name: "Cocina",
+    description: "Cocina totalmente equipada con todo el menaje",
+    cover: cocina01,
+    images: [cocina01, cocina06, cocina05, cocina02, cocina03, cocina04],
+  },
+  {
     id: "salon",
     name: "Salón",
     description: "Acogedor salón con chimenea de pellets y Smart TV",
     cover: salonChimenea,
     images: [salonChimenea],
-  },
-  {
-    id: "cocina",
-    name: "Cocina",
-    description: "Cocina totalmente equipada con todo el menaje",
-    cover: cocinaEquipada,
-    images: [cocinaEquipada],
-  },
-  {
-    id: "hab-tejo",
-    name: "Habitación El Tejo",
-    description: "Dormitorio principal con cama King size",
-    cover: habTejo,
-    images: [habTejo],
-  },
-  {
-    id: "hab-pumarada",
-    name: "Habitación La Pumarada",
-    description: "Dormitorio con cama de matrimonio",
-    cover: habPumarada,
-    images: [habPumarada],
-  },
-  {
-    id: "hab-lechuza",
-    name: "Habitación La Lechuza",
-    description: "Dormitorio con litera (cama matrimonio inferior)",
-    cover: habLechuza,
-    images: [habLechuza],
   },
   {
     id: "bano",
