@@ -46,8 +46,8 @@ Rehabilitada en 2023, nuestra casa ofrece un entorno íntimo, cálido y cómodo,
           value: "3",
           label: "Habitaciones"
         }, {
-          value: "2",
-          label: "Baños"
+          value: "1+1",
+          label: "Baño y Aseo"
         }, {
           value: "140m²",
           label: "Superficie"
