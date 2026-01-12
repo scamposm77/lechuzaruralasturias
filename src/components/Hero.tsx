@@ -42,16 +42,16 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="inline-block mb-6 animate-fade-up opacity-0 delay-100">
+        <h1 className="font-display text-background text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-4 text-shadow animate-fade-up opacity-0 delay-100">
+          La Cabaña de
+          <span className="block italic text-accent">la Lechuza</span>
+        </h1>
+
+        <div className="inline-block mb-8 animate-fade-up opacity-0 delay-200">
           <span className="font-body text-background/80 text-xs md:text-sm uppercase tracking-[0.4em] px-4 py-2 border border-background/30 rounded-full backdrop-blur-sm bg-background/5">
             Comarca de la Sidra · La Roza, Cabranes
           </span>
         </div>
-        
-        <h1 className="font-display text-background text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-8 text-shadow animate-fade-up opacity-0 delay-200">
-          La Cabaña de
-          <span className="block italic text-accent">la Lechuza</span>
-        </h1>
         
         <p className="font-body text-background/85 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-up opacity-0 delay-300">
           Bienvenido a tu refugio ideal en plena naturaleza asturiana. 
