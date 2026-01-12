@@ -2,31 +2,31 @@ import { Star, Quote } from "lucide-react";
 
 const reviews = [
   {
+    name: "Audrie",
+    date: "Julio 2025",
+    rating: 5,
+    text: "Casa muy bonita y renovada. En un lugar tranquilo y perfecto para relajarse, pero que permite recorrer esta hermosa región y descubrirla con facilidad.",
+    avatar: "A",
+  },
+  {
     name: "Elvia",
     date: "Diciembre 2025",
     rating: 5,
-    text: "La casa es una maravilla, está muy bien ubicada por carretera. Es una casita muy especial en plena naturaleza, al levantarte escuchas pajaritos y es muy agradable. La casa tiene de todo, con la estufa de pellets se está muy calentito. Está cuidada al detalle no le falta menaje de hogar. Recomendable si quieres ir a disfrutar de la naturaleza y a descansar.",
+    text: "La casa es una maravilla, está muy bien ubicada por carretera. Es una casita muy especial en plena naturaleza, al levantarte escuchas pajaritos y es muy agradable. La casa tiene de todo, con la estufa de pellets se está muy calentito.",
     avatar: "E",
   },
   {
     name: "Diego",
     date: "Agosto 2025",
     rating: 5,
-    text: "Al llegar a la casa después de un largo viaje, Susana nos demostró que es una gran anfitriona contestando enseguida a todas nuestras dudas y preguntas. Todas las estancias de la casa están limpias y en perfectas condiciones. Las vistas desde el porche de la casa son impresionantes y la cocina tiene todo lo que puedas necesitar.",
+    text: "Al llegar a la casa después de un largo viaje, Susana nos demostró que es una gran anfitriona contestando enseguida a todas nuestras dudas y preguntas. Todas las estancias de la casa están limpias y en perfectas condiciones.",
     avatar: "D",
-  },
-  {
-    name: "Matteo",
-    date: "Agosto 2025",
-    rating: 5,
-    text: "Una experiencia increíble en plena naturaleza asturiana. La cabaña es exactamente como se ve en las fotos, muy acogedora y con todo lo necesario. Susana fue una anfitriona excepcional. Volveremos sin duda.",
-    avatar: "M",
   },
   {
     name: "Laura",
     date: "Julio 2025",
     rating: 5,
-    text: "Perfecto para familias que buscan desconectar del trabajo y disfrutar de la naturaleza. El entorno es precioso, rodeado de manzanos y con unas vistas espectaculares al valle. Los niños disfrutaron mucho del jardín.",
+    text: "Perfecto para familias que buscan desconectar del trabajo y disfrutar de la naturaleza. El entorno es precioso, rodeado de manzanos y con unas vistas espectaculares al valle.",
     avatar: "L",
   },
 ];
@@ -54,8 +54,7 @@ const Reviews = () => {
                 />
               ))}
             </div>
-            <span className="font-display text-2xl text-foreground ml-2">5.0</span>
-            <span className="font-body text-muted-foreground">· Superanfitrión en Airbnb</span>
+            <span className="font-display text-2xl text-foreground ml-2">4.88</span>
           </div>
           <p className="font-body text-muted-foreground text-lg max-w-xl mx-auto">
             Susana, nuestra anfitriona, está siempre disponible para hacer tu estancia perfecta
@@ -113,7 +112,7 @@ const Reviews = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <a
-            href="https://www.airbnb.es/rooms/1232063912950498409"
+            href="https://www.airbnb.es/rooms/1134703286904548225?guests=1&adults=1&s=67&unique_share_id=502cab8b-a5f4-48ee-af66-a507f113d2f2"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-body text-primary hover:text-primary-dark transition-colors duration-300 text-lg font-medium"
