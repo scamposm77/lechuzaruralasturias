@@ -52,18 +52,29 @@ const Footer = () => {
               {[
                 { href: "#inicio", label: "Inicio" },
                 { href: "#espacios", label: "Espacios" },
-                { href: "#experiencia", label: "La Experiencia" },
+                { href: "#habitaciones", label: "Habitaciones" },
                 { href: "#servicios", label: "Servicios" },
                 { href: "#opiniones", label: "Opiniones" },
+                { href: "/blog", label: "Blog", isExternal: true },
                 { href: "#contacto", label: "Contacto" },
               ].map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="font-body text-background/60 text-sm hover:text-background hover:translate-x-1 transition-all duration-300"
-                >
-                  {link.label}
-                </a>
+                link.isExternal ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="font-body text-background/60 text-sm hover:text-background hover:translate-x-1 transition-all duration-300"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="font-body text-background/60 text-sm hover:text-background hover:translate-x-1 transition-all duration-300"
+                  >
+                    {link.label}
+                  </a>
+                )
               ))}
             </nav>
           </div>
