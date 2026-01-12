@@ -7,8 +7,10 @@ const ComoLlegar = () => {
   return (
     <>
       <Helmet>
-        <title>Cómo Llegar | La Cabaña de la Lechuza - Casa Rural en Asturias</title>
-        <meta name="description" content="Instrucciones detalladas para llegar a La Cabaña de la Lechuza en La Roza, Cabranes, Asturias. Incluye mapa, video tutorial y consejos para el camino." />
+        <title>Cómo Llegar a La Cabaña de la Lechuza | Casa Rural en Cabranes, Asturias</title>
+        <meta name="description" content="Indicaciones y ruta para llegar a nuestra casa rural en La Roza, Cabranes. Incluye video tutorial, mapa de Google Maps, enlace a Waze y consejos para la carretera de montaña." />
+        <meta name="keywords" content="cómo llegar casa rural Cabranes, ruta La Roza Asturias, indicaciones casa rural Asturias, mapa Comarca de la Sidra, GPS casa rural" />
+        <link rel="canonical" href="https://www.lechuzaruralasturias.es/como-llegar" />
       </Helmet>
 
       <div className="min-h-screen bg-background">

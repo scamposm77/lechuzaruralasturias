@@ -6,10 +6,10 @@ import heroPorche from "@/assets/hero-porche.jpg";
 import heroCasa from "@/assets/hero-casa.jpg";
 
 const heroImages = [
-  heroCasa,
-  heroPorche,
-  heroPaisaje,
-  heroExterior,
+  { src: heroCasa, alt: "Fachada exterior de La Cabaña de la Lechuza, casa rural en Cabranes, Asturias" },
+  { src: heroPorche, alt: "Porche cubierto con vistas panorámicas al valle asturiano" },
+  { src: heroPaisaje, alt: "Paisaje natural de la Comarca de la Sidra con montañas y prados verdes" },
+  { src: heroExterior, alt: "Jardín con manzanos centenarios de la casa rural en La Roza" },
 ];
 
 const Hero = () => {
@@ -23,7 +23,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="inicio" className="relative h-screen min-h-[750px] flex items-center justify-center overflow-hidden">
+    <section id="inicio" aria-label="Bienvenida a La Cabaña de la Lechuza" className="relative h-screen min-h-[750px] flex items-center justify-center overflow-hidden">
       {/* Background Slideshow */}
       {heroImages.map((image, index) => (
         <div
@@ -31,7 +31,9 @@ const Hero = () => {
           className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
-          style={{ backgroundImage: `url(${image})` }}
+          style={{ backgroundImage: `url(${image.src})` }}
+          role="img"
+          aria-label={image.alt}
         >
           <div className="absolute inset-0 hero-overlay" />
         </div>
@@ -54,8 +56,8 @@ const Hero = () => {
         </div>
         
         <p className="font-body text-background/85 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-up opacity-0 delay-300">
-          Bienvenido a tu refugio ideal en plena naturaleza asturiana. 
-          Rehabilitada en 2023, nuestra casa ofrece un entorno íntimo, cálido y cómodo, perfecto para desconectar y disfrutar de la tranquilidad.
+          Tu casa rural con encanto en el corazón de la Comarca de la Sidra. 
+          Rehabilitada en 2023, nuestra casa ofrece un alojamiento íntimo para familias y grupos, perfecto para escapadas rurales y vacaciones en Asturias.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up opacity-0 delay-400">

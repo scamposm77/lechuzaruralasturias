@@ -100,18 +100,18 @@ const Rooms = () => {
     <section id="habitaciones" className="py-28 bg-card">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <header className="text-center mb-20">
           <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
-            Descanso Asegurado
+            Dormitorios con encanto
           </span>
           <h2 className="font-display text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
             Nuestras <span className="text-primary italic">Habitaciones</span>
           </h2>
           <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
-            3 dormitorios dobles con capacidad para 7 personas. 
-            Cada habitación ha sido decorada con encanto para tu máximo confort.
+            3 habitaciones dobles con capacidad para 7 huéspedes en nuestra casa rural de Asturias. 
+            Dormitorios acogedores con ropa de cama incluida para tu máximo confort y descanso.
           </p>
-        </div>
+        </header>
 
         {/* Rooms Grid */}
         <div className="grid md:grid-cols-3 gap-8">
@@ -124,8 +124,9 @@ const Rooms = () => {
               <div className="aspect-[4/3] overflow-hidden relative">
                 <img
                   src={room.cover}
-                  alt={`Habitación ${room.name}`}
+                  alt={`Habitación ${room.name} - ${room.subtitle} en casa rural La Cabaña de la Lechuza, Asturias`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute top-4 left-4 p-3 bg-primary/90 backdrop-blur-sm rounded-full">
                   <room.icon className="w-5 h-5 text-primary-foreground" />
@@ -219,7 +220,7 @@ const Rooms = () => {
           {/* Main Image */}
           <img
             src={selectedRoom.images[currentIndex]}
-            alt={`${selectedRoom.name} - Foto ${currentIndex + 1}`}
+            alt={`Habitación ${selectedRoom.name} - ${selectedRoom.subtitle} en casa rural Asturias - Foto ${currentIndex + 1}`}
             className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
           />
 

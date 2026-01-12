@@ -41,28 +41,28 @@ const spaces: Space[] = [
   {
     id: "exterior",
     name: "Exterior y Jardín",
-    description: "1.500m² de parcela con porche, balancín y vistas panorámicas",
+    description: "1.500m² de parcela privada con porche cubierto, balancín y vistas panorámicas al valle asturiano",
     cover: extPortada,
     images: [extPortada, ext02, ext03, ext04, ext05, ext06, ext07, ext08, ext09, ext10],
   },
   {
     id: "cocina",
-    name: "Cocina",
-    description: "Cocina totalmente equipada con todo el menaje",
+    name: "Cocina Equipada",
+    description: "Cocina totalmente equipada con vitrocerámica, horno, microondas y menaje completo para cocinar durante tu estancia",
     cover: cocina01,
     images: [cocina01, cocina06, cocina05, cocina02, cocina03, cocina04],
   },
   {
     id: "salon",
-    name: "Salón",
-    description: "Acogedor salón con chimenea de pellets y Smart TV",
+    name: "Salón con Chimenea",
+    description: "Acogedor salón de casa rural con chimenea de pellets, sofá cama y Smart TV con Chromecast",
     cover: salonChimenea,
     images: [salonChimenea, salon01],
   },
   {
     id: "bano",
     name: "Baños",
-    description: "1 baño completo + 1 aseo",
+    description: "1 baño completo con ducha + 1 aseo. Toallas y ropa de baño incluidas",
     cover: bano01,
     images: [bano01, bano02],
   },
@@ -105,18 +105,18 @@ const Gallery = () => {
     <section id="espacios" className="py-28 bg-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <header className="text-center mb-20">
           <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
-            Descubre cada rincón
+            Galería de fotos de la casa rural
           </span>
           <h2 className="font-display text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
             Nuestros <span className="text-primary italic">Espacios</span>
           </h2>
           <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
-            3 habitaciones, un acogedor salón con chimenea y un amplio porche. 
-            El lugar ideal para familias y grupos que buscan desconectar.
+            Descubre cada rincón de nuestra casa rural en Asturias: 3 habitaciones dobles, salón con chimenea de pellets y 1500m² de jardín privado. 
+            El alojamiento perfecto para familias y grupos en la Comarca de la Sidra.
           </p>
-        </div>
+        </header>
 
         {/* Spaces Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -131,8 +131,9 @@ const Gallery = () => {
               <div className={`overflow-hidden ${index === 0 ? "aspect-[2/1]" : "aspect-[4/3]"}`}>
                 <img
                   src={space.cover}
-                  alt={space.name}
+                  alt={`${space.name} de La Cabaña de la Lechuza - Casa rural en Cabranes, Asturias`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
               </div>
               
@@ -214,7 +215,7 @@ const Gallery = () => {
           {/* Main Image */}
           <img
             src={selectedSpace.images[currentIndex]}
-            alt={`${selectedSpace.name} - Foto ${currentIndex + 1}`}
+            alt={`${selectedSpace.name} de casa rural La Cabaña de la Lechuza - Foto ${currentIndex + 1} - Alojamiento rural en Asturias`}
             className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
           />
 
