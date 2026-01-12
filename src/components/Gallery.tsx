@@ -21,9 +21,12 @@ import cocina04 from "@/assets/cocina/cocina-04.jpg";
 import cocina05 from "@/assets/cocina/cocina-05.jpg";
 import cocina06 from "@/assets/cocina/cocina-06.jpg";
 
-// Other spaces (placeholders for salon and banos)
+// Baños images
+import bano01 from "@/assets/banos/bano-01.jpg";
+import bano02 from "@/assets/banos/bano-02.jpg";
+
+// Other spaces (placeholder for salon)
 import salonChimenea from "@/assets/salon-chimenea.jpg";
-import banoCompleto from "@/assets/bano-completo.jpg";
 
 type Space = {
   id: string;
@@ -59,8 +62,8 @@ const spaces: Space[] = [
     id: "bano",
     name: "Baños",
     description: "1 baño completo + 1 aseo",
-    cover: banoCompleto,
-    images: [banoCompleto],
+    cover: bano01,
+    images: [bano01, bano02],
   },
 ];
 
