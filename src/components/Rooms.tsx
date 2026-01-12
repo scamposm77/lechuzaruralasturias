@@ -13,6 +13,7 @@ import lechuza01 from "@/assets/habitaciones/lechuza-01.jpg";
 import lechuza02 from "@/assets/habitaciones/lechuza-02.jpg";
 import lechuza03 from "@/assets/habitaciones/lechuza-03.jpg";
 import lechuza04 from "@/assets/habitaciones/lechuza-04.jpg";
+import lechuza05 from "@/assets/habitaciones/lechuza-05.jpg";
 
 type Room = {
   name: string;
@@ -46,11 +47,11 @@ const rooms: Room[] = [
   {
     name: "La Lechuza",
     subtitle: "Habitación Familiar",
-    description: "Ideal para niños, con litera metálica (cama inferior de matrimonio). Perfecta para familias con pequeños aventureros.",
+    description: "Ideal para niños, con litera metálica blanca. La cama inferior es de matrimonio (135cm) y la superior individual. Decoración acogedora con papel pintado floral y vistas espectaculares al valle desde su ventana. Incluye armario espacioso y luces de lectura en cada nivel.",
     cover: habLechuza,
-    images: [habLechuza, lechuza01, lechuza02, lechuza03, lechuza04],
+    images: [habLechuza, lechuza01, lechuza02, lechuza03, lechuza04, lechuza05],
     icon: Users,
-    features: ["Litera metálica", "Cama inferior doble", "Ideal niños"],
+    features: ["Litera metálica", "Cama inferior 135cm", "Vistas al valle"],
   },
 ];
 
