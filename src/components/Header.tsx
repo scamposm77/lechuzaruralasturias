@@ -14,11 +14,12 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: "#inicio", label: "Inicio" },
-    { href: "#espacios", label: "Espacios" },
-    { href: "#habitaciones", label: "Habitaciones" },
-    { href: "#servicios", label: "Servicios" },
-    { href: "#opiniones", label: "Opiniones" },
+    { href: "#inicio", label: "Inicio", isExternal: false },
+    { href: "#espacios", label: "Espacios", isExternal: false },
+    { href: "#habitaciones", label: "Habitaciones", isExternal: false },
+    { href: "#servicios", label: "Servicios", isExternal: false },
+    { href: "#opiniones", label: "Opiniones", isExternal: false },
+    { href: "/como-llegar", label: "Cómo llegar", isExternal: true },
   ];
 
   return (
@@ -42,15 +43,29 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`font-body text-sm font-medium tracking-wider uppercase transition-all relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all hover:after:w-full ${
-                isScrolled ? "text-foreground" : "text-background"
-              }`}
-            >
-              {link.label}
-            </a>
+            link.isExternal ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`font-body text-sm font-medium tracking-wider uppercase transition-all relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all hover:after:w-full ${
+                  isScrolled ? "text-foreground" : "text-background"
+                }`}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`font-body text-sm font-medium tracking-wider uppercase transition-all relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all hover:after:w-full ${
+                  isScrolled ? "text-foreground" : "text-background"
+                }`}
+              >
+                {link.label}
+              </a>
+            )
           ))}
           <a
             href="#contacto"
@@ -80,14 +95,27 @@ const Header = () => {
         <nav className="lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-lg border-b border-border animate-fade-in shadow-xl">
           <div className="container mx-auto px-6 py-8 flex flex-col gap-2">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="font-body text-foreground text-lg font-medium py-3 border-b border-border/30 hover:text-primary transition-colors"
-              >
-                {link.label}
-              </a>
+              link.isExternal ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="font-body text-foreground text-lg font-medium py-3 border-b border-border/30 hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="font-body text-foreground text-lg font-medium py-3 border-b border-border/30 hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
             <a
               href="#contacto"
