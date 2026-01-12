@@ -15,9 +15,7 @@ const Header = () => {
 
   const navLinks = [
     { href: "#inicio", label: "Inicio", isExternal: false },
-    { href: "#espacios", label: "Espacios", isExternal: false },
     { href: "#habitaciones", label: "Habitaciones", isExternal: false },
-    { href: "#servicios", label: "Servicios", isExternal: false },
     { href: "#opiniones", label: "Opiniones", isExternal: false },
     { href: "/como-llegar", label: "Cómo llegar", isExternal: true },
   ];

@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Car, Phone, MapPin, Navigation, AlertTriangle, CheckCircle, Play } from "lucide-react";
+import rutaVideo from "@/assets/ruta_1.mp4";
 
 const ComoLlegar = () => {
   return (
@@ -173,14 +174,16 @@ const ComoLlegar = () => {
               </li>
             </ul>
 
-            {/* Video placeholder - aquí se puede insertar el video real */}
-            <div className="aspect-video bg-muted rounded-xl flex items-center justify-center border-2 border-dashed border-muted-foreground/30">
-              <div className="text-center p-6">
-                <Play className="w-16 h-16 text-muted-foreground/50 mx-auto mb-4" />
-                <p className="font-body text-muted-foreground">
-                  Video tutorial disponible próximamente
-                </p>
-              </div>
+            {/* Video tutorial */}
+            <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+              <video
+                controls
+                className="w-full h-full object-cover"
+                poster=""
+              >
+                <source src={rutaVideo} type="video/mp4" />
+                Tu navegador no soporta la reproducción de videos.
+              </video>
             </div>
           </section>
 
