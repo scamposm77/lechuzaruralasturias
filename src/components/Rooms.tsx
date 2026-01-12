@@ -11,6 +11,10 @@ import tejo05 from "@/assets/habitaciones/tejo-05.jpg";
 
 // Habitación La Pumarada
 import habPumarada from "@/assets/hab-pumarada.jpg";
+import pumarada01 from "@/assets/habitaciones/pumarada-01.jpg";
+import pumarada02 from "@/assets/habitaciones/pumarada-02.jpg";
+import pumarada03 from "@/assets/habitaciones/pumarada-03.jpg";
+import pumarada04 from "@/assets/habitaciones/pumarada-04.jpg";
 
 // Habitación La Lechuza
 import habLechuza from "@/assets/hab-lechuza.jpg";
@@ -43,11 +47,11 @@ const rooms: Room[] = [
   {
     name: "La Pumarada",
     subtitle: "Habitación Doble",
-    description: "Cama de matrimonio (135x190cm) con vistas a los valles y a la pumarada. Ambiente tranquilo y luminoso.",
+    description: "Bautizada en honor a las plantaciones de manzanos típicas de la Comarca de la Sidra, esta habitación evoca la esencia rural asturiana. Un espacio acogedor y luminoso que invita al descanso rodeado de la tranquilidad del campo. Un espacio tranquilo y luminoso perfecto para desconectar. Las vistas al campo asturiano y a las montañas te recordarán cada mañana que estás en plena naturaleza, lejos del ruido y las prisas. Capacidad: 2 personas. Ideal para parejas o huéspedes individuales que buscan un espacio cómodo con vistas al campo.",
     cover: habPumarada,
-    images: [habPumarada],
+    images: [habPumarada, pumarada01, pumarada02, pumarada03, pumarada04],
     icon: Bed,
-    features: ["Cama 135x190", "Vistas a pumarada", "Luz natural"],
+    features: ["Cama 135x190", "Vistas al valle", "Luz natural", "Armario"],
   },
   {
     name: "La Lechuza",
