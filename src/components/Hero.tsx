@@ -1,4 +1,4 @@
-import heroImage from "@/assets/exterior-house.jpg";
+import porcheHero from "@/assets/porche-hero.jpg";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
@@ -10,7 +10,7 @@ const Hero = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        style={{ backgroundImage: `url(${porcheHero})` }}
       >
         <div className="absolute inset-0 hero-overlay" />
       </div>
@@ -31,9 +31,9 @@ const Hero = () => {
           <span className="block italic text-accent">la Lechuza</span>
         </h1>
         
-        <p className="font-body text-background/85 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-up opacity-0 delay-300">
-          Un refugio de piedra y madera entre manzanos centenarios y un tejo milenario.
-          Desconecta en el corazón verde de Asturias.
+        <p className="font-body text-background/85 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-up opacity-0 delay-300">
+          Bienvenido a tu refugio ideal en plena naturaleza asturiana. Rehabilitada en 2023, 
+          nuestra casa ofrece un entorno cálido y cómodo, perfecto para desconectar y disfrutar de la tranquilidad.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up opacity-0 delay-400">
@@ -43,13 +43,13 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="group px-10 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
           >
-            Reservar en Airbnb
+            Reservar Ahora
           </a>
           <a
             href="#espacios"
             className="px-10 py-4 bg-background/10 text-background border border-background/40 rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-background/20 transition-all duration-300 backdrop-blur-sm"
           >
-            Descubrir Más
+            Conoce Más
           </a>
         </div>
 

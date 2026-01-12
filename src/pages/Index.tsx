@@ -1,10 +1,13 @@
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Values from "@/components/Values";
 import Gallery from "@/components/Gallery";
-import Experience from "@/components/Experience";
-import Amenities from "@/components/Amenities";
+import Rooms from "@/components/Rooms";
+import Services from "@/components/Services";
 import Reviews from "@/components/Reviews";
+import HouseRules from "@/components/HouseRules";
+import Location from "@/components/Location";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -12,26 +15,41 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Casa Los Olivos - Casa Rural en Úbeda, Jaén | Turismo Rural España</title>
+        <title>La Cabaña de la Lechuza - Casa Rural en Cabranes, Asturias | Comarca de la Sidra</title>
         <meta
           name="description"
-          content="Descubre Casa Los Olivos, una casa rural de lujo en Úbeda, Jaén. Piscina privada, 3 habitaciones, vistas a olivares. Reserva tu escapada rural perfecta en Andalucía."
+          content="Descubre La Cabaña de la Lechuza, una casa rural de 140m² para 7 personas en La Roza, Cabranes. 3 habitaciones, salón con chimenea, porche y 1500m² de terreno con manzanos en la Comarca de la Sidra asturiana."
         />
         <meta
           name="keywords"
-          content="casa rural, Úbeda, Jaén, turismo rural, Andalucía, alojamiento rural, piscina privada, vacaciones rurales"
+          content="casa rural, Asturias, Cabranes, turismo rural, Comarca de la Sidra, alojamiento rural, manzanos, sidra, La Roza"
         />
-        <link rel="canonical" href="https://casalosolivos.es" />
+        <link rel="canonical" href="https://www.lechuzaruralasturias.es" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="La Cabaña de la Lechuza - Casa Rural en la Comarca de la Sidra" />
+        <meta property="og:description" content="Un refugio de paz entre manzanos y valles asturianos. 7 plazas, 140m², 1500m² de terreno." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.lechuzaruralasturias.es" />
+        <meta property="og:locale" content="es_ES" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="La Cabaña de la Lechuza - Casa Rural en Asturias" />
+        <meta name="twitter:description" content="Descubre La Cabaña de la Lechuza, una casa rural con encanto en la Comarca de la Sidra." />
       </Helmet>
 
       <div className="min-h-screen">
         <Header />
         <main>
           <Hero />
+          <Values />
           <Gallery />
-          <Experience />
-          <Amenities />
+          <Rooms />
+          <Services />
           <Reviews />
+          <HouseRules />
+          <Location />
           <Contact />
         </main>
         <Footer />
