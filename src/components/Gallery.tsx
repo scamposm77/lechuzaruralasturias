@@ -1,43 +1,117 @@
 import { useState } from "react";
-import fachadaExterior from "@/assets/fachada-exterior.jpg";
+import { X, ChevronLeft, ChevronRight, Images } from "lucide-react";
+
+// Exterior images
+import ext01 from "@/assets/exterior/ext-01.jpg";
+import ext02 from "@/assets/exterior/ext-02.jpg";
+import ext03 from "@/assets/exterior/ext-03.jpg";
+import ext04 from "@/assets/exterior/ext-04.jpg";
+import ext05 from "@/assets/exterior/ext-05.jpg";
+import ext06 from "@/assets/exterior/ext-06.jpg";
+import ext07 from "@/assets/exterior/ext-07.jpg";
+import ext08 from "@/assets/exterior/ext-08.jpg";
+import ext09 from "@/assets/exterior/ext-09.jpg";
+
+// Placeholder images for other spaces (to be replaced when user uploads)
 import salonChimenea from "@/assets/salon-chimenea.jpg";
 import cocinaEquipada from "@/assets/cocina-equipada.jpg";
 import habTejo from "@/assets/hab-tejo.jpg";
 import habPumarada from "@/assets/hab-pumarada.jpg";
 import habLechuza from "@/assets/hab-lechuza.jpg";
-import jardinPorche from "@/assets/jardin-porche.jpg";
 import banoCompleto from "@/assets/bano-completo.jpg";
-import ventanaVistas from "@/assets/ventana-vistas.jpg";
-import panoramica from "@/assets/panoramica.jpg";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-const images = [
-  { src: fachadaExterior, alt: "Fachada exterior de la casa", label: "Exterior" },
-  { src: salonChimenea, alt: "Salón con chimenea de pellets", label: "Salón" },
-  { src: cocinaEquipada, alt: "Cocina totalmente equipada", label: "Cocina" },
-  { src: habTejo, alt: "Habitación El Tejo - Principal", label: "El Tejo" },
-  { src: habPumarada, alt: "Habitación La Pumarada", label: "La Pumarada" },
-  { src: habLechuza, alt: "Habitación La Lechuza - Literas", label: "La Lechuza" },
-  { src: jardinPorche, alt: "Jardín y porche cubierto", label: "Jardín" },
-  { src: banoCompleto, alt: "Baño completo", label: "Baño" },
-  { src: ventanaVistas, alt: "Vistas desde la ventana", label: "Vistas" },
-  { src: panoramica, alt: "Vista panorámica del entorno", label: "Panorámica" },
+type Space = {
+  id: string;
+  name: string;
+  description: string;
+  cover: string;
+  images: string[];
+};
+
+const spaces: Space[] = [
+  {
+    id: "exterior",
+    name: "Exterior y Jardín",
+    description: "1.500m² de parcela con porche, balancín y vistas panorámicas",
+    cover: ext09,
+    images: [ext09, ext05, ext06, ext04, ext02, ext03, ext07, ext08, ext01],
+  },
+  {
+    id: "salon",
+    name: "Salón",
+    description: "Acogedor salón con chimenea de pellets y Smart TV",
+    cover: salonChimenea,
+    images: [salonChimenea],
+  },
+  {
+    id: "cocina",
+    name: "Cocina",
+    description: "Cocina totalmente equipada con todo el menaje",
+    cover: cocinaEquipada,
+    images: [cocinaEquipada],
+  },
+  {
+    id: "hab-tejo",
+    name: "Habitación El Tejo",
+    description: "Dormitorio principal con cama King size",
+    cover: habTejo,
+    images: [habTejo],
+  },
+  {
+    id: "hab-pumarada",
+    name: "Habitación La Pumarada",
+    description: "Dormitorio con cama de matrimonio",
+    cover: habPumarada,
+    images: [habPumarada],
+  },
+  {
+    id: "hab-lechuza",
+    name: "Habitación La Lechuza",
+    description: "Dormitorio con litera (cama matrimonio inferior)",
+    cover: habLechuza,
+    images: [habLechuza],
+  },
+  {
+    id: "bano",
+    name: "Baños",
+    description: "1 baño completo + 1 aseo",
+    cover: banoCompleto,
+    images: [banoCompleto],
+  },
 ];
 
 const Gallery = () => {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedSpace, setSelectedSpace] = useState<Space | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const openLightbox = (index: number) => {
-    setCurrentIndex(index);
-    setLightboxOpen(true);
+  const openSlideshow = (space: Space) => {
+    setSelectedSpace(space);
+    setCurrentIndex(0);
   };
 
-  const closeLightbox = () => setLightboxOpen(false);
+  const closeSlideshow = () => {
+    setSelectedSpace(null);
+    setCurrentIndex(0);
+  };
 
-  const goNext = () => setCurrentIndex((prev) => (prev + 1) % images.length);
-  const goPrev = () =>
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  const goNext = () => {
+    if (selectedSpace) {
+      setCurrentIndex((prev) => (prev + 1) % selectedSpace.images.length);
+    }
+  };
+
+  const goPrev = () => {
+    if (selectedSpace) {
+      setCurrentIndex((prev) => (prev - 1 + selectedSpace.images.length) % selectedSpace.images.length);
+    }
+  };
+
+  // Handle keyboard navigation
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowRight") goNext();
+    if (e.key === "ArrowLeft") goPrev();
+    if (e.key === "Escape") closeSlideshow();
+  };
 
   return (
     <section id="espacios" className="py-28 bg-background">
@@ -56,74 +130,128 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-          {images.map((image, index) => (
+        {/* Spaces Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {spaces.map((space, index) => (
             <button
-              key={index}
-              onClick={() => openLightbox(index)}
-              className={`group relative overflow-hidden rounded-sm cursor-pointer ${
-                index === 0 ? "col-span-2 row-span-2" : ""
+              key={space.id}
+              onClick={() => openSlideshow(space)}
+              className={`group relative overflow-hidden rounded-lg cursor-pointer text-left card-shadow hover:hover-lift transition-all duration-500 ${
+                index === 0 ? "md:col-span-2 lg:col-span-2" : ""
               }`}
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className={`w-full object-cover transition-all duration-700 group-hover:scale-110 ${
-                  index === 0 ? "h-full min-h-[350px] md:min-h-[450px]" : "h-52 md:h-60"
-                }`}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/0 to-foreground/0 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end">
-                <span className="font-display text-background text-lg p-5 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  {image.label}
-                </span>
+              <div className={`overflow-hidden ${index === 0 ? "aspect-[2/1]" : "aspect-[4/3]"}`}>
+                <img
+                  src={space.cover}
+                  alt={space.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+              
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/30 to-transparent flex flex-col justify-end p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="font-display text-background text-xl md:text-2xl mb-1">
+                      {space.name}
+                    </h3>
+                    <p className="font-body text-background/70 text-sm">
+                      {space.description}
+                    </p>
+                  </div>
+                  {space.images.length > 1 && (
+                    <div className="flex items-center gap-2 bg-background/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                      <Images className="w-4 h-4 text-background" />
+                      <span className="font-body text-background text-sm">
+                        {space.images.length}
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
             </button>
           ))}
         </div>
       </div>
 
-      {/* Lightbox */}
-      {lightboxOpen && (
-        <div className="fixed inset-0 z-50 bg-foreground/98 flex items-center justify-center animate-fade-in">
-          <button
-            onClick={closeLightbox}
-            className="absolute top-8 right-8 text-background/70 hover:text-background transition-colors"
-          >
-            <X size={36} strokeWidth={1.5} />
-          </button>
+      {/* Slideshow Modal */}
+      {selectedSpace && (
+        <div 
+          className="fixed inset-0 z-50 bg-foreground/98 flex items-center justify-center animate-fade-in"
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+          role="dialog"
+          aria-modal="true"
+        >
+          {/* Header */}
+          <div className="absolute top-0 left-0 right-0 p-6 flex items-center justify-between z-10">
+            <div>
+              <h3 className="font-display text-background text-2xl">
+                {selectedSpace.name}
+              </h3>
+              <p className="font-body text-background/60 text-sm">
+                {currentIndex + 1} / {selectedSpace.images.length}
+              </p>
+            </div>
+            <button
+              onClick={closeSlideshow}
+              className="text-background/70 hover:text-background transition-colors p-2 hover:bg-background/10 rounded-full"
+              aria-label="Cerrar galería"
+            >
+              <X size={32} strokeWidth={1.5} />
+            </button>
+          </div>
 
-          <button
-            onClick={goPrev}
-            className="absolute left-6 md:left-12 text-background/70 hover:text-background transition-colors p-2 hover:bg-background/10 rounded-full"
-          >
-            <ChevronLeft size={48} strokeWidth={1.5} />
-          </button>
+          {/* Navigation Arrows */}
+          {selectedSpace.images.length > 1 && (
+            <>
+              <button
+                onClick={goPrev}
+                className="absolute left-4 md:left-8 text-background/70 hover:text-background transition-colors p-3 hover:bg-background/10 rounded-full z-10"
+                aria-label="Foto anterior"
+              >
+                <ChevronLeft size={48} strokeWidth={1.5} />
+              </button>
 
+              <button
+                onClick={goNext}
+                className="absolute right-4 md:right-8 text-background/70 hover:text-background transition-colors p-3 hover:bg-background/10 rounded-full z-10"
+                aria-label="Foto siguiente"
+              >
+                <ChevronRight size={48} strokeWidth={1.5} />
+              </button>
+            </>
+          )}
+
+          {/* Main Image */}
           <img
-            src={images[currentIndex].src}
-            alt={images[currentIndex].alt}
-            className="max-w-[90vw] max-h-[85vh] object-contain rounded-sm shadow-2xl"
+            src={selectedSpace.images[currentIndex]}
+            alt={`${selectedSpace.name} - Foto ${currentIndex + 1}`}
+            className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
           />
 
-          <button
-            onClick={goNext}
-            className="absolute right-6 md:right-12 text-background/70 hover:text-background transition-colors p-2 hover:bg-background/10 rounded-full"
-          >
-            <ChevronRight size={48} strokeWidth={1.5} />
-          </button>
-
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
-            {images.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  idx === currentIndex ? "bg-background w-8" : "bg-background/30 w-2 hover:bg-background/50"
-                }`}
-              />
-            ))}
-          </div>
+          {/* Thumbnail Navigation */}
+          {selectedSpace.images.length > 1 && (
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 max-w-[90vw] overflow-x-auto pb-2">
+              {selectedSpace.images.map((img, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`flex-shrink-0 w-16 h-12 rounded overflow-hidden transition-all duration-300 ${
+                    idx === currentIndex 
+                      ? "ring-2 ring-primary opacity-100 scale-110" 
+                      : "opacity-50 hover:opacity-80"
+                  }`}
+                >
+                  <img
+                    src={img}
+                    alt={`Miniatura ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </section>
