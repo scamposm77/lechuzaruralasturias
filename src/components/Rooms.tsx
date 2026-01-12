@@ -47,11 +47,11 @@ const rooms: Room[] = [
   {
     name: "La Lechuza",
     subtitle: "Habitación Familiar",
-    description: "Ideal para niños, con litera metálica blanca. La cama inferior es de matrimonio (135cm) y la superior individual. Decoración acogedora con papel pintado floral y vistas espectaculares al valle desde su ventana. Incluye armario espacioso y luces de lectura en cada nivel.",
+    description: "Esta habitación lleva el nombre de nuestra cabaña y es el espacio favorito de los más pequeños. Con su litera metálica y su espacio acogedor, es perfecta para que niños y jóvenes disfruten de su propia aventura asturiana. Una habitación luminosa y acogedora que hace las delicias de niños y jóvenes. La litera metálica añade un toque de aventura, mientras que la luz natural crea un ambiente alegre y agradable para el descanso. Con colchón de matrimonio en la parte inferior, espacio luminoso con mucho encanto y decoración pensada para familias.",
     cover: habLechuza,
     images: [habLechuza, lechuza01, lechuza02, lechuza03, lechuza04, lechuza05],
     icon: Users,
-    features: ["Litera metálica", "Cama inferior 135cm", "Vistas al valle"],
+    features: ["Litera metálica", "Colchón matrimonio abajo", "Vistas al valle", "Ideal niños"],
   },
 ];
 

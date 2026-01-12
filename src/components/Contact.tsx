@@ -15,14 +15,21 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Construir mensaje de WhatsApp
-    const whatsappMessage = `Hola Susana! Me interesa reservar La Cabaña de la Lechuza.\n\nNombre: ${formData.name}\nEmail: ${formData.email}\nTeléfono: ${formData.phone}\nFechas: ${formData.dates}\nHuéspedes: ${formData.guests}\nMensaje: ${formData.message}`;
-    const whatsappUrl = `https://wa.me/34625081519?text=${encodeURIComponent(whatsappMessage)}`;
-    window.open(whatsappUrl, "_blank");
+    // Enviar por email
+    const subject = encodeURIComponent('Consulta sobre La Cabaña de la Lechuza');
+    const body = encodeURIComponent(
+      `Nombre: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Teléfono: ${formData.phone}\n` +
+      `Fechas: ${formData.dates}\n` +
+      `Huéspedes: ${formData.guests}\n\n` +
+      `Mensaje:\n${formData.message}`
+    );
+    window.location.href = `mailto:info@lechuzaruralasturias.es?subject=${subject}&body=${body}`;
     
     toast({
-      title: "¡Redirigiendo a WhatsApp!",
-      description: "Te conectamos con Susana para tu reserva.",
+      title: "¡Abriendo cliente de correo!",
+      description: "Se abrirá tu aplicación de email para enviar la consulta.",
     });
   };
 
@@ -70,7 +77,7 @@ const Contact = () => {
               <span className="text-primary italic"> Desconectar?</span>
             </h2>
             <p className="font-body text-muted-foreground text-lg mb-8 leading-relaxed">
-              Escríbenos para consultar disponibilidad, resolver cualquier duda
+              Escríbenos para consultar disponibilidad, reservar, resolver cualquier duda
               o simplemente para saber más sobre La Cabaña de la Lechuza.
             </p>
             <p className="font-body text-muted-foreground mb-12">
@@ -106,21 +113,6 @@ const Contact = () => {
                 );
               })}
             </div>
-
-            {/* Quick booking button */}
-            <div className="mt-10">
-              <a
-                href="https://www.airbnb.es/rooms/1232063912950498409"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#FF5A5F] text-white rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-[#FF5A5F]/90 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12.001 18.275c-.69 0-1.283-.244-1.752-.708-.469-.469-.703-1.064-.703-1.752 0-.703.244-1.299.703-1.768.469-.469 1.064-.703 1.752-.703.703 0 1.299.234 1.768.703.469.469.703 1.064.703 1.768 0 .688-.234 1.283-.703 1.752-.469.464-1.064.708-1.768.708z"/>
-                </svg>
-                Reservar en Airbnb
-              </a>
-            </div>
           </div>
 
           {/* Contact Form */}
@@ -131,7 +123,7 @@ const Contact = () => {
               Solicitar Información
             </h3>
             <p className="font-body text-muted-foreground text-sm mb-8">
-              Te contactaremos por WhatsApp para resolver todas tus dudas
+              Te responderemos a la mayor brevedad posible
             </p>
             <form onSubmit={handleSubmit} className="space-y-6 relative">
               <div className="grid md:grid-cols-2 gap-6">
@@ -203,7 +195,7 @@ const Contact = () => {
                 className="w-full group flex items-center justify-center gap-3 px-8 py-5 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 <Send className="w-5 h-5" />
-                Enviar por WhatsApp
+                Enviar Consulta
                 <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </button>
             </form>
