@@ -25,6 +25,7 @@ const Header = () => {
     { href: "#habitaciones", label: "Habitaciones", isExternal: false },
     { href: "#opiniones", label: "Opiniones", isExternal: false },
     { href: "/como-llegar", label: "Cómo llegar", isExternal: true },
+    { href: "/blog", label: "Blog", isExternal: true },
   ];
 
   return (
