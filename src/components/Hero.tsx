@@ -60,9 +60,7 @@ const Hero = () => {
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up opacity-0 delay-400">
           <a
-            href="https://www.airbnb.es/rooms/1232063912950498409"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contacto"
             className="group px-10 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
           >
             Reservar Ahora
