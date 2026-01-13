@@ -60,11 +60,12 @@ const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
   return (
     <nav 
       aria-label="Breadcrumb"
-      className="container mx-auto px-6 py-4"
+      className="bg-muted/50 border-b border-border"
       itemScope
       itemType="https://schema.org/BreadcrumbList"
     >
-      <ol className="flex flex-wrap items-center gap-2 text-sm font-body">
+      <div className="container mx-auto px-6 py-3">
+        <ol className="flex flex-wrap items-center gap-2 text-sm font-body">
         {breadcrumbItems.map((item, index) => {
           const isLast = index === breadcrumbItems.length - 1;
 
@@ -105,7 +106,8 @@ const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
             </li>
           );
         })}
-      </ol>
+        </ol>
+      </div>
     </nav>
   );
 };
