@@ -123,7 +123,7 @@ const Index = () => {
     "sameAs": [
       "https://www.instagram.com/lechuza.casaruralasturias",
       "https://www.facebook.com/profile.php?id=61586207769517",
-      "https://www.airbnb.es/rooms/1232063912950498409"
+      "https://www.airbnb.es/rooms/1134703286904548225?guests=1&adults=1&s=67&unique_share_id=9e3d8fa8-48d8-49ab-a24e-c39cf096703e"
     ],
     "image": [
       "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
