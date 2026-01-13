@@ -1,13 +1,3 @@
 deployment:
   tasks:
-    - DEPLOYPATH="/home/ncyzekbm/public_html"
-    - echo "INICIANDO DESPLIEGUE: $(date)"
-    - echo "1. Limpiando directorio destino..."
-    - rm -rf "$DEPLOYPATH"/*
-    - echo "2. Copiando archivos desde dist/..."
-    - cp -R dist/* "$DEPLOYPATH"/
-    - echo "3. Fijando permisos..."
-    - chmod 644 "$DEPLOYPATH"/*
-    - find "$DEPLOYPATH" -type d -exec chmod 755 {} \;
-    - echo "DESPLIEGUE COMPLETADO: $(date)"
-    - echo "Commit: $(git log -1 --pretty=format:'%H')" > "$DEPLOYPATH/deploy-verificacion.txt""
+    - echo "Prueba $(date)" > /home/ncyzekbm/public_html/test.txt
