@@ -91,8 +91,7 @@ const ComoLlegar = () => {
                     Several natural passing places to meet other vehicles
                   </li>
                   
-                  <li className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  <li className="flex items-center gap-2">No through traffic, only residents and visitors.<span className="w-2 h-2 bg-primary rounded-full"></span>
                     No through traffic
                   </li>
                 </ul>
