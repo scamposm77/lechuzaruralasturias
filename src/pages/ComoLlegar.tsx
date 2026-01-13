@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Car, Phone, MapPin, Navigation, AlertTriangle, CheckCircle, Play } from "lucide-react";
 import rutaVideo from "@/assets/ruta_1.mp4";
 import { useLanguage } from "@/contexts/LanguageContext";
-
 const ComoLlegar = () => {
-  const { language } = useLanguage();
-
+  const {
+    language
+  } = useLanguage();
   if (language === "en") {
-    return (
-      <>
+    return <>
         <Helmet>
           <title>How to Get There | La Cabaña de la Lechuza - Rural House in Cabranes, Asturias</title>
           <meta name="description" content="Directions and route to our rural house in La Roza, Cabranes. Includes video tutorial, Google Maps, Waze link and tips for the mountain road." />
@@ -21,10 +20,7 @@ const ComoLlegar = () => {
           {/* Header */}
           <header className="bg-primary text-primary-foreground py-6">
             <div className="container mx-auto px-6">
-              <Link 
-                to="/" 
-                className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-4"
-              >
+              <Link to="/" className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-4">
                 <ArrowLeft className="w-4 h-4" />
                 <span className="font-body text-sm">Back to home</span>
               </Link>
@@ -181,11 +177,7 @@ const ComoLlegar = () => {
 
               {/* Video tutorial */}
               <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
-                <video
-                  controls
-                  className="w-full h-full object-cover"
-                  poster=""
-                >
+                <video controls className="w-full h-full object-cover" poster="">
                   <source src={rutaVideo} type="video/mp4" />
                   Your browser does not support video playback.
                 </video>
@@ -205,35 +197,18 @@ const ComoLlegar = () => {
 
               {/* Google Map */}
               <div className="aspect-video md:aspect-[16/9] rounded-xl overflow-hidden shadow-lg mb-6">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.5!2d-5.417!3d43.408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd368b5d1b1b1b1b%3A0x0!2sLa%20Roza%2C%20Cabranes%2C%20Asturias!5e0!3m2!1ses!2ses!4v1704931200000"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="La Cabaña de la Lechuza Location"
-                />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.5!2d-5.417!3d43.408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd368b5d1b1b1b1b%3A0x0!2sLa%20Roza%2C%20Cabranes%2C%20Asturias!5e0!3m2!1ses!2ses!4v1704931200000" width="100%" height="100%" style={{
+                border: 0
+              }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="La Cabaña de la Lechuza Location" />
               </div>
 
               {/* Navigation buttons */}
               <div className="grid sm:grid-cols-2 gap-4">
-                <a
-                  href="https://maps.app.goo.gl/kgmiycYPBchbJ9mT8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-body font-semibold hover:bg-primary/90 transition-colors shadow-md"
-                >
+                <a href="https://maps.app.goo.gl/kgmiycYPBchbJ9mT8" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-body font-semibold hover:bg-primary/90 transition-colors shadow-md">
                   <Navigation className="w-5 h-5" />
                   Open in Google Maps
                 </a>
-                <a
-                  href="https://waze.com/ul/hezsph6wy1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 bg-[#33ccff] text-white px-6 py-4 rounded-lg font-body font-semibold hover:bg-[#33ccff]/90 transition-colors shadow-md"
-                >
+                <a href="https://waze.com/ul/hezsph6wy1" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-[#33ccff] text-white px-6 py-4 rounded-lg font-body font-semibold hover:bg-[#33ccff]/90 transition-colors shadow-md">
                   <Navigation className="w-5 h-5" />
                   Open in Waze
                 </a>
@@ -253,10 +228,7 @@ const ComoLlegar = () => {
               <p className="font-body text-muted-foreground mb-4">
                 If at any point you have doubts about the way, call us without hesitation:
               </p>
-              <a 
-                href="tel:+34625081519"
-                className="inline-flex items-center gap-2 text-2xl md:text-3xl font-display text-primary hover:text-primary/80 transition-colors"
-              >
+              <a href="tel:+34625081519" className="inline-flex items-center gap-2 text-2xl md:text-3xl font-display text-primary hover:text-primary/80 transition-colors">
                 <Phone className="w-6 h-6" />
                 +34 625 081 519
               </a>
@@ -270,10 +242,7 @@ const ComoLlegar = () => {
           {/* Simple footer */}
           <footer className="bg-muted py-8 mt-12">
             <div className="container mx-auto px-6 text-center">
-              <Link 
-                to="/"
-                className="font-display text-xl text-foreground hover:text-primary transition-colors"
-              >
+              <Link to="/" className="font-display text-xl text-foreground hover:text-primary transition-colors">
                 La Cabaña de la Lechuza
               </Link>
               <p className="font-body text-muted-foreground text-sm mt-2">
@@ -282,13 +251,11 @@ const ComoLlegar = () => {
             </div>
           </footer>
         </div>
-      </>
-    );
+      </>;
   }
 
   // Spanish version (default)
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Cómo Llegar a La Cabaña de la Lechuza | Casa Rural en Cabranes, Asturias</title>
         <meta name="description" content="Indicaciones y ruta para llegar a nuestra casa rural en La Roza, Cabranes. Incluye video tutorial, mapa de Google Maps, enlace a Waze y consejos para la carretera de montaña." />
@@ -300,10 +267,7 @@ const ComoLlegar = () => {
         {/* Header */}
         <header className="bg-primary text-primary-foreground py-6">
           <div className="container mx-auto px-6">
-            <Link 
-              to="/" 
-              className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-4"
-            >
+            <Link to="/" className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-4">
               <ArrowLeft className="w-4 h-4" />
               <span className="font-body text-sm">Volver al inicio</span>
             </Link>
@@ -378,8 +342,7 @@ const ComoLlegar = () => {
                   <span className="w-2 h-2 bg-primary rounded-full"></span>
                   Poca circulación (solo residentes y huéspedes)
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                <li className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full"></span>
                   Sin tráfico de paso
                 </li>
               </ul>
@@ -402,7 +365,8 @@ const ComoLlegar = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>De día, la visibilidad es perfecta y el paisaje, espectacular</span>
+                  <span>
+                </span>
                 </li>
               </ul>
             </div>
@@ -460,11 +424,7 @@ const ComoLlegar = () => {
 
             {/* Video tutorial */}
             <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
-              <video
-                controls
-                className="w-full h-full object-cover"
-                poster=""
-              >
+              <video controls className="w-full h-full object-cover" poster="">
                 <source src={rutaVideo} type="video/mp4" />
                 Tu navegador no soporta la reproducción de videos.
               </video>
@@ -484,35 +444,18 @@ const ComoLlegar = () => {
 
             {/* Mapa de Google */}
             <div className="aspect-video md:aspect-[16/9] rounded-xl overflow-hidden shadow-lg mb-6">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.5!2d-5.417!3d43.408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd368b5d1b1b1b1b%3A0x0!2sLa%20Roza%2C%20Cabranes%2C%20Asturias!5e0!3m2!1ses!2ses!4v1704931200000"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación La Cabaña de la Lechuza"
-              />
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.5!2d-5.417!3d43.408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd368b5d1b1b1b1b%3A0x0!2sLa%20Roza%2C%20Cabranes%2C%20Asturias!5e0!3m2!1ses!2ses!4v1704931200000" width="100%" height="100%" style={{
+              border: 0
+            }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Ubicación La Cabaña de la Lechuza" />
             </div>
 
             {/* Botones de navegación */}
             <div className="grid sm:grid-cols-2 gap-4">
-              <a
-                href="https://maps.app.goo.gl/kgmiycYPBchbJ9mT8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-body font-semibold hover:bg-primary/90 transition-colors shadow-md"
-              >
+              <a href="https://maps.app.goo.gl/kgmiycYPBchbJ9mT8" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-body font-semibold hover:bg-primary/90 transition-colors shadow-md">
                 <Navigation className="w-5 h-5" />
                 Abrir en Google Maps
               </a>
-              <a
-                href="https://waze.com/ul/hezsph6wy1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-[#33ccff] text-white px-6 py-4 rounded-lg font-body font-semibold hover:bg-[#33ccff]/90 transition-colors shadow-md"
-              >
+              <a href="https://waze.com/ul/hezsph6wy1" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-[#33ccff] text-white px-6 py-4 rounded-lg font-body font-semibold hover:bg-[#33ccff]/90 transition-colors shadow-md">
                 <Navigation className="w-5 h-5" />
                 Abrir en Waze
               </a>
@@ -532,10 +475,7 @@ const ComoLlegar = () => {
             <p className="font-body text-muted-foreground mb-4">
               Si en algún momento tienes dudas sobre el camino, llámanos sin problema:
             </p>
-            <a 
-              href="tel:+34625081519"
-              className="inline-flex items-center gap-2 text-2xl md:text-3xl font-display text-primary hover:text-primary/80 transition-colors"
-            >
+            <a href="tel:+34625081519" className="inline-flex items-center gap-2 text-2xl md:text-3xl font-display text-primary hover:text-primary/80 transition-colors">
               <Phone className="w-6 h-6" />
               625 081 519
             </a>
@@ -549,10 +489,7 @@ const ComoLlegar = () => {
         {/* Footer simple */}
         <footer className="bg-muted py-8 mt-12">
           <div className="container mx-auto px-6 text-center">
-            <Link 
-              to="/"
-              className="font-display text-xl text-foreground hover:text-primary transition-colors"
-            >
+            <Link to="/" className="font-display text-xl text-foreground hover:text-primary transition-colors">
               La Cabaña de la Lechuza
             </Link>
             <p className="font-body text-muted-foreground text-sm mt-2">
@@ -561,8 +498,6 @@ const ComoLlegar = () => {
           </div>
         </footer>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default ComoLlegar;
