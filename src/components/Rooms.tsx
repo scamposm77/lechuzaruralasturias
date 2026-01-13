@@ -144,6 +144,8 @@ const Rooms = () => {
                   }
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                   itemProp="photo"
                 />
                 <div className="absolute top-4 left-4 p-3 bg-primary/90 backdrop-blur-sm rounded-full" aria-hidden="true">

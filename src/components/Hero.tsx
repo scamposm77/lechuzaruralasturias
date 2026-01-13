@@ -67,17 +67,24 @@ const Hero = () => {
       <meta itemProp="email" content="info@lechuzaruralasturias.es" />
       <meta itemProp="priceRange" content="€€" />
 
-      {/* Background Slideshow */}
+      {/* Background Slideshow - First image eagerly loaded, rest lazy */}
       {heroImages.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
-          style={{ backgroundImage: `url(${image.src})` }}
           role="img"
           aria-label={image.alt}
         >
+          <img
+            src={image.src}
+            alt={image.alt}
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding={index === 0 ? "sync" : "async"}
+            fetchPriority={index === 0 ? "high" : "low"}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           <div className="absolute inset-0 hero-overlay" />
         </div>
       ))}
