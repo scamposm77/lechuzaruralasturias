@@ -1,16 +1,30 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Values from "@/components/Values";
-import Gallery from "@/components/Gallery";
-import Rooms from "@/components/Rooms";
-import Services from "@/components/Services";
-import Reviews from "@/components/Reviews";
-import HouseRules from "@/components/HouseRules";
-import Location from "@/components/Location";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+// Lazy load below-the-fold components for faster initial load
+const Values = lazy(() => import("@/components/Values"));
+const Gallery = lazy(() => import("@/components/Gallery"));
+const Rooms = lazy(() => import("@/components/Rooms"));
+const Services = lazy(() => import("@/components/Services"));
+const Reviews = lazy(() => import("@/components/Reviews"));
+const HouseRules = lazy(() => import("@/components/HouseRules"));
+const Location = lazy(() => import("@/components/Location"));
+const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
+
+// Loading skeleton for lazy components
+const SectionSkeleton = () => (
+  <div className="py-28 bg-card animate-pulse">
+    <div className="container mx-auto px-6">
+      <div className="h-8 bg-muted rounded w-48 mx-auto mb-4" />
+      <div className="h-12 bg-muted rounded w-96 mx-auto mb-6" />
+      <div className="h-4 bg-muted rounded w-full max-w-2xl mx-auto" />
+    </div>
+  </div>
+);
 
 const Index = () => {
   const { language } = useLanguage();
@@ -156,16 +170,34 @@ const Index = () => {
         <Header />
         <main role="main">
           <Hero />
-          <Values />
-          <Gallery />
-          <Rooms />
-          <Services />
-          <Reviews />
-          <HouseRules />
-          <Location />
-          <Contact />
+          <Suspense fallback={<SectionSkeleton />}>
+            <Values />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton />}>
+            <Gallery />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton />}>
+            <Rooms />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton />}>
+            <Services />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton />}>
+            <Reviews />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton />}>
+            <HouseRules />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton />}>
+            <Location />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton />}>
+            <Contact />
+          </Suspense>
         </main>
-        <Footer />
+        <Suspense fallback={<div className="h-64 bg-foreground" />}>
+          <Footer />
+        </Suspense>
       </div>
     </>
   );
