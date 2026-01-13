@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight, Images } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Exterior images
 import extPortada from "@/assets/exterior/ext-00-portada.jpg";
@@ -37,40 +38,41 @@ type Space = {
   images: string[];
 };
 
-const spaces: Space[] = [
-  {
-    id: "exterior",
-    name: "Exterior y Jardín",
-    description: "1.500m² de parcela privada con porche cubierto, balancín y vistas panorámicas al valle asturiano",
-    cover: extPortada,
-    images: [extPortada, ext02, ext03, ext04, ext05, ext06, ext07, ext08, ext09, ext10],
-  },
-  {
-    id: "cocina",
-    name: "Cocina Equipada",
-    description: "Cocina totalmente equipada con vitrocerámica, horno, microondas y menaje completo para cocinar durante tu estancia",
-    cover: cocina01,
-    images: [cocina01, cocina06, cocina05, cocina02, cocina03, cocina04],
-  },
-  {
-    id: "salon",
-    name: "Salón con Chimenea",
-    description: "Acogedor salón de casa rural con chimenea de pellets, sofá cama y Smart TV con Chromecast",
-    cover: salonChimenea,
-    images: [salonChimenea, salon01],
-  },
-  {
-    id: "bano",
-    name: "Baños",
-    description: "1 baño completo con ducha + 1 aseo. Toallas y ropa de baño incluidas",
-    cover: bano01,
-    images: [bano01, bano02],
-  },
-];
-
 const Gallery = () => {
   const [selectedSpace, setSelectedSpace] = useState<Space | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t, language } = useLanguage();
+
+  const spaces: Space[] = [
+    {
+      id: "exterior",
+      name: t("gallery.exterior"),
+      description: t("gallery.exterior.desc"),
+      cover: extPortada,
+      images: [extPortada, ext02, ext03, ext04, ext05, ext06, ext07, ext08, ext09, ext10],
+    },
+    {
+      id: "cocina",
+      name: t("gallery.kitchen"),
+      description: t("gallery.kitchen.desc"),
+      cover: cocina01,
+      images: [cocina01, cocina06, cocina05, cocina02, cocina03, cocina04],
+    },
+    {
+      id: "salon",
+      name: t("gallery.living"),
+      description: t("gallery.living.desc"),
+      cover: salonChimenea,
+      images: [salonChimenea, salon01],
+    },
+    {
+      id: "bano",
+      name: t("gallery.bathroom"),
+      description: t("gallery.bathroom.desc"),
+      cover: bano01,
+      images: [bano01, bano02],
+    },
+  ];
 
   const openSlideshow = (space: Space) => {
     setSelectedSpace(space);
@@ -94,7 +96,6 @@ const Gallery = () => {
     }
   };
 
-  // Handle keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowRight") goNext();
     if (e.key === "ArrowLeft") goPrev();
@@ -102,24 +103,31 @@ const Gallery = () => {
   };
 
   return (
-    <section id="espacios" className="py-28 bg-background">
+    <section 
+      id="espacios" 
+      className="py-28 bg-background"
+      aria-label={language === "es" ? "Galería de espacios" : "Spaces gallery"}
+      itemScope
+      itemType="https://schema.org/ImageGallery"
+    >
+      <meta itemProp="name" content={language === "es" ? "Galería de La Cabaña de la Lechuza" : "La Cabaña de la Lechuza Gallery"} />
+      
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <header className="text-center mb-20">
           <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
-            Galería de fotos de la casa rural
+            {t("gallery.subtitle")}
           </span>
           <h2 className="font-display text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
-            Nuestros <span className="text-primary italic">Espacios</span>
+            {t("gallery.title")} <span className="text-primary italic">{t("gallery.titleAccent")}</span>
           </h2>
-          <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
-            Descubre cada rincón de nuestra casa rural en Asturias: 3 habitaciones dobles, salón con chimenea de pellets y 1500m² de jardín privado. 
-            El alojamiento perfecto para familias y grupos en la Comarca de la Sidra.
+          <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto" itemProp="description">
+            {t("gallery.description")}
           </p>
         </header>
 
         {/* Spaces Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" itemProp="associatedMedia">
           {spaces.map((space, index) => (
             <button
               key={space.id}
@@ -127,13 +135,20 @@ const Gallery = () => {
               className={`group relative overflow-hidden rounded-lg cursor-pointer text-left card-shadow hover:hover-lift transition-all duration-500 ${
                 index === 0 ? "md:col-span-2 lg:col-span-2" : ""
               }`}
+              aria-label={language === "es" ? `Ver galería de ${space.name}` : `View ${space.name} gallery`}
+              itemScope
+              itemType="https://schema.org/ImageObject"
             >
               <div className={`overflow-hidden ${index === 0 ? "aspect-[2/1]" : "aspect-[4/3]"}`}>
                 <img
                   src={space.cover}
-                  alt={`${space.name} de La Cabaña de la Lechuza - Casa rural en Cabranes, Asturias`}
+                  alt={language === "es" 
+                    ? `${space.name} de La Cabaña de la Lechuza - Casa rural en Cabranes, Asturias`
+                    : `${space.name} at La Cabaña de la Lechuza - Rural house in Cabranes, Asturias`
+                  }
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
+                  itemProp="contentUrl"
                 />
               </div>
               
@@ -141,16 +156,16 @@ const Gallery = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/30 to-transparent flex flex-col justify-end p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="font-display text-background text-xl md:text-2xl mb-1">
+                    <h3 className="font-display text-background text-xl md:text-2xl mb-1" itemProp="name">
                       {space.name}
                     </h3>
-                    <p className="font-body text-background/70 text-sm">
+                    <p className="font-body text-background/70 text-sm" itemProp="description">
                       {space.description}
                     </p>
                   </div>
                   {space.images.length > 1 && (
-                    <div className="flex items-center gap-2 bg-background/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                      <Images className="w-4 h-4 text-background" />
+                    <div className="flex items-center gap-2 bg-background/20 backdrop-blur-sm px-3 py-1.5 rounded-full" aria-label={`${space.images.length} ${language === "es" ? "fotos" : "photos"}`}>
+                      <Images className="w-4 h-4 text-background" aria-hidden="true" />
                       <span className="font-body text-background text-sm">
                         {space.images.length}
                       </span>
@@ -171,6 +186,7 @@ const Gallery = () => {
           tabIndex={0}
           role="dialog"
           aria-modal="true"
+          aria-label={selectedSpace.name}
         >
           {/* Header */}
           <div className="absolute top-0 left-0 right-0 p-6 flex items-center justify-between z-10">
@@ -185,7 +201,7 @@ const Gallery = () => {
             <button
               onClick={closeSlideshow}
               className="text-background/70 hover:text-background transition-colors p-2 hover:bg-background/10 rounded-full"
-              aria-label="Cerrar galería"
+              aria-label={t("gallery.closeGallery")}
             >
               <X size={32} strokeWidth={1.5} />
             </button>
@@ -197,7 +213,7 @@ const Gallery = () => {
               <button
                 onClick={goPrev}
                 className="absolute left-4 md:left-8 text-background/70 hover:text-background transition-colors p-3 hover:bg-background/10 rounded-full z-10"
-                aria-label="Foto anterior"
+                aria-label={t("gallery.prevPhoto")}
               >
                 <ChevronLeft size={48} strokeWidth={1.5} />
               </button>
@@ -205,7 +221,7 @@ const Gallery = () => {
               <button
                 onClick={goNext}
                 className="absolute right-4 md:right-8 text-background/70 hover:text-background transition-colors p-3 hover:bg-background/10 rounded-full z-10"
-                aria-label="Foto siguiente"
+                aria-label={t("gallery.nextPhoto")}
               >
                 <ChevronRight size={48} strokeWidth={1.5} />
               </button>
@@ -215,13 +231,16 @@ const Gallery = () => {
           {/* Main Image */}
           <img
             src={selectedSpace.images[currentIndex]}
-            alt={`${selectedSpace.name} de casa rural La Cabaña de la Lechuza - Foto ${currentIndex + 1} - Alojamiento rural en Asturias`}
+            alt={language === "es"
+              ? `${selectedSpace.name} de casa rural La Cabaña de la Lechuza - Foto ${currentIndex + 1} - Alojamiento rural en Asturias`
+              : `${selectedSpace.name} at La Cabaña de la Lechuza rural house - Photo ${currentIndex + 1} - Rural accommodation in Asturias`
+            }
             className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
           />
 
           {/* Thumbnail Navigation */}
           {selectedSpace.images.length > 1 && (
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 max-w-[90vw] overflow-x-auto pb-2">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 max-w-[90vw] overflow-x-auto pb-2" role="tablist">
               {selectedSpace.images.map((img, idx) => (
                 <button
                   key={idx}
@@ -231,10 +250,13 @@ const Gallery = () => {
                       ? "ring-2 ring-primary opacity-100 scale-110" 
                       : "opacity-50 hover:opacity-80"
                   }`}
+                  role="tab"
+                  aria-selected={idx === currentIndex}
+                  aria-label={`${t("gallery.thumbnail")} ${idx + 1}`}
                 >
                   <img
                     src={img}
-                    alt={`Miniatura ${idx + 1}`}
+                    alt=""
                     className="w-full h-full object-cover"
                   />
                 </button>
