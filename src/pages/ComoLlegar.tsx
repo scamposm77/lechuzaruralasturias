@@ -91,10 +91,7 @@ const ComoLlegar = () => {
                     <span className="w-2 h-2 bg-primary rounded-full"></span>
                     Several natural passing places to meet other vehicles
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-primary rounded-full"></span>
-                    Low traffic (only residents and guests)
-                  </li>
+                  
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-primary rounded-full"></span>
                     No through traffic
@@ -113,10 +110,7 @@ const ComoLlegar = () => {
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <span>If you see an oncoming vehicle, use the passing places to yield or wait</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>It's easier than it looks: stay calm and everything flows</span>
-                  </li>
+                  
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <span>During the day, visibility is perfect and the scenery is spectacular</span>
@@ -165,10 +159,7 @@ const ComoLlegar = () => {
                   <span className="w-2 h-2 bg-primary rounded-full"></span>
                   Turns and clear visual references
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-primary rounded-full"></span>
-                  How to navigate the mountain road
-                </li>
+                
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary rounded-full"></span>
                   Exactly where to turn until you reach the house door
