@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Lazy load below-the-fold components for faster initial load
@@ -259,6 +260,7 @@ const Index = () => {
         <Suspense fallback={<div className="h-64 bg-foreground" />}>
           <Footer />
         </Suspense>
+        <WhatsAppButton />
       </div>
     </>
   );
