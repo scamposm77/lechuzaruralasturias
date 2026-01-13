@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import logoLechuza from "@/assets/logo-lechuza.png";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -9,6 +10,8 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLogoClicked, setIsLogoClicked] = useState(false);
   const { t } = useLanguage();
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,11 +26,16 @@ const Header = () => {
     setTimeout(() => setIsLogoClicked(false), 300);
   };
 
+  // Helper to get correct href for anchor links
+  const getAnchorHref = (anchor: string) => {
+    return isHomePage ? anchor : `/${anchor}`;
+  };
+
   const navLinks = [
-    { href: "#inicio", label: t("nav.home"), isExternal: false },
-    { href: "#habitaciones", label: t("nav.rooms"), isExternal: false },
-    { href: "/como-llegar", label: t("nav.directions"), isExternal: true },
-    { href: "/blog", label: t("nav.blog"), isExternal: true },
+    { href: getAnchorHref("#inicio"), label: t("nav.home"), isRoute: false },
+    { href: getAnchorHref("#habitaciones"), label: t("nav.rooms"), isRoute: false },
+    { href: "/como-llegar", label: t("nav.directions"), isRoute: true },
+    { href: "/blog", label: t("nav.blog"), isRoute: true },
   ];
 
   return (
@@ -39,8 +47,8 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a
-          href="#inicio"
+        <Link
+          to="/"
           className={`flex items-center gap-3 font-display text-xl md:text-2xl transition-colors ${
             isScrolled ? "text-foreground" : "text-background"
           }`}
@@ -54,21 +62,21 @@ const Header = () => {
             }`}
           />
           <span className="hidden sm:inline">La Cabaña de la Lechuza</span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            link.isExternal ? (
-              <a
+            link.isRoute ? (
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className={`font-body text-sm font-medium tracking-wider uppercase transition-all relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all hover:after:w-full ${
                   isScrolled ? "text-foreground" : "text-background"
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ) : (
               <a
                 key={link.href}
@@ -83,7 +91,7 @@ const Header = () => {
           ))}
           <LanguageSelector isScrolled={isScrolled} />
           <a
-            href="#contacto"
+            href={getAnchorHref("#contacto")}
             className={`px-6 py-3 rounded-sm font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 ${
               isScrolled
                 ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg"
@@ -113,15 +121,15 @@ const Header = () => {
         <nav className="lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-lg border-b border-border animate-fade-in shadow-xl">
           <div className="container mx-auto px-6 py-8 flex flex-col gap-2">
             {navLinks.map((link) => (
-              link.isExternal ? (
-                <a
+              link.isRoute ? (
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="font-body text-foreground text-lg font-medium py-3 border-b border-border/30 hover:text-primary transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ) : (
                 <a
                   key={link.href}
@@ -134,7 +142,7 @@ const Header = () => {
               )
             ))}
             <a
-              href="#contacto"
+              href={getAnchorHref("#contacto")}
               onClick={() => setIsMobileMenuOpen(false)}
               className="mt-4 px-6 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider text-center shadow-md"
             >
