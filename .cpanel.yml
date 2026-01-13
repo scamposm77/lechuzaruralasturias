@@ -1,16 +1,22 @@
 deployment:
   tasks:
+    # Nota: cPanel ejecuta esto desde la raíz del repo (no uses rutas hardcodeadas tipo /home/.../github)
+    - set -e
     - DEPLOYPATH="/home/ncyzekbm/public_html"
-    - echo "Activando Node.js..."
-    - source /home/ncyzekbm/nodevenv/repos/lechuzaruralasturias/20/bin/activate
-    - echo "Entrando al repositorio..."
-    - cd /home/ncyzekbm/github
-    - echo "Instalando dependencias..."
-    - npm ci --only=production
+    - echo "== Deploy start: $(date) =="
+    - echo "Repo dir: $(pwd)"
+    - echo "Node: $(node -v 2>/dev/null || echo 'no-node')"
+    - echo "NPM: $(npm -v 2>/dev/null || echo 'no-npm')"
+    - echo "Instalando dependencias (incluye devDependencies para poder hacer build)..."
+    - npm ci
     - echo "Construyendo proyecto..."
     - npm run build
+    - echo "Preparando directorio destino: $DEPLOYPATH"
+    - mkdir -p "$DEPLOYPATH"
     - echo "Limpiando directorio destino..."
     - rm -rf "$DEPLOYPATH"/*
     - echo "Copiando archivos construidos..."
     - cp -R dist/* "$DEPLOYPATH"/
-    - echo "Despliegue completado: $(date)"
+    - echo "deploy_sha=$(git rev-parse HEAD)" > "$DEPLOYPATH"/deploy.txt
+    - echo "deploy_date=$(date -Is)" >> "$DEPLOYPATH"/deploy.txt
+    - echo "== Deploy done: $(date) =="
