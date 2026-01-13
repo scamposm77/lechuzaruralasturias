@@ -246,7 +246,7 @@ const Reviews = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <a
-            href="https://www.airbnb.es/rooms/1134703286904548225?guests=1&adults=1&s=67&unique_share_id=502cab8b-a5f4-48ee-af66-a507f113d2f2"
+            href="https://www.airbnb.es/rooms/1134703286904548225?guests=1&adults=1&s=67&unique_share_id=9e3d8fa8-48d8-49ab-a24e-c39cf096703e"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-body text-primary hover:text-primary-dark transition-colors duration-300 text-lg font-medium"
