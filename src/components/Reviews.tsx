@@ -6,13 +6,13 @@ const Reviews = () => {
 
   const reviews = [
     {
-      name: "Audrie",
-      date: language === "es" ? "Julio 2025" : "July 2025",
+      name: "Matteo",
+      date: language === "es" ? "Agosto 2025" : "August 2025",
       rating: 5,
       text: language === "es" 
-        ? "Casa muy bonita y renovada. En un lugar tranquilo y perfecto para relajarse, pero que permite recorrer esta hermosa región y descubrirla con facilidad."
-        : "Very nice and renovated house. In a quiet place perfect for relaxing, but allowing to explore this beautiful region and discover it easily.",
-      avatar: "A",
+        ? "Un sitio muy bonito, está muy cuidado. Se nota que tiene cariño. Entorno muy tranquilo. Aparcamiento en la puerta. Se ven estrellas desde el porche."
+        : "A very beautiful place, very well maintained. You can tell it's cared for with love. Very quiet surroundings. Parking at the door. You can see stars from the porch.",
+      avatar: "M",
     },
     {
       name: "Elvia",
@@ -72,7 +72,7 @@ const Reviews = () => {
             <meta itemProp="worstRating" content="1" />
             <meta itemProp="bestRating" content="5" />
             <meta itemProp="reviewCount" content={String(reviews.length)} />
-            <div className="flex" aria-label={language === "es" ? "Valoración 4.88 de 5 estrellas" : "Rating 4.88 out of 5 stars"}>
+            <div className="flex" aria-label={language === "es" ? "Valoración 4.9 de 5 estrellas" : "Rating 4.9 out of 5 stars"}>
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
@@ -82,7 +82,7 @@ const Reviews = () => {
                 />
               ))}
             </div>
-            <span className="font-display text-2xl text-foreground ml-2" itemProp="ratingValue">4.88</span>
+            <span className="font-display text-2xl text-foreground ml-2" itemProp="ratingValue">4.9</span>
             <span className="font-body text-muted-foreground text-sm">· Airbnb</span>
           </div>
           <p className="font-body text-primary font-semibold mb-4">
