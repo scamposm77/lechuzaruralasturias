@@ -120,8 +120,8 @@ const translations: Record<Language, Record<string, string>> = {
     "reviews.title": "Lo Que Dicen",
     "reviews.titleAccent": "Nuestros Visitantes",
     "reviews.satisfied": "100% clientes satisfechos",
-    "reviews.featured": "\"Un sitio muy bonito, está muy cuidado. Se nota que tiene cariño. Entorno muy tranquilo. Aparcamiento en la puerta. Se ven estrellas desde el porche.\"",
-    "reviews.featuredAuthor": "— Matteo, Agosto 2025",
+    "reviews.featured": "\"Casa muy bonita y renovada. En un lugar tranquilo y perfecto para relajarse, pero que permite recorrer esta hermosa región y descubrirla con facilidad.\"",
+    "reviews.featuredAuthor": "— Audrie, Julio 2025",
     "reviews.seeAll": "Ver todas las reseñas en Airbnb",
 
     // House Rules
@@ -315,8 +315,8 @@ const translations: Record<Language, Record<string, string>> = {
     "reviews.title": "What",
     "reviews.titleAccent": "Our Visitors Say",
     "reviews.satisfied": "100% satisfied customers",
-    "reviews.featured": "\"A very beautiful place, very well maintained. You can tell it's cared for with love. Very quiet surroundings. Parking at the door. You can see stars from the porch.\"",
-    "reviews.featuredAuthor": "— Matteo, August 2025",
+    "reviews.featured": "\"A very beautiful and renovated house. In a quiet place, perfect for relaxing, but that allows you to explore this beautiful region and discover it easily.\"",
+    "reviews.featuredAuthor": "— Audrie, July 2025",
     "reviews.seeAll": "See all reviews on Airbnb",
 
     // House Rules
