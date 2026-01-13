@@ -1,3 +1,16 @@
 deployment:
   tasks:
-    - echo "Prueba $(date)" > /home/ncyzekbm/public_html/test.txt
+    - DEPLOYPATH="/home/ncyzekbm/public_html"
+    - echo "Activando Node.js..."
+    - source /home/ncyzekbm/nodevenv/repos/lechuzaruralasturias/20/bin/activate
+    - echo "Entrando al repositorio..."
+    - cd /home/ncyzekbm/github
+    - echo "Instalando dependencias..."
+    - npm ci --only=production
+    - echo "Construyendo proyecto..."
+    - npm run build
+    - echo "Limpiando directorio destino..."
+    - rm -rf "$DEPLOYPATH"/*
+    - echo "Copiando archivos construidos..."
+    - cp -R dist/* "$DEPLOYPATH"/
+    - echo "Despliegue completado: $(date)"
