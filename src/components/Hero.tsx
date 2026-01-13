@@ -48,6 +48,7 @@ const Hero = () => {
     { value: "7", label: t("hero.guests") },
     { value: "3", label: t("hero.bedrooms") },
     { value: "1+1", label: t("hero.bathrooms") },
+    { value: "35m²", label: t("hero.porch") },
     { value: "140m²", label: t("hero.surface") },
   ];
 
@@ -129,7 +130,7 @@ const Hero = () => {
 
         {/* Property Stats */}
         <div 
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 max-w-3xl mx-auto animate-fade-up opacity-0 delay-500"
+          className="mt-20 grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 max-w-4xl mx-auto animate-fade-up opacity-0 delay-500"
           itemProp="amenityFeature"
           itemScope
           itemType="https://schema.org/LocationFeatureSpecification"

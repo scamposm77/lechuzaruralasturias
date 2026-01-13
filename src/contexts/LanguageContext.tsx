@@ -31,6 +31,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.guests": "Huéspedes",
     "hero.bedrooms": "Habitaciones",
     "hero.bathrooms": "Baño y Aseo",
+    "hero.porch": "Porche",
     "hero.surface": "Superficie",
     "hero.viewImage": "Ver imagen",
 
@@ -226,6 +227,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.guests": "Guests",
     "hero.bedrooms": "Bedrooms",
     "hero.bathrooms": "Bath & WC",
+    "hero.porch": "Porch",
     "hero.surface": "Surface",
     "hero.viewImage": "View image",
 
