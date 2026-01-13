@@ -224,7 +224,7 @@ const Rooms = () => {
         </div>
       </div>
 
-      {/* Details Modal */}
+      {/* Details Modal with integrated slideshow */}
       {detailRoom && (
         <div 
           className="fixed inset-0 z-50 bg-foreground/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
@@ -236,13 +236,13 @@ const Rooms = () => {
           aria-label={detailRoom.name}
         >
           <div 
-            className="bg-background rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+            className="bg-background rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="sticky top-0 bg-background border-b border-border p-6 flex items-center justify-between">
+            <div className="sticky top-0 bg-background border-b border-border p-4 md:p-6 flex items-center justify-between z-10">
               <div>
-                <h3 className="font-display text-foreground text-2xl">
+                <h3 className="font-display text-foreground text-xl md:text-2xl">
                   {detailRoom.name}
                 </h3>
                 <p className="font-body text-primary text-sm font-semibold">
@@ -258,40 +258,109 @@ const Rooms = () => {
               </button>
             </div>
             
-            {/* Modal Content */}
-            <div className="p-6">
+            {/* Integrated Photo Slideshow */}
+            <div className="relative">
+              {/* Main Image */}
+              <div className="aspect-[16/10] relative overflow-hidden bg-muted">
+                <img
+                  src={detailRoom.images[currentIndex]}
+                  alt={language === "es"
+                    ? `Foto habitación ${detailRoom.name} La Cabaña de la Lechuza - Imagen ${currentIndex + 1}`
+                    : `${detailRoom.name} room photo La Cabaña de la Lechuza - Image ${currentIndex + 1}`
+                  }
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Navigation Arrows */}
+                {detailRoom.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentIndex((prev) => (prev - 1 + detailRoom.images.length) % detailRoom.images.length);
+                      }}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background text-foreground p-2 rounded-full transition-all shadow-lg"
+                      aria-label={t("gallery.prevPhoto")}
+                    >
+                      <ChevronLeft size={24} />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentIndex((prev) => (prev + 1) % detailRoom.images.length);
+                      }}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background text-foreground p-2 rounded-full transition-all shadow-lg"
+                      aria-label={t("gallery.nextPhoto")}
+                    >
+                      <ChevronRight size={24} />
+                    </button>
+                  </>
+                )}
+                
+                {/* Image Counter */}
+                <div className="absolute bottom-3 right-3 bg-foreground/70 text-background px-3 py-1 rounded-full text-sm font-body">
+                  {currentIndex + 1} / {detailRoom.images.length}
+                </div>
+              </div>
+              
+              {/* Thumbnail Navigation */}
+              {detailRoom.images.length > 1 && (
+                <div className="flex gap-2 p-3 overflow-x-auto bg-muted/50">
+                  {detailRoom.images.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentIndex(idx);
+                      }}
+                      className={`flex-shrink-0 w-16 h-12 rounded overflow-hidden transition-all duration-300 ${
+                        idx === currentIndex 
+                          ? "ring-2 ring-primary opacity-100 scale-105" 
+                          : "opacity-60 hover:opacity-100"
+                      }`}
+                    >
+                      <img
+                        src={img}
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            
+            {/* Modal Content - Always visible below photos */}
+            <div className="p-4 md:p-6">
               {/* Quick info */}
-              <div className="flex flex-wrap gap-4 mb-6 pb-6 border-b border-border">
-                <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
+              <div className="flex flex-wrap gap-3 mb-5 pb-5 border-b border-border">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-muted rounded-full">
                   <User className="w-4 h-4 text-primary" />
                   <span className="font-body text-sm">{detailRoom.capacity}</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-muted rounded-full">
                   <Eye className="w-4 h-4 text-primary" />
                   <span className="font-body text-sm">{detailRoom.views}</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-muted rounded-full">
                   <Bed className="w-4 h-4 text-primary" />
                   <span className="font-body text-sm">{detailRoom.bedType}</span>
                 </div>
               </div>
               
-              {/* Description */}
+              {/* Description - Always visible */}
               <p className="font-body text-muted-foreground leading-relaxed">
                 {detailRoom.description}
               </p>
               
-              {/* View photos button */}
-              <button
-                onClick={(e) => {
-                  closeDetails();
-                  openSlideshow(detailRoom, e);
-                }}
+              {/* CTA Button */}
+              <a
+                href="#contacto"
+                onClick={closeDetails}
                 className="mt-6 w-full py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2"
               >
-                <Images className="w-5 h-5" />
-                {language === "es" ? `Ver ${detailRoom.images.length} fotos` : `View ${detailRoom.images.length} photos`}
-              </button>
+                {language === "es" ? "Reservar esta habitación" : "Book this room"}
+              </a>
             </div>
           </div>
         </div>
