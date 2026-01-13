@@ -24,8 +24,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title": "La Cabaña de",
     "hero.titleAccent": "la Lechuza",
-    "hero.location": "Comarca de la Sidra · La Roza, Cabranes",
-    "hero.description": "Tu casa rural con encanto en el corazón de la Comarca de la Sidra. Rehabilitada en 2023, nuestra casa ofrece un alojamiento íntimo para familias y grupos, perfecto para escapadas rurales y vacaciones en Asturias.",
+    "hero.location": "Comarca de la Sidra. Asturias.",
+    "hero.description": "Tu casa rural con encanto en Cabranes. Rehabilitada en 2023, nuestra casa ofrece un alojamiento íntimo para familias y grupos, perfecto para escapadas rurales y vacaciones en Asturias.",
     "hero.bookNow": "Reservar Ahora",
     "hero.learnMore": "Conoce Más",
     "hero.guests": "Huéspedes",
@@ -120,8 +120,8 @@ const translations: Record<Language, Record<string, string>> = {
     "reviews.title": "Lo Que Dicen",
     "reviews.titleAccent": "Nuestros Visitantes",
     "reviews.satisfied": "100% clientes satisfechos",
-    "reviews.featured": "\"Casa muy bonita y renovada. En un lugar tranquilo y perfecto para relajarse, pero que permite recorrer esta hermosa región y descubrirla con facilidad.\"",
-    "reviews.featuredAuthor": "— Audrie, Julio 2025",
+    "reviews.featured": "\"Un sitio muy bonito, está muy cuidado. Se nota que tiene cariño. Entorno muy tranquilo. Aparcamiento en la puerta. Se ven estrellas desde el porche.\"",
+    "reviews.featuredAuthor": "— Matteo, Agosto 2025",
     "reviews.seeAll": "Ver todas las reseñas en Airbnb",
 
     // House Rules
@@ -219,8 +219,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.title": "La Cabaña de",
     "hero.titleAccent": "la Lechuza",
-    "hero.location": "Cider Region · La Roza, Cabranes",
-    "hero.description": "Your charming rural retreat in the heart of the Cider Region. Renovated in 2023, our cottage offers intimate accommodation for families and groups, perfect for rural getaways and holidays in Asturias.",
+    "hero.location": "Cider Region. Asturias.",
+    "hero.description": "Your charming rural house in Cabranes. Renovated in 2023, our cottage offers intimate accommodation for families and groups, perfect for rural getaways and holidays in Asturias.",
     "hero.bookNow": "Book Now",
     "hero.learnMore": "Learn More",
     "hero.guests": "Guests",
@@ -315,8 +315,8 @@ const translations: Record<Language, Record<string, string>> = {
     "reviews.title": "What",
     "reviews.titleAccent": "Our Visitors Say",
     "reviews.satisfied": "100% satisfied customers",
-    "reviews.featured": "\"Very nice and renovated house. In a quiet place perfect for relaxing, but allowing to explore this beautiful region and discover it easily.\"",
-    "reviews.featuredAuthor": "— Audrie, July 2025",
+    "reviews.featured": "\"A very beautiful place, very well maintained. You can tell it's cared for with love. Very quiet surroundings. Parking at the door. You can see stars from the porch.\"",
+    "reviews.featuredAuthor": "— Matteo, August 2025",
     "reviews.seeAll": "See all reviews on Airbnb",
 
     // House Rules
