@@ -53,7 +53,7 @@ const Contact = () => {
       icon: MapPin,
       title: t("contact.location"),
       lines: ["Barrio la Roza s/n", "33310 Cabranes, Asturias"],
-      link: "https://maps.google.com/?q=La+Roza+Cabranes+Asturias",
+      link: "https://maps.app.goo.gl/RAUYH5vjUNvub4Nn9",
     },
     {
       icon: Phone,

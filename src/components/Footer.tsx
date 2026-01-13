@@ -101,7 +101,7 @@ const Footer = () => {
             </h4>
             <div className="font-body text-background/60 text-sm space-y-4">
               <a 
-                href="https://maps.google.com/?q=La+Roza+Cabranes+Asturias"
+                href="https://maps.app.goo.gl/RAUYH5vjUNvub4Nn9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 hover:text-background transition-colors"
