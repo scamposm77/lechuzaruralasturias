@@ -161,8 +161,8 @@ const Rooms = () => {
                 <img
                   src={room.cover}
                   alt={language === "es"
-                    ? `Habitación ${room.name} - ${room.bedType} en casa rural La Cabaña de la Lechuza, Asturias`
-                    : `${room.name} Room - ${room.bedType} at La Cabaña de la Lechuza rural house, Asturias`
+                    ? `Foto habitación ${room.name} La Cabaña de la Lechuza casa rural Cabranes Asturias - ${room.bedType}`
+                    : `${room.name} room photo La Cabaña de la Lechuza rural house Cabranes Asturias - ${room.bedType}`
                   }
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
@@ -351,8 +351,8 @@ const Rooms = () => {
           <img
             src={selectedRoom.images[currentIndex]}
             alt={language === "es"
-              ? `Habitación ${selectedRoom.name} - ${selectedRoom.bedType} en casa rural Asturias - Foto ${currentIndex + 1}`
-              : `${selectedRoom.name} Room - ${selectedRoom.bedType} in Asturias rural house - Photo ${currentIndex + 1}`
+              ? `Foto habitación ${selectedRoom.name} La Cabaña de la Lechuza casa rural Cabranes Asturias - Imagen ${currentIndex + 1}`
+              : `${selectedRoom.name} room photo La Cabaña de la Lechuza rural house Cabranes Asturias - Image ${currentIndex + 1}`
             }
             className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
           />

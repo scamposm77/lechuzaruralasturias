@@ -14,26 +14,26 @@ const Hero = () => {
     { 
       src: heroCasa, 
       alt: language === "es" 
-        ? "Fachada exterior de La Cabaña de la Lechuza, casa rural en Cabranes, Asturias" 
-        : "Exterior facade of La Cabaña de la Lechuza, rural house in Cabranes, Asturias"
+        ? "Foto fachada exterior La Cabaña de la Lechuza casa rural Cabranes Asturias" 
+        : "Exterior facade photo La Cabaña de la Lechuza rural house Cabranes Asturias"
     },
     { 
       src: heroPorche, 
       alt: language === "es"
-        ? "Porche cubierto con vistas panorámicas al valle asturiano"
-        : "Covered porch with panoramic views of the Asturian valley"
+        ? "Foto porche cubierto La Cabaña de la Lechuza casa rural Cabranes Asturias - Vistas al valle"
+        : "Covered porch photo La Cabaña de la Lechuza rural house Cabranes Asturias - Valley views"
     },
     { 
       src: heroPaisaje, 
       alt: language === "es"
-        ? "Paisaje natural de la Comarca de la Sidra con montañas y prados verdes"
-        : "Natural landscape of the Cider Region with mountains and green meadows"
+        ? "Foto paisaje natural Comarca de la Sidra Cabranes Asturias - Montañas y prados verdes"
+        : "Natural landscape photo Cider Region Cabranes Asturias - Mountains and green meadows"
     },
     { 
       src: heroExterior, 
       alt: language === "es"
-        ? "Jardín con manzanos centenarios de la casa rural en La Roza"
-        : "Garden with centuries-old apple trees at the rural house in La Roza"
+        ? "Foto jardín La Cabaña de la Lechuza casa rural Cabranes Asturias - Manzanos centenarios"
+        : "Garden photo La Cabaña de la Lechuza rural house Cabranes Asturias - Centuries-old apple trees"
     },
   ];
 
@@ -121,6 +121,7 @@ const Hero = () => {
         {/* Price Badge */}
         <div className="mb-8 animate-fade-up opacity-0 delay-350">
           <span className="inline-flex items-center gap-2 px-6 py-3 bg-primary/90 text-primary-foreground rounded-full font-body text-sm md:text-base font-semibold shadow-lg backdrop-blur-sm">
+            <span className="opacity-90">{language === "es" ? "Desde" : "From"}</span>
             <span className="text-accent font-display text-lg md:text-xl">120€</span>
             <span className="opacity-90">/</span>
             <span>{language === "es" ? "noche · Sin comisiones" : "night · No fees"}</span>

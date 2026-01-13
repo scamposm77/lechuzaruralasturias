@@ -42,13 +42,13 @@
     <meta name="twitter:description" content="Casa rural 7 plazas en Cabranes, Asturias. Jardín privado, 3 hab, chimenea. Reserva sin comisiones desde 120€." />
     <meta name="twitter:image" content="https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg" />
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data - VacationRental -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LodgingBusiness",
+      "@type": "VacationRental",
       "name": "La Cabaña de la Lechuza",
-      "description": "Casa rural con encanto en La Roza, Cabranes. Alojamiento para 7 personas en la Comarca de la Sidra, Asturias.",
+      "description": "Casa rural con encanto en La Roza, Cabranes. Alojamiento para 7 personas en la Comarca de la Sidra, Asturias. 3 habitaciones, jardín privado y chimenea de pellets.",
       "url": "https://www.lechuzaruralasturias.es",
       "telephone": "+34625081519",
       "email": "info@lechuzaruralasturias.es",
@@ -65,17 +65,49 @@
         "latitude": "43.408",
         "longitude": "-5.417"
       },
+      "image": [
+        "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
+        "https://www.lechuzaruralasturias.es/assets/exterior/ext-03.jpg",
+        "https://www.lechuzaruralasturias.es/assets/exterior/ext-09.jpg",
+        "https://www.lechuzaruralasturias.es/assets/cocina/cocina-01.jpg"
+      ],
       "amenityFeature": [
-        {"@type": "LocationFeatureSpecification", "name": "WiFi gratuito"},
-        {"@type": "LocationFeatureSpecification", "name": "Parking privado"},
-        {"@type": "LocationFeatureSpecification", "name": "Chimenea de pellets"},
-        {"@type": "LocationFeatureSpecification", "name": "Cocina equipada"},
-        {"@type": "LocationFeatureSpecification", "name": "Smart TV"},
-        {"@type": "LocationFeatureSpecification", "name": "Jardín privado"}
+        {"@type": "LocationFeatureSpecification", "name": "WiFi gratuito", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Parking privado", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Chimenea de pellets", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Cocina equipada", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Smart TV", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Jardín privado", "value": true}
       ],
       "numberOfRooms": 3,
+      "occupancy": {
+        "@type": "QuantitativeValue",
+        "maxValue": 7
+      },
       "petsAllowed": false,
-      "priceRange": "€€"
+      "priceRange": "100-200€",
+      "checkinTime": "18:00",
+      "checkoutTime": "11:00",
+      "containsPlace": [
+        {
+          "@type": "Room",
+          "name": "El Tejo",
+          "description": "Habitación principal con cama King size y vistas al valle",
+          "bed": {"@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1}
+        },
+        {
+          "@type": "Room",
+          "name": "La Pumarada",
+          "description": "Habitación doble con cama de matrimonio y vistas al campo",
+          "bed": {"@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1}
+        },
+        {
+          "@type": "Room",
+          "name": "La Lechuza",
+          "description": "Habitación familiar con litera",
+          "bed": {"@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1}
+        }
+      ]
     }
     </script>
   </head>
