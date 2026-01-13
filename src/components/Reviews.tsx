@@ -1,8 +1,11 @@
-import { Star, Quote } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Reviews = () => {
   const { t, language } = useLanguage();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const reviews = [
     {
@@ -43,10 +46,43 @@ const Reviews = () => {
     },
   ];
 
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % reviews.length);
+  }, [reviews.length]);
+
+  const goToPrev = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+  }, [reviews.length]);
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+    setIsAutoPlaying(false);
+  };
+
+  // Auto-play carousel
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const interval = setInterval(goToNext, 6000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, goToNext]);
+
+  // Resume auto-play after user interaction
+  useEffect(() => {
+    if (isAutoPlaying) return;
+    const timeout = setTimeout(() => setIsAutoPlaying(true), 10000);
+    return () => clearTimeout(timeout);
+  }, [isAutoPlaying]);
+
+  const handleNavClick = (direction: 'prev' | 'next') => {
+    setIsAutoPlaying(false);
+    if (direction === 'prev') goToPrev();
+    else goToNext();
+  };
+
   return (
     <section 
       id="opiniones" 
-      className="py-28 bg-card"
+      className="py-28 bg-card overflow-hidden"
       aria-label={language === "es" ? "Opiniones de huéspedes" : "Guest reviews"}
       itemScope
       itemType="https://schema.org/Product"
@@ -96,72 +132,115 @@ const Reviews = () => {
           </p>
         </div>
 
-        {/* Reviews Grid */}
-        <div 
-          className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
-          itemProp="review"
-        >
-          {reviews.map((review, index) => (
-            <article
-              key={index}
-              className="bg-background rounded-sm p-8 shadow-rustic relative group hover:shadow-rustic-lg transition-all duration-500"
-              itemScope
-              itemType="https://schema.org/Review"
+        {/* Reviews Carousel */}
+        <div className="relative max-w-4xl mx-auto" itemProp="review">
+          {/* Navigation Arrows */}
+          <button
+            onClick={() => handleNavClick('prev')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-12 h-12 rounded-full bg-background shadow-lg flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            aria-label={language === "es" ? "Reseña anterior" : "Previous review"}
+          >
+            <ChevronLeft size={24} />
+          </button>
+          
+          <button
+            onClick={() => handleNavClick('next')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 w-12 h-12 rounded-full bg-background shadow-lg flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            aria-label={language === "es" ? "Siguiente reseña" : "Next review"}
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          {/* Carousel Container */}
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              <Quote
-                size={40}
-                className="absolute top-6 right-6 text-primary/10 group-hover:text-primary/20 transition-colors duration-500"
-                aria-hidden="true"
+              {reviews.map((review, index) => (
+                <article
+                  key={index}
+                  className="w-full flex-shrink-0 px-4"
+                  itemScope
+                  itemType="https://schema.org/Review"
+                  aria-hidden={index !== currentIndex}
+                >
+                  <div className="bg-background rounded-sm p-8 md:p-12 shadow-rustic relative">
+                    <Quote
+                      size={60}
+                      className="absolute top-6 right-6 text-primary/10"
+                      aria-hidden="true"
+                    />
+                    
+                    {/* Rating */}
+                    <div 
+                      className="flex gap-1 mb-6 justify-center"
+                      itemProp="reviewRating"
+                      itemScope
+                      itemType="https://schema.org/Rating"
+                    >
+                      <meta itemProp="worstRating" content="1" />
+                      <meta itemProp="bestRating" content="5" />
+                      <meta itemProp="ratingValue" content={String(review.rating)} />
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          size={20}
+                          className="text-primary fill-primary"
+                          aria-hidden="true"
+                        />
+                      ))}
+                    </div>
+
+                    {/* Text */}
+                    <p className="font-body text-foreground/90 text-lg md:text-xl leading-relaxed mb-8 italic text-center max-w-2xl mx-auto" itemProp="reviewBody">
+                      &quot;{review.text}&quot;
+                    </p>
+
+                    {/* Author */}
+                    <div 
+                      className="flex items-center justify-center gap-4"
+                      itemProp="author"
+                      itemScope
+                      itemType="https://schema.org/Person"
+                    >
+                      <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center" aria-hidden="true">
+                        <span className="font-display text-primary text-lg font-semibold">
+                          {review.avatar}
+                        </span>
+                      </div>
+                      <div className="text-left">
+                        <p className="font-display text-foreground font-medium text-lg" itemProp="name">
+                          {review.name}
+                        </p>
+                        <p className="font-body text-muted-foreground text-sm" itemProp="datePublished">
+                          {review.date}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-3 mt-8" role="tablist">
+            {reviews.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-primary w-8"
+                    : "bg-primary/30 hover:bg-primary/50"
+                }`}
+                aria-label={`${language === "es" ? "Ir a reseña" : "Go to review"} ${index + 1}`}
+                aria-selected={index === currentIndex}
+                role="tab"
               />
-              
-              {/* Rating */}
-              <div 
-                className="flex gap-1 mb-4"
-                itemProp="reviewRating"
-                itemScope
-                itemType="https://schema.org/Rating"
-              >
-                <meta itemProp="worstRating" content="1" />
-                <meta itemProp="bestRating" content="5" />
-                <meta itemProp="ratingValue" content={String(review.rating)} />
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={16}
-                    className="text-primary fill-primary"
-                    aria-hidden="true"
-                  />
-                ))}
-              </div>
-
-              {/* Text */}
-              <p className="font-body text-foreground/90 text-lg leading-relaxed mb-6 italic" itemProp="reviewBody">
-                &quot;{review.text}&quot;
-              </p>
-
-              {/* Author */}
-              <div 
-                className="flex items-center gap-4"
-                itemProp="author"
-                itemScope
-                itemType="https://schema.org/Person"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center" aria-hidden="true">
-                  <span className="font-display text-primary text-sm font-semibold">
-                    {review.avatar}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-display text-foreground font-medium" itemProp="name">
-                    {review.name}
-                  </p>
-                  <p className="font-body text-muted-foreground text-sm" itemProp="datePublished">
-                    {review.date}
-                  </p>
-                </div>
-              </div>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* CTA */}
