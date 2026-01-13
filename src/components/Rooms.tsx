@@ -50,7 +50,7 @@ const Rooms = () => {
       views: language === "es" ? "Vistas al valle" : "Valley views",
       description: t("rooms.tejo.description"),
       cover: habTejo,
-      images: [habTejo, tejo01, tejo02, tejo03, tejo04, tejo05],
+      images: [habTejo, tejo02, tejo03, tejo04, tejo05],
       icon: Mountain,
     },
     {
@@ -84,6 +84,7 @@ const Rooms = () => {
   const openDetails = (room: Room, e: React.MouseEvent) => {
     e.stopPropagation();
     setDetailRoom(room);
+    setCurrentIndex(0);
   };
 
   const closeSlideshow = () => {
@@ -93,6 +94,7 @@ const Rooms = () => {
 
   const closeDetails = () => {
     setDetailRoom(null);
+    setCurrentIndex(0);
   };
 
   const goNext = () => {
