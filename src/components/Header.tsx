@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import logoLechuza from "@/assets/logo-lechuza.png";
+import LanguageSelector from "@/components/LanguageSelector";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLogoClicked, setIsLogoClicked] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,11 +24,11 @@ const Header = () => {
   };
 
   const navLinks = [
-    { href: "#inicio", label: "Inicio", isExternal: false },
-    { href: "#habitaciones", label: "Habitaciones", isExternal: false },
-    { href: "#opiniones", label: "Opiniones", isExternal: false },
-    { href: "/como-llegar", label: "Cómo llegar", isExternal: true },
-    { href: "/blog", label: "Blog", isExternal: true },
+    { href: "#inicio", label: t("nav.home"), isExternal: false },
+    { href: "#habitaciones", label: t("nav.rooms"), isExternal: false },
+    { href: "#opiniones", label: t("nav.reviews"), isExternal: false },
+    { href: "/como-llegar", label: t("nav.directions"), isExternal: true },
+    { href: "/blog", label: t("nav.blog"), isExternal: true },
   ];
 
   return (
@@ -51,7 +54,7 @@ const Header = () => {
               isLogoClicked ? "scale-150" : "hover:scale-110"
             }`}
           />
-          <span>La Cabaña de la Lechuza</span>
+          <span className="hidden sm:inline">La Cabaña de la Lechuza</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -61,8 +64,6 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className={`font-body text-sm font-medium tracking-wider uppercase transition-all relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all hover:after:w-full ${
                   isScrolled ? "text-foreground" : "text-background"
                 }`}
@@ -81,6 +82,7 @@ const Header = () => {
               </a>
             )
           ))}
+          <LanguageSelector isScrolled={isScrolled} />
           <a
             href="#contacto"
             className={`px-6 py-3 rounded-sm font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 ${
@@ -89,19 +91,22 @@ const Header = () => {
                 : "bg-background/95 text-foreground hover:bg-background shadow-lg"
             }`}
           >
-            Reservar
+            {t("nav.book")}
           </a>
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`lg:hidden p-2 transition-colors ${
-            isScrolled ? "text-foreground" : "text-background"
-          }`}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="lg:hidden flex items-center gap-3">
+          <LanguageSelector isScrolled={isScrolled} />
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`p-2 transition-colors ${
+              isScrolled ? "text-foreground" : "text-background"
+            }`}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -113,8 +118,6 @@ const Header = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="font-body text-foreground text-lg font-medium py-3 border-b border-border/30 hover:text-primary transition-colors"
                 >
@@ -136,7 +139,7 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(false)}
               className="mt-4 px-6 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider text-center shadow-md"
             >
-              Reservar
+              {t("nav.book")}
             </a>
           </div>
         </nav>
