@@ -57,7 +57,7 @@ const Rooms = () => {
       name: t("rooms.pumarada.name"),
       bedType: language === "es" ? "Matrimonio (135x190)" : "Double (135x190)",
       capacity: language === "es" ? "2 personas" : "2 guests",
-      views: language === "es" ? "Ambiente luminoso" : "Bright atmosphere",
+      views: language === "es" ? "Vistas al valle" : "Valley views",
       description: t("rooms.pumarada.description"),
       cover: habPumarada,
       images: [habPumarada, pumarada01, pumarada02, pumarada03, pumarada04],
