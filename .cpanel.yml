@@ -1,5 +1,10 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/ncyzekbm/public_html/
+    - cd /home/ncyzekbm/repos/lechuzaruralasturias
+    - source /home/ncyzekbm/nodevenv/repos/lechuzaruralasturias/20/bin/activate
+    - npm ci --only=production --prefix /home/ncyzekbm/repos/lechuzaruralasturias
+    - npm run build --prefix /home/ncyzekbm/repos/lechuzaruralasturias
     - /bin/rm -rf $DEPLOYPATH/*
-    - /bin/cp -R dist/* $DEPLOYPATH
+    - /bin/cp -R /home/ncyzekbm/repos/lechuzaruralasturias/dist/* $DEPLOYPATH/
+    - echo "✅ Despliegue EXITOSO: $(date)"
