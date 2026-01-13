@@ -90,9 +90,9 @@ const ComoLlegar = () => {
                     <span className="w-2 h-2 bg-primary rounded-full"></span>
                     Several natural passing places to meet other vehicles
                   </li>
-                  
-                  <li className="flex items-center gap-2">No through traffic, only residents and visitors.<span className="w-2 h-2 bg-primary rounded-full"></span>
-                    No through traffic
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-primary rounded-full"></span>
+                    Low traffic (only residents and guests)
                   </li>
                 </ul>
               </div>
@@ -314,7 +314,7 @@ const ComoLlegar = () => {
               <h4 className="font-display text-lg text-foreground mb-4">Características del camino:</h4>
               <ul className="space-y-2 font-body text-muted-foreground">
                 <li className="flex items-center gap-2">
-                  
+                  <span className="w-2 h-2 bg-primary rounded-full"></span>
                   Carretera asfaltada pero estrecha
                 </li>
                 <li className="flex items-center gap-2">
