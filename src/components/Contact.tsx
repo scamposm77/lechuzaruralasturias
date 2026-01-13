@@ -98,51 +98,6 @@ const Contact = () => {
               <strong className="text-foreground">Susana</strong>{t("contact.hostIntro")}
             </p>
 
-            {/* WhatsApp Button and Social Media */}
-            <div className="mb-8 flex flex-wrap items-center gap-4">
-              <button
-                onClick={openWhatsApp}
-                className="flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-[#20BA5C] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
-                aria-label={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
-              >
-                <MessageCircle className="w-5 h-5" />
-                {t("contact.whatsapp")}
-              </button>
-              
-              {/* Social Media Icons */}
-              <a
-                href="https://www.instagram.com/lechuza.casaruralasturias"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-14 h-14 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
-                title={language === "es" ? "Síguenos en Instagram" : "Follow us on Instagram"}
-                aria-label="Instagram"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=61586207769517&mibextid=wwXIfr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-14 h-14 bg-[#1877F2] rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
-                title={language === "es" ? "Síguenos en Facebook" : "Follow us on Facebook"}
-                aria-label="Facebook"
-              >
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.airbnb.es/rooms/1232063912950498409"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-14 h-14 bg-[#FF5A5F] rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
-                title={language === "es" ? "Ver en Airbnb" : "View on Airbnb"}
-                aria-label="Airbnb"
-              >
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12.001 18.275c-.69 0-1.283-.244-1.752-.708-.469-.469-.703-1.064-.703-1.752 0-.703.244-1.299.703-1.768.469-.469 1.064-.703 1.752-.703.703 0 1.299.234 1.768.703.469.469.703 1.064.703 1.768 0 .688-.234 1.283-.703 1.752-.469.464-1.064.708-1.768.708z"/>
-                </svg>
-              </a>
-            </div>
 
             <div 
               className="space-y-8"
@@ -279,6 +234,40 @@ const Contact = () => {
                 {t("contact.send")}
                 <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" aria-hidden="true" />
               </button>
+
+              {/* WhatsApp and Social Media */}
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+                <button
+                  type="button"
+                  onClick={openWhatsApp}
+                  className="flex items-center justify-center gap-3 px-6 py-3 bg-[#25D366] text-white rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-[#20BA5C] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                  aria-label={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  {t("contact.whatsapp")}
+                </button>
+                
+                <a
+                  href="https://www.instagram.com/lechuza.casaruralasturias"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  title={language === "es" ? "Síguenos en Instagram" : "Follow us on Instagram"}
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61586207769517&mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-[#1877F2] rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  title={language === "es" ? "Síguenos en Facebook" : "Follow us on Facebook"}
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+              </div>
             </form>
           </div>
         </div>
