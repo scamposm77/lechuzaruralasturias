@@ -118,6 +118,15 @@ const Hero = () => {
           {t("hero.description")}
         </p>
         
+        {/* Price Badge */}
+        <div className="mb-8 animate-fade-up opacity-0 delay-350">
+          <span className="inline-flex items-center gap-2 px-6 py-3 bg-primary/90 text-primary-foreground rounded-full font-body text-sm md:text-base font-semibold shadow-lg backdrop-blur-sm">
+            <span className="text-accent font-display text-lg md:text-xl">120€</span>
+            <span className="opacity-90">/</span>
+            <span>{language === "es" ? "noche · Sin comisiones" : "night · No fees"}</span>
+          </span>
+        </div>
+        
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up opacity-0 delay-400">
           <a
             href="#contacto"

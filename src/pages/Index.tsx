@@ -31,22 +31,22 @@ const Index = () => {
 
   const seo = {
     es: {
-      title: "La Cabaña de la Lechuza | Casa Rural con Encanto en Cabranes, Asturias",
-      description: "Alquiler de casa rural en La Roza, Cabranes (Asturias). Alojamiento para 7 personas con 3 habitaciones, salón con chimenea de pellets, cocina equipada y 1500m² de jardín privado con manzanos. Turismo rural en la Comarca de la Sidra.",
-      keywords: "casa rural Asturias, alojamiento rural Cabranes, turismo rural Comarca de la Sidra, vacaciones Asturias, casa rural familiar, escapada rural, alquiler casa rural, sidra asturiana, naturaleza Asturias, La Roza",
-      ogTitle: "La Cabaña de la Lechuza - Casa Rural con Encanto en Asturias",
-      ogDescription: "Escapada rural perfecta en la Comarca de la Sidra. Casa rural para 7 personas con chimenea, jardín y vistas panorámicas. ¡Reserva tu estancia!",
-      twitterTitle: "La Cabaña de la Lechuza - Casa Rural en Asturias",
-      twitterDescription: "Casa rural con encanto en la Comarca de la Sidra. 7 plazas, 3 habitaciones, chimenea y jardín privado.",
+      title: "Casa Rural Cabranes Asturias | La Cabaña de la Lechuza - 7 Plazas",
+      description: "Alquila casa rural completa en Cabranes con jardín privado, 3 hab y chimenea. Comarca Sidra. Reserva sin comisiones.",
+      keywords: "casa rural Asturias, alojamiento rural Cabranes, turismo rural Comarca de la Sidra, vacaciones Asturias, casa rural familiar, escapada rural, alquiler casa rural, sidra asturiana, naturaleza Asturias, La Roza, reserva sin comisiones",
+      ogTitle: "Casa Rural Cabranes Asturias | La Cabaña de la Lechuza - 7 Plazas",
+      ogDescription: "Alquila casa rural completa en Cabranes con jardín privado, 3 hab y chimenea. Comarca Sidra. Reserva sin comisiones desde 120€/noche.",
+      twitterTitle: "Casa Rural Cabranes | La Cabaña de la Lechuza",
+      twitterDescription: "Casa rural 7 plazas en Cabranes, Asturias. Jardín privado, 3 hab, chimenea. Reserva sin comisiones desde 120€.",
     },
     en: {
-      title: "La Cabaña de la Lechuza | Charming Rural House in Cabranes, Asturias, Spain",
-      description: "Rural house rental in La Roza, Cabranes (Asturias, Spain). Accommodation for 7 guests with 3 bedrooms, living room with pellet fireplace, equipped kitchen and 1500m² private garden with apple trees. Rural tourism in the Cider Region.",
-      keywords: "rural house Asturias, rural accommodation Spain, Cider Region tourism, Asturias holidays, family rural house, rural getaway, house rental Asturias, Asturian cider, nature Spain, La Roza Cabranes",
-      ogTitle: "La Cabaña de la Lechuza - Charming Rural House in Asturias, Spain",
-      ogDescription: "Perfect rural getaway in the Cider Region. Rural house for 7 guests with fireplace, garden and panoramic views. Book your stay!",
-      twitterTitle: "La Cabaña de la Lechuza - Rural House in Asturias, Spain",
-      twitterDescription: "Charming rural house in the Cider Region. 7 guests, 3 bedrooms, fireplace and private garden.",
+      title: "Rural House Cabranes Asturias Spain | La Cabaña de la Lechuza - 7 Guests",
+      description: "Rent complete rural house in Cabranes with private garden, 3 bedrooms and fireplace. Cider Region. Book without fees.",
+      keywords: "rural house Asturias, rural accommodation Spain, Cider Region tourism, Asturias holidays, family rural house, rural getaway, house rental Asturias, Asturian cider, nature Spain, La Roza Cabranes, no booking fees",
+      ogTitle: "Rural House Cabranes Asturias Spain | La Cabaña de la Lechuza - 7 Guests",
+      ogDescription: "Rent complete rural house in Cabranes with private garden, 3 bedrooms and fireplace. Cider Region. Book without fees from €120/night.",
+      twitterTitle: "Rural House Cabranes | La Cabaña de la Lechuza",
+      twitterDescription: "Rural house 7 guests in Cabranes, Asturias Spain. Private garden, 3 bedrooms, fireplace. Book without fees from €120.",
     },
   };
 
