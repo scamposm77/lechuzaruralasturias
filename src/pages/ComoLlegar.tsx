@@ -352,11 +352,7 @@ const ComoLlegar = () => {
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <span>Es más fácil de lo que parece: con calma, todo fluye</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>
-                </span>
-                </li>
+                
               </ul>
             </div>
           </section>
