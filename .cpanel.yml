@@ -1,16 +1,13 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/ncyzekbm/public_html/
-    - cd /home/ncyzekbm/repos/lechuzaruralasturias
-    - echo "== Deploy start: $(date) =="
-    - pwd
-    - ls -la
-    - if [ -f /home/ncyzekbm/nodevenv/repos/lechuzaruralasturias/20/bin/activate ]; then source /home/ncyzekbm/nodevenv/repos/lechuzaruralasturias/20/bin/activate; fi
-    - node -v || true
-    - npm -v || true
-    - npm ci
-    - npm run build
-    - /bin/rm -rf $DEPLOYPATH/*
-    - /bin/cp -R dist/* $DEPLOYPATH/
-    - if [ -f dist/.htaccess ]; then /bin/cp dist/.htaccess $DEPLOYPATH/; fi
-    - echo "Despliegue EXITOSO: $(date)"
+    - DEPLOYPATH="/home/ncyzekbm/public_html"
+    - echo "INICIANDO DESPLIEGUE: $(date)"
+    - echo "1. Limpiando directorio destino..."
+    - rm -rf "$DEPLOYPATH"/*
+    - echo "2. Copiando archivos desde dist/..."
+    - cp -R dist/* "$DEPLOYPATH"/
+    - echo "3. Fijando permisos..."
+    - chmod 644 "$DEPLOYPATH"/*
+    - find "$DEPLOYPATH" -type d -exec chmod 755 {} \;
+    - echo "DESPLIEGUE COMPLETADO: $(date)"
+    - echo "Commit: $(git log -1 --pretty=format:'%H')" > "$DEPLOYPATH/deploy-verificacion.txt""
