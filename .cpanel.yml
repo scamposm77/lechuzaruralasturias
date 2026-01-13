@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ncyzekbm/public_html/
+    - npm ci --only=production
+    - npm run build
+    - rm -rf $DEPLOYPATH/*
+    - cp -r dist/* $DEPLOYPATH
