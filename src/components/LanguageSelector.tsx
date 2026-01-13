@@ -11,7 +11,7 @@ const LanguageSelector = ({ isScrolled = false }: LanguageSelectorProps) => {
     <div className="flex items-center gap-1">
       <button
         onClick={() => setLanguage("es")}
-        className={`w-8 h-6 rounded overflow-hidden transition-all duration-300 ${
+        className={`w-6 h-[18px] rounded-sm overflow-hidden transition-all duration-300 ${
           language === "es" 
             ? "ring-2 ring-primary scale-110" 
             : "opacity-60 hover:opacity-100"
@@ -27,7 +27,7 @@ const LanguageSelector = ({ isScrolled = false }: LanguageSelectorProps) => {
       </button>
       <button
         onClick={() => setLanguage("en")}
-        className={`w-8 h-6 rounded overflow-hidden transition-all duration-300 ${
+        className={`w-6 h-[18px] rounded-sm overflow-hidden transition-all duration-300 ${
           language === "en" 
             ? "ring-2 ring-primary scale-110" 
             : "opacity-60 hover:opacity-100"
