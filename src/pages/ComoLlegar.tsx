@@ -333,9 +333,7 @@ const ComoLlegar = () => {
                   <span className="w-2 h-2 bg-primary rounded-full"></span>
                   Poca circulación (solo residentes y huéspedes)
                 </li>
-                <li className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full"></span>
-                  Sin tráfico de paso
-                </li>
+                
               </ul>
             </div>
 
@@ -395,10 +393,7 @@ const ComoLlegar = () => {
             </p>
 
             <ul className="space-y-2 font-body text-muted-foreground mb-6">
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
-                Salida desde Villaviciosa
-              </li>
+              
               <li className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-primary rounded-full"></span>
                 Desvíos y referencias visuales claras
