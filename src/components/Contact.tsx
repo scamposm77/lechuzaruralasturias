@@ -235,23 +235,23 @@ const Contact = () => {
                 <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" aria-hidden="true" />
               </button>
 
-              {/* WhatsApp and Social Media */}
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+              {/* WhatsApp and Social Media - Todos en la misma línea en móvil */}
+              <div className="mt-6 flex items-center justify-center gap-3">
                 <button
                   type="button"
                   onClick={openWhatsApp}
-                  className="flex items-center justify-center gap-3 px-6 py-3 bg-[#25D366] text-white rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-[#20BA5C] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                  className="flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] text-white rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-[#20BA5C] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                   aria-label={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
                 >
                   <MessageCircle className="w-5 h-5" />
-                  {t("contact.whatsapp")}
+                  <span className="hidden sm:inline">{t("contact.whatsapp")}</span>
                 </button>
                 
                 <a
                   href="https://www.instagram.com/lechuza.casaruralasturias"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="w-12 h-12 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl flex-shrink-0"
                   title={language === "es" ? "Síguenos en Instagram" : "Follow us on Instagram"}
                   aria-label="Instagram"
                 >
@@ -261,7 +261,7 @@ const Contact = () => {
                   href="https://www.facebook.com/profile.php?id=61586207769517&mibextid=wwXIfr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-[#1877F2] rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="w-12 h-12 bg-[#1877F2] rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl flex-shrink-0"
                   title={language === "es" ? "Síguenos en Facebook" : "Follow us on Facebook"}
                   aria-label="Facebook"
                 >

@@ -1,8 +1,48 @@
 // ============================================
-// BLOG POSTS - EDITA ESTE ARCHIVO PARA AÑADIR/MODIFICAR POSTS
+// 📝 BLOG POSTS - GESTIÓN DE CONTENIDO
 // ============================================
-// Para añadir un nuevo post, copia la estructura de un post existente
-// y modifica los campos según necesites.
+// 
+// 🚀 CÓMO GESTIONAR EL BLOG DESDE TU HOSTING:
+// 
+// 1. AÑADIR UN NUEVO POST:
+//    - Copia la estructura de un post existente (todo entre { y },)
+//    - Pégala al PRINCIPIO del array blogPosts (para que aparezca primero)
+//    - Modifica los campos según tu contenido
+//    - Sube el archivo a tu hosting vía FTP
+//
+// 2. CAMPOS OBLIGATORIOS:
+//    - id: número único ("6", "7", etc.)
+//    - slug: URL amigable (sin espacios, sin acentos, con guiones)
+//    - title: título del post
+//    - excerpt: resumen corto (aparece en la lista del blog)
+//    - content: contenido completo en HTML
+//    - coverImage: ruta de la imagen (ej: "/blog/mi-imagen.jpg")
+//    - author: nombre del autor
+//    - publishedAt: fecha en formato "2025-01-15"
+//    - tags: etiquetas para categorizar (array de strings)
+//
+// 3. FORMATO HTML PARA CONTENT:
+//    - <h2>Título de sección</h2>
+//    - <p>Párrafo de texto</p>
+//    - <strong>Texto en negrita</strong>
+//    - <em>Texto en cursiva</em>
+//    - <ul><li>Elemento de lista</li></ul>
+//    - <a href="url">Enlace</a>
+//
+// 4. IMÁGENES:
+//    - Sube las imágenes a la carpeta /blog/ en tu hosting
+//    - Usa rutas como: "/blog/nombre-imagen.jpg"
+//    - Tamaño recomendado: 1200x630 px (formato 16:9)
+//
+// 5. MODIFICAR UN POST EXISTENTE:
+//    - Busca el post por su slug o título
+//    - Edita los campos que necesites
+//    - Guarda y sube el archivo
+//
+// 6. ELIMINAR UN POST:
+//    - Borra todo el bloque del post (desde { hasta },)
+//    - Guarda y sube el archivo
+//
 // ============================================
 
 export interface BlogPost {

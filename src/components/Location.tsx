@@ -220,7 +220,7 @@ const Location = () => {
               />
             </div>
             <a
-              href="https://www.google.com/maps/place/La+Roza,+Cabranes,+Asturias/@43.4083,-5.4169,15z"
+              href="https://maps.app.goo.gl/RAUYH5vjUNvub4Nn9"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 py-3 px-6 bg-primary text-primary-foreground rounded-lg font-body text-sm font-medium hover:bg-primary/90 transition-colors"
