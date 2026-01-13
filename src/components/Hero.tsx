@@ -93,18 +93,18 @@ const Hero = () => {
       <div className="absolute inset-0 grain pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center pt-24 md:pt-20">
+      <div className="relative z-10 container mx-auto px-4 md:px-6 text-center pt-16 md:pt-12">
         <h1 
-          className="font-display text-background text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-4 text-shadow animate-fade-up opacity-0 delay-100"
+          className="font-display text-background text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-3 md:mb-4 text-shadow animate-fade-up opacity-0 delay-100"
           itemProp="name"
         >
           {t("hero.title")}
           <span className="block italic text-accent">{t("hero.titleAccent")}</span>
         </h1>
 
-        <div className="inline-block mb-8 animate-fade-up opacity-0 delay-200">
+        <div className="inline-block mb-4 md:mb-6 animate-fade-up opacity-0 delay-200">
           <span 
-            className="font-body text-background/80 text-xs md:text-sm uppercase tracking-[0.4em] px-4 py-2 border border-background/30 rounded-full backdrop-blur-sm bg-background/5"
+            className="font-body text-background/80 text-[10px] md:text-sm uppercase tracking-[0.3em] md:tracking-[0.4em] px-3 md:px-4 py-1.5 md:py-2 border border-background/30 rounded-full backdrop-blur-sm bg-background/5"
             itemProp="areaServed"
           >
             {t("hero.location")}
@@ -112,33 +112,33 @@ const Hero = () => {
         </div>
         
         <p 
-          className="font-body text-background/85 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-up opacity-0 delay-300"
+          className="font-body text-background/85 text-sm md:text-lg lg:text-xl max-w-2xl lg:max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed animate-fade-up opacity-0 delay-300"
           itemProp="description"
         >
           {t("hero.description")}
         </p>
         
         {/* Price Badge */}
-        <div className="mb-8 animate-fade-up opacity-0 delay-350">
-          <span className="inline-flex items-center gap-2 px-6 py-3 bg-primary/90 text-primary-foreground rounded-full font-body text-sm md:text-base font-semibold shadow-lg backdrop-blur-sm">
+        <div className="mb-6 md:mb-8 animate-fade-up opacity-0 delay-350">
+          <span className="inline-flex items-center gap-1.5 md:gap-2 px-4 md:px-6 py-2 md:py-3 bg-primary/90 text-primary-foreground rounded-full font-body text-xs md:text-base font-semibold shadow-lg backdrop-blur-sm">
             <span className="opacity-90">{language === "es" ? "Desde" : "From"}</span>
-            <span className="text-accent font-display text-lg md:text-xl">120€</span>
+            <span className="text-accent font-display text-base md:text-xl">120€</span>
             <span className="opacity-90">/</span>
             <span>{language === "es" ? "noche · Sin comisiones" : "night · No fees"}</span>
           </span>
         </div>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up opacity-0 delay-400">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 animate-fade-up opacity-0 delay-400">
           <a
             href="#contacto"
-            className="group px-10 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+            className="group px-8 md:px-10 py-3 md:py-4 bg-primary text-primary-foreground rounded-sm font-body text-xs md:text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
             aria-label={language === "es" ? "Ir al formulario de reserva" : "Go to booking form"}
           >
             {t("hero.bookNow")}
           </a>
           <a
             href="#espacios"
-            className="px-10 py-4 bg-background/10 text-background border border-background/40 rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-background/20 transition-all duration-300 backdrop-blur-sm"
+            className="px-8 md:px-10 py-3 md:py-4 bg-background/10 text-background border border-background/40 rounded-sm font-body text-xs md:text-sm font-semibold uppercase tracking-wider hover:bg-background/20 transition-all duration-300 backdrop-blur-sm"
             aria-label={language === "es" ? "Ver más información sobre la casa" : "Learn more about the house"}
           >
             {t("hero.learnMore")}
@@ -147,7 +147,7 @@ const Hero = () => {
 
         {/* Property Stats */}
         <div 
-          className="mt-20 grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 max-w-4xl mx-auto animate-fade-up opacity-0 delay-500"
+          className="mt-10 md:mt-16 grid grid-cols-5 gap-2 md:gap-8 max-w-4xl mx-auto animate-fade-up opacity-0 delay-500"
           itemProp="amenityFeature"
           itemScope
           itemType="https://schema.org/LocationFeatureSpecification"
@@ -155,13 +155,13 @@ const Hero = () => {
           {stats.map((stat) => (
             <div key={stat.label} className="text-center group">
               <p 
-                className="font-display text-background text-4xl md:text-5xl mb-2 group-hover:text-accent transition-colors duration-300"
+                className="font-display text-background text-2xl md:text-5xl mb-1 md:mb-2 group-hover:text-accent transition-colors duration-300"
                 itemProp="value"
               >
                 {stat.value}
               </p>
               <p 
-                className="font-body text-background/60 text-xs uppercase tracking-[0.2em]"
+                className="font-body text-background/60 text-[9px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.2em] leading-tight"
                 itemProp="name"
               >
                 {stat.label}
