@@ -93,7 +93,7 @@ const Hero = () => {
       <div className="absolute inset-0 grain pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center pt-20 md:pt-0">
+      <div className="relative z-10 container mx-auto px-6 text-center pt-24 md:pt-20">
         <h1 
           className="font-display text-background text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-4 text-shadow animate-fade-up opacity-0 delay-100"
           itemProp="name"
