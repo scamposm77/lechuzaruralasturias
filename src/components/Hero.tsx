@@ -93,16 +93,16 @@ const Hero = () => {
       <div className="absolute inset-0 grain pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-6 text-center pt-20 md:pt-8">
+      <div className="relative z-10 container mx-auto px-4 md:px-6 text-center pt-20 md:pt-4">
         <h1 
-          className="font-display text-background text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-2 md:mb-4 text-shadow animate-fade-up opacity-0 delay-100"
+          className="font-display text-background text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-2 md:mb-3 text-shadow animate-fade-up opacity-0 delay-100"
           itemProp="name"
         >
           {t("hero.title")}
           <span className="block italic text-accent">{t("hero.titleAccent")}</span>
         </h1>
 
-        <div className="inline-block mb-3 md:mb-6 animate-fade-up opacity-0 delay-200">
+        <div className="inline-block mb-3 md:mb-4 animate-fade-up opacity-0 delay-200">
           <span 
             className="font-body text-background/80 text-[10px] md:text-sm uppercase tracking-[0.3em] md:tracking-[0.4em] px-3 md:px-4 py-1.5 md:py-2 border border-background/30 rounded-full backdrop-blur-sm bg-background/5"
             itemProp="areaServed"
@@ -112,7 +112,7 @@ const Hero = () => {
         </div>
         
         <p 
-          className="font-body text-background/85 text-xs md:text-lg lg:text-xl max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-4 md:mb-8 leading-relaxed animate-fade-up opacity-0 delay-300 px-2 md:px-0"
+          className="font-body text-background/85 text-xs md:text-lg lg:text-xl max-w-xl md:max-w-4xl lg:max-w-5xl mx-auto mb-4 md:mb-6 leading-relaxed animate-fade-up opacity-0 delay-300 px-2 md:px-0"
           itemProp="description"
         >
           {t("hero.description")}
