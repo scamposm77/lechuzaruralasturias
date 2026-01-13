@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, ChevronLeft, ChevronRight, Images, Bed, Mountain, Users } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Images, Bed, Mountain, Users, Eye, User } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Habitación El Tejo
@@ -27,57 +27,72 @@ import lechuza05 from "@/assets/habitaciones/lechuza-05.jpg";
 
 type Room = {
   name: string;
-  subtitle: string;
+  bedType: string;
+  capacity: string;
+  views: string;
   description: string;
   cover: string;
   images: string[];
   icon: any;
-  features: string[];
 };
 
 const Rooms = () => {
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
+  const [detailRoom, setDetailRoom] = useState<Room | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const { t, language } = useLanguage();
 
   const rooms: Room[] = [
     {
       name: t("rooms.tejo.name"),
-      subtitle: t("rooms.tejo.subtitle"),
+      bedType: language === "es" ? "King size (160x200)" : "King size (160x200)",
+      capacity: language === "es" ? "2 personas" : "2 guests",
+      views: language === "es" ? "Vistas al valle" : "Valley views",
       description: t("rooms.tejo.description"),
       cover: habTejo,
       images: [habTejo, tejo01, tejo02, tejo03, tejo04, tejo05],
       icon: Mountain,
-      features: [t("rooms.tejo.bed"), t("rooms.tejo.stone"), t("rooms.tejo.views"), t("rooms.tejo.wardrobe")],
     },
     {
       name: t("rooms.pumarada.name"),
-      subtitle: t("rooms.pumarada.subtitle"),
+      bedType: language === "es" ? "Matrimonio (135x190)" : "Double (135x190)",
+      capacity: language === "es" ? "2 personas" : "2 guests",
+      views: language === "es" ? "Vistas al campo" : "Countryside views",
       description: t("rooms.pumarada.description"),
       cover: habPumarada,
       images: [habPumarada, pumarada01, pumarada02, pumarada03, pumarada04],
       icon: Bed,
-      features: [t("rooms.pumarada.bed"), t("rooms.pumarada.views"), t("rooms.pumarada.light"), t("rooms.pumarada.wardrobe")],
     },
     {
       name: t("rooms.lechuza.name"),
-      subtitle: t("rooms.lechuza.subtitle"),
+      bedType: language === "es" ? "Litera (90x190)" : "Bunk beds (90x190)",
+      capacity: language === "es" ? "2-3 personas" : "2-3 guests",
+      views: language === "es" ? "Ambiente luminoso" : "Bright atmosphere",
       description: t("rooms.lechuza.description"),
       cover: habLechuza,
       images: [habLechuza, lechuza01, lechuza02, lechuza03, lechuza04, lechuza05],
       icon: Users,
-      features: [t("rooms.lechuza.bunk"), t("rooms.lechuza.light"), t("rooms.lechuza.kids")],
     },
   ];
 
-  const openSlideshow = (room: Room) => {
+  const openSlideshow = (room: Room, e: React.MouseEvent) => {
+    e.stopPropagation();
     setSelectedRoom(room);
     setCurrentIndex(0);
+  };
+
+  const openDetails = (room: Room, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setDetailRoom(room);
   };
 
   const closeSlideshow = () => {
     setSelectedRoom(null);
     setCurrentIndex(0);
+  };
+
+  const closeDetails = () => {
+    setDetailRoom(null);
   };
 
   const goNext = () => {
@@ -95,7 +110,10 @@ const Rooms = () => {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowRight") goNext();
     if (e.key === "ArrowLeft") goPrev();
-    if (e.key === "Escape") closeSlideshow();
+    if (e.key === "Escape") {
+      closeSlideshow();
+      closeDetails();
+    }
   };
 
   return (
@@ -111,7 +129,7 @@ const Rooms = () => {
       
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <header className="text-center mb-20">
+        <header className="text-center mb-16">
           <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
             {t("rooms.subtitle")}
           </span>
@@ -128,19 +146,23 @@ const Rooms = () => {
           {rooms.map((room, index) => (
             <article
               key={room.name}
-              onClick={() => openSlideshow(room)}
-              className="group bg-background rounded-lg overflow-hidden card-shadow hover:hover-lift transition-all duration-500 text-left cursor-pointer"
+              className="group bg-background rounded-lg overflow-hidden card-shadow hover:hover-lift transition-all duration-500"
               itemScope
               itemType="https://schema.org/HotelRoom"
               itemProp="itemListElement"
             >
               <meta itemProp="position" content={String(index + 1)} />
-              <div className="aspect-[4/3] overflow-hidden relative">
+              
+              {/* Image with photo count badge */}
+              <div 
+                className="aspect-[4/3] overflow-hidden relative cursor-pointer"
+                onClick={(e) => openSlideshow(room, e)}
+              >
                 <img
                   src={room.cover}
                   alt={language === "es"
-                    ? `Habitación ${room.name} - ${room.subtitle} en casa rural La Cabaña de la Lechuza, Asturias`
-                    : `${room.name} Room - ${room.subtitle} at La Cabaña de la Lechuza rural house, Asturias`
+                    ? `Habitación ${room.name} - ${room.bedType} en casa rural La Cabaña de la Lechuza, Asturias`
+                    : `${room.name} Room - ${room.bedType} at La Cabaña de la Lechuza rural house, Asturias`
                   }
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
@@ -159,34 +181,121 @@ const Rooms = () => {
                     </span>
                   </div>
                 )}
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300 flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/90 px-4 py-2 rounded-full font-body text-sm text-foreground">
+                    {language === "es" ? "Ver fotos" : "View photos"}
+                  </span>
+                </div>
               </div>
               
+              {/* Content */}
               <div className="p-6">
-                <p className="font-body text-primary text-xs uppercase tracking-[0.2em] mb-2">
-                  {room.subtitle}
-                </p>
-                <h3 className="font-display text-foreground text-2xl mb-3" itemProp="name">
+                {/* Room name and bed type */}
+                <h3 className="font-display text-foreground text-2xl mb-1" itemProp="name">
                   {room.name}
                 </h3>
-                <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4" itemProp="description">
-                  {room.description}
+                <p className="font-body text-primary text-sm font-semibold mb-4">
+                  {room.bedType}
                 </p>
                 
-                <div className="flex flex-wrap gap-2" itemProp="amenityFeature">
-                  {room.features.map((feature) => (
-                    <span
-                      key={feature}
-                      className="px-3 py-1 bg-muted text-muted-foreground text-xs rounded-full font-body"
-                    >
-                      {feature}
-                    </span>
-                  ))}
+                {/* Info pills */}
+                <div className="flex flex-wrap gap-3 mb-5">
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <User className="w-4 h-4" />
+                    <span className="font-body text-sm">{room.capacity}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <Eye className="w-4 h-4" />
+                    <span className="font-body text-sm">{room.views}</span>
+                  </div>
                 </div>
+                
+                {/* View details button */}
+                <button
+                  onClick={(e) => openDetails(room, e)}
+                  className="w-full py-3 bg-muted hover:bg-primary hover:text-primary-foreground text-foreground rounded-sm font-body text-sm font-medium transition-all duration-300"
+                >
+                  {language === "es" ? "Ver detalles" : "View details"}
+                </button>
               </div>
             </article>
           ))}
         </div>
       </div>
+
+      {/* Details Modal */}
+      {detailRoom && (
+        <div 
+          className="fixed inset-0 z-50 bg-foreground/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
+          onClick={closeDetails}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+          role="dialog"
+          aria-modal="true"
+          aria-label={detailRoom.name}
+        >
+          <div 
+            className="bg-background rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-background border-b border-border p-6 flex items-center justify-between">
+              <div>
+                <h3 className="font-display text-foreground text-2xl">
+                  {detailRoom.name}
+                </h3>
+                <p className="font-body text-primary text-sm font-semibold">
+                  {detailRoom.bedType}
+                </p>
+              </div>
+              <button
+                onClick={closeDetails}
+                className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full"
+                aria-label={language === "es" ? "Cerrar" : "Close"}
+              >
+                <X size={24} strokeWidth={1.5} />
+              </button>
+            </div>
+            
+            {/* Modal Content */}
+            <div className="p-6">
+              {/* Quick info */}
+              <div className="flex flex-wrap gap-4 mb-6 pb-6 border-b border-border">
+                <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
+                  <User className="w-4 h-4 text-primary" />
+                  <span className="font-body text-sm">{detailRoom.capacity}</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
+                  <Eye className="w-4 h-4 text-primary" />
+                  <span className="font-body text-sm">{detailRoom.views}</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
+                  <Bed className="w-4 h-4 text-primary" />
+                  <span className="font-body text-sm">{detailRoom.bedType}</span>
+                </div>
+              </div>
+              
+              {/* Description */}
+              <p className="font-body text-muted-foreground leading-relaxed">
+                {detailRoom.description}
+              </p>
+              
+              {/* View photos button */}
+              <button
+                onClick={(e) => {
+                  closeDetails();
+                  openSlideshow(detailRoom, e);
+                }}
+                className="mt-6 w-full py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <Images className="w-5 h-5" />
+                {language === "es" ? `Ver ${detailRoom.images.length} fotos` : `View ${detailRoom.images.length} photos`}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Slideshow Modal */}
       {selectedRoom && (
@@ -242,8 +351,8 @@ const Rooms = () => {
           <img
             src={selectedRoom.images[currentIndex]}
             alt={language === "es"
-              ? `Habitación ${selectedRoom.name} - ${selectedRoom.subtitle} en casa rural Asturias - Foto ${currentIndex + 1}`
-              : `${selectedRoom.name} Room - ${selectedRoom.subtitle} in Asturias rural house - Photo ${currentIndex + 1}`
+              ? `Habitación ${selectedRoom.name} - ${selectedRoom.bedType} en casa rural Asturias - Foto ${currentIndex + 1}`
+              : `${selectedRoom.name} Room - ${selectedRoom.bedType} in Asturias rural house - Photo ${currentIndex + 1}`
             }
             className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
           />
