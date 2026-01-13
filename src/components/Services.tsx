@@ -18,129 +18,163 @@ import {
   BedDouble,
   Shirt,
 } from "lucide-react";
-
-const services = [
-  {
-    icon: UtensilsCrossed,
-    title: "Cocina Completa",
-    description: "Vitrocerámica, horno, microondas, cafetera manual de filtro, nevera y menaje completo (vajilla, cubertería y utensilios) para cocinar como en casa.",
-    image: cocinaEquipada,
-  },
-  {
-    icon: Flame,
-    title: "Salón Acogedor",
-    description: "Chimenea de pellets para el invierno, sofá cama doble, Smart TV con Chromecast y juegos de mesa para disfrutar en familia.",
-    image: salonChimenea,
-  },
-  {
-    icon: TreePine,
-    title: "Jardín y Porche",
-    description: "1.500m² de parcela privada con manzanos y tejo centenario. Gran porche cubierto con mesa para 10 comensales y balancín con vistas.",
-    image: jardinPorche,
-  },
-  {
-    icon: BedDouble,
-    title: "3 Dormitorios Dobles",
-    description: "Dormitorio 1: Cama King size. Dormitorio 2: Cama de matrimonio. Dormitorio 3: Litera con cama de matrimonio inferior. Ropa de cama incluida.",
-    image: ventanaVistas,
-  },
-  {
-    icon: MapPin,
-    title: "Asesoría Local",
-    description: "Te ayudamos con recomendaciones sobre actividades, restaurantes y sidrerías en la Comarca de la Sidra. Conocemos cada rincón.",
-    image: banoCompleto,
-  },
-  {
-    icon: Mountain,
-    title: "Rutas y Senderismo",
-    description: "Cercanía a P.R. AS-147, Senda del río Viacaba y el Camino de Santiago. Entorno natural privilegiado para explorar Asturias.",
-    image: vistaLejana,
-  },
-];
-
-const extras = [
-  { icon: Wifi, label: "WiFi gratuito en toda la casa" },
-  { icon: Car, label: "Parking privado junto a la casa" },
-  { icon: Tv, label: "Smart TV con Chromecast" },
-  { icon: Droplets, label: "Agua potable de manantial" },
-  { icon: Shirt, label: "Ropa de cama y toallas incluidas" },
-  { icon: Leaf, label: "Calefacción con chimenea de pellets" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t, language } = useLanguage();
+
+  const services = [
+    {
+      icon: UtensilsCrossed,
+      title: t("services.kitchen.title"),
+      description: t("services.kitchen.description"),
+      image: cocinaEquipada,
+    },
+    {
+      icon: Flame,
+      title: t("services.living.title"),
+      description: t("services.living.description"),
+      image: salonChimenea,
+    },
+    {
+      icon: TreePine,
+      title: t("services.garden.title"),
+      description: t("services.garden.description"),
+      image: jardinPorche,
+    },
+    {
+      icon: BedDouble,
+      title: t("services.bedrooms.title"),
+      description: t("services.bedrooms.description"),
+      image: ventanaVistas,
+    },
+    {
+      icon: MapPin,
+      title: t("services.local.title"),
+      description: t("services.local.description"),
+      image: banoCompleto,
+    },
+    {
+      icon: Mountain,
+      title: t("services.hiking.title"),
+      description: t("services.hiking.description"),
+      image: vistaLejana,
+    },
+  ];
+
+  const extras = [
+    { icon: Wifi, label: t("services.wifi") },
+    { icon: Car, label: t("services.parking") },
+    { icon: Tv, label: t("services.tv") },
+    { icon: Droplets, label: t("services.water") },
+    { icon: Shirt, label: t("services.linens") },
+    { icon: Leaf, label: t("services.heating") },
+  ];
+
   return (
-    <section id="servicios" aria-label="Servicios y comodidades de la casa rural" className="py-28 bg-background">
+    <section 
+      id="servicios" 
+      aria-label={language === "es" ? "Servicios y comodidades de la casa rural" : "Rural house services and amenities"} 
+      className="py-28 bg-background"
+      itemScope
+      itemType="https://schema.org/ItemList"
+    >
+      <meta itemProp="name" content={language === "es" ? "Servicios incluidos" : "Included services"} />
+      <meta itemProp="numberOfItems" content={String(services.length + extras.length)} />
+      
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <header className="text-center mb-20">
           <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
-            Servicios incluidos en tu estancia
+            {t("services.subtitle")}
           </span>
           <h2 className="font-display text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
-            Nuestros <span className="text-primary italic">Servicios</span>
+            {t("services.title")} <span className="text-primary italic">{t("services.titleAccent")}</span>
           </h2>
-          <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
-            Nuestra casa rural en Asturias está completamente equipada con WiFi, chimenea, cocina y parking privado. Disfruta de uso exclusivo del alojamiento y jardín.
+          <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto" itemProp="description">
+            {t("services.description")}
           </p>
         </header>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <article
               key={service.title}
               className="group relative overflow-hidden rounded-lg card-shadow hover:hover-lift transition-all duration-500"
+              itemScope
+              itemType="https://schema.org/Offer"
+              itemProp="itemListElement"
             >
+              <meta itemProp="position" content={String(index + 1)} />
               <div className="aspect-[16/10] overflow-hidden">
                 <img
                   src={service.image}
-                  alt={`${service.title} - Servicio de casa rural La Cabaña de la Lechuza en Asturias`}
+                  alt={language === "es"
+                    ? `${service.title} - Servicio de casa rural La Cabaña de la Lechuza en Asturias`
+                    : `${service.title} - Service at La Cabaña de la Lechuza rural house in Asturias`
+                  }
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
+                  itemProp="image"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/95 via-foreground/50 to-transparent flex flex-col justify-end p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 bg-primary rounded-full">
+                  <div className="p-2 bg-primary rounded-full" aria-hidden="true">
                     <service.icon className="w-4 h-4 text-primary-foreground" />
                   </div>
-                  <h3 className="font-display text-background text-xl">{service.title}</h3>
+                  <h3 className="font-display text-background text-xl" itemProp="name">{service.title}</h3>
                 </div>
-                <p className="font-body text-background/80 text-sm leading-relaxed">
+                <p className="font-body text-background/80 text-sm leading-relaxed" itemProp="description">
                   {service.description}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         {/* Extras Grid */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div 
+          className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+          itemScope
+          itemType="https://schema.org/ItemList"
+        >
+          <meta itemProp="name" content={language === "es" ? "Extras incluidos" : "Included extras"} />
           {extras.map((extra, index) => (
             <div
               key={index}
               className="flex items-center gap-3 p-4 bg-card rounded-lg card-shadow"
+              itemProp="itemListElement"
+              itemScope
+              itemType="https://schema.org/ListItem"
             >
-              <extra.icon className="w-5 h-5 text-primary flex-shrink-0" />
-              <span className="font-body text-foreground text-sm">{extra.label}</span>
+              <meta itemProp="position" content={String(index + 1)} />
+              <extra.icon className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
+              <span className="font-body text-foreground text-sm" itemProp="name">{extra.label}</span>
             </div>
           ))}
         </div>
 
         {/* CTA */}
         <div className="mt-20 text-center">
-          <div className="inline-block bg-card p-8 md:p-12 rounded-lg card-shadow">
-            <h3 className="font-display text-foreground text-2xl md:text-3xl mb-4">
-              ¡Reserva tu escapada rural en Asturias!
+          <div 
+            className="inline-block bg-card p-8 md:p-12 rounded-lg card-shadow"
+            itemScope
+            itemType="https://schema.org/Offer"
+          >
+            <h3 className="font-display text-foreground text-2xl md:text-3xl mb-4" itemProp="name">
+              {t("services.cta.title")}
             </h3>
-            <p className="font-body text-muted-foreground mb-6">
-              Alojamiento para 7 personas en la Comarca de la Sidra. Vive la auténtica experiencia del turismo rural asturiano.
+            <p className="font-body text-muted-foreground mb-6" itemProp="description">
+              {t("services.cta.description")}
             </p>
             <a
               href="#contacto"
               className="inline-block px-10 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+              aria-label={language === "es" ? "Ir al formulario de reserva" : "Go to booking form"}
             >
-              Reservar Ahora
+              {t("hero.bookNow")}
             </a>
           </div>
         </div>

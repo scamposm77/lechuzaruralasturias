@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight, Images, Bed, Mountain, Users } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Habitación El Tejo
 import habTejo from "@/assets/hab-tejo.jpg";
@@ -34,39 +35,40 @@ type Room = {
   features: string[];
 };
 
-const rooms: Room[] = [
-  {
-    name: "El Tejo",
-    subtitle: "Habitación Principal",
-    description: "La habitación más espaciosa de La Cabaña de la Lechuza lleva el nombre del majestuoso tejo centenario que preside nuestro jardín. Este dormitorio principal combina la tradición asturiana con el confort moderno, creando un refugio perfecto para el descanso. Un espacio amplio y luminoso donde las vigas de madera y las paredes de piedra crean una atmósfera que combina tradición y confort. Despertarás con los sonidos de los pájaros y la paz de la naturaleza asturiana. Capacidad: 2 personas. Ideal para parejas que buscan el dormitorio más espacioso y con más privacidad.",
-    cover: habTejo,
-    images: [habTejo, tejo01, tejo02, tejo03, tejo04, tejo05],
-    icon: Mountain,
-    features: ["Cama 160x200", "Pared de piedra", "Vistas al valle", "Armario amplio"],
-  },
-  {
-    name: "La Pumarada",
-    subtitle: "Habitación Doble",
-    description: "Bautizada en honor a las plantaciones de manzanos típicas de la Comarca de la Sidra, esta habitación evoca la esencia rural asturiana. Un espacio acogedor y luminoso que invita al descanso rodeado de la tranquilidad del campo. Un espacio tranquilo y luminoso perfecto para desconectar. Las vistas al campo asturiano y a las montañas te recordarán cada mañana que estás en plena naturaleza, lejos del ruido y las prisas. Capacidad: 2 personas. Ideal para parejas o huéspedes individuales que buscan un espacio cómodo con vistas al campo.",
-    cover: habPumarada,
-    images: [habPumarada, pumarada01, pumarada02, pumarada03, pumarada04],
-    icon: Bed,
-    features: ["Cama 135x190", "Vistas al valle", "Luz natural", "Armario"],
-  },
-  {
-    name: "La Lechuza",
-    subtitle: "Habitación Familiar",
-    description: "Esta habitación lleva el nombre de nuestra cabaña y es el espacio favorito de los más pequeños. Con su litera metálica y su espacio acogedor, es perfecta para que niños y jóvenes disfruten de su propia aventura asturiana. Una habitación luminosa y acogedora que hace las delicias de niños y jóvenes. La litera metálica añade un toque de aventura, mientras que la luz natural crea un ambiente alegre y agradable para el descanso. Capacidad: 2 personas. Ideal para niños, jóvenes o huéspedes que prefieren literas.",
-    cover: habLechuza,
-    images: [habLechuza, lechuza01, lechuza02, lechuza03, lechuza04, lechuza05],
-    icon: Users,
-    features: ["Litera metálica", "Espacio luminoso", "Ideal niños y jóvenes"],
-  },
-];
-
 const Rooms = () => {
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t, language } = useLanguage();
+
+  const rooms: Room[] = [
+    {
+      name: t("rooms.tejo.name"),
+      subtitle: t("rooms.tejo.subtitle"),
+      description: t("rooms.tejo.description"),
+      cover: habTejo,
+      images: [habTejo, tejo01, tejo02, tejo03, tejo04, tejo05],
+      icon: Mountain,
+      features: [t("rooms.tejo.bed"), t("rooms.tejo.stone"), t("rooms.tejo.views"), t("rooms.tejo.wardrobe")],
+    },
+    {
+      name: t("rooms.pumarada.name"),
+      subtitle: t("rooms.pumarada.subtitle"),
+      description: t("rooms.pumarada.description"),
+      cover: habPumarada,
+      images: [habPumarada, pumarada01, pumarada02, pumarada03, pumarada04],
+      icon: Bed,
+      features: [t("rooms.pumarada.bed"), t("rooms.pumarada.views"), t("rooms.pumarada.light"), t("rooms.pumarada.wardrobe")],
+    },
+    {
+      name: t("rooms.lechuza.name"),
+      subtitle: t("rooms.lechuza.subtitle"),
+      description: t("rooms.lechuza.description"),
+      cover: habLechuza,
+      images: [habLechuza, lechuza01, lechuza02, lechuza03, lechuza04, lechuza05],
+      icon: Users,
+      features: [t("rooms.lechuza.bunk"), t("rooms.lechuza.light"), t("rooms.lechuza.kids")],
+    },
+  ];
 
   const openSlideshow = (room: Room) => {
     setSelectedRoom(room);
@@ -97,43 +99,59 @@ const Rooms = () => {
   };
 
   return (
-    <section id="habitaciones" className="py-28 bg-card">
+    <section 
+      id="habitaciones" 
+      className="py-28 bg-card"
+      aria-label={language === "es" ? "Habitaciones de la casa rural" : "Rural house bedrooms"}
+      itemScope
+      itemType="https://schema.org/ItemList"
+    >
+      <meta itemProp="name" content={language === "es" ? "Habitaciones" : "Rooms"} />
+      <meta itemProp="numberOfItems" content="3" />
+      
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <header className="text-center mb-20">
           <span className="inline-block font-body text-primary text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
-            Dormitorios con encanto
+            {t("rooms.subtitle")}
           </span>
           <h2 className="font-display text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
-            Nuestras <span className="text-primary italic">Habitaciones</span>
+            {t("rooms.title")} <span className="text-primary italic">{t("rooms.titleAccent")}</span>
           </h2>
-          <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
-            3 habitaciones dobles con capacidad para 7 huéspedes en nuestra casa rural de Asturias. 
-            Dormitorios acogedores con ropa de cama incluida para tu máximo confort y descanso.
+          <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto" itemProp="description">
+            {t("rooms.description")}
           </p>
         </header>
 
         {/* Rooms Grid */}
         <div className="grid md:grid-cols-3 gap-8">
-          {rooms.map((room) => (
-            <button
+          {rooms.map((room, index) => (
+            <article
               key={room.name}
               onClick={() => openSlideshow(room)}
               className="group bg-background rounded-lg overflow-hidden card-shadow hover:hover-lift transition-all duration-500 text-left cursor-pointer"
+              itemScope
+              itemType="https://schema.org/HotelRoom"
+              itemProp="itemListElement"
             >
+              <meta itemProp="position" content={String(index + 1)} />
               <div className="aspect-[4/3] overflow-hidden relative">
                 <img
                   src={room.cover}
-                  alt={`Habitación ${room.name} - ${room.subtitle} en casa rural La Cabaña de la Lechuza, Asturias`}
+                  alt={language === "es"
+                    ? `Habitación ${room.name} - ${room.subtitle} en casa rural La Cabaña de la Lechuza, Asturias`
+                    : `${room.name} Room - ${room.subtitle} at La Cabaña de la Lechuza rural house, Asturias`
+                  }
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
+                  itemProp="photo"
                 />
-                <div className="absolute top-4 left-4 p-3 bg-primary/90 backdrop-blur-sm rounded-full">
+                <div className="absolute top-4 left-4 p-3 bg-primary/90 backdrop-blur-sm rounded-full" aria-hidden="true">
                   <room.icon className="w-5 h-5 text-primary-foreground" />
                 </div>
                 {room.images.length > 1 && (
                   <div className="absolute top-4 right-4 flex items-center gap-2 bg-background/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                    <Images className="w-4 h-4 text-background" />
+                    <Images className="w-4 h-4 text-background" aria-hidden="true" />
                     <span className="font-body text-background text-sm">
                       {room.images.length}
                     </span>
@@ -145,14 +163,14 @@ const Rooms = () => {
                 <p className="font-body text-primary text-xs uppercase tracking-[0.2em] mb-2">
                   {room.subtitle}
                 </p>
-                <h3 className="font-display text-foreground text-2xl mb-3">
+                <h3 className="font-display text-foreground text-2xl mb-3" itemProp="name">
                   {room.name}
                 </h3>
-                <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">
+                <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4" itemProp="description">
                   {room.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" itemProp="amenityFeature">
                   {room.features.map((feature) => (
                     <span
                       key={feature}
@@ -163,7 +181,7 @@ const Rooms = () => {
                   ))}
                 </div>
               </div>
-            </button>
+            </article>
           ))}
         </div>
       </div>
@@ -176,6 +194,7 @@ const Rooms = () => {
           tabIndex={0}
           role="dialog"
           aria-modal="true"
+          aria-label={selectedRoom.name}
         >
           {/* Header */}
           <div className="absolute top-0 left-0 right-0 p-6 flex items-center justify-between z-10">
@@ -190,7 +209,7 @@ const Rooms = () => {
             <button
               onClick={closeSlideshow}
               className="text-background/70 hover:text-background transition-colors p-2 hover:bg-background/10 rounded-full"
-              aria-label="Cerrar galería"
+              aria-label={t("gallery.closeGallery")}
             >
               <X size={32} strokeWidth={1.5} />
             </button>
@@ -202,7 +221,7 @@ const Rooms = () => {
               <button
                 onClick={goPrev}
                 className="absolute left-4 md:left-8 text-background/70 hover:text-background transition-colors p-3 hover:bg-background/10 rounded-full z-10"
-                aria-label="Foto anterior"
+                aria-label={t("gallery.prevPhoto")}
               >
                 <ChevronLeft size={48} strokeWidth={1.5} />
               </button>
@@ -210,7 +229,7 @@ const Rooms = () => {
               <button
                 onClick={goNext}
                 className="absolute right-4 md:right-8 text-background/70 hover:text-background transition-colors p-3 hover:bg-background/10 rounded-full z-10"
-                aria-label="Foto siguiente"
+                aria-label={t("gallery.nextPhoto")}
               >
                 <ChevronRight size={48} strokeWidth={1.5} />
               </button>
@@ -220,13 +239,16 @@ const Rooms = () => {
           {/* Main Image */}
           <img
             src={selectedRoom.images[currentIndex]}
-            alt={`Habitación ${selectedRoom.name} - ${selectedRoom.subtitle} en casa rural Asturias - Foto ${currentIndex + 1}`}
+            alt={language === "es"
+              ? `Habitación ${selectedRoom.name} - ${selectedRoom.subtitle} en casa rural Asturias - Foto ${currentIndex + 1}`
+              : `${selectedRoom.name} Room - ${selectedRoom.subtitle} in Asturias rural house - Photo ${currentIndex + 1}`
+            }
             className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
           />
 
           {/* Thumbnail Navigation */}
           {selectedRoom.images.length > 1 && (
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 max-w-[90vw] overflow-x-auto pb-2">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 max-w-[90vw] overflow-x-auto pb-2" role="tablist">
               {selectedRoom.images.map((img, idx) => (
                 <button
                   key={idx}
@@ -236,10 +258,13 @@ const Rooms = () => {
                       ? "ring-2 ring-primary opacity-100 scale-110" 
                       : "opacity-50 hover:opacity-80"
                   }`}
+                  role="tab"
+                  aria-selected={idx === currentIndex}
+                  aria-label={`${t("gallery.thumbnail")} ${idx + 1}`}
                 >
                   <img
                     src={img}
-                    alt={`Miniatura ${idx + 1}`}
+                    alt=""
                     className="w-full h-full object-cover"
                   />
                 </button>
