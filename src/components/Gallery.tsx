@@ -143,8 +143,8 @@ const Gallery = () => {
                 <img
                   src={space.cover}
                   alt={language === "es" 
-                    ? `${space.name} de La Cabaña de la Lechuza - Casa rural en Cabranes, Asturias`
-                    : `${space.name} at La Cabaña de la Lechuza - Rural house in Cabranes, Asturias`
+                    ? `Foto ${space.name.toLowerCase()} La Cabaña de la Lechuza casa rural Cabranes Asturias - Alojamiento rural Comarca de la Sidra`
+                    : `${space.name} photo La Cabaña de la Lechuza rural house Cabranes Asturias - Rural accommodation Cider Region`
                   }
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
@@ -234,8 +234,8 @@ const Gallery = () => {
           <img
             src={selectedSpace.images[currentIndex]}
             alt={language === "es"
-              ? `${selectedSpace.name} de casa rural La Cabaña de la Lechuza - Foto ${currentIndex + 1} - Alojamiento rural en Asturias`
-              : `${selectedSpace.name} at La Cabaña de la Lechuza rural house - Photo ${currentIndex + 1} - Rural accommodation in Asturias`
+              ? `Foto ${selectedSpace.name.toLowerCase()} La Cabaña de la Lechuza casa rural Cabranes Asturias - Imagen ${currentIndex + 1}`
+              : `${selectedSpace.name} photo La Cabaña de la Lechuza rural house Cabranes Asturias - Image ${currentIndex + 1}`
             }
             className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
           />

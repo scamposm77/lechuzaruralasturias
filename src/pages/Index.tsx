@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Lazy load below-the-fold components for faster initial load
@@ -52,10 +53,10 @@ const Index = () => {
 
   const currentSeo = seo[language];
 
-  // JSON-LD structured data
+  // JSON-LD structured data - VacationRental
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LodgingBusiness",
+    "@type": "VacationRental",
     "name": "La Cabaña de la Lechuza",
     "description": currentSeo.description,
     "url": "https://www.lechuzaruralasturias.es",
@@ -74,7 +75,9 @@ const Index = () => {
       "latitude": 43.4083,
       "longitude": -5.4169
     },
-    "priceRange": "€€",
+    "priceRange": "100-200€",
+    "checkinTime": "18:00",
+    "checkoutTime": "11:00",
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "WiFi", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Parking", "value": true },
@@ -88,6 +91,27 @@ const Index = () => {
       "@type": "QuantitativeValue",
       "maxValue": 7
     },
+    "petsAllowed": false,
+    "containsPlace": [
+      {
+        "@type": "Room",
+        "name": "El Tejo",
+        "description": language === "es" ? "Habitación principal con cama King size y vistas al valle" : "Master bedroom with King size bed and valley views",
+        "bed": { "@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1 }
+      },
+      {
+        "@type": "Room",
+        "name": "La Pumarada",
+        "description": language === "es" ? "Habitación doble con cama de matrimonio y vistas al campo" : "Double room with double bed and countryside views",
+        "bed": { "@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1 }
+      },
+      {
+        "@type": "Room",
+        "name": "La Lechuza",
+        "description": language === "es" ? "Habitación familiar con litera" : "Family room with bunk beds",
+        "bed": { "@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1 }
+      }
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.88",
@@ -102,6 +126,9 @@ const Index = () => {
     ],
     "image": [
       "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
+      "https://www.lechuzaruralasturias.es/assets/exterior/ext-03.jpg",
+      "https://www.lechuzaruralasturias.es/assets/exterior/ext-09.jpg",
+      "https://www.lechuzaruralasturias.es/assets/cocina/cocina-01.jpg",
       "https://www.lechuzaruralasturias.es/assets/hero-casa.jpg"
     ],
     "potentialAction": {
@@ -119,6 +146,32 @@ const Index = () => {
         "name": language === "es" ? "Reserva en La Cabaña de la Lechuza" : "Booking at La Cabaña de la Lechuza"
       }
     }
+  };
+
+  // Breadcrumb JSON-LD
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": language === "es" ? "Inicio" : "Home",
+        "item": "https://www.lechuzaruralasturias.es"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Cabranes",
+        "item": "https://www.lechuzaruralasturias.es/#ubicacion"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": language === "es" ? "Habitaciones" : "Rooms",
+        "item": "https://www.lechuzaruralasturias.es/#habitaciones"
+      }
+    ]
   };
 
   return (
@@ -164,12 +217,20 @@ const Index = () => {
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbJsonLd)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen">
         <Header />
         <main role="main">
           <Hero />
+          <Breadcrumbs items={[
+            { label: language === "es" ? "Inicio" : "Home", href: "/" },
+            { label: "Cabranes", href: "/#ubicacion" },
+            { label: language === "es" ? "Habitaciones" : "Rooms" }
+          ]} />
           <Suspense fallback={<SectionSkeleton />}>
             <Values />
           </Suspense>
