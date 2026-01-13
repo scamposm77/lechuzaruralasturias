@@ -327,7 +327,7 @@ const ComoLlegar = () => {
               <h4 className="font-display text-lg text-foreground mb-4">Características del camino:</h4>
               <ul className="space-y-2 font-body text-muted-foreground">
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  
                   Carretera asfaltada pero estrecha
                 </li>
                 <li className="flex items-center gap-2">
