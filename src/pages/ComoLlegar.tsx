@@ -1,8 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Car, Phone, MapPin, Navigation, AlertTriangle, CheckCircle, Play } from "lucide-react";
+import { Car, Phone, MapPin, Navigation, AlertTriangle, CheckCircle, Play } from "lucide-react";
 import rutaVideo from "@/assets/ruta_1.mp4";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Header from "@/components/Header";
 const ComoLlegar = () => {
   const {
     language
@@ -17,18 +18,16 @@ const ComoLlegar = () => {
         </Helmet>
 
         <div className="min-h-screen bg-background">
-          {/* Header */}
-          <header className="bg-primary text-primary-foreground py-6">
+          <Header />
+          
+          {/* Page Title */}
+          <div className="bg-primary text-primary-foreground py-12 mt-20">
             <div className="container mx-auto px-6">
-              <Link to="/" className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-4">
-                <ArrowLeft className="w-4 h-4" />
-                <span className="font-body text-sm">Back to home</span>
-              </Link>
               <h1 className="font-display text-3xl md:text-4xl lg:text-5xl">
                 How to Get There
               </h1>
             </div>
-          </header>
+          </div>
 
           <main className="container mx-auto px-6 py-12 max-w-4xl">
             {/* Intro */}
@@ -255,18 +254,16 @@ const ComoLlegar = () => {
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        {/* Header */}
-        <header className="bg-primary text-primary-foreground py-6">
+        <Header />
+        
+        {/* Page Title */}
+        <div className="bg-primary text-primary-foreground py-12 mt-20">
           <div className="container mx-auto px-6">
-            <Link to="/" className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-4">
-              <ArrowLeft className="w-4 h-4" />
-              <span className="font-body text-sm">Volver al inicio</span>
-            </Link>
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl">
               Cómo Llegar
             </h1>
           </div>
-        </header>
+        </div>
 
         <main className="container mx-auto px-6 py-12 max-w-4xl">
           {/* Intro */}
