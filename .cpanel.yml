@@ -1,9 +1,5 @@
----
 deployment:
   tasks:
     - export DEPLOYPATH=/home/ncyzekbm/public_html/
-    - npm ci
-    - npm run build
-    - rm -rf $DEPLOYPATH/*
-    - cp -r dist/* $DEPLOYPATH/
-    - echo "Deploy OK lechuzaruralasturias.es"
+    - /bin/rm -rf $DEPLOYPATH/*
+    - /bin/cp -R dist/* $DEPLOYPATH
