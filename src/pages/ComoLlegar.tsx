@@ -193,7 +193,7 @@ const ComoLlegar = () => {
 
               {/* Navigation buttons */}
               <div className="grid sm:grid-cols-2 gap-4">
-                <a href="https://maps.app.goo.gl/kgmiycYPBchbJ9mT8" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-body font-semibold hover:bg-primary/90 transition-colors shadow-md">
+                <a href="https://maps.app.goo.gl/RAUYH5vjUNvub4Nn9" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-body font-semibold hover:bg-primary/90 transition-colors shadow-md">
                   <Navigation className="w-5 h-5" />
                   Open in Google Maps
                 </a>
@@ -429,7 +429,7 @@ const ComoLlegar = () => {
 
             {/* Botones de navegación */}
             <div className="grid sm:grid-cols-2 gap-4">
-              <a href="https://maps.app.goo.gl/kgmiycYPBchbJ9mT8" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-body font-semibold hover:bg-primary/90 transition-colors shadow-md">
+              <a href="https://maps.app.goo.gl/RAUYH5vjUNvub4Nn9" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-body font-semibold hover:bg-primary/90 transition-colors shadow-md">
                 <Navigation className="w-5 h-5" />
                 Abrir en Google Maps
               </a>
