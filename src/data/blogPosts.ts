@@ -65,34 +65,50 @@ export const blogPosts: BlogPost[] = [
   {
     id: "1",
     slug: "historia-cabana-lechuza",
-    title: "La Historia de La Cabaña de la Lechuza",
-    excerpt: "Descubre cómo una antigua casona asturiana se transformó en el refugio rural que hoy conoces, manteniendo la esencia de la arquitectura tradicional.",
+    title: "La Historia de La Cabaña de la Lechuza: Un Proyecto Personal con Alma",
+    excerpt: "Esta casa la he restaurado yo misma, poco a poco, con mucho cariño y esfuerzo. Descubre la historia de este refugio rural y el origen de su nombre tan especial.",
     content: `
-      <p>La Cabaña de la Lechuza tiene una historia que se remonta a principios del siglo XX, cuando fue construida como vivienda tradicional asturiana en el pequeño barrio de La Roza, en el concejo de Cabranes.</p>
+      <p><em>Esta casa la he restaurado yo misma, poco a poco, con mucho cariño y esfuerzo. Es un proyecto muy personal, pensado para compartir la tranquilidad y la belleza de este entorno rural con quienes buscan desconectar y reconectar con lo esencial.</em></p>
       
-      <h2>Los orígenes</h2>
-      <p>La casa fue edificada siguiendo los cánones de la <strong>arquitectura popular asturiana</strong>: muros de piedra caliza, tejado de teja árabe y un corredor orientado al sur para aprovechar la luz del sol. Durante décadas, sirvió como hogar de familias que vivían de la tierra, cultivando manzanos y cuidando del ganado.</p>
+      <h2>Un proyecto nacido del corazón</h2>
+      <p>La Cabaña de la Lechuza no es solo una casa rural, es el resultado de años de trabajo, ilusión y amor por esta tierra asturiana. Cada piedra restaurada, cada viga recuperada, cada rincón cuidado lleva mi dedicación personal. Quería crear un espacio donde los huéspedes pudieran vivir la experiencia auténtica del campo asturiano, con todas las comodidades modernas pero sin perder la esencia de lo que hace especial a este lugar.</p>
       
-      <h2>El nombre de "La Lechuza"</h2>
-      <p>El nombre no es casualidad. Desde tiempos inmemoriales, una familia de lechuzas comunes (<em>Tyto alba</em>) ha habitado en el desván de la casa. En Asturias, la lechuza es considerada un ave de buen augurio, protectora de las cosechas y símbolo de sabiduría. Los antiguos habitantes de la casa siempre respetaron su presencia, y hoy en día seguimos esa tradición.</p>
+      <h2>El nombre de "La Lechuza": Una historia real</h2>
+      <p>El nombre de La Cabaña de la Lechuza no es casual ni inventado: <strong>en el tejado vive una familia de lechuzas desde hace años</strong>. Estas hermosas aves nocturnas han convertido nuestra casa en su hogar, y nosotros las respetamos y protegemos como parte de la magia de este lugar.</p>
       
-      <h2>La rehabilitación de 2023</h2>
-      <p>Tras años de deterioro, la casa fue completamente rehabilitada en 2023 con un objetivo claro: <strong>preservar su esencia mientras se adapta a las necesidades actuales</strong>. Se respetaron los materiales originales siempre que fue posible:</p>
+      <p>Si os alojáis en la habitación grande (El Tejo), puede que durante la noche las escuchéis entrar y salir, especialmente en primavera y verano, cuando aún están criando a sus polluelos. No os preocupéis, son muy discretas y silenciosas, pero es una experiencia preciosa que os conectará con la naturaleza de una forma muy especial. El suave ulular de la lechuza al anochecer es uno de esos sonidos que te recuerdan que estás en un lugar auténtico, lejos del ruido de la ciudad.</p>
+      
+      <h2>La casa: arquitectura tradicional asturiana</h2>
+      <p>La casa fue construida a principios del siglo XX siguiendo los cánones de la <strong>arquitectura popular asturiana</strong>:</p>
       <ul>
-        <li>Se restauraron los muros de piedra originales</li>
-        <li>Se recuperaron las vigas de castaño del techo</li>
-        <li>Se instaló calefacción por suelo radiante y chimenea de pellets</li>
-        <li>Se equipó con cocina moderna y baños completos</li>
-        <li>Se acondicionaron 3 habitaciones para 7 personas</li>
+        <li><strong>Muros de piedra caliza</strong> de gran espesor que mantienen la casa fresca en verano y cálida en invierno</li>
+        <li><strong>Tejado de teja árabe</strong> con la pendiente característica del norte</li>
+        <li><strong>Corredor orientado al sur</strong> para aprovechar la luz natural</li>
+        <li><strong>Vigas de castaño originales</strong> que hemos recuperado y tratado</li>
       </ul>
       
-      <h2>Un nuevo capítulo</h2>
-      <p>Hoy, La Cabaña de la Lechuza abre sus puertas a viajeros que buscan desconectar y vivir la auténtica experiencia rural asturiana. Y sí, las lechuzas siguen aquí. Si tienes suerte, podrás escuchar su característico canto al caer la noche.</p>
+      <h2>La rehabilitación: respeto por la tradición, confort actual</h2>
+      <p>Cuando decidí rehabilitar esta casa en 2023, tenía claro que quería <strong>preservar su esencia mientras la adaptaba a las necesidades actuales</strong>. No quería convertirla en algo frío y moderno, sino mantener el calor de las casas de antes con las comodidades de hoy:</p>
+      <ul>
+        <li>Chimenea de pellets para los días fríos</li>
+        <li>Cocina totalmente equipada para cocinar como en casa</li>
+        <li>Baños modernos sin perder el encanto rústico</li>
+        <li>WiFi de alta velocidad (sí, ¡estamos en pleno campo pero con buena conexión!)</li>
+        <li>3 dormitorios acogedores para hasta 7 personas</li>
+      </ul>
+      
+      <h2>El entorno: 1.500m² de naturaleza</h2>
+      <p>La casa está rodeada de <strong>1.500m² de jardín privado</strong> con manzanos centenarios y un majestuoso tejo que da nombre a nuestra habitación principal. Desde el porche podréis disfrutar de vistas al valle mientras desayunáis, leéis un libro o simplemente respiráis el aire puro de la montaña asturiana.</p>
+      
+      <h2>Mi invitación personal</h2>
+      <p>Os invito a venir y vivir la experiencia de La Cabaña de la Lechuza. A despertaros con el canto de los pájaros, a pasear entre manzanos, a cenar bajo las estrellas en el porche... y quizás, si tenéis suerte, a escuchar a nuestras lechuzas nocturnas.</p>
+      
+      <p><strong>Esta casa está hecha para ser disfrutada. Espero que la sintáis como vuestra.</strong></p>
     `,
     coverImage: "/assets/exterior/ext-00-portada.jpg",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-12",
-    tags: ["historia", "arquitectura", "asturias"]
+    tags: ["historia", "arquitectura", "asturias", "lechuzas", "naturaleza"]
   },
   {
     id: "2",

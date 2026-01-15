@@ -122,7 +122,7 @@ const Hero = () => {
         <div className="mb-4 md:mb-8 animate-fade-up opacity-0 delay-350">
           <span className="inline-flex items-center gap-1 md:gap-2 px-3 md:px-6 py-1.5 md:py-3 bg-primary/90 text-primary-foreground rounded-full font-body text-[10px] md:text-base font-semibold shadow-lg backdrop-blur-sm">
             <span className="opacity-90">{language === "es" ? "Desde" : "From"}</span>
-            <span className="text-accent font-display text-sm md:text-xl">120€</span>
+            <span className="text-accent font-display text-sm md:text-xl">100€</span>
             <span className="opacity-90">/</span>
             <span>{language === "es" ? "noche · Sin comisiones" : "night · No fees"}</span>
           </span>
