@@ -8,6 +8,7 @@ interface OptimizedImageProps {
   sizes?: string;
   priority?: boolean;
   itemProp?: string;
+  fetchPriority?: "high" | "low" | "auto";
 }
 
 const OptimizedImage = ({
@@ -18,6 +19,7 @@ const OptimizedImage = ({
   sizes = "100vw",
   priority = false,
   itemProp,
+  fetchPriority = "auto",
 }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
@@ -49,6 +51,16 @@ const OptimizedImage = ({
     return () => observer.disconnect();
   }, [priority]);
 
+  // Generate WebP source if original is jpg/jpeg/png
+  const getWebPSource = (originalSrc: string): string | null => {
+    if (originalSrc.match(/\.(jpg|jpeg|png)$/i)) {
+      return originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    }
+    return null;
+  };
+
+  const webpSrc = getWebPSource(src);
+
   return (
     <div ref={imgRef} className={`relative overflow-hidden ${className}`}>
       {/* Placeholder blur */}
@@ -60,18 +72,24 @@ const OptimizedImage = ({
       )}
       
       {isInView && (
-        <img
-          src={src}
-          alt={alt}
-          loading={loading}
-          decoding="async"
-          sizes={sizes}
-          onLoad={() => setIsLoaded(true)}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${
-            isLoaded ? "opacity-100" : "opacity-0"
-          }`}
-          itemProp={itemProp}
-        />
+        <picture>
+          {webpSrc && (
+            <source srcSet={webpSrc} type="image/webp" />
+          )}
+          <img
+            src={src}
+            alt={alt}
+            loading={loading}
+            decoding="async"
+            fetchPriority={priority ? "high" : fetchPriority}
+            sizes={sizes}
+            onLoad={() => setIsLoaded(true)}
+            className={`w-full h-full object-cover transition-opacity duration-500 ${
+              isLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            itemProp={itemProp}
+          />
+        </picture>
       )}
     </div>
   );
