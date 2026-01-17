@@ -5,6 +5,14 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+// Imágenes locales de Qué Hacer
+import bufonesPriaImg from "@/assets/quehacer/bufones-pria.webp";
+import cangasOnisImg from "@/assets/quehacer/cangas-onis.png";
+import lastresImg from "@/assets/quehacer/lastres.png";
+import miradorFituImg from "@/assets/quehacer/mirador-fitu.png";
+import museoSidraImg from "@/assets/quehacer/museo-sidra.png";
+import museoJurasicoImg from "@/assets/quehacer/museo-jurasico.png";
+
 interface Activity {
   id: string;
   nameEs: string;
@@ -67,7 +75,7 @@ const activities: Activity[] = [
     descriptionEn: "In Nava, discover the history and tradition of Asturian cider. Interactive exhibitions, tastings and shop. Ideal to understand cider culture.",
     distance: "12 km",
     duration: "15 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Manzanas_sidra.jpg/1280px-Manzanas_sidra.jpg",
+    image: museoSidraImg,
     externalLink: "https://www.museodelasidra.com/",
     category: "gastronomy",
     icon: Wine
@@ -80,7 +88,7 @@ const activities: Activity[] = [
     descriptionEn: "Spectacular viewpoint at 635m altitude with 360° panoramic views over the Asturian coast, Picos de Europa and Sierra del Sueve. A must at sunset.",
     distance: "25 km",
     duration: "30 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Mirador_del_Fitu%2C_Parres%2C_Asturias.jpg/1280px-Mirador_del_Fitu%2C_Parres%2C_Asturias.jpg",
+    image: miradorFituImg,
     externalLink: "https://www.turismoasturias.es/descubre/naturaleza/otros-espacios/miradores/mirador-del-fito",
     category: "nature",
     icon: Camera
@@ -93,7 +101,7 @@ const activities: Activity[] = [
     descriptionEn: "One of the most beautiful villages in Spain, Exemplary Village Award 2010. Its cobblestone streets, colonial mansions and Cantabrian views will captivate you.",
     distance: "20 km",
     duration: "25 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Lastres_%28Colunga%2C_Asturias%29.jpg/1280px-Lastres_%28Colunga%2C_Asturias%29.jpg",
+    image: lastresImg,
     externalLink: "https://www.turismocolunga.es/llastres/",
     category: "culture",
     icon: Church
@@ -106,7 +114,7 @@ const activities: Activity[] = [
     descriptionEn: "Dinosaur footprint-shaped museum with life-size replicas, fossils and the Dinosaur Coast. Ideal for families with children. Stunning sea views.",
     distance: "22 km",
     duration: "25 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/MUJA_Museo_del_Jur%C3%A1sico_de_Asturias.jpg/1280px-MUJA_Museo_del_Jur%C3%A1sico_de_Asturias.jpg",
+    image: museoJurasicoImg,
     externalLink: "https://www.museojurasicoasturias.com/",
     category: "culture",
     icon: Leaf
@@ -132,7 +140,7 @@ const activities: Activity[] = [
     descriptionEn: "Unique natural spectacle: sea geysers that expel water and air through cliff fissures. Best with spring tides and ocean swells.",
     distance: "45 km",
     duration: "40 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Bufones_de_Pria_17.jpg/1280px-Bufones_de_Pria_17.jpg",
+    image: bufonesPriaImg,
     externalLink: "https://www.turismoasturias.es/descubre/naturaleza/otros-espacios/bufones/bufones-de-pria",
     category: "nature",
     icon: Waves
@@ -171,7 +179,7 @@ const activities: Activity[] = [
     descriptionEn: "First capital of the Kingdom of Asturias with its iconic medieval bridge over the Sella river. Starting point to Picos de Europa and Covadonga.",
     distance: "45 km",
     duration: "40 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Cangas_de_On%C3%ADs_-_Puente_romano.jpg/1280px-Cangas_de_On%C3%ADs_-_Puente_romano.jpg",
+    image: cangasOnisImg,
     externalLink: "https://www.cangasdeonis.com/",
     category: "culture",
     icon: Church
