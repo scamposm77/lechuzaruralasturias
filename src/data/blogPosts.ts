@@ -150,9 +150,9 @@ export const blogPosts: BlogPost[] = [
       
       <p><strong>This house is made to be enjoyed. I hope you feel it as your own.</strong></p>
     `,
-    coverImage: "/assets/exterior/ext-00-portada.jpg",
-    coverImageAltEs: "Fachada exterior de La Cabaña de la Lechuza casa rural con encanto en Cabranes Asturias - Historia y origen del nombre",
-    coverImageAltEn: "Exterior facade of La Cabaña de la Lechuza charming rural house in Cabranes Asturias - History and origin of the name",
+    coverImage: "/assets/blog/horreos-asturianos.jpg",
+    coverImageAltEs: "Hórreos asturianos tradicionales de madera con pegollos de piedra en pueblo rural de Asturias - Historia arquitectura popular",
+    coverImageAltEn: "Traditional Asturian wooden hórreos with stone pillars in rural village of Asturias - Popular architecture history",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-12",
     tags: ["historia", "arquitectura", "asturias", "lechuzas", "naturaleza"]
@@ -230,9 +230,9 @@ export const blogPosts: BlogPost[] = [
       <h2>10. The legend of the Cuélebre</h2>
       <p>According to Asturian mythology, the <em>Cuélebre</em>, a winged dragon that guards treasures, lives in nearby caves. The oldest neighbors still tell stories about it!</p>
     `,
-    coverImage: "/assets/exterior/ext-10.jpg",
-    coverImageAltEs: "Vista del jardín con manzanos en la Comarca de la Sidra Cabranes Asturias - Blog casa rural",
-    coverImageAltEn: "Garden view with apple trees in the Cider Region Cabranes Asturias - Rural house blog",
+    coverImage: "/assets/blog/comarca-sidra.jpg",
+    coverImageAltEs: "Cosecha de manzanas para sidra en la Comarca de la Sidra Asturias con sacos de manzanas en pomarada",
+    coverImageAltEn: "Apple harvest for cider in the Asturias Cider Region with bags of apples in apple orchard",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-11",
     tags: ["cabranes", "comarca de la sidra", "curiosidades"]
@@ -314,9 +314,9 @@ export const blogPosts: BlogPost[] = [
       
       <p>During your stay, we encourage you to walk through nearby villages like Santa Eulalia or Torazo to admire these architectural treasures that remain standing after centuries.</p>
     `,
-    coverImage: "/assets/exterior/ext-03.jpg",
-    coverImageAltEs: "Arquitectura tradicional asturiana con hórreo y casona de piedra en Cabranes - Patrimonio rural",
-    coverImageAltEn: "Traditional Asturian architecture with hórreo and stone house in Cabranes - Rural heritage",
+    coverImage: "/assets/blog/horreos-asturianos.jpg",
+    coverImageAltEs: "Conjunto de hórreos asturianos tradicionales con carros antiguos en pueblo rural de Asturias - Arquitectura popular",
+    coverImageAltEn: "Traditional Asturian hórreos ensemble with antique carts in rural village of Asturias - Popular architecture",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-10",
     tags: ["arquitectura", "hórreos", "tradición"]
@@ -354,9 +354,9 @@ export const blogPosts: BlogPost[] = [
         <li>Respect the environment and don't leave litter</li>
       </ul>
     `,
-    coverImage: "/assets/exterior/ext-09.jpg",
-    coverImageAltEs: "Ruta de senderismo por prados verdes y montañas cerca de casa rural Cabranes Asturias",
-    coverImageAltEn: "Hiking trail through green meadows and mountains near rural house Cabranes Asturias",
+    coverImage: "/assets/blog/rutas-senderismo.jpg",
+    coverImageAltEs: "Molino antiguo junto a cascada en bosque verde ruta de senderismo Asturias naturaleza",
+    coverImageAltEn: "Ancient mill next to waterfall in green forest hiking trail Asturias nature",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-08",
     tags: ["senderismo", "rutas", "naturaleza"]
@@ -392,9 +392,9 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Gamonéu:</strong> smoked with blue touches</li>
       </ul>
     `,
-    coverImage: "/assets/cocina/cocina-01.jpg",
-    coverImageAltEs: "Cocina equipada de casa rural La Cabaña de la Lechuza para cocinar gastronomía asturiana",
-    coverImageAltEn: "Equipped kitchen at La Cabaña de la Lechuza rural house for cooking Asturian cuisine",
+    coverImage: "/assets/blog/gastronomia-asturiana.jpg",
+    coverImageAltEs: "Fabada asturiana tradicional con fabes chorizo morcilla y lacón plato típico de Asturias",
+    coverImageAltEn: "Traditional Asturian fabada with beans chorizo blood sausage and ham typical dish of Asturias",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-06",
     tags: ["gastronomía", "cocina asturiana", "sidra"]
