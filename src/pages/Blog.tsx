@@ -4,51 +4,39 @@ import { Calendar, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blogPosts";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const Blog = () => {
-  const { language } = useLanguage();
-
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString(language === "es" ? 'es-ES' : 'en-US', {
+    // Formato bilingüe: día mes año
+    const esDate = date.toLocaleDateString('es-ES', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
     });
+    return esDate;
   };
 
   const seo = {
-    es: {
-      title: "Blog | La Cabaña de la Lechuza - Casa Rural en Asturias",
-      description: "Descubre las últimas novedades, rutas de senderismo, gastronomía asturiana y consejos para tu escapada rural en la Comarca de la Sidra.",
-      heading: "Nuestro Blog",
-      mainTitle: "Historias desde La Cabaña",
-      intro: "Rutas, gastronomía, tradiciones y todo lo que necesitas saber para disfrutar al máximo de tu escapada a la Comarca de la Sidra.",
-      readMore: "Leer más",
-      noContent: "Próximamente publicaremos contenido. ¡Vuelve pronto!"
-    },
-    en: {
-      title: "Blog | La Cabaña de la Lechuza - Rural House in Asturias",
-      description: "Discover the latest news, hiking routes, Asturian gastronomy and tips for your rural getaway in the Cider Region.",
-      heading: "Our Blog",
-      mainTitle: "Stories from The Cabin",
-      intro: "Routes, gastronomy, traditions and everything you need to know to make the most of your getaway to the Cider Region.",
-      readMore: "Read more",
-      noContent: "Content coming soon. Check back soon!"
-    }
+    title: "Blog | La Cabaña de la Lechuza - Casa Rural en Asturias",
+    description: "Descubre las últimas novedades, rutas de senderismo, gastronomía asturiana y consejos para tu escapada rural. Discover hiking routes, gastronomy and tips for your rural getaway.",
+    heading: "Nuestro Blog / Our Blog",
+    mainTitle: "Historias desde La Cabaña",
+    mainTitleEn: "Stories from The Cabin",
+    intro: "Rutas, gastronomía, tradiciones y todo lo que necesitas saber para disfrutar al máximo de tu escapada a la Comarca de la Sidra.",
+    introEn: "Routes, gastronomy, traditions and everything you need to know to make the most of your getaway to the Cider Region.",
+    readMore: "Leer más / Read more",
+    noContent: "Próximamente publicaremos contenido. ¡Vuelve pronto! / Content coming soon. Check back soon!"
   };
-
-  const currentSeo = seo[language];
 
   return (
     <>
       <Helmet>
-        <title>{currentSeo.title}</title>
-        <meta name="description" content={currentSeo.description} />
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
         <link rel="canonical" href="https://www.lechuzaruralasturias.es/blog" />
-        <meta property="og:title" content={currentSeo.title} />
-        <meta property="og:description" content={currentSeo.description} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
         <meta property="og:url" content="https://www.lechuzaruralasturias.es/blog" />
         <meta name="robots" content="index, follow" />
       </Helmet>
@@ -61,13 +49,19 @@ const Blog = () => {
             {/* Header */}
             <div className="text-center mb-16">
               <span className="text-primary font-body text-sm tracking-widest uppercase">
-                {currentSeo.heading}
+                {seo.heading}
               </span>
-              <h1 className="font-display text-4xl md:text-5xl text-foreground mt-4 mb-6">
-                {currentSeo.mainTitle}
+              <h1 className="font-display text-4xl md:text-5xl text-foreground mt-4 mb-2">
+                {seo.mainTitle}
               </h1>
-              <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-                {currentSeo.intro}
+              <p className="font-display text-2xl md:text-3xl text-muted-foreground mb-6">
+                {seo.mainTitleEn}
+              </p>
+              <p className="text-muted-foreground max-w-2xl mx-auto font-body mb-2">
+                {seo.intro}
+              </p>
+              <p className="text-muted-foreground/70 max-w-2xl mx-auto font-body italic">
+                {seo.introEn}
               </p>
             </div>
 
@@ -82,7 +76,7 @@ const Blog = () => {
                     <div className="aspect-video overflow-hidden">
                       <img
                         src={post.coverImage}
-                        alt={language === "es" ? post.coverImageAltEs : post.coverImageAltEn}
+                        alt={`${post.coverImageAltEs} / ${post.coverImageAltEn}`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
@@ -94,14 +88,22 @@ const Blog = () => {
                           {formatDate(post.publishedAt)}
                         </time>
                       </div>
-                      <h2 className="font-display text-xl text-foreground mb-3 group-hover:text-primary transition-colors">
-                        {language === "es" ? post.title : post.titleEn || post.title}
+                      {/* Títulos bilingües */}
+                      <h2 className="font-display text-xl text-foreground mb-1 group-hover:text-primary transition-colors">
+                        {post.title}
                       </h2>
-                      <p className="text-muted-foreground font-body text-sm mb-4 line-clamp-3">
-                        {language === "es" ? post.excerpt : post.excerptEn || post.excerpt}
+                      <p className="font-display text-base text-muted-foreground/70 mb-3 italic">
+                        {post.titleEn || post.title}
+                      </p>
+                      {/* Extractos bilingües */}
+                      <p className="text-muted-foreground font-body text-sm mb-2 line-clamp-2">
+                        {post.excerpt}
+                      </p>
+                      <p className="text-muted-foreground/70 font-body text-sm mb-4 line-clamp-2 italic">
+                        {post.excerptEn || post.excerpt}
                       </p>
                       <div className="flex items-center gap-2 text-primary font-body text-sm font-medium">
-                        {currentSeo.readMore}
+                        {seo.readMore}
                         <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
@@ -113,7 +115,7 @@ const Blog = () => {
             {blogPosts.length === 0 && (
               <div className="text-center py-20">
                 <p className="text-muted-foreground font-body">
-                  {currentSeo.noContent}
+                  {seo.noContent}
                 </p>
               </div>
             )}
