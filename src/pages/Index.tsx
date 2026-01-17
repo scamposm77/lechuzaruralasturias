@@ -1,5 +1,6 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -31,7 +32,20 @@ const SectionSkeleton = () => (
 
 const Index = () => {
   const { language } = useLanguage();
+  const location = useLocation();
 
+  // Handle hash navigation when coming from another page
+  useEffect(() => {
+    if (location.hash) {
+      // Small delay to ensure the page is loaded
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
   const seo = {
     es: {
       title: "Casa Rural con Encanto en Asturias | La Cabaña de la Lechuza | Cabranes, Comarca de la Sidra",

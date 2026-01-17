@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logoLechuza from "@/assets/logo-lechuza.png";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -11,6 +11,7 @@ const Header = () => {
   const [isLogoClicked, setIsLogoClicked] = useState(false);
   const { t } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
@@ -26,16 +27,28 @@ const Header = () => {
     setTimeout(() => setIsLogoClicked(false), 300);
   };
 
-  // Helper to get correct href for anchor links
-  const getAnchorHref = (anchor: string) => {
-    return isHomePage ? anchor : `/${anchor}`;
+  // Handle anchor navigation - scrolls if on home page, navigates then scrolls if on another page
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    
+    if (isHomePage) {
+      // On home page, just scroll to the section
+      const element = document.querySelector(anchor);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // On another page, navigate to home with hash
+      navigate('/' + anchor);
+    }
   };
 
   const navLinks = [
-    { href: getAnchorHref("#inicio"), label: t("nav.home"), isRoute: false },
-    { href: getAnchorHref("#galeria"), label: t("nav.gallery"), isRoute: false },
+    { href: "#inicio", label: t("nav.home"), isRoute: false },
+    { href: "#espacios", label: t("nav.gallery"), isRoute: false },
     { href: "/que-hacer", label: t("nav.whatToDo"), isRoute: true },
-    { href: "/como-llegar", label: t("nav.location"), isRoute: true },
+    { href: "/como-llegar", label: t("nav.directions"), isRoute: true },
     { href: "/blog", label: t("nav.blog"), isRoute: true },
   ];
 
@@ -82,7 +95,8 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`font-body text-sm font-medium tracking-wider uppercase transition-all relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all hover:after:w-full ${
+                onClick={(e) => handleAnchorClick(e, link.href)}
+                className={`font-body text-sm font-medium tracking-wider uppercase transition-all relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-current after:transition-all hover:after:w-full cursor-pointer ${
                   isScrolled ? "text-foreground" : "text-background"
                 }`}
               >
@@ -92,8 +106,9 @@ const Header = () => {
           ))}
           <LanguageSelector isScrolled={isScrolled} />
           <a
-            href={getAnchorHref("#contacto")}
-            className={`px-6 py-3 rounded-sm font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 ${
+            href="#contacto"
+            onClick={(e) => handleAnchorClick(e, "#contacto")}
+            className={`px-6 py-3 rounded-sm font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
               isScrolled
                 ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg"
                 : "bg-background/95 text-foreground hover:bg-background shadow-lg"
@@ -135,17 +150,17 @@ const Header = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-body text-foreground text-lg font-medium py-3 border-b border-border/30 hover:text-primary transition-colors"
+                  onClick={(e) => handleAnchorClick(e, link.href)}
+                  className="font-body text-foreground text-lg font-medium py-3 border-b border-border/30 hover:text-primary transition-colors cursor-pointer"
                 >
                   {link.label}
                 </a>
               )
             ))}
             <a
-              href={getAnchorHref("#contacto")}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-4 px-6 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider text-center shadow-md"
+              href="#contacto"
+              onClick={(e) => handleAnchorClick(e, "#contacto")}
+              className="mt-4 px-6 py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider text-center shadow-md cursor-pointer"
             >
               {t("nav.book")}
             </a>

@@ -68,6 +68,156 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "6",
+    slug: "ruta-molinos-viacaba",
+    title: "La Ruta de los Molinos del Río Viacaba: Un Paseo Mágico desde La Cabaña",
+    titleEn: "The Viacaba River Mills Route: A Magical Walk from The Cabin",
+    excerpt: "A solo 5 minutos en coche desde La Cabaña de la Lechuza, descubre una de las rutas más encantadoras y desconocidas de Asturias: la Senda de los Molinos del río Viacaba.",
+    excerptEn: "Just 5 minutes by car from La Cabaña de la Lechuza, discover one of the most charming and unknown routes in Asturias: the Viacaba River Mills Trail.",
+    content: `
+      <p>Una de las joyas ocultas de la Comarca de la Sidra espera a los huéspedes de La Cabaña de la Lechuza: <strong>la Ruta de los Molinos del río Viacaba</strong>. Este sendero, prácticamente desconocido para el turismo masivo, ofrece un recorrido fascinante por la historia rural de Asturias y paisajes de bosque atlántico que te dejarán sin aliento.</p>
+      
+      <h2>Cómo llegar desde La Cabaña</h2>
+      <p>El inicio de la ruta está a <strong>solo 5 minutos en coche</strong> desde nuestra casa rural. Desde La Roza, toma la carretera dirección Torazo y sigue las indicaciones hacia la Senda del río Viacaba. Hay un pequeño aparcamiento junto al punto de inicio, aunque en temporada alta conviene ir temprano.</p>
+      
+      <h2>Datos técnicos de la ruta</h2>
+      <ul>
+        <li><strong>Distancia:</strong> 5,8 km (circular)</li>
+        <li><strong>Duración:</strong> 2-2,5 horas</li>
+        <li><strong>Dificultad:</strong> Fácil-Moderada</li>
+        <li><strong>Desnivel:</strong> 180 metros</li>
+        <li><strong>Mejor época:</strong> Todo el año (especialmente bonita en otoño)</li>
+        <li><strong>Apta para niños:</strong> Sí, a partir de 6 años</li>
+      </ul>
+      
+      <h2>Los molinos históricos</h2>
+      <p>A lo largo del recorrido encontrarás <strong>más de 10 molinos harineros</strong> en diferentes estados de conservación. Estos molinos, algunos datados en el siglo XVIII, fueron el motor económico de las aldeas de la zona. El agua del río Viacaba movía las piedras que molían el maíz y el trigo de los campesinos locales.</p>
+      
+      <p>Algunos molinos han sido restaurados y permiten ver el mecanismo original de funcionamiento. Podrás observar:</p>
+      <ul>
+        <li>La <strong>rueda hidráulica</strong> de madera (en algunos casos restaurada)</li>
+        <li>El <strong>canal de agua</strong> o "cuérnago" que desviaba el caudal</li>
+        <li>Las <strong>piedras de moler</strong> o "muelas"</li>
+        <li>La <strong>tolva</strong> donde se vertía el grano</li>
+      </ul>
+      
+      <h2>El bosque atlántico</h2>
+      <p>Más allá de los molinos, la ruta atraviesa uno de los <strong>bosques de ribera mejor conservados</strong> de la zona. Caminarás bajo la sombra de:</p>
+      <ul>
+        <li><strong>Castaños centenarios</strong> con troncos de varios metros de diámetro</li>
+        <li><strong>Robles carballos</strong> típicos del norte peninsular</li>
+        <li><strong>Alisos y fresnos</strong> junto a las orillas del río</li>
+        <li><strong>Helechos gigantes</strong> y musgo que cubren rocas y árboles</li>
+      </ul>
+      
+      <h2>Fauna que puedes observar</h2>
+      <p>Si caminas en silencio, especialmente al amanecer o atardecer, podrás avistar:</p>
+      <ul>
+        <li><strong>Truchas</strong> en las pozas cristalinas del río</li>
+        <li><strong>Martín pescador</strong> con su plumaje azul eléctrico</li>
+        <li><strong>Mirlo acuático</strong> buscando insectos entre las rocas</li>
+        <li><strong>Ardillas rojas</strong> entre los castaños</li>
+        <li><strong>Salamandras</strong> en días húmedos</li>
+      </ul>
+      
+      <h2>Las cascadas del Viacaba</h2>
+      <p>Uno de los puntos más espectaculares de la ruta son las <strong>pequeñas cascadas</strong> que forma el río Viacaba. Aunque no son de gran altura, el conjunto de saltos de agua entre rocas cubiertas de musgo crea un paisaje de cuento. Es el lugar perfecto para hacer una pausa, respirar el aire puro y escuchar el sonido del agua.</p>
+      
+      <h2>Consejos para disfrutar la ruta</h2>
+      <ul>
+        <li><strong>Calzado:</strong> Lleva botas de montaña o zapatillas con buen agarre. El terreno puede estar húmedo y resbaladizo.</li>
+        <li><strong>Agua y snacks:</strong> Aunque la ruta no es larga, siempre es bueno llevar algo de hidratación y frutos secos.</li>
+        <li><strong>Cámara:</strong> Los rincones fotogénicos son infinitos. La luz filtrada por el bosque crea escenas mágicas.</li>
+        <li><strong>Repelente:</strong> En verano puede haber mosquitos cerca del río.</li>
+        <li><strong>Silencio:</strong> Si quieres ver fauna, camina en silencio y haz pausas para observar.</li>
+      </ul>
+      
+      <h2>Combinar con otras actividades</h2>
+      <p>Después de la ruta, te recomendamos:</p>
+      <ul>
+        <li>Comer en una sidrería tradicional de Torazo o Santa Eulalia</li>
+        <li>Visitar el llagar de sidra más cercano para una degustación</li>
+        <li>Volver a La Cabaña para un merecido descanso en el porche con vistas</li>
+      </ul>
+      
+      <p><strong>Esta ruta es una de nuestras favoritas y se la recomendamos a todos nuestros huéspedes.</strong> Es perfecta para una mañana tranquila, ideal para familias y parejas que buscan conectar con la naturaleza asturiana más auténtica.</p>
+    `,
+    contentEn: `
+      <p>One of the hidden gems of the Cider Region awaits guests at La Cabaña de la Lechuza: <strong>the Viacaba River Mills Route</strong>. This trail, virtually unknown to mass tourism, offers a fascinating journey through Asturias' rural history and Atlantic forest landscapes that will take your breath away.</p>
+      
+      <h2>How to get there from The Cabin</h2>
+      <p>The start of the route is <strong>just 5 minutes by car</strong> from our rural house. From La Roza, take the road towards Torazo and follow the signs to the Viacaba River Trail. There is a small parking area at the starting point, although in high season it's advisable to arrive early.</p>
+      
+      <h2>Technical data</h2>
+      <ul>
+        <li><strong>Distance:</strong> 5.8 km (circular)</li>
+        <li><strong>Duration:</strong> 2-2.5 hours</li>
+        <li><strong>Difficulty:</strong> Easy-Moderate</li>
+        <li><strong>Elevation gain:</strong> 180 meters</li>
+        <li><strong>Best time:</strong> Year-round (especially beautiful in autumn)</li>
+        <li><strong>Suitable for children:</strong> Yes, from 6 years old</li>
+      </ul>
+      
+      <h2>The historic mills</h2>
+      <p>Along the route you will find <strong>more than 10 flour mills</strong> in different states of conservation. These mills, some dating from the 18th century, were the economic engine of the villages in the area. The water from the Viacaba river moved the stones that ground the corn and wheat of local farmers.</p>
+      
+      <p>Some mills have been restored and allow you to see the original mechanism. You can observe:</p>
+      <ul>
+        <li>The wooden <strong>water wheel</strong> (restored in some cases)</li>
+        <li>The <strong>water channel</strong> or "cuérnago" that diverted the flow</li>
+        <li>The <strong>grinding stones</strong> or "millstones"</li>
+        <li>The <strong>hopper</strong> where grain was poured</li>
+      </ul>
+      
+      <h2>The Atlantic forest</h2>
+      <p>Beyond the mills, the route passes through one of the <strong>best-preserved riparian forests</strong> in the area. You will walk under the shade of:</p>
+      <ul>
+        <li><strong>Centuries-old chestnut trees</strong> with trunks several meters in diameter</li>
+        <li><strong>Carballo oaks</strong> typical of the northern peninsula</li>
+        <li><strong>Alders and ash trees</strong> along the river banks</li>
+        <li><strong>Giant ferns</strong> and moss covering rocks and trees</li>
+      </ul>
+      
+      <h2>Wildlife you can observe</h2>
+      <p>If you walk quietly, especially at dawn or dusk, you may spot:</p>
+      <ul>
+        <li><strong>Trout</strong> in the crystal-clear river pools</li>
+        <li><strong>Kingfisher</strong> with its electric blue plumage</li>
+        <li><strong>Dipper</strong> looking for insects among the rocks</li>
+        <li><strong>Red squirrels</strong> among the chestnut trees</li>
+        <li><strong>Salamanders</strong> on humid days</li>
+      </ul>
+      
+      <h2>The Viacaba waterfalls</h2>
+      <p>One of the most spectacular points of the route are the <strong>small waterfalls</strong> formed by the Viacaba river. Although not very high, the series of water cascades between moss-covered rocks creates a fairy-tale landscape. It's the perfect place for a break, to breathe pure air and listen to the sound of water.</p>
+      
+      <h2>Tips to enjoy the route</h2>
+      <ul>
+        <li><strong>Footwear:</strong> Wear hiking boots or shoes with good grip. The terrain can be wet and slippery.</li>
+        <li><strong>Water and snacks:</strong> Although the route is not long, it's always good to bring some hydration and nuts.</li>
+        <li><strong>Camera:</strong> The photogenic spots are endless. The light filtered through the forest creates magical scenes.</li>
+        <li><strong>Repellent:</strong> In summer there may be mosquitoes near the river.</li>
+        <li><strong>Silence:</strong> If you want to see wildlife, walk quietly and take breaks to observe.</li>
+      </ul>
+      
+      <h2>Combine with other activities</h2>
+      <p>After the route, we recommend:</p>
+      <ul>
+        <li>Eating at a traditional cider house in Torazo or Santa Eulalia</li>
+        <li>Visiting the nearest cider mill for a tasting</li>
+        <li>Returning to The Cabin for a well-deserved rest on the porch with views</li>
+      </ul>
+      
+      <p><strong>This route is one of our favorites and we recommend it to all our guests.</strong> It's perfect for a quiet morning, ideal for families and couples looking to connect with the most authentic Asturian nature.</p>
+    `,
+    coverImage: "/blog/ruta-molinos.jpg",
+    coverImageAltEs: "Molino antiguo de piedra junto a cascada en bosque verde con musgo - Ruta de los Molinos Asturias",
+    coverImageAltEn: "Ancient stone mill next to waterfall in green mossy forest - Mills Route Asturias",
+    author: "La Cabaña de la Lechuza",
+    publishedAt: "2025-01-16",
+    tags: ["senderismo", "rutas", "molinos", "naturaleza", "cabranes"]
+  },
+  {
     id: "1",
     slug: "historia-cabana-lechuza",
     title: "La Historia de La Cabaña de la Lechuza: Un Proyecto Personal con Alma",
@@ -326,78 +476,338 @@ export const blogPosts: BlogPost[] = [
     slug: "rutas-senderismo-cabranes",
     title: "Las Mejores Rutas de Senderismo desde La Cabaña",
     titleEn: "The Best Hiking Trails from The Cabin",
-    excerpt: "Explora los senderos más espectaculares de nuestra zona: desde paseos suaves entre pomaradas hasta rutas de montaña con vistas al Cantábrico.",
-    excerptEn: "Explore the most spectacular trails in our area: from gentle walks through apple orchards to mountain routes with views of the Cantabrian Sea.",
+    excerpt: "Explora los senderos más espectaculares de nuestra zona: desde paseos suaves entre pomaradas hasta cascadas impresionantes y sendas costeras.",
+    excerptEn: "Explore the most spectacular trails in our area: from gentle walks through apple orchards to impressive waterfalls and coastal paths.",
     content: `
-      <p>La ubicación de La Cabaña de la Lechuza es perfecta para los amantes del senderismo. Aquí te presentamos las rutas que puedes hacer directamente desde nuestra puerta.</p>
+      <p>La ubicación de La Cabaña de la Lechuza es perfecta para los amantes del senderismo. Aquí te presentamos una selección de las mejores rutas que puedes hacer desde nuestra puerta o a pocos minutos en coche, incluyendo senderos de montaña, bosques mágicos, cascadas espectaculares y paseos por la costa.</p>
+      
       <h2>Ruta de las Pomaradas (3 km - Fácil)</h2>
-      <p>Sal de la casa y en 5 minutos estarás caminando entre manzanos centenarios. Esta ruta circular de 3 km es perfecta para un paseo tranquilo.</p>
-      <h2>Mirador del Sueve (8 km - Moderada)</h2>
-      <p>Una ruta de media montaña que asciende hasta un mirador espectacular desde donde se divisa el mar Cantábrico y los Picos de Europa.</p>
-      <h2>Consejos prácticos</h2>
+      
+      <p>Sal de la casa y en 5 minutos estarás caminando entre manzanos centenarios. Esta ruta circular de 3 km es perfecta para un paseo tranquilo al atardecer.</p>
+      
+      <p>En primavera los manzanos en flor crean un espectáculo inolvidable, y en otoño podrás ver (y oler) las manzanas maduras listas para la recogida.</p>
+      
       <ul>
-        <li>Lleva calzado de montaña o zapatillas con buen agarre</li>
-        <li>Siempre lleva agua y algo de comida</li>
-        <li>Respeta el entorno y no dejes basura</li>
+        <li><strong>Distancia:</strong> 3 km (circular)</li>
+        <li><strong>Tiempo:</strong> 45 minutos - 1 hora</li>
+        <li><strong>Dificultad:</strong> Muy fácil, apta para todos</li>
+        <li><strong>Mejor época:</strong> Primavera (floración) y otoño (cosecha)</li>
       </ul>
+      
+      <h2>Cascadas de Oneta (2,5 km - Fácil)</h2>
+      
+      <p>Una de las rutas más espectaculares y accesibles de Asturias. Las <strong>Cascadas de Oneta</strong>, situadas en el concejo de Villayón (a unos 90 minutos en coche), son un conjunto de tres saltos de agua impresionantes que alcanzan los 20 metros de altura.</p>
+      
+      <p>El sendero transcurre por un bosque atlántico exuberante, con helechos gigantes, musgo y una vegetación que parece sacada de un cuento de hadas. El sonido del agua te acompañará durante todo el recorrido.</p>
+      
+      <ul>
+        <li><strong>Distancia:</strong> 2,5 km (ida y vuelta)</li>
+        <li><strong>Tiempo:</strong> 1-1,5 horas</li>
+        <li><strong>Dificultad:</strong> Fácil</li>
+        <li><strong>Desnivel:</strong> 100 metros</li>
+        <li><strong>Mejor época:</strong> Todo el año, espectacular en otoño e invierno con más caudal</li>
+      </ul>
+      
+      <p><strong>Consejo:</strong> Lleva chubasquero porque la humedad del bosque y las salpicaduras de las cascadas te mojarán. ¡Merece la pena!</p>
+      
+      <h2>Senda Costera de la Playa de la Griega (6 km - Fácil)</h2>
+      
+      <p>Una ruta perfecta para combinar senderismo y playa. La <strong>Playa de la Griega</strong>, cerca de Colunga (a 25 minutos en coche), es famosa por sus <strong>huellas de dinosaurios</strong> fosilizadas en las rocas.</p>
+      
+      <p>El sendero costero ofrece vistas espectaculares de los acantilados y el mar Cantábrico. Puedes caminar desde la playa de la Griega hasta la playa de Lastres, pasando por calas escondidas y formaciones rocosas impresionantes.</p>
+      
+      <ul>
+        <li><strong>Distancia:</strong> 6 km (lineal, ida y vuelta 12 km o con transporte)</li>
+        <li><strong>Tiempo:</strong> 2-3 horas</li>
+        <li><strong>Dificultad:</strong> Fácil</li>
+        <li><strong>Mejor época:</strong> Primavera y verano</li>
+      </ul>
+      
+      <p>No te pierdas el <strong>Museo del Jurásico de Asturias (MUJA)</strong> que está junto a la playa, con una colección impresionante de fósiles de dinosaurios encontrados en la costa asturiana.</p>
+      
+      <h2>Mirador del Sueve (8 km - Moderada)</h2>
+      
+      <p>Una ruta de media montaña que asciende hasta un mirador espectacular desde donde se divisa el mar Cantábrico, los Picos de Europa y todo el valle. En días claros las vistas son impresionantes.</p>
+      
+      <p>La Sierra del Sueve es hogar de los últimos <strong>caballos asturcones</strong> en libertad, una raza autóctona que podrás avistar durante la ruta.</p>
+      
+      <ul>
+        <li><strong>Distancia:</strong> 8 km (ida y vuelta)</li>
+        <li><strong>Tiempo:</strong> 3-4 horas</li>
+        <li><strong>Dificultad:</strong> Moderada</li>
+        <li><strong>Desnivel:</strong> 450 metros</li>
+        <li><strong>Mejor época:</strong> Primavera y otoño</li>
+      </ul>
+      
+      <h2>PR-AS 147: Senda Verde de Cabranes (12 km - Moderada)</h2>
+      
+      <p>Una ruta homologada que recorre lo mejor del concejo de Cabranes. Atraviesa bosques, pomaradas, pueblos tradicionales y ofrece vistas panorámicas del valle.</p>
+      
+      <ul>
+        <li><strong>Distancia:</strong> 12 km (circular)</li>
+        <li><strong>Tiempo:</strong> 4-5 horas</li>
+        <li><strong>Dificultad:</strong> Moderada</li>
+        <li><strong>Desnivel:</strong> 380 metros</li>
+      </ul>
+      
+      <h2>Ruta del Fitu (15 km - Moderada-Alta)</h2>
+      
+      <p>Para los más aventureros. Esta ruta sube hasta el famoso <strong>Mirador del Fitu</strong>, uno de los balcones más impresionantes de Asturias con vistas de 360 grados que abarcan desde los Picos de Europa hasta el mar.</p>
+      
+      <ul>
+        <li><strong>Distancia:</strong> 15 km (ida y vuelta)</li>
+        <li><strong>Tiempo:</strong> 5-6 horas</li>
+        <li><strong>Dificultad:</strong> Moderada-Alta</li>
+        <li><strong>Desnivel:</strong> 650 metros</li>
+      </ul>
+      
+      <h2>Consejos prácticos para todas las rutas</h2>
+      
+      <ul>
+        <li><strong>Calzado:</strong> Botas de montaña o zapatillas con buen agarre. El terreno puede estar húmedo.</li>
+        <li><strong>Agua:</strong> Lleva siempre al menos 1 litro por persona.</li>
+        <li><strong>Ropa:</strong> Vístete por capas. El tiempo en Asturias puede cambiar rápidamente.</li>
+        <li><strong>Mapa/GPS:</strong> Descarga el track antes de salir. La cobertura móvil puede ser irregular.</li>
+        <li><strong>Respeto:</strong> No dejes basura, no arranques plantas, cierra las porteras que encuentres.</li>
+      </ul>
+      
+      <p><strong>En La Cabaña de la Lechuza tenemos mapas e información detallada de todas estas rutas. ¡Pregúntanos y te ayudaremos a elegir la mejor opción según tu nivel!</strong></p>
     `,
     contentEn: `
-      <p>The location of La Cabaña de la Lechuza is perfect for hiking lovers. Here are the routes you can do directly from our door.</p>
+      <p>The location of La Cabaña de la Lechuza is perfect for hiking lovers. Here we present a selection of the best routes you can do from our door or just a few minutes away by car, including mountain trails, magical forests, spectacular waterfalls and coastal walks.</p>
+      
       <h2>Apple Orchards Route (3 km - Easy)</h2>
-      <p>Leave the house and in 5 minutes you'll be walking among century-old apple trees. This 3 km circular route is perfect for a quiet walk.</p>
-      <h2>Sueve Viewpoint (8 km - Moderate)</h2>
-      <p>A mid-mountain route that ascends to a spectacular viewpoint overlooking the Cantabrian Sea and Picos de Europa.</p>
-      <h2>Practical tips</h2>
+      
+      <p>Leave the house and in 5 minutes you'll be walking among century-old apple trees. This 3 km circular route is perfect for a quiet evening walk.</p>
+      
+      <p>In spring the flowering apple trees create an unforgettable spectacle, and in autumn you can see (and smell) the ripe apples ready for harvest.</p>
+      
       <ul>
-        <li>Wear hiking boots or shoes with good grip</li>
-        <li>Always carry water and some food</li>
-        <li>Respect the environment and don't leave litter</li>
+        <li><strong>Distance:</strong> 3 km (circular)</li>
+        <li><strong>Time:</strong> 45 minutes - 1 hour</li>
+        <li><strong>Difficulty:</strong> Very easy, suitable for all</li>
+        <li><strong>Best time:</strong> Spring (flowering) and autumn (harvest)</li>
       </ul>
+      
+      <h2>Oneta Waterfalls (2.5 km - Easy)</h2>
+      
+      <p>One of the most spectacular and accessible routes in Asturias. The <strong>Oneta Waterfalls</strong>, located in the Villayón council (about 90 minutes by car), are a set of three impressive waterfalls reaching 20 meters in height.</p>
+      
+      <p>The trail runs through a lush Atlantic forest, with giant ferns, moss and vegetation that seems taken from a fairy tale. The sound of water will accompany you throughout the journey.</p>
+      
+      <ul>
+        <li><strong>Distance:</strong> 2.5 km (round trip)</li>
+        <li><strong>Time:</strong> 1-1.5 hours</li>
+        <li><strong>Difficulty:</strong> Easy</li>
+        <li><strong>Elevation gain:</strong> 100 meters</li>
+        <li><strong>Best time:</strong> Year-round, spectacular in autumn and winter with more water flow</li>
+      </ul>
+      
+      <p><strong>Tip:</strong> Bring a raincoat because the forest humidity and waterfall splashes will get you wet. It's worth it!</p>
+      
+      <h2>La Griega Beach Coastal Path (6 km - Easy)</h2>
+      
+      <p>A perfect route to combine hiking and beach. <strong>La Griega Beach</strong>, near Colunga (25 minutes by car), is famous for its <strong>fossilized dinosaur footprints</strong> in the rocks.</p>
+      
+      <p>The coastal path offers spectacular views of the cliffs and the Cantabrian Sea. You can walk from La Griega beach to Lastres beach, passing through hidden coves and impressive rock formations.</p>
+      
+      <ul>
+        <li><strong>Distance:</strong> 6 km (linear, 12 km round trip or with transport)</li>
+        <li><strong>Time:</strong> 2-3 hours</li>
+        <li><strong>Difficulty:</strong> Easy</li>
+        <li><strong>Best time:</strong> Spring and summer</li>
+      </ul>
+      
+      <p>Don't miss the <strong>Jurassic Museum of Asturias (MUJA)</strong> which is next to the beach, with an impressive collection of dinosaur fossils found on the Asturian coast.</p>
+      
+      <h2>Sueve Viewpoint (8 km - Moderate)</h2>
+      
+      <p>A mid-mountain route that ascends to a spectacular viewpoint overlooking the Cantabrian Sea, Picos de Europa and the entire valley. On clear days the views are impressive.</p>
+      
+      <p>The Sierra del Sueve is home to the last <strong>asturcón horses</strong> in the wild, a native breed that you can spot during the route.</p>
+      
+      <ul>
+        <li><strong>Distance:</strong> 8 km (round trip)</li>
+        <li><strong>Time:</strong> 3-4 hours</li>
+        <li><strong>Difficulty:</strong> Moderate</li>
+        <li><strong>Elevation gain:</strong> 450 meters</li>
+        <li><strong>Best time:</strong> Spring and autumn</li>
+      </ul>
+      
+      <h2>PR-AS 147: Cabranes Green Trail (12 km - Moderate)</h2>
+      
+      <p>An official trail that covers the best of Cabranes. It crosses forests, apple orchards, traditional villages and offers panoramic views of the valley.</p>
+      
+      <ul>
+        <li><strong>Distance:</strong> 12 km (circular)</li>
+        <li><strong>Time:</strong> 4-5 hours</li>
+        <li><strong>Difficulty:</strong> Moderate</li>
+        <li><strong>Elevation gain:</strong> 380 meters</li>
+      </ul>
+      
+      <h2>Fitu Route (15 km - Moderate-High)</h2>
+      
+      <p>For the more adventurous. This route climbs to the famous <strong>Fitu Viewpoint</strong>, one of the most impressive balconies in Asturias with 360-degree views spanning from Picos de Europa to the sea.</p>
+      
+      <ul>
+        <li><strong>Distance:</strong> 15 km (round trip)</li>
+        <li><strong>Time:</strong> 5-6 hours</li>
+        <li><strong>Difficulty:</strong> Moderate-High</li>
+        <li><strong>Elevation gain:</strong> 650 meters</li>
+      </ul>
+      
+      <h2>Practical tips for all routes</h2>
+      
+      <ul>
+        <li><strong>Footwear:</strong> Hiking boots or shoes with good grip. The terrain can be wet.</li>
+        <li><strong>Water:</strong> Always carry at least 1 liter per person.</li>
+        <li><strong>Clothing:</strong> Dress in layers. Weather in Asturias can change quickly.</li>
+        <li><strong>Map/GPS:</strong> Download the track before leaving. Mobile coverage can be spotty.</li>
+        <li><strong>Respect:</strong> Don't leave litter, don't pick plants, close any gates you find.</li>
+      </ul>
+      
+      <p><strong>At La Cabaña de la Lechuza we have maps and detailed information about all these routes. Ask us and we'll help you choose the best option for your level!</strong></p>
     `,
     coverImage: "/blog/rutas-senderismo.jpg",
-    coverImageAltEs: "Molino antiguo junto a cascada en bosque verde ruta de senderismo Asturias naturaleza",
-    coverImageAltEn: "Ancient mill next to waterfall in green forest hiking trail Asturias nature",
+    coverImageAltEs: "Senderista contemplando cascada espectacular en bosque verde de Asturias ruta de senderismo naturaleza",
+    coverImageAltEn: "Hiker contemplating spectacular waterfall in green forest of Asturias hiking trail nature",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-08",
-    tags: ["senderismo", "rutas", "naturaleza"]
+    tags: ["senderismo", "rutas", "naturaleza", "cascadas", "playas"]
   },
   {
     id: "5",
     slug: "gastronomia-asturiana-imprescindibles",
-    title: "Gastronomía Asturiana: Los Platos que Debes Probar",
-    titleEn: "Asturian Gastronomy: Must-Try Dishes",
-    excerpt: "La cocina asturiana es sinónimo de sabor y tradición. Te contamos qué platos no puedes dejar de probar durante tu visita.",
-    excerptEn: "Asturian cuisine is synonymous with flavor and tradition. We tell you which dishes you must try during your visit.",
+    title: "Gastronomía Asturiana: Guía Completa de Platos y Restaurantes",
+    titleEn: "Asturian Gastronomy: Complete Guide to Dishes and Restaurants",
+    excerpt: "Descubre los platos imprescindibles de la cocina asturiana y los mejores lugares para degustarlos cerca de La Cabaña de la Lechuza.",
+    excerptEn: "Discover the essential dishes of Asturian cuisine and the best places to taste them near La Cabaña de la Lechuza.",
     content: `
-      <p>Asturias es conocida como el <strong>paraíso gastronómico</strong> de España. Su cocina combina productos del mar y la montaña.</p>
-      <h2>Fabada Asturiana</h2>
-      <p>El plato más emblemático de la región. Fabes guisadas lentamente con chorizo, morcilla y lacón.</p>
-      <h2>Sidra Natural</h2>
-      <p>La bebida por excelencia de Asturias. Se escancia desde altura para oxigenarla.</p>
-      <h2>Quesos Asturianos</h2>
+      <p>Asturias es conocida como el <strong>paraíso gastronómico</strong> de España. Su cocina combina productos del mar y la montaña en platos contundentes y sabrosos que reconfortan el alma. Durante tu estancia en La Cabaña de la Lechuza, te recomendamos que no dejes de probar estos manjares.</p>
+      
+      <h2>Los platos imprescindibles</h2>
+      
+      <h3>Fabada Asturiana</h3>
+      <p>El plato más emblemático de la región. Las <em>fabes</em> (judías blancas grandes) se guisan lentamente durante horas con el <strong>compango</strong>: chorizo, morcilla, lacón y tocino. El resultado es un plato cremoso, reconfortante y lleno de sabor. Ideal para días fríos.</p>
+      <p><strong>Dónde probarla:</strong> Las sidrerías tradicionales de la zona suelen tenerla en carta, especialmente en invierno. Pregúntanos por nuestras recomendaciones.</p>
+      
+      <h3>Cachopo</h3>
+      <p>Dos enormes filetes de ternera empanados rellenos de jamón y queso. El cachopo asturiano es famoso por su tamaño descomunal, normalmente suficiente para compartir entre dos o más personas. Crujiente por fuera, jugoso por dentro.</p>
+      
+      <h3>Pote Asturiano</h3>
+      <p>Un guiso tradicional de berza (col), patatas, fabes y compango. Es el plato de cuchara por excelencia de los días de invierno en Asturias. Cada casa tiene su propia receta familiar.</p>
+      
+      <h3>Tortos con Picadillo</h3>
+      <p>Pequeñas tortas de maíz fritas servidas con picadillo (carne de cerdo adobada y desmenuzada) o huevos fritos. Un plato sencillo pero adictivo que encontrarás en cualquier sidrería.</p>
+      
+      <h2>Los quesos asturianos</h2>
+      <p>Asturias es la comunidad con más variedades de queso de España. Algunos imprescindibles:</p>
       <ul>
-        <li><strong>Cabrales:</strong> queso azul curado en cuevas naturales</li>
-        <li><strong>Gamonéu:</strong> ahumado y con toques azules</li>
+        <li><strong>Cabrales:</strong> El rey de los quesos azules españoles. Se cura en cuevas naturales de los Picos de Europa y tiene un sabor intenso y picante. No apto para paladares tímidos.</li>
+        <li><strong>Gamonéu:</strong> Queso ahumado con toques azules, más suave que el Cabrales. Se elabora en dos variedades: del Puerto (de alta montaña) y del Valle.</li>
+        <li><strong>Afuega'l Pitu:</strong> Su nombre significa "ahoga el pollo" porque es tan cremoso que "se pega" al paladar. Puede ser blanco o anaranjado (con pimentón).</li>
+        <li><strong>Casín:</strong> El queso más antiguo de España, elaborado en Caso. Tiene forma de bola con grabados característicos.</li>
+        <li><strong>Vidiago:</strong> Queso cremoso de la zona costera, suave y mantecoso.</li>
       </ul>
+      
+      <h2>La sidra: mucho más que una bebida</h2>
+      <p>La sidra natural es la bebida por excelencia de Asturias. Se elabora con manzanas locales y tiene una graduación alcohólica suave (4-6%). Pero lo más especial es el <strong>ritual del escanciado</strong>:</p>
+      <ul>
+        <li>La sidra se <strong>escancia desde altura</strong> (la botella arriba, el vaso abajo) para oxigenarla y liberar su carbónico natural.</li>
+        <li>Se sirve un <strong>"culín"</strong> (pequeña cantidad) que debe beberse de un trago.</li>
+        <li>Es costumbre dejar un poco en el vaso y tirarlo al suelo para "limpiar" antes del siguiente culín.</li>
+        <li>La sidra siempre se comparte en grupo, siguiendo un orden de turnos.</li>
+      </ul>
+      
+      <h2>Postres tradicionales</h2>
+      <ul>
+        <li><strong>Arroz con leche:</strong> Cremoso, con canela y azúcar caramelizado por encima. El postre más popular.</li>
+        <li><strong>Frixuelos:</strong> Crepes finos rellenos de crema, nata o miel. Típicos de Carnaval pero disponibles todo el año.</li>
+        <li><strong>Casadielles:</strong> Empanadillas dulces rellenas de nuez y anís. Adictivas.</li>
+        <li><strong>Carbayones:</strong> Dulce típico de Oviedo con almendra y yema.</li>
+      </ul>
+      
+      <h2>Dónde comer cerca de La Cabaña</h2>
+      <p>Durante tu estancia, te recomendaremos las mejores sidrerías y restaurantes de la zona. Algunos están a pocos minutos en coche. También podéis cocinar en la casa (¡tenéis cocina totalmente equipada!) y comprar productos locales en los mercados de Infiesto o Villaviciosa.</p>
+      
+      <h2>Productos para llevar</h2>
+      <p>No te vayas de Asturias sin llevarte:</p>
+      <ul>
+        <li>Queso Cabrales o Gamonéu (se conservan bien)</li>
+        <li>Botellas de sidra natural</li>
+        <li>Fabes de la granja para cocinar en casa</li>
+        <li>Morcilla asturiana</li>
+        <li>Dulces típicos como carbayones o casadielles</li>
+      </ul>
+      
+      <p><strong>En La Cabaña de la Lechuza estaremos encantados de darte recomendaciones personalizadas según tus gustos. ¡La gastronomía asturiana es una experiencia que recordarás siempre!</strong></p>
     `,
     contentEn: `
-      <p>Asturias is known as Spain's <strong>gastronomic paradise</strong>. Its cuisine combines products from the sea and mountains.</p>
-      <h2>Fabada Asturiana</h2>
-      <p>The region's most emblematic dish. Beans slowly stewed with chorizo, blood sausage and ham.</p>
-      <h2>Natural Cider</h2>
-      <p>The quintessential Asturian drink. It's poured from height to oxygenate it.</p>
-      <h2>Asturian Cheeses</h2>
+      <p>Asturias is known as Spain's <strong>gastronomic paradise</strong>. Its cuisine combines products from the sea and mountains in hearty and flavorful dishes that comfort the soul. During your stay at La Cabaña de la Lechuza, we recommend you try these delicacies.</p>
+      
+      <h2>Must-try dishes</h2>
+      
+      <h3>Fabada Asturiana</h3>
+      <p>The region's most emblematic dish. Large white beans are slowly stewed for hours with the <strong>compango</strong>: chorizo, blood sausage, ham and bacon. The result is a creamy, comforting dish full of flavor. Ideal for cold days.</p>
+      <p><strong>Where to try it:</strong> Traditional cider houses in the area usually have it on the menu, especially in winter. Ask us for recommendations.</p>
+      
+      <h3>Cachopo</h3>
+      <p>Two huge breaded beef fillets stuffed with ham and cheese. The Asturian cachopo is famous for its enormous size, usually enough to share between two or more people. Crispy on the outside, juicy on the inside.</p>
+      
+      <h3>Pote Asturiano</h3>
+      <p>A traditional stew of cabbage, potatoes, beans and compango. It's the quintessential winter spoon dish in Asturias. Each house has its own family recipe.</p>
+      
+      <h3>Tortos with Picadillo</h3>
+      <p>Small fried corn cakes served with picadillo (seasoned shredded pork) or fried eggs. A simple but addictive dish you'll find in any cider house.</p>
+      
+      <h2>Asturian cheeses</h2>
+      <p>Asturias is the region with the most cheese varieties in Spain. Some essentials:</p>
       <ul>
-        <li><strong>Cabrales:</strong> blue cheese aged in natural caves</li>
-        <li><strong>Gamonéu:</strong> smoked with blue touches</li>
+        <li><strong>Cabrales:</strong> The king of Spanish blue cheeses. Aged in natural caves of Picos de Europa with an intense, spicy flavor. Not for timid palates.</li>
+        <li><strong>Gamonéu:</strong> Smoked cheese with blue touches, milder than Cabrales. Made in two varieties: del Puerto (high mountain) and del Valle.</li>
+        <li><strong>Afuega'l Pitu:</strong> Its name means "chokes the chicken" because it's so creamy it "sticks" to the palate. Can be white or orange (with paprika).</li>
+        <li><strong>Casín:</strong> Spain's oldest cheese, made in Caso. Has a ball shape with characteristic engravings.</li>
+        <li><strong>Vidiago:</strong> Creamy coastal cheese, soft and buttery.</li>
       </ul>
+      
+      <h2>Cider: much more than a drink</h2>
+      <p>Natural cider is Asturias' quintessential drink. Made with local apples with mild alcohol content (4-6%). But the most special thing is the <strong>pouring ritual</strong>:</p>
+      <ul>
+        <li>Cider is <strong>poured from height</strong> (bottle up, glass down) to oxygenate it and release its natural carbonation.</li>
+        <li>A <strong>"culín"</strong> (small amount) is served and must be drunk in one gulp.</li>
+        <li>It's customary to leave a little in the glass and throw it on the floor to "clean" before the next culín.</li>
+        <li>Cider is always shared in a group, following a turn order.</li>
+      </ul>
+      
+      <h2>Traditional desserts</h2>
+      <ul>
+        <li><strong>Rice pudding:</strong> Creamy, with cinnamon and caramelized sugar on top. The most popular dessert.</li>
+        <li><strong>Frixuelos:</strong> Thin crepes filled with cream, whipped cream or honey. Typical of Carnival but available year-round.</li>
+        <li><strong>Casadielles:</strong> Sweet pastries filled with walnut and anise. Addictive.</li>
+        <li><strong>Carbayones:</strong> Typical Oviedo sweet with almond and egg yolk.</li>
+      </ul>
+      
+      <h2>Where to eat near The Cabin</h2>
+      <p>During your stay, we'll recommend the best cider houses and restaurants in the area. Some are just minutes away by car. You can also cook at the house (you have a fully equipped kitchen!) and buy local products at the Infiesto or Villaviciosa markets.</p>
+      
+      <h2>Products to take home</h2>
+      <p>Don't leave Asturias without taking:</p>
+      <ul>
+        <li>Cabrales or Gamonéu cheese (they keep well)</li>
+        <li>Bottles of natural cider</li>
+        <li>Farm beans to cook at home</li>
+        <li>Asturian blood sausage</li>
+        <li>Typical sweets like carbayones or casadielles</li>
+      </ul>
+      
+      <p><strong>At La Cabaña de la Lechuza we'll be happy to give you personalized recommendations based on your tastes. Asturian gastronomy is an experience you'll always remember!</strong></p>
     `,
     coverImage: "/blog/gastronomia-asturiana.jpg",
     coverImageAltEs: "Fabada asturiana tradicional con fabes chorizo morcilla y lacón plato típico de Asturias",
     coverImageAltEn: "Traditional Asturian fabada with beans chorizo blood sausage and ham typical dish of Asturias",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-06",
-    tags: ["gastronomía", "cocina asturiana", "sidra"]
+    tags: ["gastronomía", "cocina asturiana", "sidra", "quesos", "restaurantes"]
   }
 ];
 
