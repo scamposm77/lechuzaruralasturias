@@ -210,9 +210,9 @@ export const blogPosts: BlogPost[] = [
       
       <p><strong>This route is one of our favorites and we recommend it to all our guests.</strong> It's perfect for a quiet morning, ideal for families and couples looking to connect with the most authentic Asturian nature.</p>
     `,
-    coverImage: "/blog/rutas-senderismo.jpg",
-    coverImageAltEs: "Molino antiguo junto a cascada en la ruta de los molinos del río Viacaba Asturias",
-    coverImageAltEn: "Ancient mill next to waterfall on the Viacaba river mills route Asturias",
+    coverImage: "/blog/ruta-molinos.jpg",
+    coverImageAltEs: "Molino antiguo de piedra junto a cascada en bosque verde con musgo - Ruta de los Molinos Asturias",
+    coverImageAltEn: "Ancient stone mill next to waterfall in green mossy forest - Mills Route Asturias",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-16",
     tags: ["senderismo", "rutas", "molinos", "naturaleza", "cabranes"]
