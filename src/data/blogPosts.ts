@@ -52,6 +52,8 @@ export interface BlogPost {
   excerpt: string;
   content: string; // Soporta HTML
   coverImage: string;
+  coverImageAltEs: string;
+  coverImageAltEn: string;
   imageCredit?: {
     author: string;
     url: string;
@@ -106,6 +108,8 @@ export const blogPosts: BlogPost[] = [
       <p><strong>Esta casa está hecha para ser disfrutada. Espero que la sintáis como vuestra.</strong></p>
     `,
     coverImage: "/assets/exterior/ext-00-portada.jpg",
+    coverImageAltEs: "Fachada exterior de La Cabaña de la Lechuza casa rural con encanto en Cabranes Asturias - Historia y origen del nombre",
+    coverImageAltEn: "Exterior facade of La Cabaña de la Lechuza charming rural house in Cabranes Asturias - History and origin of the name",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-12",
     tags: ["historia", "arquitectura", "asturias", "lechuzas", "naturaleza"]
@@ -149,6 +153,8 @@ export const blogPosts: BlogPost[] = [
       <p>Según la mitología asturiana, en las cuevas cercanas habita el <em>Cuélebre</em>, un dragón alado que custodia tesoros. ¡Los vecinos más ancianos aún cuentan historias sobre él!</p>
     `,
     coverImage: "/assets/exterior/ext-10.jpg",
+    coverImageAltEs: "Vista del jardín con manzanos en la Comarca de la Sidra Cabranes Asturias - Blog casa rural",
+    coverImageAltEn: "Garden view with apple trees in the Cider Region Cabranes Asturias - Rural house blog",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-11",
     tags: ["cabranes", "comarca de la sidra", "curiosidades"]
@@ -194,6 +200,8 @@ export const blogPosts: BlogPost[] = [
       <p>Durante tu estancia, te animamos a pasear por los pueblos cercanos como Santa Eulalia o Torazo para admirar estos tesoros arquitectónicos que siguen en pie después de siglos.</p>
     `,
     coverImage: "/assets/exterior/ext-03.jpg",
+    coverImageAltEs: "Arquitectura tradicional asturiana con hórreo y casona de piedra en Cabranes - Patrimonio rural",
+    coverImageAltEn: "Traditional Asturian architecture with hórreo and stone house in Cabranes - Rural heritage",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-10",
     tags: ["arquitectura", "hórreos", "tradición"]
@@ -230,6 +238,8 @@ export const blogPosts: BlogPost[] = [
       <p>Pregúntanos durante tu estancia y te daremos mapas detallados e indicaciones personalizadas según tu nivel.</p>
     `,
     coverImage: "/assets/exterior/ext-09.jpg",
+    coverImageAltEs: "Ruta de senderismo por prados verdes y montañas cerca de casa rural Cabranes Asturias",
+    coverImageAltEn: "Hiking trail through green meadows and mountains near rural house Cabranes Asturias",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-08",
     tags: ["senderismo", "rutas", "naturaleza"]
@@ -269,6 +279,8 @@ export const blogPosts: BlogPost[] = [
       <p>Pregúntanos durante tu estancia y te recomendaremos los mejores restaurantes y sidrerías de la zona.</p>
     `,
     coverImage: "/assets/cocina/cocina-01.jpg",
+    coverImageAltEs: "Cocina equipada de casa rural La Cabaña de la Lechuza para cocinar gastronomía asturiana",
+    coverImageAltEn: "Equipped kitchen at La Cabaña de la Lechuza rural house for cooking Asturian cuisine",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-06",
     tags: ["gastronomía", "cocina asturiana", "sidra"]

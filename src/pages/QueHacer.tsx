@@ -28,6 +28,8 @@ interface Activity {
   distance: string;
   duration?: string;
   image: string;
+  altEs: string;
+  altEn: string;
   externalLink: string;
   category: "nature" | "beach" | "gastronomy" | "culture" | "hiking";
   icon: typeof Mountain;
@@ -43,6 +45,8 @@ const activities: Activity[] = [
     distance: "15 km",
     duration: "20 min",
     image: playaRodilesImg,
+    altEs: "Vista panorámica de la Playa de Rodiles con dunas y estuario - Excursión desde casa rural La Cabaña de la Lechuza en Cabranes Asturias",
+    altEn: "Panoramic view of Rodiles Beach with dunes and estuary - Day trip from La Cabaña de la Lechuza rural house in Cabranes Asturias",
     externalLink: "https://www.turismoasturias.es/descubre/costa/playas/playa-de-rodiles",
     category: "beach",
     icon: Waves
@@ -56,6 +60,8 @@ const activities: Activity[] = [
     distance: "12 km",
     duration: "15 min",
     image: tazonesImg,
+    altEs: "Vista aérea del puerto pesquero de Tazones con casas coloridas - Pueblo marinero cerca de casa rural Asturias",
+    altEn: "Aerial view of Tazones fishing port with colorful houses - Fishing village near rural house Asturias",
     externalLink: "https://www.turismovillaviciosa.es/pueblos/tazones/",
     category: "beach",
     icon: Waves
@@ -69,6 +75,8 @@ const activities: Activity[] = [
     distance: "7 km",
     duration: "10 min",
     image: rutaSidraImg,
+    altEs: "Escanciado de sidra asturiana tradicional en sidrería - Ruta de la Sidra desde La Cabaña de la Lechuza",
+    altEn: "Traditional Asturian cider pouring in cider house - Cider Route from La Cabaña de la Lechuza",
     externalLink: "https://www.sidratrabanco.com/",
     category: "gastronomy",
     icon: Wine
@@ -82,6 +90,8 @@ const activities: Activity[] = [
     distance: "12 km",
     duration: "15 min",
     image: museoSidraImg,
+    altEs: "Interior del Museo de la Sidra de Asturias en Nava con maquinaria tradicional - Cultura sidrera asturiana",
+    altEn: "Inside the Asturias Cider Museum in Nava with traditional machinery - Asturian cider culture",
     externalLink: "https://www.museodelasidra.com/",
     category: "gastronomy",
     icon: Wine
@@ -95,6 +105,8 @@ const activities: Activity[] = [
     distance: "25 km",
     duration: "30 min",
     image: miradorFituImg,
+    altEs: "Atardecer espectacular desde el Mirador del Fitu con vistas a los Picos de Europa - Excursión desde casa rural Cabranes",
+    altEn: "Spectacular sunset from Fitu Viewpoint with views to Picos de Europa - Day trip from rural house Cabranes",
     externalLink: "https://www.turismoasturias.es/descubre/naturaleza/otros-espacios/miradores/mirador-del-fito",
     category: "nature",
     icon: Camera
@@ -108,6 +120,8 @@ const activities: Activity[] = [
     distance: "20 km",
     duration: "25 min",
     image: lastresImg,
+    altEs: "Vista panorámica de Lastres pueblo pesquero con casas tradicionales y mar Cantábrico - Pueblos bonitos Asturias",
+    altEn: "Panoramic view of Lastres fishing village with traditional houses and Cantabrian Sea - Beautiful villages Asturias",
     externalLink: "https://www.turismocolunga.es/llastres/",
     category: "culture",
     icon: Church
@@ -121,6 +135,8 @@ const activities: Activity[] = [
     distance: "22 km",
     duration: "25 min",
     image: museoJurasicoImg,
+    altEs: "Museo del Jurásico MUJA con réplica de dinosaurio a tamaño real - Actividad familiar cerca de casa rural Asturias",
+    altEn: "Jurassic Museum MUJA with life-size dinosaur replica - Family activity near rural house Asturias",
     externalLink: "https://www.museojurasicoasturias.com/",
     category: "culture",
     icon: Leaf
@@ -134,6 +150,8 @@ const activities: Activity[] = [
     distance: "55 km",
     duration: "50 min",
     image: covadongaImg,
+    altEs: "Lago Enol en Covadonga rodeado de montañas de los Picos de Europa - Excursión imprescindible desde casa rural Asturias",
+    altEn: "Lake Enol in Covadonga surrounded by Picos de Europa mountains - Must-see excursion from rural house Asturias",
     externalLink: "https://lagosdecovadonga.org/",
     category: "nature",
     icon: Mountain
@@ -147,6 +165,8 @@ const activities: Activity[] = [
     distance: "45 km",
     duration: "40 min",
     image: bufonesPriaImg,
+    altEs: "Bufones de Pría con chorros de agua emergiendo de los acantilados - Fenómeno natural costa de Asturias",
+    altEn: "Pría Blowholes with water jets emerging from cliffs - Natural phenomenon Asturias coast",
     externalLink: "https://www.turismoasturias.es/descubre/naturaleza/otros-espacios/bufones/bufones-de-pria",
     category: "nature",
     icon: Waves
@@ -160,6 +180,8 @@ const activities: Activity[] = [
     distance: "7 km",
     duration: "10 min",
     image: villaviciosaImg,
+    altEs: "Vista de Villaviciosa capital de la manzana con costa y casas tradicionales - Comarca de la Sidra Asturias",
+    altEn: "View of Villaviciosa apple capital with coast and traditional houses - Cider Region Asturias",
     externalLink: "https://www.turismovillaviciosa.es/",
     category: "culture",
     icon: Church
@@ -173,6 +195,8 @@ const activities: Activity[] = [
     distance: "50 km",
     duration: "45 min",
     image: sendaOsoImg,
+    altEs: "Senda del Oso vía verde entre bosques de Asturias ideal para ciclismo y senderismo",
+    altEn: "Bear Trail greenway through Asturian forests ideal for cycling and hiking",
     externalLink: "https://www.turismoasturias.es/descubre/naturaleza/rutas/rutas-a-pie/senda-del-oso",
     category: "hiking",
     icon: Footprints
@@ -186,6 +210,8 @@ const activities: Activity[] = [
     distance: "45 km",
     duration: "40 min",
     image: cangasOnisImg,
+    altEs: "Puente romano de Cangas de Onís sobre el río Sella con la Cruz de la Victoria - Monumento histórico Asturias",
+    altEn: "Roman bridge of Cangas de Onís over Sella river with Victory Cross - Historic monument Asturias",
     externalLink: "https://www.cangasdeonis.com/",
     category: "culture",
     icon: Church
@@ -291,7 +317,7 @@ const QueHacer = () => {
                     <div className="relative h-48 overflow-hidden">
                       <img
                         src={activity.image}
-                        alt={language === "es" ? activity.nameEs : activity.nameEn}
+                        alt={language === "es" ? activity.altEs : activity.altEn}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                         onError={(e) => {
