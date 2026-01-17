@@ -9,6 +9,7 @@ const Footer = () => {
     { href: "#espacios", label: t("footer.spaces") },
     { href: "#habitaciones", label: t("nav.rooms") },
     { href: "#servicios", label: t("footer.services") },
+    { href: "/que-hacer", label: t("nav.whatToDo"), isExternal: true },
     { href: "/blog", label: t("nav.blog"), isExternal: true },
     { href: "#contacto", label: t("footer.contact") },
   ];
