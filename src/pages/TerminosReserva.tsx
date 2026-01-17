@@ -1,13 +1,12 @@
 import { ArrowLeft } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
-
 const TerminosReserva = () => {
-  const { language } = useLanguage();
-
+  const {
+    language
+  } = useLanguage();
   if (language === "en") {
-    return (
-      <>
+    return <>
         <Helmet>
           <title>Booking Terms | La Cabaña de la Lechuza - Rural House Asturias</title>
           <meta name="description" content="Booking terms and conditions of La Cabaña de la Lechuza, rural house in Cabranes, Asturias. Cancellation policy, payment conditions and house rules." />
@@ -17,10 +16,7 @@ const TerminosReserva = () => {
         <div className="min-h-screen bg-background">
           <header className="bg-foreground text-background py-6">
             <div className="container mx-auto px-6">
-              <a
-                href="/"
-                className="inline-flex items-center gap-2 font-body text-background/80 hover:text-background transition-colors"
-              >
+              <a href="/" className="inline-flex items-center gap-2 font-body text-background/80 hover:text-background transition-colors">
                 <ArrowLeft className="w-4 h-4" />
                 Back to La Cabaña de la Lechuza
               </a>
@@ -138,12 +134,9 @@ const TerminosReserva = () => {
             </div>
           </main>
         </div>
-      </>
-    );
+      </>;
   }
-
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Términos de Reserva | La Cabaña de la Lechuza - Casa Rural Asturias</title>
         <meta name="description" content="Términos y condiciones de reserva de La Cabaña de la Lechuza, casa rural en Cabranes, Asturias. Política de cancelación, condiciones de pago y normas de la casa." />
@@ -153,10 +146,7 @@ const TerminosReserva = () => {
       <div className="min-h-screen bg-background">
         <header className="bg-foreground text-background py-6">
           <div className="container mx-auto px-6">
-            <a
-              href="/"
-              className="inline-flex items-center gap-2 font-body text-background/80 hover:text-background transition-colors"
-            >
+            <a href="/" className="inline-flex items-center gap-2 font-body text-background/80 hover:text-background transition-colors">
               <ArrowLeft className="w-4 h-4" />
               Volver a La Cabaña de la Lechuza
             </a>
@@ -184,7 +174,7 @@ const TerminosReserva = () => {
               </p>
               <ul className="list-disc pl-6 space-y-2 mb-4">
                 <li>Se haya recibido el pago (señal o importe total)</li>
-                <li>Recibas confirmación escrita por email de Susana</li>
+                <li>Recibas confirmación escrita por email</li>
               </ul>
 
               <h3 className="font-display text-foreground text-xl mb-3">1.2. Métodos de Pago</h3>
@@ -197,7 +187,7 @@ const TerminosReserva = () => {
               <h3 className="font-display text-foreground text-xl mb-3">1.3. Precio (desde 100€/noche)</h3>
               <p className="leading-relaxed mb-2">El precio de la reserva incluye:</p>
               <ul className="list-disc pl-6 space-y-1 mb-4">
-                <li>Alojamiento para hasta 7 huéspedes</li>
+                <li>Alojamiento para hasta 7 huéspedes (sillón cama en el salón)</li>
                 <li>Uso exclusivo de la casa y jardín</li>
                 <li>Agua, luz y calefacción (uso razonable)</li>
                 <li>Ropa de cama y toallas</li>
@@ -226,7 +216,7 @@ const TerminosReserva = () => {
 
               <h3 className="font-display text-foreground text-xl mb-3">2.4. Cómo Cancelar</h3>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Email: susana@lechuzaruralasturias.es</li>
+                <li>Email: info@lechuzaruralasturias.es</li>
                 <li>Teléfono/WhatsApp: +34 625 08 15 19</li>
               </ul>
             </section>
@@ -266,7 +256,7 @@ const TerminosReserva = () => {
               <h2 className="font-display text-foreground text-2xl mb-4">6. CONTACTO</h2>
               <ul className="list-none space-y-2 text-muted-foreground">
                 <li><strong className="text-foreground">Anfitriona:</strong> Susana Campos Márquez</li>
-                <li><strong className="text-foreground">Email:</strong> susana@lechuzaruralasturias.es</li>
+                <li><strong className="text-foreground">Email:</strong>Email: info@lechuzaruralasturias.es</li>
                 <li><strong className="text-foreground">Teléfono/WhatsApp:</strong> +34 625 08 15 19</li>
                 <li><strong className="text-foreground">Registro Turístico:</strong> VV.3561.AS</li>
               </ul>
@@ -274,8 +264,6 @@ const TerminosReserva = () => {
           </div>
         </main>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default TerminosReserva;
