@@ -138,7 +138,8 @@ const Header = () => {
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
         <nav 
-          className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-border animate-fade-in shadow-2xl"
+          id="mobile-menu"
+          className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border animate-fade-in shadow-2xl"
           role="navigation"
           aria-label="Menú móvil"
         >
