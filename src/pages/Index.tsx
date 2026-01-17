@@ -33,22 +33,22 @@ const Index = () => {
 
   const seo = {
     es: {
-      title: "La Cabaña de la Lechuza | Casa Rural Cabranes Asturias - 7 Plazas",
-      description: "Casa rural completa Cabranes Asturias. 3 hab, jardín privado tejo centenario, chimenea. Comarca Sidra. Reserva directa 7 personas.",
-      keywords: "casa rural Cabranes, alquiler Asturias, casa rural Comarca Sidra, Cabranes alojamiento",
-      ogTitle: "La Cabaña de la Lechuza | Casa Rural Cabranes",
-      ogDescription: "Alquila casa rural completa en Cabranes. Jardín privado, 3 hab, hasta 7p. Asturias.",
-      twitterTitle: "Casa Rural Cabranes | La Cabaña de la Lechuza",
-      twitterDescription: "Alquila casa rural completa en Cabranes. Jardín privado, 3 hab, hasta 7p. Asturias.",
+      title: "Casa Rural con Encanto en Asturias | La Cabaña de la Lechuza | Cabranes, Comarca de la Sidra",
+      description: "Escápate a una casa rural rehabilitada en 2023 en plena naturaleza asturiana. Capacidad para 7 personas, jardín privado de 1500m² y porche con vistas. Tu refugio ideal en la Comarca de la Sidra. ¡Reserva ahora!",
+      keywords: "casa rural Asturias, alquiler íntegro Cabranes, casa rural Comarca de la Sidra, turismo rural Asturias 7 personas, alojamiento rural familiar Asturias",
+      ogTitle: "Casa Rural con Encanto en Asturias | La Cabaña de la Lechuza",
+      ogDescription: "Escápate a una casa rural rehabilitada en 2023 en plena naturaleza asturiana. Capacidad 7 personas, jardín 1500m², porche con vistas. ¡Reserva ahora!",
+      twitterTitle: "Casa Rural con Encanto en Asturias | La Cabaña de la Lechuza",
+      twitterDescription: "Escápate a una casa rural rehabilitada en 2023 en plena naturaleza asturiana. Capacidad 7 personas, jardín 1500m², porche con vistas.",
     },
     en: {
-      title: "La Cabaña de la Lechuza | Rural House Cabranes Asturias - 7 Guests",
-      description: "Complete rural house Cabranes Asturias. 3 bedrooms, private garden with centenary yew tree, fireplace. Cider Region. Direct booking 7 people.",
-      keywords: "rural house Cabranes, Asturias rental, rural house Cider Region, Cabranes accommodation",
-      ogTitle: "La Cabaña de la Lechuza | Rural House Cabranes",
-      ogDescription: "Rent complete rural house in Cabranes. Private garden, 3 bedrooms, up to 7p. Asturias.",
-      twitterTitle: "Rural House Cabranes | La Cabaña de la Lechuza",
-      twitterDescription: "Rent complete rural house in Cabranes. Private garden, 3 bedrooms, up to 7p. Asturias.",
+      title: "Charming Rural House in Asturias | La Cabaña de la Lechuza | Cabranes, Cider Region",
+      description: "Escape to a rural house renovated in 2023 in the heart of Asturian nature. Capacity for 7 guests, 1500m² private garden and porch with views. Your ideal retreat in the Cider Region. Book now!",
+      keywords: "rural house Asturias, whole house rental Cabranes, rural house Cider Region, rural tourism Asturias 7 guests, family rural accommodation Asturias",
+      ogTitle: "Charming Rural House in Asturias | La Cabaña de la Lechuza",
+      ogDescription: "Escape to a rural house renovated in 2023 in the heart of Asturian nature. Capacity 7 guests, 1500m² garden, porch with views. Book now!",
+      twitterTitle: "Charming Rural House in Asturias | La Cabaña de la Lechuza",
+      twitterDescription: "Escape to a rural house renovated in 2023 in the heart of Asturian nature. Capacity 7 guests, 1500m² garden, porch with views.",
     },
   };
 
