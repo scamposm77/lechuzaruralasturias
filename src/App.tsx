@@ -8,10 +8,13 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import AvisoLegal from "./pages/AvisoLegal";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
+import PoliticaCookies from "./pages/PoliticaCookies";
+import TerminosReserva from "./pages/TerminosReserva";
 import ComoLlegar from "./pages/ComoLlegar";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
+import CookieBanner from "./components/CookieBanner";
 
 const queryClient = new QueryClient();
 
@@ -27,12 +30,15 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/aviso-legal" element={<AvisoLegal />} />
               <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
+              <Route path="/politica-cookies" element={<PoliticaCookies />} />
+              <Route path="/terminos-reserva" element={<TerminosReserva />} />
               <Route path="/como-llegar" element={<ComoLlegar />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <CookieBanner />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
