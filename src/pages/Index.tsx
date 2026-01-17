@@ -13,6 +13,7 @@ const Rooms = lazy(() => import("@/components/Rooms"));
 const Services = lazy(() => import("@/components/Services"));
 const Reviews = lazy(() => import("@/components/Reviews"));
 const HouseRules = lazy(() => import("@/components/HouseRules"));
+const ThingsToDo = lazy(() => import("@/components/ThingsToDo"));
 const Location = lazy(() => import("@/components/Location"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
@@ -249,6 +250,9 @@ const Index = () => {
           </Suspense>
           <Suspense fallback={<SectionSkeleton />}>
             <HouseRules />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton />}>
+            <ThingsToDo />
           </Suspense>
           <Suspense fallback={<SectionSkeleton />}>
             <Location />
