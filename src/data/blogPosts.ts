@@ -150,7 +150,7 @@ export const blogPosts: BlogPost[] = [
       
       <p><strong>This house is made to be enjoyed. I hope you feel it as your own.</strong></p>
     `,
-    coverImage: "/assets/blog/horreos-asturianos.jpg",
+    coverImage: "/blog/horreos-asturianos.jpg",
     coverImageAltEs: "Hórreos asturianos tradicionales de madera con pegollos de piedra en pueblo rural de Asturias - Historia arquitectura popular",
     coverImageAltEn: "Traditional Asturian wooden hórreos with stone pillars in rural village of Asturias - Popular architecture history",
     author: "La Cabaña de la Lechuza",
@@ -230,7 +230,7 @@ export const blogPosts: BlogPost[] = [
       <h2>10. The legend of the Cuélebre</h2>
       <p>According to Asturian mythology, the <em>Cuélebre</em>, a winged dragon that guards treasures, lives in nearby caves. The oldest neighbors still tell stories about it!</p>
     `,
-    coverImage: "/assets/blog/comarca-sidra.jpg",
+    coverImage: "/blog/comarca-sidra.jpg",
     coverImageAltEs: "Cosecha de manzanas para sidra en la Comarca de la Sidra Asturias con sacos de manzanas en pomarada",
     coverImageAltEn: "Apple harvest for cider in the Asturias Cider Region with bags of apples in apple orchard",
     author: "La Cabaña de la Lechuza",
@@ -314,7 +314,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>During your stay, we encourage you to walk through nearby villages like Santa Eulalia or Torazo to admire these architectural treasures that remain standing after centuries.</p>
     `,
-    coverImage: "/assets/blog/horreos-asturianos.jpg",
+    coverImage: "/blog/horreos-asturianos.jpg",
     coverImageAltEs: "Conjunto de hórreos asturianos tradicionales con carros antiguos en pueblo rural de Asturias - Arquitectura popular",
     coverImageAltEn: "Traditional Asturian hórreos ensemble with antique carts in rural village of Asturias - Popular architecture",
     author: "La Cabaña de la Lechuza",
@@ -354,7 +354,7 @@ export const blogPosts: BlogPost[] = [
         <li>Respect the environment and don't leave litter</li>
       </ul>
     `,
-    coverImage: "/assets/blog/rutas-senderismo.jpg",
+    coverImage: "/blog/rutas-senderismo.jpg",
     coverImageAltEs: "Molino antiguo junto a cascada en bosque verde ruta de senderismo Asturias naturaleza",
     coverImageAltEn: "Ancient mill next to waterfall in green forest hiking trail Asturias nature",
     author: "La Cabaña de la Lechuza",
@@ -392,7 +392,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Gamonéu:</strong> smoked with blue touches</li>
       </ul>
     `,
-    coverImage: "/assets/blog/gastronomia-asturiana.jpg",
+    coverImage: "/blog/gastronomia-asturiana.jpg",
     coverImageAltEs: "Fabada asturiana tradicional con fabes chorizo morcilla y lacón plato típico de Asturias",
     coverImageAltEn: "Traditional Asturian fabada with beans chorizo blood sausage and ham typical dish of Asturias",
     author: "La Cabaña de la Lechuza",
