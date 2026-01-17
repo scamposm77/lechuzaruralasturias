@@ -44,7 +44,7 @@ const TerminosReserva = () => {
                 </p>
                 <ul className="list-disc pl-6 space-y-2 mb-4">
                   <li>Payment has been received (deposit or full amount)</li>
-                  <li>You receive written confirmation by email from Susana</li>
+                  <li>You receive written confirmation by email</li>
                 </ul>
 
                 <h3 className="font-display text-foreground text-xl mb-3">1.2. Payment Methods</h3>
@@ -86,7 +86,7 @@ const TerminosReserva = () => {
 
                 <h3 className="font-display text-foreground text-xl mb-3">2.4. How to Cancel</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Email: susana@lechuzaruralasturias.es</li>
+                  <li>Email: info@lechuzaruralasturias.es</li>
                   <li>Phone/WhatsApp: +34 625 08 15 19</li>
                 </ul>
               </section>
@@ -126,7 +126,7 @@ const TerminosReserva = () => {
                 <h2 className="font-display text-foreground text-2xl mb-4">6. CONTACT</h2>
                 <ul className="list-none space-y-2 text-muted-foreground">
                   <li><strong className="text-foreground">Host:</strong> Susana Campos Márquez</li>
-                  <li><strong className="text-foreground">Email:</strong> susana@lechuzaruralasturias.es</li>
+                  <li><strong className="text-foreground">Email:</strong>Email: info@lechuzaruralasturias.es</li>
                   <li><strong className="text-foreground">Phone/WhatsApp:</strong> +34 625 08 15 19</li>
                   <li><strong className="text-foreground">Tourist Registry:</strong> VV.3561.AS</li>
                 </ul>
