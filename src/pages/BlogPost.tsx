@@ -4,9 +4,11 @@ import { Calendar, ArrowLeft, User, Camera } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getPostBySlug, blogPosts } from "@/data/blogPosts";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { language } = useLanguage();
   const post = slug ? getPostBySlug(slug) : undefined;
 
   if (!post) {
@@ -15,7 +17,7 @@ const BlogPost = () => {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('es-ES', {
+    return date.toLocaleDateString(language === "es" ? 'es-ES' : 'en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
@@ -27,16 +29,38 @@ const BlogPost = () => {
     .filter(p => p.id !== post.id && p.tags.some(tag => post.tags.includes(tag)))
     .slice(0, 2);
 
+  const title = language === "es" ? post.title : post.titleEn || post.title;
+  const excerpt = language === "es" ? post.excerpt : post.excerptEn || post.excerpt;
+  const content = language === "es" ? post.content : post.contentEn || post.content;
+  const coverImageAlt = language === "es" ? post.coverImageAltEs : post.coverImageAltEn;
+
+  const texts = {
+    es: {
+      backToBlog: "Volver al blog",
+      photoBy: "Foto por",
+      onUnsplash: "en Unsplash",
+      relatedArticles: "Artículos relacionados"
+    },
+    en: {
+      backToBlog: "Back to blog",
+      photoBy: "Photo by",
+      onUnsplash: "on Unsplash",
+      relatedArticles: "Related articles"
+    }
+  };
+
+  const t = texts[language];
+
   return (
     <>
       <Helmet>
-        <title>{post.title} | La Cabaña de la Lechuza</title>
-        <meta name="description" content={post.excerpt} />
+        <title>{title} | La Cabaña de la Lechuza</title>
+        <meta name="description" content={excerpt} />
         <link rel="canonical" href={`https://www.lechuzaruralasturias.es/blog/${post.slug}`} />
         
         {/* Open Graph */}
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={excerpt} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://www.lechuzaruralasturias.es/blog/${post.slug}`} />
         <meta property="og:image" content={post.coverImage} />
@@ -45,6 +69,7 @@ const BlogPost = () => {
         {post.tags.map(tag => (
           <meta key={tag} property="article:tag" content={tag} />
         ))}
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -58,7 +83,7 @@ const BlogPost = () => {
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 font-body"
             >
               <ArrowLeft size={18} />
-              Volver al blog
+              {t.backToBlog}
             </Link>
 
             {/* Cover Image */}
@@ -66,14 +91,14 @@ const BlogPost = () => {
               <div className="aspect-video rounded-lg overflow-hidden">
                 <img
                   src={post.coverImage}
-                  alt={post.title}
+                  alt={coverImageAlt}
                   className="w-full h-full object-cover"
                 />
               </div>
               {post.imageCredit && (
                 <div className="flex items-center gap-1 mt-2 text-muted-foreground text-xs font-body">
                   <Camera size={12} />
-                  <span>Foto por </span>
+                  <span>{t.photoBy} </span>
                   <a 
                     href={post.imageCredit.url}
                     target="_blank"
@@ -82,7 +107,7 @@ const BlogPost = () => {
                   >
                     {post.imageCredit.author}
                   </a>
-                  <span> en Unsplash</span>
+                  <span> {t.onUnsplash}</span>
                 </div>
               )}
             </div>
@@ -103,11 +128,11 @@ const BlogPost = () => {
               </div>
               
               <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
-                {post.title}
+                {title}
               </h1>
               
               <p className="text-muted-foreground text-lg font-body">
-                {post.excerpt}
+                {excerpt}
               </p>
 
               {/* Tags */}
@@ -134,14 +159,14 @@ const BlogPost = () => {
                 prose-li:marker:text-primary
                 prose-strong:text-foreground
                 prose-a:text-primary prose-a:no-underline hover:prose-a:underline"
-              dangerouslySetInnerHTML={{ __html: post.content }}
+              dangerouslySetInnerHTML={{ __html: content }}
             />
 
             {/* Related Posts */}
             {relatedPosts.length > 0 && (
               <section className="mt-16 pt-10 border-t border-border">
                 <h2 className="font-display text-2xl text-foreground mb-6">
-                  Artículos relacionados
+                  {t.relatedArticles}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   {relatedPosts.map(relatedPost => (
@@ -153,16 +178,17 @@ const BlogPost = () => {
                       <div className="w-24 h-24 flex-shrink-0 rounded overflow-hidden">
                         <img
                           src={relatedPost.coverImage}
-                          alt={relatedPost.title}
+                          alt={language === "es" ? relatedPost.coverImageAltEs : relatedPost.coverImageAltEn}
                           className="w-full h-full object-cover"
+                          loading="lazy"
                         />
                       </div>
                       <div>
                         <h3 className="font-display text-foreground group-hover:text-primary transition-colors mb-2">
-                          {relatedPost.title}
+                          {language === "es" ? relatedPost.title : relatedPost.titleEn || relatedPost.title}
                         </h3>
                         <p className="text-muted-foreground text-sm line-clamp-2 font-body">
-                          {relatedPost.excerpt}
+                          {language === "es" ? relatedPost.excerpt : relatedPost.excerptEn || relatedPost.excerpt}
                         </p>
                       </div>
                     </Link>

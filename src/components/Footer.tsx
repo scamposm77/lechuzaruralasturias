@@ -9,6 +9,7 @@ const Footer = () => {
     { href: "#espacios", label: t("footer.spaces") },
     { href: "#habitaciones", label: t("nav.rooms") },
     { href: "#servicios", label: t("footer.services") },
+    { href: "/que-hacer", label: t("nav.whatToDo"), isExternal: true },
     { href: "/blog", label: t("nav.blog"), isExternal: true },
     { href: "#contacto", label: t("footer.contact") },
   ];
@@ -146,7 +147,7 @@ const Footer = () => {
           <p className="font-body text-background/40 text-sm flex items-center gap-1">
             © {new Date().getFullYear()} La Cabaña de la Lechuza. {t("footer.madeWith")} <Heart className="w-4 h-4 text-primary fill-primary" aria-hidden="true" /> {t("footer.inAsturias")}
           </p>
-          <div className="flex gap-8">
+          <nav className="flex flex-wrap justify-center gap-4 md:gap-8" aria-label={language === "es" ? "Enlaces legales" : "Legal links"}>
             <a 
               href="/politica-privacidad"
               className="font-body text-background/40 text-sm hover:text-background/70 transition-colors"
@@ -159,7 +160,19 @@ const Footer = () => {
             >
               {t("footer.legal")}
             </a>
-          </div>
+            <a 
+              href="/politica-cookies"
+              className="font-body text-background/40 text-sm hover:text-background/70 transition-colors"
+            >
+              {language === "es" ? "Política de Cookies" : "Cookie Policy"}
+            </a>
+            <a 
+              href="/terminos-reserva"
+              className="font-body text-background/40 text-sm hover:text-background/70 transition-colors"
+            >
+              {language === "es" ? "Condiciones de Reserva" : "Booking Terms"}
+            </a>
+          </nav>
         </div>
       </div>
     </footer>

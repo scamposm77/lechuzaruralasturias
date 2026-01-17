@@ -29,36 +29,48 @@ const Services = () => {
       title: t("services.kitchen.title"),
       description: t("services.kitchen.description"),
       image: cocinaEquipada,
+      altEs: "Cocina totalmente equipada con vitrocerámica, horno, microondas y utensilios - Casa rural La Cabaña de la Lechuza Cabranes Asturias",
+      altEn: "Fully equipped kitchen with ceramic hob, oven, microwave and utensils - La Cabaña de la Lechuza rural house Cabranes Asturias",
     },
     {
       icon: Flame,
       title: t("services.living.title"),
       description: t("services.living.description"),
       image: salonChimenea,
+      altEs: "Salón acogedor con chimenea de pellets y sofá cama en casa rural La Cabaña de la Lechuza Asturias",
+      altEn: "Cozy living room with pellet fireplace and sofa bed at La Cabaña de la Lechuza rural house Asturias",
     },
     {
       icon: TreePine,
       title: t("services.garden.title"),
       description: t("services.garden.description"),
       image: jardinPorche,
+      altEs: "Porche cubierto de 35m² con mesa para 10 comensales y vistas al jardín de manzanos - Alojamiento rural Asturias",
+      altEn: "35m² covered porch with table for 10 guests and views to apple orchard - Rural accommodation Asturias",
     },
     {
       icon: BedDouble,
       title: t("services.bedrooms.title"),
       description: t("services.bedrooms.description"),
       image: ventanaVistas,
+      altEs: "Ventana con vistas a las montañas y prados verdes desde habitación casa rural Cabranes",
+      altEn: "Window with views to mountains and green meadows from bedroom rural house Cabranes",
     },
     {
       icon: MapPin,
       title: t("services.local.title"),
       description: t("services.local.description"),
       image: banoCompleto,
+      altEs: "Baño completo con ducha moderna en casa rural La Cabaña de la Lechuza Asturias",
+      altEn: "Full bathroom with modern shower at La Cabaña de la Lechuza rural house Asturias",
     },
     {
       icon: Mountain,
       title: t("services.hiking.title"),
       description: t("services.hiking.description"),
       image: vistaLejana,
+      altEs: "Vistas panorámicas desde la casa rural a los prados verdes y montañas de la Comarca de la Sidra",
+      altEn: "Panoramic views from rural house to green meadows and mountains of the Cider Region",
     },
   ];
 
@@ -110,10 +122,7 @@ const Services = () => {
               <div className="aspect-[16/10] overflow-hidden">
                 <img
                   src={service.image}
-                  alt={language === "es"
-                    ? `${service.title} - Servicio de casa rural La Cabaña de la Lechuza en Asturias`
-                    : `${service.title} - Service at La Cabaña de la Lechuza rural house in Asturias`
-                  }
+                  alt={language === "es" ? service.altEs : service.altEn}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                   itemProp="image"
