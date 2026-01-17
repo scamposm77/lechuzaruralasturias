@@ -476,13 +476,17 @@ export const blogPosts: BlogPost[] = [
     slug: "rutas-senderismo-cabranes",
     title: "Las Mejores Rutas de Senderismo desde La Cabaña",
     titleEn: "The Best Hiking Trails from The Cabin",
-    excerpt: "Explora los senderos más espectaculares de nuestra zona: desde paseos suaves entre pomaradas hasta rutas de montaña con vistas al Cantábrico.",
-    excerptEn: "Explore the most spectacular trails in our area: from gentle walks through apple orchards to mountain routes with views of the Cantabrian Sea.",
+    excerpt: "Explora los senderos más espectaculares de nuestra zona: desde paseos suaves entre pomaradas hasta cascadas impresionantes y sendas costeras.",
+    excerptEn: "Explore the most spectacular trails in our area: from gentle walks through apple orchards to impressive waterfalls and coastal paths.",
     content: `
-      <p>La ubicación de La Cabaña de la Lechuza es perfecta para los amantes del senderismo. Aquí te presentamos las rutas que puedes hacer directamente desde nuestra puerta o a pocos minutos en coche.</p>
+      <p>La ubicación de La Cabaña de la Lechuza es perfecta para los amantes del senderismo. Aquí te presentamos una selección de las mejores rutas que puedes hacer desde nuestra puerta o a pocos minutos en coche, incluyendo senderos de montaña, bosques mágicos, cascadas espectaculares y paseos por la costa.</p>
       
       <h2>Ruta de las Pomaradas (3 km - Fácil)</h2>
-      <p>Sal de la casa y en 5 minutos estarás caminando entre manzanos centenarios. Esta ruta circular de 3 km es perfecta para un paseo tranquilo al atardecer. En primavera los manzanos en flor crean un espectáculo inolvidable, y en otoño podrás ver (y oler) las manzanas maduras listas para la recogida.</p>
+      
+      <p>Sal de la casa y en 5 minutos estarás caminando entre manzanos centenarios. Esta ruta circular de 3 km es perfecta para un paseo tranquilo al atardecer.</p>
+      
+      <p>En primavera los manzanos en flor crean un espectáculo inolvidable, y en otoño podrás ver (y oler) las manzanas maduras listas para la recogida.</p>
+      
       <ul>
         <li><strong>Distancia:</strong> 3 km (circular)</li>
         <li><strong>Tiempo:</strong> 45 minutos - 1 hora</li>
@@ -490,17 +494,43 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Mejor época:</strong> Primavera (floración) y otoño (cosecha)</li>
       </ul>
       
-      <h2>Senda del Río Viacaba - Ruta de los Molinos (5,8 km - Fácil/Moderada)</h2>
-      <p>Una de nuestras rutas favoritas. A solo 5 minutos en coche, esta senda te lleva por un bosque de ribera espectacular, con más de 10 molinos históricos y pequeñas cascadas. Lee nuestro artículo completo sobre esta ruta.</p>
+      <h2>Cascadas de Oneta (2,5 km - Fácil)</h2>
+      
+      <p>Una de las rutas más espectaculares y accesibles de Asturias. Las <strong>Cascadas de Oneta</strong>, situadas en el concejo de Villayón (a unos 90 minutos en coche), son un conjunto de tres saltos de agua impresionantes que alcanzan los 20 metros de altura.</p>
+      
+      <p>El sendero transcurre por un bosque atlántico exuberante, con helechos gigantes, musgo y una vegetación que parece sacada de un cuento de hadas. El sonido del agua te acompañará durante todo el recorrido.</p>
+      
       <ul>
-        <li><strong>Distancia:</strong> 5,8 km (circular)</li>
-        <li><strong>Tiempo:</strong> 2-2,5 horas</li>
-        <li><strong>Dificultad:</strong> Fácil-Moderada</li>
-        <li><strong>Mejor época:</strong> Todo el año, especialmente bonita en otoño</li>
+        <li><strong>Distancia:</strong> 2,5 km (ida y vuelta)</li>
+        <li><strong>Tiempo:</strong> 1-1,5 horas</li>
+        <li><strong>Dificultad:</strong> Fácil</li>
+        <li><strong>Desnivel:</strong> 100 metros</li>
+        <li><strong>Mejor época:</strong> Todo el año, espectacular en otoño e invierno con más caudal</li>
       </ul>
       
+      <p><strong>Consejo:</strong> Lleva chubasquero porque la humedad del bosque y las salpicaduras de las cascadas te mojarán. ¡Merece la pena!</p>
+      
+      <h2>Senda Costera de la Playa de la Griega (6 km - Fácil)</h2>
+      
+      <p>Una ruta perfecta para combinar senderismo y playa. La <strong>Playa de la Griega</strong>, cerca de Colunga (a 25 minutos en coche), es famosa por sus <strong>huellas de dinosaurios</strong> fosilizadas en las rocas.</p>
+      
+      <p>El sendero costero ofrece vistas espectaculares de los acantilados y el mar Cantábrico. Puedes caminar desde la playa de la Griega hasta la playa de Lastres, pasando por calas escondidas y formaciones rocosas impresionantes.</p>
+      
+      <ul>
+        <li><strong>Distancia:</strong> 6 km (lineal, ida y vuelta 12 km o con transporte)</li>
+        <li><strong>Tiempo:</strong> 2-3 horas</li>
+        <li><strong>Dificultad:</strong> Fácil</li>
+        <li><strong>Mejor época:</strong> Primavera y verano</li>
+      </ul>
+      
+      <p>No te pierdas el <strong>Museo del Jurásico de Asturias (MUJA)</strong> que está junto a la playa, con una colección impresionante de fósiles de dinosaurios encontrados en la costa asturiana.</p>
+      
       <h2>Mirador del Sueve (8 km - Moderada)</h2>
+      
       <p>Una ruta de media montaña que asciende hasta un mirador espectacular desde donde se divisa el mar Cantábrico, los Picos de Europa y todo el valle. En días claros las vistas son impresionantes.</p>
+      
+      <p>La Sierra del Sueve es hogar de los últimos <strong>caballos asturcones</strong> en libertad, una raza autóctona que podrás avistar durante la ruta.</p>
+      
       <ul>
         <li><strong>Distancia:</strong> 8 km (ida y vuelta)</li>
         <li><strong>Tiempo:</strong> 3-4 horas</li>
@@ -510,7 +540,9 @@ export const blogPosts: BlogPost[] = [
       </ul>
       
       <h2>PR-AS 147: Senda Verde de Cabranes (12 km - Moderada)</h2>
+      
       <p>Una ruta homologada que recorre lo mejor del concejo de Cabranes. Atraviesa bosques, pomaradas, pueblos tradicionales y ofrece vistas panorámicas del valle.</p>
+      
       <ul>
         <li><strong>Distancia:</strong> 12 km (circular)</li>
         <li><strong>Tiempo:</strong> 4-5 horas</li>
@@ -519,7 +551,9 @@ export const blogPosts: BlogPost[] = [
       </ul>
       
       <h2>Ruta del Fitu (15 km - Moderada-Alta)</h2>
-      <p>Para los más aventureros. Esta ruta sube hasta el famoso Mirador del Fitu, uno de los balcones más impresionantes de Asturias con vistas de 360 grados que abarcan desde los Picos de Europa hasta el mar.</p>
+      
+      <p>Para los más aventureros. Esta ruta sube hasta el famoso <strong>Mirador del Fitu</strong>, uno de los balcones más impresionantes de Asturias con vistas de 360 grados que abarcan desde los Picos de Europa hasta el mar.</p>
+      
       <ul>
         <li><strong>Distancia:</strong> 15 km (ida y vuelta)</li>
         <li><strong>Tiempo:</strong> 5-6 horas</li>
@@ -528,6 +562,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
       
       <h2>Consejos prácticos para todas las rutas</h2>
+      
       <ul>
         <li><strong>Calzado:</strong> Botas de montaña o zapatillas con buen agarre. El terreno puede estar húmedo.</li>
         <li><strong>Agua:</strong> Lleva siempre al menos 1 litro por persona.</li>
@@ -539,10 +574,14 @@ export const blogPosts: BlogPost[] = [
       <p><strong>En La Cabaña de la Lechuza tenemos mapas e información detallada de todas estas rutas. ¡Pregúntanos y te ayudaremos a elegir la mejor opción según tu nivel!</strong></p>
     `,
     contentEn: `
-      <p>The location of La Cabaña de la Lechuza is perfect for hiking lovers. Here are the routes you can do directly from our door or just a few minutes away by car.</p>
+      <p>The location of La Cabaña de la Lechuza is perfect for hiking lovers. Here we present a selection of the best routes you can do from our door or just a few minutes away by car, including mountain trails, magical forests, spectacular waterfalls and coastal walks.</p>
       
       <h2>Apple Orchards Route (3 km - Easy)</h2>
-      <p>Leave the house and in 5 minutes you'll be walking among century-old apple trees. This 3 km circular route is perfect for a quiet evening walk. In spring the flowering apple trees create an unforgettable spectacle, and in autumn you can see (and smell) the ripe apples ready for harvest.</p>
+      
+      <p>Leave the house and in 5 minutes you'll be walking among century-old apple trees. This 3 km circular route is perfect for a quiet evening walk.</p>
+      
+      <p>In spring the flowering apple trees create an unforgettable spectacle, and in autumn you can see (and smell) the ripe apples ready for harvest.</p>
+      
       <ul>
         <li><strong>Distance:</strong> 3 km (circular)</li>
         <li><strong>Time:</strong> 45 minutes - 1 hour</li>
@@ -550,17 +589,43 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Best time:</strong> Spring (flowering) and autumn (harvest)</li>
       </ul>
       
-      <h2>Viacaba River Trail - Mills Route (5.8 km - Easy/Moderate)</h2>
-      <p>One of our favorite routes. Just 5 minutes by car, this trail takes you through a spectacular riverside forest, with more than 10 historic mills and small waterfalls. Read our full article about this route.</p>
+      <h2>Oneta Waterfalls (2.5 km - Easy)</h2>
+      
+      <p>One of the most spectacular and accessible routes in Asturias. The <strong>Oneta Waterfalls</strong>, located in the Villayón council (about 90 minutes by car), are a set of three impressive waterfalls reaching 20 meters in height.</p>
+      
+      <p>The trail runs through a lush Atlantic forest, with giant ferns, moss and vegetation that seems taken from a fairy tale. The sound of water will accompany you throughout the journey.</p>
+      
       <ul>
-        <li><strong>Distance:</strong> 5.8 km (circular)</li>
-        <li><strong>Time:</strong> 2-2.5 hours</li>
-        <li><strong>Difficulty:</strong> Easy-Moderate</li>
-        <li><strong>Best time:</strong> Year-round, especially beautiful in autumn</li>
+        <li><strong>Distance:</strong> 2.5 km (round trip)</li>
+        <li><strong>Time:</strong> 1-1.5 hours</li>
+        <li><strong>Difficulty:</strong> Easy</li>
+        <li><strong>Elevation gain:</strong> 100 meters</li>
+        <li><strong>Best time:</strong> Year-round, spectacular in autumn and winter with more water flow</li>
       </ul>
       
+      <p><strong>Tip:</strong> Bring a raincoat because the forest humidity and waterfall splashes will get you wet. It's worth it!</p>
+      
+      <h2>La Griega Beach Coastal Path (6 km - Easy)</h2>
+      
+      <p>A perfect route to combine hiking and beach. <strong>La Griega Beach</strong>, near Colunga (25 minutes by car), is famous for its <strong>fossilized dinosaur footprints</strong> in the rocks.</p>
+      
+      <p>The coastal path offers spectacular views of the cliffs and the Cantabrian Sea. You can walk from La Griega beach to Lastres beach, passing through hidden coves and impressive rock formations.</p>
+      
+      <ul>
+        <li><strong>Distance:</strong> 6 km (linear, 12 km round trip or with transport)</li>
+        <li><strong>Time:</strong> 2-3 hours</li>
+        <li><strong>Difficulty:</strong> Easy</li>
+        <li><strong>Best time:</strong> Spring and summer</li>
+      </ul>
+      
+      <p>Don't miss the <strong>Jurassic Museum of Asturias (MUJA)</strong> which is next to the beach, with an impressive collection of dinosaur fossils found on the Asturian coast.</p>
+      
       <h2>Sueve Viewpoint (8 km - Moderate)</h2>
+      
       <p>A mid-mountain route that ascends to a spectacular viewpoint overlooking the Cantabrian Sea, Picos de Europa and the entire valley. On clear days the views are impressive.</p>
+      
+      <p>The Sierra del Sueve is home to the last <strong>asturcón horses</strong> in the wild, a native breed that you can spot during the route.</p>
+      
       <ul>
         <li><strong>Distance:</strong> 8 km (round trip)</li>
         <li><strong>Time:</strong> 3-4 hours</li>
@@ -570,7 +635,9 @@ export const blogPosts: BlogPost[] = [
       </ul>
       
       <h2>PR-AS 147: Cabranes Green Trail (12 km - Moderate)</h2>
+      
       <p>An official trail that covers the best of Cabranes. It crosses forests, apple orchards, traditional villages and offers panoramic views of the valley.</p>
+      
       <ul>
         <li><strong>Distance:</strong> 12 km (circular)</li>
         <li><strong>Time:</strong> 4-5 hours</li>
@@ -579,7 +646,9 @@ export const blogPosts: BlogPost[] = [
       </ul>
       
       <h2>Fitu Route (15 km - Moderate-High)</h2>
-      <p>For the more adventurous. This route climbs to the famous Fitu Viewpoint, one of the most impressive balconies in Asturias with 360-degree views spanning from Picos de Europa to the sea.</p>
+      
+      <p>For the more adventurous. This route climbs to the famous <strong>Fitu Viewpoint</strong>, one of the most impressive balconies in Asturias with 360-degree views spanning from Picos de Europa to the sea.</p>
+      
       <ul>
         <li><strong>Distance:</strong> 15 km (round trip)</li>
         <li><strong>Time:</strong> 5-6 hours</li>
@@ -588,6 +657,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
       
       <h2>Practical tips for all routes</h2>
+      
       <ul>
         <li><strong>Footwear:</strong> Hiking boots or shoes with good grip. The terrain can be wet.</li>
         <li><strong>Water:</strong> Always carry at least 1 liter per person.</li>
@@ -599,11 +669,11 @@ export const blogPosts: BlogPost[] = [
       <p><strong>At La Cabaña de la Lechuza we have maps and detailed information about all these routes. Ask us and we'll help you choose the best option for your level!</strong></p>
     `,
     coverImage: "/blog/rutas-senderismo.jpg",
-    coverImageAltEs: "Molino antiguo junto a cascada en bosque verde ruta de senderismo Asturias naturaleza",
-    coverImageAltEn: "Ancient mill next to waterfall in green forest hiking trail Asturias nature",
+    coverImageAltEs: "Senderista contemplando cascada espectacular en bosque verde de Asturias ruta de senderismo naturaleza",
+    coverImageAltEn: "Hiker contemplating spectacular waterfall in green forest of Asturias hiking trail nature",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-08",
-    tags: ["senderismo", "rutas", "naturaleza"]
+    tags: ["senderismo", "rutas", "naturaleza", "cascadas", "playas"]
   },
   {
     id: "5",

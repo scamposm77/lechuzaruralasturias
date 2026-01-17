@@ -152,13 +152,17 @@ const BlogPost = () => {
             <div 
               className="prose prose-lg max-w-none font-body
                 prose-headings:font-display prose-headings:text-foreground
-                prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-                prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                prose-p:text-muted-foreground prose-p:leading-relaxed
-                prose-ul:text-muted-foreground
-                prose-li:marker:text-primary
-                prose-strong:text-foreground
-                prose-a:text-primary prose-a:no-underline hover:prose-a:underline"
+                prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-border
+                prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4
+                prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6
+                prose-ul:text-muted-foreground prose-ul:my-6 prose-ul:space-y-2
+                prose-ol:text-muted-foreground prose-ol:my-6 prose-ol:space-y-2
+                prose-li:marker:text-primary prose-li:pl-2
+                prose-strong:text-foreground prose-strong:font-semibold
+                prose-em:text-foreground/80
+                prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:my-8
+                [&>p+p]:mt-6 [&>ul+p]:mt-8 [&>p+ul]:mt-6 [&>h2+p]:mt-6 [&>h3+p]:mt-4"
               dangerouslySetInnerHTML={{ __html: content }}
             />
 
