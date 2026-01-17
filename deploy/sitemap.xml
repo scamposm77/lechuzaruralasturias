@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Página principal -->
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.lechuzaruralasturias.es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lechuzaruralasturias.es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lechuzaruralasturias.es/"/>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg</image:loc>
+      <image:title>La Cabaña de la Lechuza - Casa Rural en Asturias</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Qué Hacer - Actividades turísticas -->
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/que-hacer</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Cómo llegar -->
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/como-llegar</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog -->
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/blog</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/blog/ruta-molinos-viacaba</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.lechuzaruralasturias.es/blog/ruta-molinos.jpg</image:loc>
+      <image:title>Ruta de los Molinos del Río Viacaba</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/blog/historia-cabana-lechuza</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.lechuzaruralasturias.es/blog/historia-cabana.jpg</image:loc>
+      <image:title>Historia de La Cabaña de la Lechuza</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/blog/rutas-senderismo-asturias</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.lechuzaruralasturias.es/blog/rutas-senderismo.jpg</image:loc>
+      <image:title>Rutas de Senderismo en Asturias</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/blog/gastronomia-comarca-sidra</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.lechuzaruralasturias.es/blog/gastronomia-asturiana.jpg</image:loc>
+      <image:title>Gastronomía de la Comarca de la Sidra</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/blog/horreos-asturianos</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.lechuzaruralasturias.es/blog/horreos-asturianos.jpg</image:loc>
+      <image:title>Hórreos Asturianos - Patrimonio Rural</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/blog/ruta-sidra-asturias</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.lechuzaruralasturias.es/blog/ruta-sidra.jpg</image:loc>
+      <image:title>Ruta de la Sidra en Asturias</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Páginas legales -->
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/aviso-legal</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/politica-privacidad</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/politica-cookies</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.lechuzaruralasturias.es/terminos-reserva</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+</urlset>
