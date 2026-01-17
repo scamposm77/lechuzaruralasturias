@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Send, ArrowRight, ExternalLink, MessageCircle, Instagram, Facebook } from "lucide-react";
+import { Phone, Mail, Send, ArrowRight, MessageCircle, Instagram, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -40,21 +40,8 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const openWhatsApp = () => {
-    const message = encodeURIComponent(language === "es" 
-      ? "Hola, me gustaría consultar disponibilidad en La Cabaña de la Lechuza."
-      : "Hello, I would like to check availability at La Cabaña de la Lechuza."
-    );
-    window.open(`https://wa.me/34625081519?text=${message}`, "_blank");
-  };
 
   const contactInfo = [
-    {
-      icon: MapPin,
-      title: t("contact.location"),
-      lines: ["Barrio la Roza s/n", "33310 Cabranes, Asturias"],
-      link: "https://maps.app.goo.gl/RAUYH5vjUNvub4Nn9",
-    },
     {
       icon: Phone,
       title: t("contact.phone"),
@@ -66,6 +53,30 @@ const Contact = () => {
       title: t("contact.email"),
       lines: ["info@lechuzaruralasturias.es"],
       link: "mailto:info@lechuzaruralasturias.es",
+    },
+  ];
+
+  const socialLinks = [
+    {
+      name: "WhatsApp",
+      icon: MessageCircle,
+      href: `https://wa.me/34625081519?text=${encodeURIComponent(language === "es" ? "Hola, me gustaría consultar disponibilidad en La Cabaña de la Lechuza." : "Hello, I would like to check availability at La Cabaña de la Lechuza.")}`,
+      className: "bg-[#25D366] hover:bg-[#20BA5C]",
+      label: language === "es" ? "WhatsApp" : "WhatsApp",
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      href: "https://www.instagram.com/lechuza.casaruralasturias",
+      className: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:opacity-90",
+      label: "Instagram",
+    },
+    {
+      name: "Facebook",
+      icon: Facebook,
+      href: "https://www.facebook.com/profile.php?id=61586207769517",
+      className: "bg-[#1877F2] hover:bg-[#166FE5]",
+      label: "Facebook",
     },
   ];
 
@@ -111,18 +122,15 @@ const Contact = () => {
                   <a 
                     key={item.title} 
                     href={item.link}
-                    target={item.link.startsWith("http") ? "_blank" : undefined}
-                    rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="flex items-start gap-5 group cursor-pointer"
-                    itemProp={item.title === t("contact.phone") ? "telephone" : item.title === t("contact.email") ? "email" : "address"}
+                    itemProp={item.title === t("contact.phone") ? "telephone" : "email"}
                   >
                     <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors duration-300" aria-hidden="true">
                       <Icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                     </div>
                     <div>
-                      <p className="font-display text-foreground text-xl mb-1 flex items-center gap-2">
+                      <p className="font-display text-foreground text-xl mb-1">
                         {item.title}
-                        <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                       </p>
                       {item.lines.map((line, idx) => (
                         <p key={idx} className="font-body text-muted-foreground group-hover:text-foreground transition-colors">
@@ -134,12 +142,37 @@ const Contact = () => {
                 );
               })}
             </div>
+
+            {/* Social Links */}
+            <div className="mt-10">
+              <h4 className="font-display text-foreground text-lg mb-4">
+                {language === "es" ? "Síguenos y Contáctanos" : "Follow & Contact Us"}
+              </h4>
+              <div className="flex flex-wrap gap-3">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-2 px-5 py-3 rounded-full text-white font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ${social.className}`}
+                      aria-label={social.label}
+                    >
+                      <Icon className="w-5 h-5" />
+                      <span>{social.label}</span>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
           {/* Contact Form */}
           <div 
             id="reservar" 
-            className="bg-background p-10 md:p-12 rounded-sm shadow-2xl relative overflow-hidden"
+            className="bg-background p-10 md:p-12 rounded-xl shadow-2xl relative overflow-hidden"
             itemScope
             itemType="https://schema.org/ContactPoint"
           >
@@ -235,39 +268,6 @@ const Contact = () => {
                 <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" aria-hidden="true" />
               </button>
 
-              {/* WhatsApp and Social Media - Todos en la misma línea en móvil */}
-              <div className="mt-6 flex items-center justify-center gap-3">
-                <button
-                  type="button"
-                  onClick={openWhatsApp}
-                  className="flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] text-white rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-[#20BA5C] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
-                  aria-label={language === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  <span className="hidden sm:inline">{t("contact.whatsapp")}</span>
-                </button>
-                
-                <a
-                  href="https://www.instagram.com/lechuza.casaruralasturias"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl flex-shrink-0"
-                  title={language === "es" ? "Síguenos en Instagram" : "Follow us on Instagram"}
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://www.facebook.com/profile.php?id=61586207769517&mibextid=wwXIfr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-[#1877F2] rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl flex-shrink-0"
-                  title={language === "es" ? "Síguenos en Facebook" : "Follow us on Facebook"}
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5" />
-                </a>
-              </div>
             </form>
           </div>
         </div>
