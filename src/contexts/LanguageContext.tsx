@@ -16,7 +16,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Header
     "nav.home": "Inicio",
     "nav.rooms": "Habitaciones",
+    "nav.gallery": "Galería",
     "nav.reviews": "Opiniones",
+    "nav.location": "Ubicación",
     "nav.directions": "Cómo llegar",
     "nav.whatToDo": "Qué Hacer",
     "nav.blog": "Blog",
@@ -213,7 +215,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Header
     "nav.home": "Home",
     "nav.rooms": "Rooms",
+    "nav.gallery": "Gallery",
     "nav.reviews": "Reviews",
+    "nav.location": "Location",
     "nav.directions": "Directions",
     "nav.whatToDo": "What to Do",
     "nav.blog": "Blog",
