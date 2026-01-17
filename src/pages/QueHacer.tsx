@@ -62,7 +62,7 @@ const activities: Activity[] = [
     image: tazonesImg,
     altEs: "Vista aérea del puerto pesquero de Tazones con casas coloridas - Pueblo marinero cerca de casa rural Asturias",
     altEn: "Aerial view of Tazones fishing port with colorful houses - Fishing village near rural house Asturias",
-    externalLink: "https://www.turismovillaviciosa.es/pueblos/tazones/",
+    externalLink: "https://www.turismoasturias.es/es/descubre/costa/villas-marineras/marinera-tazones",
     category: "beach",
     icon: Waves
   },
@@ -77,7 +77,7 @@ const activities: Activity[] = [
     image: rutaSidraImg,
     altEs: "Escanciado de sidra asturiana tradicional en sidrería - Ruta de la Sidra desde La Cabaña de la Lechuza",
     altEn: "Traditional Asturian cider pouring in cider house - Cider Route from La Cabaña de la Lechuza",
-    externalLink: "https://www.sidratrabanco.com/",
+    externalLink: "https://www.lacomarcadelasidra.com/ruta-de-la-manzana-y-la-sidra-asturias/",
     category: "gastronomy",
     icon: Wine
   },
@@ -107,7 +107,7 @@ const activities: Activity[] = [
     image: miradorFituImg,
     altEs: "Atardecer espectacular desde el Mirador del Fitu con vistas a los Picos de Europa - Excursión desde casa rural Cabranes",
     altEn: "Spectacular sunset from Fitu Viewpoint with views to Picos de Europa - Day trip from rural house Cabranes",
-    externalLink: "https://www.turismoasturias.es/descubre/naturaleza/otros-espacios/miradores/mirador-del-fito",
+    externalLink: "https://www.turismoasturias.es/es/descubre/naturaleza/otros-espacios/areas-recreativas/el-fitu",
     category: "nature",
     icon: Camera
   },
@@ -122,7 +122,7 @@ const activities: Activity[] = [
     image: lastresImg,
     altEs: "Vista panorámica de Lastres pueblo pesquero con casas tradicionales y mar Cantábrico - Pueblos bonitos Asturias",
     altEn: "Panoramic view of Lastres fishing village with traditional houses and Cantabrian Sea - Beautiful villages Asturias",
-    externalLink: "https://www.turismocolunga.es/llastres/",
+    externalLink: "https://www.colunga.es/lastres3",
     category: "culture",
     icon: Church
   },
@@ -167,7 +167,7 @@ const activities: Activity[] = [
     image: bufonesPriaImg,
     altEs: "Bufones de Pría con chorros de agua emergiendo de los acantilados - Fenómeno natural costa de Asturias",
     altEn: "Pría Blowholes with water jets emerging from cliffs - Natural phenomenon Asturias coast",
-    externalLink: "https://www.turismoasturias.es/descubre/naturaleza/otros-espacios/bufones/bufones-de-pria",
+    externalLink: "https://www.llanes.es/es/ruta/bufones-de-pria",
     category: "nature",
     icon: Waves
   },
@@ -197,7 +197,7 @@ const activities: Activity[] = [
     image: sendaOsoImg,
     altEs: "Senda del Oso vía verde entre bosques de Asturias ideal para ciclismo y senderismo",
     altEn: "Bear Trail greenway through Asturian forests ideal for cycling and hiking",
-    externalLink: "https://www.turismoasturias.es/descubre/naturaleza/rutas/rutas-a-pie/senda-del-oso",
+    externalLink: "https://www.turismoasturias.es/es/descubre/naturaleza/rutas/senderismo/senda-del-oso",
     category: "hiking",
     icon: Footprints
   },
@@ -212,7 +212,7 @@ const activities: Activity[] = [
     image: cangasOnisImg,
     altEs: "Puente romano de Cangas de Onís sobre el río Sella con la Cruz de la Victoria - Monumento histórico Asturias",
     altEn: "Roman bridge of Cangas de Onís over Sella river with Victory Cross - Historic monument Asturias",
-    externalLink: "https://www.cangasdeonis.com/",
+    externalLink: "https://www.turismocangasdeonis.com/index.html",
     category: "culture",
     icon: Church
   }
