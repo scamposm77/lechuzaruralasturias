@@ -11,6 +11,7 @@ import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import PoliticaCookies from "./pages/PoliticaCookies";
 import TerminosReserva from "./pages/TerminosReserva";
 import ComoLlegar from "./pages/ComoLlegar";
+import QueHacer from "./pages/QueHacer";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
@@ -33,6 +34,7 @@ const App = () => (
               <Route path="/politica-cookies" element={<PoliticaCookies />} />
               <Route path="/terminos-reserva" element={<TerminosReserva />} />
               <Route path="/como-llegar" element={<ComoLlegar />} />
+              <Route path="/que-hacer" element={<QueHacer />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

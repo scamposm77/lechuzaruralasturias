@@ -34,6 +34,7 @@ const Header = () => {
   const navLinks = [
     { href: getAnchorHref("#inicio"), label: t("nav.home"), isRoute: false },
     { href: getAnchorHref("#habitaciones"), label: t("nav.rooms"), isRoute: false },
+    { href: "/que-hacer", label: t("nav.whatToDo"), isRoute: true },
     { href: "/como-llegar", label: t("nav.directions"), isRoute: true },
     { href: "/blog", label: t("nav.blog"), isRoute: true },
   ];
