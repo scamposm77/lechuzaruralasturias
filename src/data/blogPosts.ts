@@ -150,9 +150,9 @@ export const blogPosts: BlogPost[] = [
       
       <p><strong>This house is made to be enjoyed. I hope you feel it as your own.</strong></p>
     `,
-    coverImage: "/blog/horreos-asturianos.jpg",
-    coverImageAltEs: "Hórreos asturianos tradicionales de madera con pegollos de piedra en pueblo rural de Asturias - Historia arquitectura popular",
-    coverImageAltEn: "Traditional Asturian wooden hórreos with stone pillars in rural village of Asturias - Popular architecture history",
+    coverImage: "/blog/historia-cabana.jpg",
+    coverImageAltEs: "La Cabaña de la Lechuza - Casa rural tradicional asturiana restaurada con jardín y entorno natural",
+    coverImageAltEn: "La Cabaña de la Lechuza - Traditional restored Asturian rural house with garden and natural surroundings",
     author: "La Cabaña de la Lechuza",
     publishedAt: "2025-01-12",
     tags: ["historia", "arquitectura", "asturias", "lechuzas", "naturaleza"]
