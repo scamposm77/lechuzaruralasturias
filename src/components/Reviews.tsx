@@ -9,6 +9,15 @@ const Reviews = () => {
 
   const reviews = [
     {
+      name: "Audrie",
+      date: language === "es" ? "Julio 2025" : "July 2025",
+      rating: 5,
+      text: language === "es" 
+        ? "Casa muy bonita y renovada. En un lugar tranquilo y perfecto para relajarse, pero que permite recorrer esta hermosa región y descubrirla con facilidad."
+        : "A very beautiful and renovated house. In a quiet place, perfect for relaxing, but that allows you to explore this beautiful region and discover it easily.",
+      avatar: "A",
+    },
+    {
       name: "Matteo",
       date: language === "es" ? "Agosto 2025" : "August 2025",
       rating: 5,
@@ -121,14 +130,8 @@ const Reviews = () => {
             <span className="font-display text-2xl text-foreground ml-2" itemProp="ratingValue">4.9</span>
             <span className="font-body text-muted-foreground text-sm">· Airbnb</span>
           </div>
-          <p className="font-body text-primary font-semibold mb-4">
+          <p className="font-body text-primary font-semibold">
             {t("reviews.satisfied")}
-          </p>
-          <p className="font-body text-muted-foreground text-lg max-w-xl mx-auto italic">
-            {t("reviews.featured")}
-          </p>
-          <p className="font-body text-muted-foreground text-sm mt-2">
-            {t("reviews.featuredAuthor")}
           </p>
         </div>
 
