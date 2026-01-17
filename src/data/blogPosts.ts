@@ -49,8 +49,11 @@ export interface BlogPost {
   id: string;
   slug: string;
   title: string;
+  titleEn?: string;
   excerpt: string;
+  excerptEn?: string;
   content: string; // Soporta HTML
+  contentEn?: string; // English version - Soporta HTML
   coverImage: string;
   coverImageAltEs: string;
   coverImageAltEn: string;
@@ -68,7 +71,9 @@ export const blogPosts: BlogPost[] = [
     id: "1",
     slug: "historia-cabana-lechuza",
     title: "La Historia de La Cabaña de la Lechuza: Un Proyecto Personal con Alma",
+    titleEn: "The History of La Cabaña de la Lechuza: A Personal Project with Soul",
     excerpt: "Esta casa la he restaurado yo misma, poco a poco, con mucho cariño y esfuerzo. Descubre la historia de este refugio rural y el origen de su nombre tan especial.",
+    excerptEn: "I have restored this house myself, little by little, with great care and effort. Discover the history of this rural retreat and the origin of its special name.",
     content: `
       <p><em>Esta casa la he restaurado yo misma, poco a poco, con mucho cariño y esfuerzo. Es un proyecto muy personal, pensado para compartir la tranquilidad y la belleza de este entorno rural con quienes buscan desconectar y reconectar con lo esencial.</em></p>
       
@@ -107,6 +112,44 @@ export const blogPosts: BlogPost[] = [
       
       <p><strong>Esta casa está hecha para ser disfrutada. Espero que la sintáis como vuestra.</strong></p>
     `,
+    contentEn: `
+      <p><em>I have restored this house myself, little by little, with great care and effort. It is a very personal project, designed to share the tranquility and beauty of this rural environment with those seeking to disconnect and reconnect with what is essential.</em></p>
+      
+      <h2>A project born from the heart</h2>
+      <p>La Cabaña de la Lechuza is not just a rural house, it is the result of years of work, enthusiasm and love for this Asturian land. Every restored stone, every recovered beam, every cared-for corner carries my personal dedication. I wanted to create a space where guests could live the authentic experience of the Asturian countryside, with all modern comforts but without losing the essence of what makes this place special.</p>
+      
+      <h2>The name "La Lechuza" (The Owl): A true story</h2>
+      <p>The name of La Cabaña de la Lechuza is neither casual nor invented: <strong>a family of barn owls has lived on our roof for years</strong>. These beautiful nocturnal birds have made our house their home, and we respect and protect them as part of the magic of this place.</p>
+      
+      <p>If you stay in the large room (El Tejo), you may hear them coming and going at night, especially in spring and summer when they are still raising their chicks. Don't worry, they are very discreet and silent, but it's a beautiful experience that will connect you with nature in a very special way. The soft hooting of the owl at dusk is one of those sounds that reminds you that you are in an authentic place, far from the noise of the city.</p>
+      
+      <h2>The house: traditional Asturian architecture</h2>
+      <p>The house was built in the early 20th century following the canons of <strong>traditional Asturian architecture</strong>:</p>
+      <ul>
+        <li><strong>Thick limestone walls</strong> that keep the house cool in summer and warm in winter</li>
+        <li><strong>Arabic tile roof</strong> with the characteristic northern slope</li>
+        <li><strong>South-facing corridor</strong> to take advantage of natural light</li>
+        <li><strong>Original chestnut beams</strong> that we have recovered and treated</li>
+      </ul>
+      
+      <h2>The renovation: respect for tradition, modern comfort</h2>
+      <p>When I decided to renovate this house in 2023, I was clear that I wanted to <strong>preserve its essence while adapting it to current needs</strong>. I didn't want to turn it into something cold and modern, but to maintain the warmth of old houses with today's comforts:</p>
+      <ul>
+        <li>Pellet fireplace for cold days</li>
+        <li>Fully equipped kitchen for home cooking</li>
+        <li>Modern bathrooms without losing rustic charm</li>
+        <li>High-speed WiFi (yes, we're in the countryside but with good connection!)</li>
+        <li>3 cozy bedrooms for up to 7 people</li>
+      </ul>
+      
+      <h2>The surroundings: 1,500m² of nature</h2>
+      <p>The house is surrounded by <strong>1,500m² of private garden</strong> with century-old apple trees and a majestic yew tree that gives its name to our main room. From the porch you can enjoy valley views while having breakfast, reading a book, or simply breathing the pure mountain air of Asturias.</p>
+      
+      <h2>My personal invitation</h2>
+      <p>I invite you to come and experience La Cabaña de la Lechuza. To wake up to birdsong, to walk among apple trees, to dine under the stars on the porch... and perhaps, if you're lucky, to hear our nocturnal owls.</p>
+      
+      <p><strong>This house is made to be enjoyed. I hope you feel it as your own.</strong></p>
+    `,
     coverImage: "/assets/exterior/ext-00-portada.jpg",
     coverImageAltEs: "Fachada exterior de La Cabaña de la Lechuza casa rural con encanto en Cabranes Asturias - Historia y origen del nombre",
     coverImageAltEn: "Exterior facade of La Cabaña de la Lechuza charming rural house in Cabranes Asturias - History and origin of the name",
@@ -118,7 +161,9 @@ export const blogPosts: BlogPost[] = [
     id: "2",
     slug: "cabranes-comarca-sidra-datos-curiosos",
     title: "Cabranes y la Comarca de la Sidra: 10 Datos Curiosos",
+    titleEn: "Cabranes and the Cider Region: 10 Curious Facts",
     excerpt: "¿Sabías que Cabranes es uno de los concejos más pequeños de Asturias pero con mayor densidad de manzanos? Descubre datos fascinantes de nuestra zona.",
+    excerptEn: "Did you know that Cabranes is one of the smallest councils in Asturias but has the highest density of apple trees? Discover fascinating facts about our area.",
     content: `
       <p>Cabranes es un pequeño paraíso verde en el corazón de la <strong>Comarca de la Sidra</strong>. Aquí te contamos 10 curiosidades que quizás no conocías.</p>
       
@@ -152,6 +197,39 @@ export const blogPosts: BlogPost[] = [
       <h2>10. La leyenda del Cuélebre</h2>
       <p>Según la mitología asturiana, en las cuevas cercanas habita el <em>Cuélebre</em>, un dragón alado que custodia tesoros. ¡Los vecinos más ancianos aún cuentan historias sobre él!</p>
     `,
+    contentEn: `
+      <p>Cabranes is a small green paradise in the heart of the <strong>Cider Region</strong>. Here we share 10 curious facts you may not have known.</p>
+      
+      <h2>1. The council of a thousand apple trees</h2>
+      <p>With only 107 km², Cabranes has one of the highest concentrations of apple trees in all of Asturias. It is estimated that there are more than <strong>50,000 trees</strong> producing cider apples.</p>
+      
+      <h2>2. The origin of the name</h2>
+      <p>The name "Cabranes" comes from the Latin <em>Capranes</em>, meaning "place of goats". In ancient times, goat farming was fundamental to the local economy.</p>
+      
+      <h2>3. The pre-Romanesque church of Santa Eulalia</h2>
+      <p>In the village of Santa Eulalia de Cabranes is one of the least known but most authentic pre-Romanesque churches in Asturias, dating from the 9th century.</p>
+      
+      <h2>4. Only 1,000 inhabitants</h2>
+      <p>Cabranes is one of the least populated councils in Asturias, with barely 1,000 registered inhabitants. This guarantees absolute tranquility.</p>
+      
+      <h2>5. The Asturian Cider Designation of Origin</h2>
+      <p>Cabranes apples are part of the <strong>P.D.O. Sidra de Asturias</strong>, a guarantee of quality and tradition.</p>
+      
+      <h2>6. More than 20 varieties of apple</h2>
+      <p>Native varieties such as <em>Raxao</em>, <em>Durona de Tresali</em>, <em>Verdialona</em> and <em>Regona</em> are cultivated in the area, each with unique characteristics.</p>
+      
+      <h2>7. The pouring ritual</h2>
+      <p>Asturian cider is poured from height to oxygenate it. This ritual has more than 200 years of history and is considered intangible cultural heritage.</p>
+      
+      <h2>8. 20 minutes from the sea</h2>
+      <p>Although we are in the mountains, Rodiles beach—one of the best in Spain for surfing—is only 20 minutes away by car.</p>
+      
+      <h2>9. Biosphere Reserve</h2>
+      <p>Cabranes is part of the <strong>Asturias Biosphere Area</strong>, recognized by UNESCO for its ecological value.</p>
+      
+      <h2>10. The legend of the Cuélebre</h2>
+      <p>According to Asturian mythology, the <em>Cuélebre</em>, a winged dragon that guards treasures, lives in nearby caves. The oldest neighbors still tell stories about it!</p>
+    `,
     coverImage: "/assets/exterior/ext-10.jpg",
     coverImageAltEs: "Vista del jardín con manzanos en la Comarca de la Sidra Cabranes Asturias - Blog casa rural",
     coverImageAltEn: "Garden view with apple trees in the Cider Region Cabranes Asturias - Rural house blog",
@@ -163,7 +241,9 @@ export const blogPosts: BlogPost[] = [
     id: "3",
     slug: "arquitectura-tradicional-asturiana",
     title: "La Arquitectura Tradicional Asturiana: Hórreos, Paneras y Casonas",
+    titleEn: "Traditional Asturian Architecture: Hórreos, Granaries and Stone Houses",
     excerpt: "Conoce los elementos arquitectónicos que hacen única a Asturias: desde los icónicos hórreos hasta las casonas de piedra como la nuestra.",
+    excerptEn: "Discover the architectural elements that make Asturias unique: from iconic hórreos to stone houses like ours.",
     content: `
       <p>Asturias posee un patrimonio arquitectónico rural único en Europa. Durante tu estancia en La Cabaña de la Lechuza, podrás admirar construcciones que llevan siglos formando parte del paisaje.</p>
       
@@ -199,6 +279,41 @@ export const blogPosts: BlogPost[] = [
       
       <p>Durante tu estancia, te animamos a pasear por los pueblos cercanos como Santa Eulalia o Torazo para admirar estos tesoros arquitectónicos que siguen en pie después de siglos.</p>
     `,
+    contentEn: `
+      <p>Asturias has a unique rural architectural heritage in Europe. During your stay at La Cabaña de la Lechuza, you will be able to admire buildings that have been part of the landscape for centuries.</p>
+      
+      <h2>The hórreo: symbol of Asturias</h2>
+      <p>The <strong>Asturian hórreo</strong> is a granary raised on stone pillars called <em>pegollos</em>. Its design has a practical function: keeping food dry and protected from rodents.</p>
+      <ul>
+        <li>Typical hórreos have 4 pegollos</li>
+        <li>Paneras, which are larger, can have 6 or more</li>
+        <li>They are built with chestnut wood, very resistant to humidity</li>
+        <li>Some are more than 500 years old</li>
+      </ul>
+      
+      <h2>The Asturian stone house</h2>
+      <p>Traditional stone houses, like La Cabaña de la Lechuza, share distinctive characteristics:</p>
+      <ul>
+        <li><strong>Limestone walls</strong> up to 60 cm thick</li>
+        <li><strong>Wooden corridors</strong> facing south</li>
+        <li><strong>Arabic tile roofs</strong> with steep slopes</li>
+        <li><strong>Small windows</strong> to conserve heat</li>
+      </ul>
+      
+      <h2>The llagar: where cider is born</h2>
+      <p>Many traditional houses included a <em>llagar</em>, the space where apples were pressed to make cider. In our area there are still active llagares that you can visit.</p>
+      
+      <h2>Local materials</h2>
+      <p>Asturian architecture is characterized by using materials from the environment:</p>
+      <ul>
+        <li><strong>Limestone</strong> from nearby quarries</li>
+        <li><strong>Chestnut and oak wood</strong> from local forests</li>
+        <li><strong>Arabic tile</strong> fired in traditional ovens</li>
+        <li><strong>Lime</strong> to whitewash facades</li>
+      </ul>
+      
+      <p>During your stay, we encourage you to walk through nearby villages like Santa Eulalia or Torazo to admire these architectural treasures that remain standing after centuries.</p>
+    `,
     coverImage: "/assets/exterior/ext-03.jpg",
     coverImageAltEs: "Arquitectura tradicional asturiana con hórreo y casona de piedra en Cabranes - Patrimonio rural",
     coverImageAltEn: "Traditional Asturian architecture with hórreo and stone house in Cabranes - Rural heritage",
@@ -210,32 +325,34 @@ export const blogPosts: BlogPost[] = [
     id: "4",
     slug: "rutas-senderismo-cabranes",
     title: "Las Mejores Rutas de Senderismo desde La Cabaña",
+    titleEn: "The Best Hiking Trails from The Cabin",
     excerpt: "Explora los senderos más espectaculares de nuestra zona: desde paseos suaves entre pomaradas hasta rutas de montaña con vistas al Cantábrico.",
+    excerptEn: "Explore the most spectacular trails in our area: from gentle walks through apple orchards to mountain routes with views of the Cantabrian Sea.",
     content: `
       <p>La ubicación de La Cabaña de la Lechuza es perfecta para los amantes del senderismo. Aquí te presentamos las rutas que puedes hacer directamente desde nuestra puerta.</p>
-      
       <h2>Ruta de las Pomaradas (3 km - Fácil)</h2>
-      <p>Sal de la casa y en 5 minutos estarás caminando entre manzanos centenarios. Esta ruta circular de 3 km es perfecta para un paseo tranquilo, especialmente bonita en primavera (floración) y otoño (cosecha).</p>
-      
+      <p>Sal de la casa y en 5 minutos estarás caminando entre manzanos centenarios. Esta ruta circular de 3 km es perfecta para un paseo tranquilo.</p>
       <h2>Mirador del Sueve (8 km - Moderada)</h2>
-      <p>Una ruta de media montaña que asciende hasta un mirador espectacular desde donde se divisa el mar Cantábrico y los Picos de Europa. Desnivel: 400 metros.</p>
-      
-      <h2>Senda del Río Viacaba (5 km - Fácil)</h2>
-      <p>Siguiendo el curso del río Viacaba, esta ruta atraviesa bosques de castaños y robles. Podrás ver antiguos molinos de agua y pozas naturales.</p>
-      
-      <h2>Ruta de los Pueblos Abandonados (12 km - Moderada)</h2>
-      <p>Una ruta fascinante que recorre antiguos pueblos donde el tiempo parece haberse detenido. Casas de piedra invadidas por la vegetación y hórreos centenarios.</p>
-      
+      <p>Una ruta de media montaña que asciende hasta un mirador espectacular desde donde se divisa el mar Cantábrico y los Picos de Europa.</p>
       <h2>Consejos prácticos</h2>
       <ul>
         <li>Lleva calzado de montaña o zapatillas con buen agarre</li>
-        <li>En verano, madruga para evitar el calor</li>
         <li>Siempre lleva agua y algo de comida</li>
-        <li>Consulta la previsión meteorológica</li>
         <li>Respeta el entorno y no dejes basura</li>
       </ul>
-      
-      <p>Pregúntanos durante tu estancia y te daremos mapas detallados e indicaciones personalizadas según tu nivel.</p>
+    `,
+    contentEn: `
+      <p>The location of La Cabaña de la Lechuza is perfect for hiking lovers. Here are the routes you can do directly from our door.</p>
+      <h2>Apple Orchards Route (3 km - Easy)</h2>
+      <p>Leave the house and in 5 minutes you'll be walking among century-old apple trees. This 3 km circular route is perfect for a quiet walk.</p>
+      <h2>Sueve Viewpoint (8 km - Moderate)</h2>
+      <p>A mid-mountain route that ascends to a spectacular viewpoint overlooking the Cantabrian Sea and Picos de Europa.</p>
+      <h2>Practical tips</h2>
+      <ul>
+        <li>Wear hiking boots or shoes with good grip</li>
+        <li>Always carry water and some food</li>
+        <li>Respect the environment and don't leave litter</li>
+      </ul>
     `,
     coverImage: "/assets/exterior/ext-09.jpg",
     coverImageAltEs: "Ruta de senderismo por prados verdes y montañas cerca de casa rural Cabranes Asturias",
@@ -248,35 +365,32 @@ export const blogPosts: BlogPost[] = [
     id: "5",
     slug: "gastronomia-asturiana-imprescindibles",
     title: "Gastronomía Asturiana: Los Platos que Debes Probar",
+    titleEn: "Asturian Gastronomy: Must-Try Dishes",
     excerpt: "La cocina asturiana es sinónimo de sabor y tradición. Te contamos qué platos no puedes dejar de probar durante tu visita.",
+    excerptEn: "Asturian cuisine is synonymous with flavor and tradition. We tell you which dishes you must try during your visit.",
     content: `
-      <p>Asturias es conocida como el <strong>paraíso gastronómico</strong> de España. Su cocina combina productos del mar y la montaña en platos contundentes y llenos de sabor.</p>
-      
+      <p>Asturias es conocida como el <strong>paraíso gastronómico</strong> de España. Su cocina combina productos del mar y la montaña.</p>
       <h2>Fabada Asturiana</h2>
-      <p>El plato más emblemático de la región. Fabes de la Granja guisadas lentamente con chorizo, morcilla y lacón. El secreto está en la cocción lenta y en usar productos de calidad.</p>
-      
-      <h2>Cachopo</h2>
-      <p>Dos filetes de ternera rellenos de jamón y queso, empanados y fritos. Un plato contundente que encontrarás en casi todos los restaurantes de la zona.</p>
-      
-      <h2>Pote Asturiano</h2>
-      <p>Un guiso tradicional de alubias, berza, patatas y compango (chorizo, morcilla y tocino). Perfecto para los días fríos de invierno.</p>
-      
+      <p>El plato más emblemático de la región. Fabes guisadas lentamente con chorizo, morcilla y lacón.</p>
       <h2>Sidra Natural</h2>
-      <p>La bebida por excelencia de Asturias. Se escancia desde altura para oxigenarla y se bebe de un trago. En la Comarca de la Sidra encontrarás los mejores lagares.</p>
-      
+      <p>La bebida por excelencia de Asturias. Se escancia desde altura para oxigenarla.</p>
       <h2>Quesos Asturianos</h2>
-      <p>Asturias tiene más de 40 variedades de queso artesanal:</p>
       <ul>
         <li><strong>Cabrales:</strong> queso azul curado en cuevas naturales</li>
         <li><strong>Gamonéu:</strong> ahumado y con toques azules</li>
-        <li><strong>Afuega'l Pitu:</strong> cremoso y ligeramente picante</li>
-        <li><strong>Casín:</strong> el más antiguo de Asturias</li>
       </ul>
-      
-      <h2>Postres</h2>
-      <p>No te vayas sin probar el <strong>arroz con leche</strong> (el mejor de España), las <strong>casadielles</strong> (empanadillas de nuez) o los <strong>frixuelos</strong> (crepes asturianos).</p>
-      
-      <p>Pregúntanos durante tu estancia y te recomendaremos los mejores restaurantes y sidrerías de la zona.</p>
+    `,
+    contentEn: `
+      <p>Asturias is known as Spain's <strong>gastronomic paradise</strong>. Its cuisine combines products from the sea and mountains.</p>
+      <h2>Fabada Asturiana</h2>
+      <p>The region's most emblematic dish. Beans slowly stewed with chorizo, blood sausage and ham.</p>
+      <h2>Natural Cider</h2>
+      <p>The quintessential Asturian drink. It's poured from height to oxygenate it.</p>
+      <h2>Asturian Cheeses</h2>
+      <ul>
+        <li><strong>Cabrales:</strong> blue cheese aged in natural caves</li>
+        <li><strong>Gamonéu:</strong> smoked with blue touches</li>
+      </ul>
     `,
     coverImage: "/assets/cocina/cocina-01.jpg",
     coverImageAltEs: "Cocina equipada de casa rural La Cabaña de la Lechuza para cocinar gastronomía asturiana",
