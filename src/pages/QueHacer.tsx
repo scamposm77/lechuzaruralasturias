@@ -12,6 +12,12 @@ import lastresImg from "@/assets/quehacer/lastres.png";
 import miradorFituImg from "@/assets/quehacer/mirador-fitu.png";
 import museoSidraImg from "@/assets/quehacer/museo-sidra.png";
 import museoJurasicoImg from "@/assets/quehacer/museo-jurasico.png";
+import playaRodilesImg from "@/assets/quehacer/playa-rodiles.png";
+import rutaSidraImg from "@/assets/quehacer/ruta-sidra.png";
+import covadongaImg from "@/assets/quehacer/covadonga.png";
+import sendaOsoImg from "@/assets/quehacer/senda-oso.png";
+import tazonesImg from "@/assets/quehacer/tazones.png";
+import villaviciosaImg from "@/assets/quehacer/villaviciosa.jpg";
 
 interface Activity {
   id: string;
@@ -36,7 +42,7 @@ const activities: Activity[] = [
     descriptionEn: "One of the most iconic beaches in Asturias, famous for its dunes, perfect waves for surfing and the Villaviciosa estuary. Blue Flag beach and protected natural environment.",
     distance: "15 km",
     duration: "20 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Playa_de_Rodiles_%28Villaviciosa%2C_Asturias%29.jpg/1280px-Playa_de_Rodiles_%28Villaviciosa%2C_Asturias%29.jpg",
+    image: playaRodilesImg,
     externalLink: "https://www.turismoasturias.es/descubre/costa/playas/playa-de-rodiles",
     category: "beach",
     icon: Waves
@@ -49,7 +55,7 @@ const activities: Activity[] = [
     descriptionEn: "Picturesque fishing village where Charles V landed in 1517. Its colorful houses, traditional fishing port and seafood restaurants make it a must-visit.",
     distance: "12 km",
     duration: "15 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Puerto_de_Tazones.jpg/1280px-Puerto_de_Tazones.jpg",
+    image: tazonesImg,
     externalLink: "https://www.turismovillaviciosa.es/pueblos/tazones/",
     category: "beach",
     icon: Waves
@@ -62,7 +68,7 @@ const activities: Activity[] = [
     descriptionEn: "Discover authentic Asturian cider houses in Villaviciosa, the apple capital. Visit traditional cider mills, taste natural cider and learn the art of pouring.",
     distance: "7 km",
     duration: "10 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Escanciano_sidra.jpg/800px-Escanciano_sidra.jpg",
+    image: rutaSidraImg,
     externalLink: "https://www.sidratrabanco.com/",
     category: "gastronomy",
     icon: Wine
@@ -127,7 +133,7 @@ const activities: Activity[] = [
     descriptionEn: "Sacred place in Spanish history with the Holy Cave, Basilica and the stunning Enol and Ercina Lakes in the Picos de Europa. Full day excursion.",
     distance: "55 km",
     duration: "50 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Covadonga_-_Bas%C3%ADlica_de_Santa_Mar%C3%ADa_la_Real.jpg/1280px-Covadonga_-_Bas%C3%ADlica_de_Santa_Mar%C3%ADa_la_Real.jpg",
+    image: covadongaImg,
     externalLink: "https://lagosdecovadonga.org/",
     category: "nature",
     icon: Mountain
@@ -153,7 +159,7 @@ const activities: Activity[] = [
     descriptionEn: "Charming town with medieval historic center, Romanesque churches, local shops and the best cider in Asturias. Weekly market on Wednesdays.",
     distance: "7 km",
     duration: "10 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Villaviciosa_-_Parque_Ballina_01.jpg/1280px-Villaviciosa_-_Parque_Ballina_01.jpg",
+    image: villaviciosaImg,
     externalLink: "https://www.turismovillaviciosa.es/",
     category: "culture",
     icon: Church
@@ -166,7 +172,7 @@ const activities: Activity[] = [
     descriptionEn: "36km greenway ideal for cycling or hiking. Mountain landscapes, tunnels and the famous enclosure with brown bears Paca, Tola and Furaco.",
     distance: "50 km",
     duration: "45 min",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Senda_del_Oso.jpg/1280px-Senda_del_Oso.jpg",
+    image: sendaOsoImg,
     externalLink: "https://www.turismoasturias.es/descubre/naturaleza/rutas/rutas-a-pie/senda-del-oso",
     category: "hiking",
     icon: Footprints
