@@ -47,7 +47,7 @@ const Hero = () => {
   const stats = [
     { value: "7", label: t("hero.guests") },
     { value: "3", label: t("hero.bedrooms") },
-    { value: "1+1", label: t("hero.bathrooms") },
+    { value: "2", label: t("hero.bathrooms") },
     { value: "35m²", label: t("hero.porch") },
     { value: "140m²", label: t("hero.surface") },
   ];

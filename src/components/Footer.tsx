@@ -137,9 +137,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-background/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="font-body text-background/40 text-sm flex items-center gap-1">
-            © {new Date().getFullYear()} La Cabaña de la Lechuza. {t("footer.madeWith")} <Heart className="w-4 h-4 text-primary fill-primary" aria-hidden="true" /> {t("footer.inAsturias")}
+        <div className="border-t border-background/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
+          <p className="font-body text-background/40 text-xs md:text-sm flex items-center gap-1 flex-wrap justify-center">
+            <span>© {new Date().getFullYear()} La Cabaña de la Lechuza</span>
+            <span className="hidden sm:inline">·</span>
+            <span className="flex items-center gap-1">{t("footer.madeWith")} <Heart className="w-3 h-3 md:w-4 md:h-4 text-primary fill-primary" aria-hidden="true" /> {t("footer.inAsturias")}</span>
           </p>
           <nav className="flex flex-wrap justify-center gap-4 md:gap-8" aria-label={language === "es" ? "Enlaces legales" : "Legal links"}>
             <a 
