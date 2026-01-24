@@ -40,31 +40,8 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     sourcemap: mode === "development",
-    // Optimize chunk splitting for better caching and smaller initial load
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // Core React - always needed
-          if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) {
-            return "react";
-          }
-          // Router - needed for navigation
-          if (id.includes("node_modules/react-router")) {
-            return "router";
-          }
-          // Radix UI components - lazy load as needed
-          if (id.includes("node_modules/@radix-ui")) {
-            return "radix";
-          }
-          // Icons - can be loaded separately
-          if (id.includes("node_modules/lucide-react")) {
-            return "icons";
-          }
-          // Other vendor code
-          if (id.includes("node_modules/")) {
-            return "vendor";
-          }
-        },
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name?.split(".");
           const ext = info?.[info.length - 1];
