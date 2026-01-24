@@ -65,9 +65,9 @@ const Location = () => {
 
             {/* A tu alcance - Grid */}
             <div className="p-5 bg-primary/5 rounded-lg border border-primary/20">
-              <h4 className="font-display text-foreground text-lg mb-4">
+              <h3 className="font-display text-foreground text-lg mb-4">
                 {language === "es" ? "A tu alcance" : "Within reach"}
-              </h4>
+              </h3>
               <div className="grid grid-cols-2 gap-3">
                 {highlightedDistances.map((item) => (
                   <div
