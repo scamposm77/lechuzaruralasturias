@@ -134,7 +134,12 @@ const Index = () => {
       {
         "@type": "VacationRental",
         "@id": vacationRentalId,
-        "identifier": "lechuza-rural-asturias-cabranes",
+        "additionalType": "https://schema.org/House",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "RENTAL_ID",
+          "value": "lechuza-rural-asturias-cabranes"
+        },
         "name": "La Cabaña de la Lechuza",
         "description": currentSeo.description,
         "url": "https://www.lechuzaruralasturias.es/",
@@ -146,7 +151,10 @@ const Index = () => {
           "addressLocality": "Cabranes",
           "addressRegion": "Asturias",
           "postalCode": "33310",
-          "addressCountry": "ES",
+          "addressCountry": {
+            "@type": "Country",
+            "name": "ES"
+          }
         },
         "geo": {
           "@type": "GeoCoordinates",
