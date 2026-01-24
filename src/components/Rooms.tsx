@@ -66,7 +66,7 @@ const Rooms = () => {
     {
       name: t("rooms.lechuza.name"),
       bedType: language === "es" ? "Litera (90x190)" : "Bunk beds (90x190)",
-      capacity: language === "es" ? "2-3 personas" : "2-3 guests",
+      capacity: language === "es" ? "2 personas" : "2 guests",
       views: language === "es" ? "Vistas a la montaña" : "Mountain views",
       description: t("rooms.lechuza.description"),
       cover: habLechuza,
