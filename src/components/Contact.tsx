@@ -62,7 +62,7 @@ const Contact = () => {
       icon: MessageCircle,
       href: `https://wa.me/34625081519?text=${encodeURIComponent(language === "es" ? "Hola, me gustaría consultar disponibilidad en La Cabaña de la Lechuza." : "Hello, I would like to check availability at La Cabaña de la Lechuza.")}`,
       className: "bg-[#25D366] hover:bg-[#20BA5C]",
-      label: language === "es" ? "WhatsApp" : "WhatsApp",
+      label: "WhatsApp",
     },
     {
       name: "Instagram",
@@ -77,6 +77,13 @@ const Contact = () => {
       href: "https://www.facebook.com/profile.php?id=61586207769517",
       className: "bg-[#1877F2] hover:bg-[#166FE5]",
       label: "Facebook",
+    },
+    {
+      name: "Airbnb",
+      icon: null,
+      href: "https://www.airbnb.es/rooms/1134703286904548225?guests=1&adults=1&s=67&unique_share_id=9e3d8fa8-48d8-49ab-a24e-c39cf096703e",
+      className: "bg-[#FF5A5F] hover:bg-[#E74E52]",
+      label: "Airbnb",
     },
   ];
 
@@ -148,7 +155,7 @@ const Contact = () => {
               <h4 className="font-display text-foreground text-lg mb-4">
                 {language === "es" ? "Síguenos y Contáctanos" : "Follow & Contact Us"}
               </h4>
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
                   return (
@@ -157,10 +164,16 @@ const Contact = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center gap-2 px-5 py-3 rounded-full text-white font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ${social.className}`}
+                      className={`flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full text-white text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap ${social.className}`}
                       aria-label={social.label}
                     >
-                      <Icon className="w-5 h-5" />
+                      {Icon ? (
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                      ) : (
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                          <path d="M16 1C7.716 1 1 7.716 1 16c0 8.284 6.716 15 15 15 8.285 0 15-6.716 15-15 0-8.284-6.715-15-15-15zm-.438 5.067c1.083 0 1.96.877 1.96 1.96 0 1.083-.877 1.96-1.96 1.96-1.083 0-1.96-.877-1.96-1.96 0-1.083.877-1.96 1.96-1.96zM16 25.933c-2.45 0-4.273-.924-5.47-2.248-.685-.756-1.143-1.647-1.399-2.537-.256-.89-.312-1.795-.152-2.592.168-.84.553-1.573 1.134-2.07.564-.484 1.303-.756 2.168-.756.608 0 1.135.123 1.583.357.428.224.78.537 1.07.901.14.176.267.366.383.564.116-.198.243-.388.383-.564.29-.364.642-.677 1.07-.901.448-.234.975-.357 1.583-.357.865 0 1.604.272 2.168.756.581.497.966 1.23 1.134 2.07.16.797.104 1.702-.152 2.592-.256.89-.714 1.781-1.399 2.537-1.197 1.324-3.02 2.248-5.47 2.248h-.634z"/>
+                        </svg>
+                      )}
                       <span>{social.label}</span>
                     </a>
                   );

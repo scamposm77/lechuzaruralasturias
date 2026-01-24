@@ -1,5 +1,5 @@
 import cocinaEquipada from "@/assets/cocina-equipada.jpg";
-import jardinPorche from "@/assets/jardin-porche.jpg";
+import cocina01 from "@/assets/cocina/cocina-01.jpg";
 import vistaLejana from "@/assets/vista-lejana.jpg";
 import salonChimenea from "@/assets/salon-chimenea.jpg";
 import banoCompleto from "@/assets/bano-completo.jpg";
@@ -28,7 +28,7 @@ const Services = () => {
       icon: UtensilsCrossed,
       title: t("services.kitchen.title"),
       description: t("services.kitchen.description"),
-      image: cocinaEquipada,
+      image: cocina01,
       altEs: "Cocina totalmente equipada con vitrocerámica, horno, microondas y utensilios - Casa rural La Cabaña de la Lechuza Cabranes Asturias",
       altEn: "Fully equipped kitchen with ceramic hob, oven, microwave and utensils - La Cabaña de la Lechuza rural house Cabranes Asturias",
     },
@@ -44,7 +44,7 @@ const Services = () => {
       icon: TreePine,
       title: t("services.garden.title"),
       description: t("services.garden.description"),
-      image: jardinPorche,
+      image: cocinaEquipada,
       altEs: "Porche cubierto de 35m² con mesa para 10 comensales y vistas al jardín de manzanos - Alojamiento rural Asturias",
       altEn: "35m² covered porch with table for 10 guests and views to apple orchard - Rural accommodation Asturias",
     },
