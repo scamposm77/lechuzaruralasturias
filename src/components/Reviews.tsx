@@ -88,65 +88,12 @@ const Reviews = () => {
     else goToNext();
   };
 
-  // Generate JSON-LD for reviews with proper itemReviewed
-  const reviewsJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LodgingBusiness",
-    "@id": "https://www.lechuzaruralasturias.es/#lodging-business",
-    "name": "La Cabaña de la Lechuza",
-    "image": "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
-    "url": "https://www.lechuzaruralasturias.es/",
-    "telephone": "+34625081519",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Barrio La Roza s/n",
-      "addressLocality": "Cabranes",
-      "addressRegion": "Asturias",
-      "postalCode": "33310",
-      "addressCountry": "ES"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "bestRating": "5",
-      "worstRating": "1",
-      "reviewCount": String(reviews.length)
-    },
-    "review": reviews.map((review, index) => ({
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": review.name
-      },
-      "datePublished": review.date.includes("2025") 
-        ? `2025-${review.date.includes("Julio") || review.date.includes("July") ? "07" : review.date.includes("Agosto") || review.date.includes("August") ? "08" : "12"}-01`
-        : "2025-07-01",
-      "reviewBody": review.text,
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": String(review.rating),
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "itemReviewed": {
-        "@type": "LodgingBusiness",
-        "@id": "https://www.lechuzaruralasturias.es/#lodging-business",
-        "name": "La Cabaña de la Lechuza"
-      }
-    }))
-  };
-
   return (
     <section 
       id="opiniones" 
       className="py-28 bg-card overflow-hidden"
       aria-label={language === "es" ? "Opiniones de huéspedes" : "Guest reviews"}
     >
-      {/* JSON-LD Structured Data for Reviews */}
-      <script 
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsJsonLd) }}
-      />
       
       <div className="container mx-auto px-6">
         {/* Section Header */}

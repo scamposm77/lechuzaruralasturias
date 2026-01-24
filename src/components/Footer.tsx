@@ -99,8 +99,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div itemScope itemType="https://schema.org/LocalBusiness">
-            <meta itemProp="name" content="La Cabaña de la Lechuza" />
+          <div>
             <h4 className="font-display text-background text-lg mb-6">
               {t("footer.contact")}
             </h4>
@@ -111,21 +110,17 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 hover:text-background transition-colors"
                 aria-label={language === "es" ? "Ver ubicación en Google Maps: Barrio la Roza s/n, 33310 Cabranes, Asturias" : "View location on Google Maps: Barrio la Roza s/n, 33310 Cabranes, Asturias"}
-                itemProp="address"
-                itemScope
-                itemType="https://schema.org/PostalAddress"
               >
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span>
-                  <span itemProp="streetAddress">Barrio la Roza s/n</span><br />
-                  <span itemProp="postalCode">33310</span> <span itemProp="addressLocality">Cabranes</span>, <span itemProp="addressRegion">Asturias</span>
+                  Barrio la Roza s/n<br />
+                  33310 Cabranes, Asturias
                 </span>
               </a>
               <a 
                 href="tel:+34625081519"
                 className="flex items-center gap-3 hover:text-background transition-colors"
                 aria-label={language === "es" ? "Llamar al teléfono +34 625 08 15 19" : "Call phone number +34 625 08 15 19"}
-                itemProp="telephone"
               >
                 <Phone className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                 <span>+34 625 08 15 19</span>
@@ -134,7 +129,6 @@ const Footer = () => {
                 href="mailto:info@lechuzaruralasturias.es"
                 className="flex items-center gap-3 hover:text-background transition-colors"
                 aria-label={language === "es" ? "Enviar email a info@lechuzaruralasturias.es" : "Send email to info@lechuzaruralasturias.es"}
-                itemProp="email"
               >
                 <Mail className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                 <span>info@lechuzaruralasturias.es</span>
