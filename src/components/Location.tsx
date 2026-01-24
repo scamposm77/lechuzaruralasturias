@@ -110,9 +110,10 @@ const Location = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 py-2.5 px-5 bg-primary text-primary-foreground rounded-lg font-body text-sm font-medium hover:bg-primary/90 transition-colors"
+              aria-label={language === "es" ? "Ver ubicación de La Cabaña de la Lechuza en Google Maps (abre en nueva ventana)" : "View La Cabaña de la Lechuza location on Google Maps (opens in new window)"}
             >
-              <MapPin className="w-4 h-4" />
-              {language === "es" ? "Ver en Google Maps" : "View on Google Maps"}
+              <MapPin className="w-4 h-4" aria-hidden="true" />
+              <span>{language === "es" ? "Ver en Google Maps" : "View on Google Maps"}</span>
             </a>
           </div>
         </div>

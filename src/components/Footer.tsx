@@ -44,10 +44,11 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 title={language === "es" ? "Síguenos en Instagram" : "Follow us on Instagram"}
-                aria-label="Instagram"
+                aria-label={language === "es" ? "Instagram - Síguenos en Instagram" : "Instagram - Follow us on Instagram"}
                 itemProp="sameAs"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-5 h-5" aria-hidden="true" />
+                <span className="sr-only">Instagram</span>
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61586207769517&mibextid=wwXIfr"
@@ -55,10 +56,11 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-background/10 rounded-full flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-all duration-300"
                 title={language === "es" ? "Síguenos en Facebook" : "Follow us on Facebook"}
-                aria-label="Facebook"
+                aria-label={language === "es" ? "Facebook - Síguenos en Facebook" : "Facebook - Follow us on Facebook"}
                 itemProp="sameAs"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-5 h-5" aria-hidden="true" />
+                <span className="sr-only">Facebook</span>
               </a>
               <a
                 href="https://www.airbnb.es/rooms/1134703286904548225?guests=1&adults=1&s=67&unique_share_id=9e3d8fa8-48d8-49ab-a24e-c39cf096703e"
@@ -66,12 +68,13 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-background/10 rounded-full flex items-center justify-center hover:bg-[#FF5A5F] hover:text-white transition-all duration-300"
                 title={language === "es" ? "Ver en Airbnb" : "View on Airbnb"}
-                aria-label="Airbnb"
+                aria-label={language === "es" ? "Airbnb - Ver nuestra casa en Airbnb" : "Airbnb - View our house on Airbnb"}
                 itemProp="sameAs"
               >
                 <svg className="w-5 h-5" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
                   <path d="M16 1C7.716 1 1 7.716 1 16c0 8.284 6.716 15 15 15 8.285 0 15-6.716 15-15 0-8.284-6.715-15-15-15zm-.438 5.067c1.083 0 1.96.877 1.96 1.96 0 1.083-.877 1.96-1.96 1.96-1.083 0-1.96-.877-1.96-1.96 0-1.083.877-1.96 1.96-1.96zM16 25.933c-2.45 0-4.273-.924-5.47-2.248-.685-.756-1.143-1.647-1.399-2.537-.256-.89-.312-1.795-.152-2.592.168-.84.553-1.573 1.134-2.07.564-.484 1.303-.756 2.168-.756.608 0 1.135.123 1.583.357.428.224.78.537 1.07.901.14.176.267.366.383.564.116-.198.243-.388.383-.564.29-.364.642-.677 1.07-.901.448-.234.975-.357 1.583-.357.865 0 1.604.272 2.168.756.581.497.966 1.23 1.134 2.07.16.797.104 1.702-.152 2.592-.256.89-.714 1.781-1.399 2.537-1.197 1.324-3.02 2.248-5.47 2.248h-.634z"/>
                 </svg>
+                <span className="sr-only">Airbnb</span>
               </a>
             </div>
           </div>
@@ -106,6 +109,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 hover:text-background transition-colors"
+                aria-label={language === "es" ? "Ver ubicación en Google Maps: Barrio la Roza s/n, 33310 Cabranes, Asturias" : "View location on Google Maps: Barrio la Roza s/n, 33310 Cabranes, Asturias"}
                 itemProp="address"
                 itemScope
                 itemType="https://schema.org/PostalAddress"
@@ -119,6 +123,7 @@ const Footer = () => {
               <a 
                 href="tel:+34625081519"
                 className="flex items-center gap-3 hover:text-background transition-colors"
+                aria-label={language === "es" ? "Llamar al teléfono +34 625 08 15 19" : "Call phone number +34 625 08 15 19"}
                 itemProp="telephone"
               >
                 <Phone className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
@@ -127,6 +132,7 @@ const Footer = () => {
               <a 
                 href="mailto:info@lechuzaruralasturias.es"
                 className="flex items-center gap-3 hover:text-background transition-colors"
+                aria-label={language === "es" ? "Enviar email a info@lechuzaruralasturias.es" : "Send email to info@lechuzaruralasturias.es"}
                 itemProp="email"
               >
                 <Mail className="w-4 h-4 flex-shrink-0" aria-hidden="true" />

@@ -165,16 +165,16 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full text-white text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap ${social.className}`}
-                      aria-label={social.label}
+                      aria-label={`${social.name} - ${language === "es" ? "Contactar o seguirnos en" : "Contact or follow us on"} ${social.name}`}
                     >
                       {Icon ? (
-                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" aria-hidden="true" />
                       ) : (
                         <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
                           <path d="M16 1C7.716 1 1 7.716 1 16c0 8.284 6.716 15 15 15 8.285 0 15-6.716 15-15 0-8.284-6.715-15-15-15zm-.438 5.067c1.083 0 1.96.877 1.96 1.96 0 1.083-.877 1.96-1.96 1.96-1.083 0-1.96-.877-1.96-1.96 0-1.083.877-1.96 1.96-1.96zM16 25.933c-2.45 0-4.273-.924-5.47-2.248-.685-.756-1.143-1.647-1.399-2.537-.256-.89-.312-1.795-.152-2.592.168-.84.553-1.573 1.134-2.07.564-.484 1.303-.756 2.168-.756.608 0 1.135.123 1.583.357.428.224.78.537 1.07.901.14.176.267.366.383.564.116-.198.243-.388.383-.564.29-.364.642-.677 1.07-.901.448-.234.975-.357 1.583-.357.865 0 1.604.272 2.168.756.581.497.966 1.23 1.134 2.07.16.797.104 1.702-.152 2.592-.256.89-.714 1.781-1.399 2.537-1.197 1.324-3.02 2.248-5.47 2.248h-.634z"/>
                         </svg>
                       )}
-                      <span>{social.label}</span>
+                      <span>{social.name}</span>
                     </a>
                   );
                 })}

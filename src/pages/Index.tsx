@@ -197,20 +197,20 @@ const Index = () => {
         <title>{currentSeo.title}</title>
         <meta name="description" content={currentSeo.description} />
         <meta name="keywords" content={currentSeo.keywords} />
-        <link rel="canonical" href="https://lechuzaruralasturias.es" />
-        <link rel="alternate" hrefLang="es" href="https://lechuzaruralasturias.es" />
-        <link rel="alternate" hrefLang="en" href="https://lechuzaruralasturias.es" />
-        <link rel="alternate" hrefLang="x-default" href="https://lechuzaruralasturias.es" />
+        <link rel="canonical" href="https://www.lechuzaruralasturias.es/" />
+        <link rel="alternate" hrefLang="es" href="https://www.lechuzaruralasturias.es/" />
+        <link rel="alternate" hrefLang="en" href="https://www.lechuzaruralasturias.es/?lang=en" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.lechuzaruralasturias.es/" />
         
         {/* Open Graph */}
         <meta property="og:title" content={currentSeo.ogTitle} />
         <meta property="og:description" content={currentSeo.ogDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://lechuzaruralasturias.es" />
+        <meta property="og:url" content="https://www.lechuzaruralasturias.es/" />
         <meta property="og:locale" content={language === "es" ? "es_ES" : "en_GB"} />
         <meta property="og:locale:alternate" content={language === "es" ? "en_GB" : "es_ES"} />
         <meta property="og:site_name" content="La Cabaña de la Lechuza" />
-        <meta property="og:image" content="https://lechuzaruralasturias.es/foto-hero.jpg" />
+        <meta property="og:image" content="https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content={language === "es" ? "Exterior de La Cabaña de la Lechuza, casa rural en Asturias" : "Exterior of La Cabaña de la Lechuza, rural house in Asturias"} />
@@ -219,7 +219,7 @@ const Index = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={currentSeo.twitterTitle} />
         <meta name="twitter:description" content={currentSeo.twitterDescription} />
-        <meta name="twitter:image" content="https://lechuzaruralasturias.es/foto-hero.jpg" />
+        <meta name="twitter:image" content="https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg" />
         
         {/* Additional SEO */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
