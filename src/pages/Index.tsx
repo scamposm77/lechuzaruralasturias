@@ -108,6 +108,7 @@ const Index = () => {
       { "@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true }
     ],
     "numberOfRooms": 3,
+    "numberOfBedrooms": 3,
     "numberOfBathroomsTotal": 2,
     "floorSize": {
       "@type": "QuantitativeValue",
