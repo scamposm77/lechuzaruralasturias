@@ -53,8 +53,8 @@
       "@context": "https://schema.org",
       "@type": "VacationRental",
       "name": "La Cabaña de la Lechuza",
-      "description": "Casa rural Asturias - Base perfecta Picos Europa/playas. Vistas espectaculares, 3 habitaciones, jardín privado con tejo centenario y chimenea de pellets.",
-      "url": "https://lechuzaruralasturias.es",
+      "description": "Casa rural con encanto en Asturias - Alojamiento para 7 personas en la Comarca de la Sidra. 3 habitaciones, jardín privado de 1500m² con tejo centenario, chimenea de pellets y vistas panorámicas al valle.",
+      "url": "https://www.lechuzaruralasturias.es",
       "telephone": "+34625081519",
       "email": "info@lechuzaruralasturias.es",
       "address": {
@@ -67,62 +67,187 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 43.426,
-        "longitude": -5.612
+        "latitude": 43.4083,
+        "longitude": -5.4169
       },
       "image": [
-        "https://lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
-        "https://lechuzaruralasturias.es/assets/exterior/ext-03.jpg",
-        "https://lechuzaruralasturias.es/assets/exterior/ext-09.jpg",
-        "https://lechuzaruralasturias.es/assets/cocina/cocina-01.jpg"
+        "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
+        "https://www.lechuzaruralasturias.es/assets/exterior/ext-03.jpg",
+        "https://www.lechuzaruralasturias.es/assets/exterior/ext-09.jpg",
+        "https://www.lechuzaruralasturias.es/assets/cocina/cocina-01.jpg"
       ],
       "amenityFeature": [
-        {"@type": "LocationFeatureSpecification", "name": "Jardín privado con tejo centenario", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Chimenea de pellets", "value": true},
         {"@type": "LocationFeatureSpecification", "name": "WiFi gratuito", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Vistas montaña", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Chimenea de pellets", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Jardín privado 1500m²", "value": true},
         {"@type": "LocationFeatureSpecification", "name": "Parking privado", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Cocina equipada", "value": true}
+        {"@type": "LocationFeatureSpecification", "name": "Cocina equipada", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Smart TV Chromecast", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Porche cubierto 35m²", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Vistas panorámicas", "value": true}
       ],
       "numberOfRooms": 3,
+      "numberOfBathroomsTotal": 2,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 140,
+        "unitCode": "MTK"
+      },
       "occupancy": {
         "@type": "QuantitativeValue",
         "maxValue": 7
       },
-      "maximumAttendeeCapacity": 7,
       "petsAllowed": false,
-      "priceRange": "€100-200",
+      "smokingAllowed": false,
+      "priceRange": "€100-200/noche",
       "checkinTime": "18:00",
       "checkoutTime": "11:00",
-      "touristType": ["Familias", "Parejas", "Grupos de amigos"],
       "containsPlace": [
         {
           "@type": "Room",
           "name": "El Tejo",
-          "description": "Habitación principal con cama King size y vistas al valle",
-          "bed": {"@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1}
+          "description": "Habitación principal con cama King size (160x200) y vistas al valle",
+          "bed": {"@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1},
+          "occupancy": {"@type": "QuantitativeValue", "value": 2}
         },
         {
           "@type": "Room",
           "name": "La Pumarada",
-          "description": "Habitación doble con cama de matrimonio y vistas al campo",
-          "bed": {"@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1}
+          "description": "Habitación doble con cama de matrimonio (135x190) y vistas al campo",
+          "bed": {"@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1},
+          "occupancy": {"@type": "QuantitativeValue", "value": 2}
         },
         {
           "@type": "Room",
           "name": "La Lechuza",
-          "description": "Habitación familiar con litera",
-          "bed": {"@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1}
+          "description": "Habitación con litera de camas individuales",
+          "bed": {"@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1},
+          "occupancy": {"@type": "QuantitativeValue", "value": 2}
         }
       ],
-      "touristDestination": [
-        {"@type": "TouristDestination", "name": "Picos de Europa"},
-        {"@type": "TouristDestination", "name": "Playas del Cantábrico"},
-        {"@type": "TouristDestination", "name": "Comarca de la Sidra"},
-        {"@type": "TouristDestination", "name": "Gijón"},
-        {"@type": "TouristDestination", "name": "Oviedo"},
-        {"@type": "TouristDestination", "name": "Descenso del Sella"}
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.88",
+        "bestRating": "5",
+        "reviewCount": "25"
+      },
+      "sameAs": [
+        "https://www.instagram.com/lechuza.casaruralasturias",
+        "https://www.facebook.com/profile.php?id=61586207769517",
+        "https://www.airbnb.es/rooms/1134703286904548225"
       ]
+    }
+    </script>
+
+    <!-- JSON-LD - FAQPage for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuántas personas caben en La Cabaña de la Lechuza?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La casa tiene capacidad para 7 personas en 3 habitaciones: El Tejo (cama King size, 2 personas), La Pumarada (cama matrimonio, 2 personas) y La Lechuza (litera, 2 personas). Además hay sofá cama en el salón."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se admiten mascotas en la casa rural?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, no se admiten animales con pelo para respetar las necesidades sanitarias de todos los huéspedes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿A qué distancia están las playas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las playas más cercanas están a 15-25 minutos en coche: Playa de Rodiles (20 min), Tazones (15 min), La Griega y Lastres (25 min)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es el precio por noche?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El precio varía entre 100€ y 200€ por noche según la temporada. Reservando directamente no hay comisiones adicionales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿La casa tiene WiFi y calefacción?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, la casa dispone de WiFi de alta velocidad en toda la vivienda y calefacción mediante chimenea de pellets muy eficiente."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Casas Rurales Asturias",
+          "item": "https://www.lechuzaruralasturias.es"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Comarca de la Sidra",
+          "item": "https://www.lechuzaruralasturias.es/#ubicacion"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "La Cabaña de la Lechuza",
+          "item": "https://www.lechuzaruralasturias.es"
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD - LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "La Cabaña de la Lechuza",
+      "image": "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
+      "@id": "https://www.lechuzaruralasturias.es",
+      "url": "https://www.lechuzaruralasturias.es",
+      "telephone": "+34625081519",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Barrio La Roza s/n",
+        "addressLocality": "Cabranes",
+        "postalCode": "33310",
+        "addressRegion": "Asturias",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.4083,
+        "longitude": -5.4169
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "hasMap": "https://maps.app.goo.gl/RAUYH5vjUNvub4Nn9"
     }
     </script>
   </head>
