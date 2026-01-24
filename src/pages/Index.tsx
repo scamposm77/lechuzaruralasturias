@@ -70,15 +70,10 @@ const Index = () => {
   const currentSeo = seo[language];
 
   // JSON-LD structured data - VacationRental
-  // Nota: usamos @graph + referencias por @id para evitar que algunos validadores
-  // interpreten `containsPlace` como campo duplicado cuando hay múltiples habitaciones.
-  const vacationRentalId = "https://www.lechuzaruralasturias.es/#vacation-rental";
-
-  const roomNodes = [
+  // Rooms are embedded directly in containsPlace as an array to avoid "duplicate field" warnings
+  const roomsData = [
     {
       "@type": "Room",
-      "@id": "https://www.lechuzaruralasturias.es/#room-tejo",
-      "additionalType": "https://schema.org/Bedroom",
       "name": "El Tejo",
       "description":
         language === "es"
@@ -86,8 +81,6 @@ const Index = () => {
           : "Master bedroom with King size bed and valley views",
       "bed": { "@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1 },
       "occupancy": { "@type": "QuantitativeValue", "value": 2 },
-      "numberOfBedrooms": 1,
-      "numberOfBathroomsTotal": 0,
       "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Valley Views", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Wardrobe", "value": true },
@@ -95,8 +88,6 @@ const Index = () => {
     },
     {
       "@type": "Room",
-      "@id": "https://www.lechuzaruralasturias.es/#room-pumarada",
-      "additionalType": "https://schema.org/Bedroom",
       "name": "La Pumarada",
       "description":
         language === "es"
@@ -104,8 +95,6 @@ const Index = () => {
           : "Double room with double bed and countryside views",
       "bed": { "@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1 },
       "occupancy": { "@type": "QuantitativeValue", "value": 2 },
-      "numberOfBedrooms": 1,
-      "numberOfBathroomsTotal": 0,
       "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Countryside Views", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Wardrobe", "value": true },
@@ -113,14 +102,10 @@ const Index = () => {
     },
     {
       "@type": "Room",
-      "@id": "https://www.lechuzaruralasturias.es/#room-lechuza",
-      "additionalType": "https://schema.org/Bedroom",
       "name": "La Lechuza",
       "description": language === "es" ? "Habitación familiar con litera" : "Family room with bunk beds",
       "bed": { "@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1 },
       "occupancy": { "@type": "QuantitativeValue", "value": 2 },
-      "numberOfBedrooms": 1,
-      "numberOfBathroomsTotal": 0,
       "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Natural Light", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Wardrobe", "value": true },
@@ -130,154 +115,148 @@ const Index = () => {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "VacationRental",
-        "@id": vacationRentalId,
-        "additionalType": "https://schema.org/House",
-        "identifier": {
-          "@type": "PropertyValue",
-          "propertyID": "RENTAL_ID",
-          "value": "lechuza-rural-asturias-cabranes"
-        },
-        "name": "La Cabaña de la Lechuza",
-        "description": currentSeo.description,
-        "url": "https://www.lechuzaruralasturias.es/",
-        "telephone": "+34625081519",
-        "email": "info@lechuzaruralasturias.es",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Barrio la Roza s/n",
-          "addressLocality": "Cabranes",
-          "addressRegion": "Asturias",
-          "postalCode": "33310",
-          "addressCountry": {
-            "@type": "Country",
-            "name": "ES"
-          }
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 43.4083,
-          "longitude": -5.4169,
-        },
-        "priceRange": "€100-200",
-        "checkinTime": "18:00",
-        "checkoutTime": "11:00",
-        "amenityFeature": [
-          { "@type": "LocationFeatureSpecification", "name": "WiFi", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Parking", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Fireplace", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Kitchen", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Garden", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Smart TV", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Porch", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true },
-        ],
-        "numberOfRooms": 3,
-        "numberOfBedrooms": 3,
-        "numberOfBathroomsTotal": 2,
-        "floorSize": {
-          "@type": "QuantitativeValue",
-          "value": 140,
-          "unitCode": "MTK",
-        },
-        "occupancy": {
-          "@type": "QuantitativeValue",
-          "maxValue": 7,
-        },
-        "petsAllowed": false,
-        "smokingAllowed": false,
-        "containsPlace": roomNodes.map((r) => ({ "@id": r["@id"] })),
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.88",
-          "bestRating": "5",
-          "worstRating": "1",
-          "reviewCount": "25",
-        },
-        "review": [
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Audrie" },
-            "datePublished": "2025-07-15",
-            "reviewBody":
-              language === "es"
-                ? "Casa muy bonita y renovada. En un lugar tranquilo y perfecto para relajarse, pero que permite recorrer esta hermosa región y descubrirla con facilidad."
-                : "A very beautiful and renovated house. In a quiet place, perfect for relaxing, but that allows you to explore this beautiful region and discover it easily.",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Matteo" },
-            "datePublished": "2025-08-10",
-            "reviewBody":
-              language === "es"
-                ? "Un sitio muy bonito, está muy cuidado. Se nota que tiene cariño. Entorno muy tranquilo. Aparcamiento en la puerta. Se ven estrellas desde el porche."
-                : "A very beautiful place, very well maintained. You can tell it's cared for with love. Very quiet surroundings. Parking at the door. You can see stars from the porch.",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Elvia" },
-            "datePublished": "2025-12-05",
-            "reviewBody":
-              language === "es"
-                ? "La casa es una maravilla, está muy bien ubicada por carretera. Es una casita muy especial en plena naturaleza, al levantarte escuchas pajaritos y es muy agradable. La casa tiene de todo, con la estufa de pellets se está muy calentito."
-                : "The house is wonderful, very well located by road. It is a very special little house in the middle of nature, when you wake up you hear birds and it is very pleasant. The house has everything, with the pellet stove it is very warm.",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Diego" },
-            "datePublished": "2025-08-20",
-            "reviewBody":
-              language === "es"
-                ? "Al llegar a la casa después de un largo viaje, Susana nos demostró que es una gran anfitriona contestando enseguida a todas nuestras dudas y preguntas. Todas las estancias de la casa están limpias y en perfectas condiciones."
-                : "Upon arriving at the house after a long journey, Susana showed us that she is a great host by immediately answering all our doubts and questions. All rooms in the house are clean and in perfect condition.",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Laura" },
-            "datePublished": "2025-07-20",
-            "reviewBody":
-              language === "es"
-                ? "Perfecto para familias que buscan desconectar del trabajo y disfrutar de la naturaleza. El entorno es precioso, rodeado de manzanos y con unas vistas espectaculares al valle."
-                : "Perfect for families looking to disconnect from work and enjoy nature. The surroundings are beautiful, surrounded by apple trees and with spectacular views of the valley.",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-          },
-        ],
-        "sameAs": [
-          "https://www.instagram.com/lechuza.casaruralasturias",
-          "https://www.facebook.com/profile.php?id=61586207769517",
-          "https://www.airbnb.es/rooms/1134703286904548225",
-        ],
-        "image": [
-          "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
-          "https://www.lechuzaruralasturias.es/assets/exterior/ext-03.jpg",
-          "https://www.lechuzaruralasturias.es/assets/exterior/ext-09.jpg",
-          "https://www.lechuzaruralasturias.es/assets/exterior/ext-10.jpg",
-          "https://www.lechuzaruralasturias.es/assets/cocina/cocina-01.jpg",
-          "https://www.lechuzaruralasturias.es/assets/salon/salon-01.jpg",
-          "https://www.lechuzaruralasturias.es/assets/habitaciones/tejo-01.jpg",
-          "https://www.lechuzaruralasturias.es/assets/habitaciones/pumarada-01.jpg",
-        ],
-        "potentialAction": {
-          "@type": "ReserveAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://www.lechuzaruralasturias.es/#contacto",
-            "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"],
-          },
-          "result": {
-            "@type": "LodgingReservation",
-            "name": language === "es" ? "Reserva en La Cabaña de la Lechuza" : "Booking at La Cabaña de la Lechuza",
-          },
-        },
-      },
-      ...roomNodes,
+    "@type": "VacationRental",
+    "@id": "https://www.lechuzaruralasturias.es/#vacation-rental",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "RENTAL_ID",
+      "value": "lechuza-rural-asturias-cabranes"
+    },
+    "name": "La Cabaña de la Lechuza",
+    "description": currentSeo.description,
+    "url": "https://www.lechuzaruralasturias.es/",
+    "telephone": "+34625081519",
+    "email": "info@lechuzaruralasturias.es",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Barrio la Roza s/n",
+      "addressLocality": "Cabranes",
+      "addressRegion": "Asturias",
+      "postalCode": "33310",
+      "addressCountry": {
+        "@type": "Country",
+        "name": "ES"
+      }
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.4083,
+      "longitude": -5.4169,
+    },
+    "priceRange": "€100-200",
+    "checkinTime": "18:00",
+    "checkoutTime": "11:00",
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "WiFi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Parking", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Fireplace", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Kitchen", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Garden", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Smart TV", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Porch", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true },
     ],
+    "numberOfRooms": 3,
+    "numberOfBedrooms": 3,
+    "numberOfBathroomsTotal": 2,
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": 140,
+      "unitCode": "MTK",
+    },
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "maxValue": 7,
+    },
+    "petsAllowed": false,
+    "smokingAllowed": false,
+    "containsPlace": roomsData,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.88",
+      "bestRating": "5",
+      "worstRating": "1",
+      "reviewCount": "25",
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Audrie" },
+        "datePublished": "2025-07-15",
+        "reviewBody":
+          language === "es"
+            ? "Casa muy bonita y renovada. En un lugar tranquilo y perfecto para relajarse, pero que permite recorrer esta hermosa región y descubrirla con facilidad."
+            : "A very beautiful and renovated house. In a quiet place, perfect for relaxing, but that allows you to explore this beautiful region and discover it easily.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Matteo" },
+        "datePublished": "2025-08-10",
+        "reviewBody":
+          language === "es"
+            ? "Un sitio muy bonito, está muy cuidado. Se nota que tiene cariño. Entorno muy tranquilo. Aparcamiento en la puerta. Se ven estrellas desde el porche."
+            : "A very beautiful place, very well maintained. You can tell it's cared for with love. Very quiet surroundings. Parking at the door. You can see stars from the porch.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Elvia" },
+        "datePublished": "2025-12-05",
+        "reviewBody":
+          language === "es"
+            ? "La casa es una maravilla, está muy bien ubicada por carretera. Es una casita muy especial en plena naturaleza, al levantarte escuchas pajaritos y es muy agradable. La casa tiene de todo, con la estufa de pellets se está muy calentito."
+            : "The house is wonderful, very well located by road. It is a very special little house in the middle of nature, when you wake up you hear birds and it is very pleasant. The house has everything, with the pellet stove it is very warm.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Diego" },
+        "datePublished": "2025-08-20",
+        "reviewBody":
+          language === "es"
+            ? "Al llegar a la casa después de un largo viaje, Susana nos demostró que es una gran anfitriona contestando enseguida a todas nuestras dudas y preguntas. Todas las estancias de la casa están limpias y en perfectas condiciones."
+            : "Upon arriving at the house after a long journey, Susana showed us that she is a great host by immediately answering all our doubts and questions. All rooms in the house are clean and in perfect condition.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Laura" },
+        "datePublished": "2025-07-20",
+        "reviewBody":
+          language === "es"
+            ? "Perfecto para familias que buscan desconectar del trabajo y disfrutar de la naturaleza. El entorno es precioso, rodeado de manzanos y con unas vistas espectaculares al valle."
+            : "Perfect for families looking to disconnect from work and enjoy nature. The surroundings are beautiful, surrounded by apple trees and with spectacular views of the valley.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
+      },
+    ],
+    "sameAs": [
+      "https://www.instagram.com/lechuza.casaruralasturias",
+      "https://www.facebook.com/profile.php?id=61586207769517",
+      "https://www.airbnb.es/rooms/1134703286904548225",
+    ],
+    "image": [
+      "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
+      "https://www.lechuzaruralasturias.es/assets/exterior/ext-03.jpg",
+      "https://www.lechuzaruralasturias.es/assets/exterior/ext-09.jpg",
+      "https://www.lechuzaruralasturias.es/assets/exterior/ext-10.jpg",
+      "https://www.lechuzaruralasturias.es/assets/cocina/cocina-01.jpg",
+      "https://www.lechuzaruralasturias.es/assets/salon/salon-01.jpg",
+      "https://www.lechuzaruralasturias.es/assets/habitaciones/tejo-01.jpg",
+      "https://www.lechuzaruralasturias.es/assets/habitaciones/pumarada-01.jpg",
+    ],
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.lechuzaruralasturias.es/#contacto",
+        "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"],
+      },
+      "result": {
+        "@type": "LodgingReservation",
+        "name": language === "es" ? "Reserva en La Cabaña de la Lechuza" : "Booking at La Cabaña de la Lechuza",
+      },
+    },
   };
 
   // Breadcrumb JSON-LD - Main navigation pages (sin trailing slash para consistencia)
