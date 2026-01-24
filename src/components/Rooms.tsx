@@ -315,11 +315,12 @@ const Rooms = () => {
                         e.stopPropagation();
                         setCurrentIndex(idx);
                       }}
-                      className={`flex-shrink-0 w-16 h-12 rounded overflow-hidden transition-all duration-300 ${
+                      className={`flex-shrink-0 min-w-[44px] min-h-[44px] w-16 h-12 rounded overflow-hidden transition-all duration-300 ${
                         idx === currentIndex 
                           ? "ring-2 ring-primary opacity-100 scale-105" 
                           : "opacity-60 hover:opacity-100"
                       }`}
+                      aria-label={`${language === "es" ? "Ver imagen" : "View image"} ${idx + 1}${idx === currentIndex ? (language === "es" ? " (actual)" : " (current)") : ""}`}
                     >
                       <img
                         src={img}
@@ -360,8 +361,9 @@ const Rooms = () => {
                 href="#contacto"
                 onClick={closeDetails}
                 className="mt-6 w-full py-4 bg-primary text-primary-foreground rounded-sm font-body text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2"
+                aria-label={language === "es" ? `Reservar habitación ${detailRoom.name}` : `Book ${detailRoom.name} room`}
               >
-                {language === "es" ? "Reservar esta habitación" : "Book this room"}
+                <span>{language === "es" ? "Reservar esta habitación" : "Book this room"}</span>
               </a>
             </div>
           </div>

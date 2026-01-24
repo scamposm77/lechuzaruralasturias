@@ -66,11 +66,14 @@ const Header = () => {
           className={`flex items-center gap-3 font-display text-xl md:text-2xl transition-colors ${
             isScrolled ? "text-foreground" : "text-background"
           }`}
+          aria-label="La Cabaña de la Lechuza - Ir a página de inicio"
         >
           <img
             src={logoLechuza}
-            alt="Logo La Cabaña de la Lechuza - Casa rural en Asturias"
+            alt="Logo La Cabaña de la Lechuza - Casa rural con encanto en Cabranes, Asturias"
             onClick={handleLogoClick}
+            width={48}
+            height={54}
             className={`h-10 md:h-12 w-auto cursor-pointer transition-transform duration-300 ${
               isLogoClicked ? "scale-150" : "hover:scale-110"
             }`}

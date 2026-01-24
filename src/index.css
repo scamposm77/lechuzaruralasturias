@@ -16,12 +16,12 @@
     --popover: 42 35% 96%;
     --popover-foreground: 25 30% 12%;
 
-    /* Warm amber primary */
-    --primary: 28 70% 45%;
+    /* Warm amber primary - darkened for better contrast (WCAG AA) */
+    --primary: 28 70% 35%;
     --primary-foreground: 42 35% 98%;
 
-    /* Forest green secondary */
-    --secondary: 145 25% 32%;
+    /* Forest green secondary - darkened for contrast */
+    --secondary: 145 30% 28%;
     --secondary-foreground: 42 35% 98%;
 
     /* Cream muted */
