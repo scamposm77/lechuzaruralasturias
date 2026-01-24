@@ -35,20 +35,18 @@
     <!-- Sitemap reference for search engines -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+    <!-- Favicons - priority order -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
     
-    <!-- Preload critical resources for LCP optimization -->
+    <!-- Preconnect for fonts (critical) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Preload hero image for faster LCP -->
-    <link rel="preload" as="image" href="/assets/exterior/ext-00-portada.jpg" fetchpriority="high" type="image/jpeg" />
-    
-    <!-- Preload critical fonts inline to avoid render blocking -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <!-- Load fonts asynchronously to prevent render blocking -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;600;700&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;600;700&display=swap" /></noscript>
     
     <!-- DNS prefetch for external resources (defer loading) -->
@@ -128,8 +126,8 @@
       ]
     }
     </script>
-    <script async type="module" crossorigin src="/assets/index-CeUO6OyZ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CDSWxxK4.css">
+    <script async type="module" crossorigin src="/assets/index-BfViAqnd.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-tt0wuoDD.css">
   </head>
 
   <body>
