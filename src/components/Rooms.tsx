@@ -160,24 +160,18 @@ const Rooms = () => {
                 className="aspect-[4/3] overflow-hidden relative cursor-pointer"
                 onClick={(e) => openSlideshow(room, e)}
               >
-                <picture>
-                  <source
-                    srcSet={room.cover.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
-                    type="image/webp"
-                  />
-                  <img
-                    src={room.cover}
-                    alt={language === "es"
-                      ? `Foto habitación ${room.name} La Cabaña de la Lechuza casa rural Cabranes Asturias - ${room.bedType}`
-                      : `${room.name} room photo La Cabaña de la Lechuza rural house Cabranes Asturias - ${room.bedType}`
-                    }
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async"
-                    fetchPriority="low"
-                    itemProp="photo"
-                  />
-                </picture>
+                <img
+                  src={room.cover}
+                  alt={language === "es"
+                    ? `Foto habitación ${room.name} La Cabaña de la Lechuza casa rural Cabranes Asturias - ${room.bedType}`
+                    : `${room.name} room photo La Cabaña de la Lechuza rural house Cabranes Asturias - ${room.bedType}`
+                  }
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                  itemProp="photo"
+                />
                 <div className="absolute top-4 left-4 p-3 bg-primary/90 backdrop-blur-sm rounded-full" aria-hidden="true">
                   <room.icon className="w-5 h-5 text-primary-foreground" />
                 </div>
@@ -270,20 +264,14 @@ const Rooms = () => {
             <div className="relative">
               {/* Main Image */}
               <div className="aspect-[16/10] relative overflow-hidden bg-muted">
-                <picture>
-                  <source
-                    srcSet={detailRoom.images[currentIndex].replace(/\.(jpg|jpeg|png)$/i, '.webp')}
-                    type="image/webp"
-                  />
-                  <img
-                    src={detailRoom.images[currentIndex]}
-                    alt={language === "es"
-                      ? `Foto habitación ${detailRoom.name} La Cabaña de la Lechuza - Imagen ${currentIndex + 1}`
-                      : `${detailRoom.name} room photo La Cabaña de la Lechuza - Image ${currentIndex + 1}`
-                    }
-                    className="w-full h-full object-cover"
-                  />
-                </picture>
+                <img
+                  src={detailRoom.images[currentIndex]}
+                  alt={language === "es"
+                    ? `Foto habitación ${detailRoom.name} La Cabaña de la Lechuza - Imagen ${currentIndex + 1}`
+                    : `${detailRoom.name} room photo La Cabaña de la Lechuza - Image ${currentIndex + 1}`
+                  }
+                  className="w-full h-full object-cover"
+                />
                 
                 {/* Navigation Arrows */}
                 {detailRoom.images.length > 1 && (
@@ -433,20 +421,14 @@ const Rooms = () => {
           )}
 
           {/* Main Image */}
-          <picture>
-            <source
-              srcSet={selectedRoom.images[currentIndex].replace(/\.(jpg|jpeg|png)$/i, '.webp')}
-              type="image/webp"
-            />
-            <img
-              src={selectedRoom.images[currentIndex]}
-              alt={language === "es"
-                ? `Foto habitación ${selectedRoom.name} La Cabaña de la Lechuza casa rural Cabranes Asturias - Imagen ${currentIndex + 1}`
-                : `${selectedRoom.name} room photo La Cabaña de la Lechuza rural house Cabranes Asturias - Image ${currentIndex + 1}`
-              }
-              className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
-            />
-          </picture>
+          <img
+            src={selectedRoom.images[currentIndex]}
+            alt={language === "es"
+              ? `Foto habitación ${selectedRoom.name} La Cabaña de la Lechuza casa rural Cabranes Asturias - Imagen ${currentIndex + 1}`
+              : `${selectedRoom.name} room photo La Cabaña de la Lechuza rural house Cabranes Asturias - Image ${currentIndex + 1}`
+            }
+            className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
+          />
 
           {/* Thumbnail Navigation */}
           {selectedRoom.images.length > 1 && (

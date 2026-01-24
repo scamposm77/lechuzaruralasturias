@@ -77,20 +77,14 @@ const Hero = () => {
           role="img"
           aria-label={image.alt}
         >
-          <picture>
-            <source
-              srcSet={image.src.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
-              type="image/webp"
-            />
-            <img
-              src={image.src}
-              alt={image.alt}
-              loading={index === 0 ? "eager" : "lazy"}
-              decoding={index === 0 ? "sync" : "async"}
-              fetchPriority={index === 0 ? "high" : "low"}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </picture>
+          <img
+            src={image.src}
+            alt={image.alt}
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding={index === 0 ? "sync" : "async"}
+            fetchPriority={index === 0 ? "high" : "low"}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           <div className="absolute inset-0 hero-overlay" />
         </div>
       ))}
