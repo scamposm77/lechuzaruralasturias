@@ -128,73 +128,8 @@
     }
     </script>
 
-    <!-- JSON-LD - BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Inicio",
-          "item": "https://www.lechuzaruralasturias.es"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Qué hacer",
-          "item": "https://www.lechuzaruralasturias.es/que-hacer"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Blog",
-          "item": "https://www.lechuzaruralasturias.es/blog"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Cómo llegar",
-          "item": "https://www.lechuzaruralasturias.es/como-llegar"
-        }
-      ]
-    }
-    </script>
-
-    <!-- JSON-LD - LocalBusiness -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LodgingBusiness",
-      "name": "La Cabaña de la Lechuza",
-      "image": "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
-      "@id": "https://www.lechuzaruralasturias.es/#lodging-business",
-      "url": "https://www.lechuzaruralasturias.es/",
-      "telephone": "+34625081519",
-      "priceRange": "€€",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Barrio La Roza s/n",
-        "addressLocality": "Cabranes",
-        "postalCode": "33310",
-        "addressRegion": "Asturias",
-        "addressCountry": "ES"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 43.4083,
-        "longitude": -5.4169
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "hasMap": "https://maps.app.goo.gl/RAUYH5vjUNvub4Nn9"
-    }
-    </script>
+    <!-- Nota: BreadcrumbList y datos de alojamiento se renderizan dinámicamente en React (Helmet)
+         para evitar duplicados en validadores y mantener soporte multidioma. -->
     <script type="module" crossorigin src="/assets/index-mETF_Ju8.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-BIxjQDMn.js">
     <link rel="modulepreload" crossorigin href="/assets/ui-C7lcbzG5.js">
