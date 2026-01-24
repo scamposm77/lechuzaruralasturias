@@ -6,6 +6,7 @@ const Footer = () => {
   const { t, language } = useLanguage();
 
   const quickLinks = [
+    { href: "#inicio", label: t("nav.home") },
     { href: "#espacios", label: t("footer.spaces") },
     { href: "#habitaciones", label: t("nav.rooms") },
     { href: "#servicios", label: t("footer.services") },
