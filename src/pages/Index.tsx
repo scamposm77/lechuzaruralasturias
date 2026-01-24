@@ -73,6 +73,7 @@ const Index = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "VacationRental",
+    "additionalType": "https://schema.org/House",
     "@id": "https://www.lechuzaruralasturias.es/#vacation-rental",
     "identifier": "lechuza-rural-asturias-cabranes",
     "name": "La Cabaña de la Lechuza",
@@ -107,6 +108,7 @@ const Index = () => {
       { "@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true }
     ],
     "numberOfRooms": 3,
+    "numberOfBedrooms": 3,
     "numberOfBathroomsTotal": 2,
     "floorSize": {
       "@type": "QuantitativeValue",
@@ -122,24 +124,45 @@ const Index = () => {
     "containsPlace": [
       {
         "@type": "Room",
+        "additionalType": "https://schema.org/Bedroom",
         "name": "El Tejo",
         "description": language === "es" ? "Habitación principal con cama King size y vistas al valle" : "Master bedroom with King size bed and valley views",
         "bed": { "@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "value": 2 }
+        "occupancy": { "@type": "QuantitativeValue", "value": 2 },
+        "numberOfBedrooms": 1,
+        "numberOfBathroomsTotal": 0,
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Valley Views", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Wardrobe", "value": true }
+        ]
       },
       {
         "@type": "Room",
+        "additionalType": "https://schema.org/Bedroom",
         "name": "La Pumarada",
         "description": language === "es" ? "Habitación doble con cama de matrimonio y vistas al campo" : "Double room with double bed and countryside views",
         "bed": { "@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "value": 2 }
+        "occupancy": { "@type": "QuantitativeValue", "value": 2 },
+        "numberOfBedrooms": 1,
+        "numberOfBathroomsTotal": 0,
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Countryside Views", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Wardrobe", "value": true }
+        ]
       },
       {
         "@type": "Room",
+        "additionalType": "https://schema.org/Bedroom",
         "name": "La Lechuza",
         "description": language === "es" ? "Habitación familiar con litera" : "Family room with bunk beds",
         "bed": { "@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "value": 2 }
+        "occupancy": { "@type": "QuantitativeValue", "value": 2 },
+        "numberOfBedrooms": 1,
+        "numberOfBathroomsTotal": 0,
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Natural Light", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Wardrobe", "value": true }
+        ]
       }
     ],
     "aggregateRating": {
