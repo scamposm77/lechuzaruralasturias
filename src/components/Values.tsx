@@ -72,13 +72,20 @@ const Values = () => {
             >
               <meta itemProp="position" content={String(index + 1)} />
               <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={value.image}
-                  alt={value.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                  itemProp="image"
-                />
+                <picture>
+                  <source
+                    srcSet={value.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
+                    type="image/webp"
+                  />
+                  <img
+                    src={value.image}
+                    alt={value.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                    itemProp="image"
+                  />
+                </picture>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-transparent flex flex-col justify-end p-6">
                 <div className="flex items-center gap-3 mb-3">

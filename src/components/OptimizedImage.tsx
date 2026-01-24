@@ -1,29 +1,51 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, ImgHTMLAttributes } from "react";
 
-interface OptimizedImageProps {
+interface OptimizedImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'loading'> {
   src: string;
   alt: string;
   className?: string;
+  containerClassName?: string;
   loading?: "lazy" | "eager";
   sizes?: string;
   priority?: boolean;
-  itemProp?: string;
-  fetchPriority?: "high" | "low" | "auto";
+  showPlaceholder?: boolean;
 }
 
+/**
+ * Generates WebP source path from original image path
+ * The build process (vite-plugin-image-optimizer) creates WebP versions automatically
+ */
+const getWebPSource = (originalSrc: string): string | null => {
+  // Only convert jpg/jpeg/png to webp
+  if (originalSrc.match(/\.(jpg|jpeg|png)$/i)) {
+    return originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+  }
+  return null;
+};
+
+/**
+ * OptimizedImage component that:
+ * 1. Uses <picture> element to serve WebP with fallback
+ * 2. Lazy loads images using IntersectionObserver
+ * 3. Shows placeholder while loading
+ * 4. Supports priority loading for LCP images
+ */
 const OptimizedImage = ({
   src,
   alt,
   className = "",
+  containerClassName = "",
   loading = "lazy",
   sizes = "100vw",
   priority = false,
-  itemProp,
-  fetchPriority = "auto",
+  showPlaceholder = true,
+  fetchPriority,
+  decoding,
+  ...imgProps
 }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (priority) {
@@ -51,20 +73,15 @@ const OptimizedImage = ({
     return () => observer.disconnect();
   }, [priority]);
 
-  // Generate WebP source if original is jpg/jpeg/png
-  const getWebPSource = (originalSrc: string): string | null => {
-    if (originalSrc.match(/\.(jpg|jpeg|png)$/i)) {
-      return originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-    }
-    return null;
-  };
-
   const webpSrc = getWebPSource(src);
 
   return (
-    <div ref={imgRef} className={`relative overflow-hidden ${className}`}>
-      {/* Placeholder blur */}
-      {!isLoaded && (
+    <div 
+      ref={imgRef} 
+      className={`relative overflow-hidden ${containerClassName}`}
+    >
+      {/* Placeholder blur effect while loading */}
+      {showPlaceholder && !isLoaded && (
         <div 
           className="absolute inset-0 bg-muted animate-pulse"
           aria-hidden="true"
@@ -73,25 +90,65 @@ const OptimizedImage = ({
       
       {isInView && (
         <picture>
+          {/* WebP source for modern browsers - higher priority */}
           {webpSrc && (
-            <source srcSet={webpSrc} type="image/webp" />
+            <source 
+              srcSet={webpSrc} 
+              type="image/webp"
+              sizes={sizes}
+            />
           )}
+          {/* Original format fallback */}
           <img
             src={src}
             alt={alt}
-            loading={loading}
-            decoding="async"
-            fetchPriority={priority ? "high" : fetchPriority}
+            loading={priority ? "eager" : loading}
+            decoding={priority ? "sync" : decoding || "async"}
+            fetchPriority={priority ? "high" : fetchPriority || "auto"}
             sizes={sizes}
             onLoad={() => setIsLoaded(true)}
-            className={`w-full h-full object-cover transition-opacity duration-500 ${
+            className={`transition-opacity duration-300 ${
               isLoaded ? "opacity-100" : "opacity-0"
-            }`}
-            itemProp={itemProp}
+            } ${className}`}
+            {...imgProps}
           />
         </picture>
       )}
     </div>
+  );
+};
+
+/**
+ * Simple inline picture element for use in loops/maps where container isn't needed
+ */
+export const PictureImage = ({
+  src,
+  alt,
+  className = "",
+  loading = "lazy",
+  sizes,
+  ...imgProps
+}: OptimizedImageProps) => {
+  const webpSrc = getWebPSource(src);
+  
+  return (
+    <picture>
+      {webpSrc && (
+        <source 
+          srcSet={webpSrc} 
+          type="image/webp"
+          sizes={sizes}
+        />
+      )}
+      <img
+        src={src}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+        className={className}
+        {...imgProps}
+      />
+    </picture>
   );
 };
 
