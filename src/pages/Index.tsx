@@ -203,8 +203,8 @@ const Index = () => {
             "datePublished": "2025-07-15",
             "reviewBody":
               language === "es"
-                ? "Casa muy bonita y renovada. En un lugar tranquilo y perfecto para relajarse."
-                : "A very beautiful and renovated house. In a quiet place, perfect for relaxing.",
+                ? "Casa muy bonita y renovada. En un lugar tranquilo y perfecto para relajarse, pero que permite recorrer esta hermosa región y descubrirla con facilidad."
+                : "A very beautiful and renovated house. In a quiet place, perfect for relaxing, but that allows you to explore this beautiful region and discover it easily.",
             "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
           },
           {
@@ -213,8 +213,28 @@ const Index = () => {
             "datePublished": "2025-08-10",
             "reviewBody":
               language === "es"
-                ? "Un sitio muy bonito, está muy cuidado. Se nota que tiene cariño."
-                : "A very beautiful place, very well maintained.",
+                ? "Un sitio muy bonito, está muy cuidado. Se nota que tiene cariño. Entorno muy tranquilo. Aparcamiento en la puerta. Se ven estrellas desde el porche."
+                : "A very beautiful place, very well maintained. You can tell it's cared for with love. Very quiet surroundings. Parking at the door. You can see stars from the porch.",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Elvia" },
+            "datePublished": "2025-12-05",
+            "reviewBody":
+              language === "es"
+                ? "La casa es una maravilla, está muy bien ubicada por carretera. Es una casita muy especial en plena naturaleza, al levantarte escuchas pajaritos y es muy agradable. La casa tiene de todo, con la estufa de pellets se está muy calentito."
+                : "The house is wonderful, very well located by road. It is a very special little house in the middle of nature, when you wake up you hear birds and it is very pleasant. The house has everything, with the pellet stove it is very warm.",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Diego" },
+            "datePublished": "2025-08-20",
+            "reviewBody":
+              language === "es"
+                ? "Al llegar a la casa después de un largo viaje, Susana nos demostró que es una gran anfitriona contestando enseguida a todas nuestras dudas y preguntas. Todas las estancias de la casa están limpias y en perfectas condiciones."
+                : "Upon arriving at the house after a long journey, Susana showed us that she is a great host by immediately answering all our doubts and questions. All rooms in the house are clean and in perfect condition.",
             "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
           },
           {
@@ -223,8 +243,8 @@ const Index = () => {
             "datePublished": "2025-07-20",
             "reviewBody":
               language === "es"
-                ? "Perfecto para familias que buscan desconectar y disfrutar de la naturaleza."
-                : "Perfect for families looking to disconnect and enjoy nature.",
+                ? "Perfecto para familias que buscan desconectar del trabajo y disfrutar de la naturaleza. El entorno es precioso, rodeado de manzanos y con unas vistas espectaculares al valle."
+                : "Perfect for families looking to disconnect from work and enjoy nature. The surroundings are beautiful, surrounded by apple trees and with spectacular views of the valley.",
             "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
           },
         ],
