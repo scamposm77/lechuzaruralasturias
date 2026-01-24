@@ -14,23 +14,21 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === "development" && componentTagger(),
     ViteImageOptimizer({
-      // Convert to WebP with high quality
       png: {
-        quality: 80,
+        quality: 75,
       },
       jpeg: {
-        quality: 75,
+        quality: 70,
       },
       jpg: {
-        quality: 75,
+        quality: 70,
       },
       webp: {
         lossless: false,
-        quality: 80,
-        alphaQuality: 85,
+        quality: 75,
+        alphaQuality: 80,
         force: false,
       },
-      // Skip already optimized files
       cache: true,
       cacheLocation: "node_modules/.cache/vite-plugin-image-optimizer",
     }),
@@ -41,16 +39,32 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Enable source maps for debugging
     sourcemap: mode === "development",
-    // Optimize chunk splitting
+    // Optimize chunk splitting for better caching and smaller initial load
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ["react", "react-dom", "react-router-dom"],
-          ui: ["lucide-react", "@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu"],
+        manualChunks: (id) => {
+          // Core React - always needed
+          if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) {
+            return "react";
+          }
+          // Router - needed for navigation
+          if (id.includes("node_modules/react-router")) {
+            return "router";
+          }
+          // Radix UI components - lazy load as needed
+          if (id.includes("node_modules/@radix-ui")) {
+            return "radix";
+          }
+          // Icons - can be loaded separately
+          if (id.includes("node_modules/lucide-react")) {
+            return "icons";
+          }
+          // Other vendor code
+          if (id.includes("node_modules/")) {
+            return "vendor";
+          }
         },
-        // Use content hash for better caching
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name?.split(".");
           const ext = info?.[info.length - 1];
@@ -62,8 +76,22 @@ export default defineConfig(({ mode }) => ({
       },
     },
     // Target modern browsers for smaller bundles
-    target: "es2020",
-    // Minify CSS
+    target: "esnext",
+    // Minify with terser for better compression
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: mode === "production",
+        drop_debugger: true,
+        pure_funcs: mode === "production" ? ["console.log", "console.info"] : [],
+      },
+      mangle: true,
+      format: {
+        comments: false,
+      },
+    },
     cssMinify: true,
+    // Reduce chunk size warnings threshold
+    chunkSizeWarningLimit: 500,
   },
 }));
