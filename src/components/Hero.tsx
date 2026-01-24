@@ -3,7 +3,9 @@ import { ChevronDown } from "lucide-react";
 import heroPaisaje from "@/assets/hero-paisaje.jpg";
 import heroExterior from "@/assets/hero-exterior.jpg";
 import heroPorche from "@/assets/hero-porche.jpg";
-import heroCasa from "@/assets/hero-casa.jpg";
+// Usamos la misma imagen que se precarga en <head> (public/assets/exterior/ext-00-portada.jpg)
+// para evitar el warning de "preloaded but not used" y mejorar LCP.
+const heroCasa = "/assets/exterior/ext-00-portada.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
