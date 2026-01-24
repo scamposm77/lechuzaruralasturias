@@ -15,6 +15,11 @@
   RewriteCond %{REQUEST_URI} (.+)/$
   RewriteRule ^ %1 [R=301,L]
   
+  # IMPORTANTE: Servir sitemap.xml y robots.txt directamente (NO rewrite)
+  RewriteRule ^sitemap\.xml$ - [L]
+  RewriteRule ^robots\.txt$ - [L]
+  RewriteRule ^\.well-known/ - [L]
+  
   # Si el archivo o directorio existe, servirlo directamente
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
@@ -149,4 +154,15 @@ FileETag None
   AddType image/avif .avif
   AddType font/woff2 .woff2
   AddType application/manifest+json .webmanifest
+  # IMPORTANTE: Asegurar que XML se sirve con el tipo correcto
+  AddType application/xml .xml
+  AddType text/plain .txt
 </IfModule>
+
+# Forzar Content-Type correcto para sitemap y robots
+<FilesMatch "sitemap\.xml$">
+  Header set Content-Type "application/xml; charset=utf-8"
+</FilesMatch>
+<FilesMatch "robots\.txt$">
+  Header set Content-Type "text/plain; charset=utf-8"
+</FilesMatch>
