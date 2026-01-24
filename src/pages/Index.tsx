@@ -74,7 +74,8 @@ const Index = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "VacationRental",
-    "additionalType": "LodgingBusiness",
+    // additionalType expects a schema.org URL (Google flags plain strings as invalid enumerations)
+    "additionalType": "https://schema.org/LodgingBusiness",
     "@id": "https://www.lechuzaruralasturias.es/#vacation-rental",
     "identifier": "lechuza-rural-asturias-cabranes",
     "name": "La Cabaña de la Lechuza",
@@ -309,10 +310,11 @@ const Index = () => {
         <meta name="ICBM" content="43.4083, -5.4169" />
         
         {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
+        {/* Add stable IDs so Helmet replaces (not duplicates) scripts across re-renders */}
+        <script id="ld-json-vacation-rental" type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </script>
-        <script type="application/ld+json">
+        <script id="ld-json-breadcrumb" type="application/ld+json">
           {JSON.stringify(breadcrumbJsonLd)}
         </script>
       </Helmet>
