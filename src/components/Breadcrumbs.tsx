@@ -15,10 +15,12 @@ const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
   const { language } = useLanguage();
   const location = useLocation();
 
+  // Only show breadcrumbs on internal pages, not on home page
+  const isHomePage = location.pathname === "/" && !location.hash;
+  
   // Generate default breadcrumbs based on current path
   const generateBreadcrumbs = (): BreadcrumbItem[] => {
     const path = location.pathname;
-    const hash = location.hash;
     const breadcrumbs: BreadcrumbItem[] = [
       {
         label: language === "es" ? "Inicio" : "Home",
@@ -26,53 +28,50 @@ const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
       },
     ];
 
-    // Add Cabranes as context
-    breadcrumbs.push({
-      label: "Cabranes",
-      href: "/#ubicacion",
-    });
-
-    // Add section based on hash or path
-    if (hash === "#habitaciones" || path.includes("habitaciones")) {
-      breadcrumbs.push({
-        label: language === "es" ? "Habitaciones" : "Rooms",
-      });
-    } else if (hash === "#espacios" || path.includes("espacios")) {
-      breadcrumbs.push({
-        label: language === "es" ? "Espacios" : "Spaces",
-      });
-    } else if (hash === "#servicios" || path.includes("servicios")) {
-      breadcrumbs.push({
-        label: language === "es" ? "Servicios" : "Services",
-      });
-    } else if (hash === "#opiniones" || path.includes("opiniones")) {
-      breadcrumbs.push({
-        label: language === "es" ? "Opiniones" : "Reviews",
-      });
-    } else if (hash === "#ubicacion") {
-      breadcrumbs.push({
-        label: language === "es" ? "Ubicación" : "Location",
-      });
-    } else if (hash === "#contacto") {
-      breadcrumbs.push({
-        label: language === "es" ? "Contacto" : "Contact",
-      });
-    } else if (path === "/como-llegar") {
+    // Add page-specific breadcrumb
+    if (path === "/como-llegar") {
       breadcrumbs.push({
         label: language === "es" ? "Cómo llegar" : "Directions",
       });
-    } else if (path === "/blog" || path.startsWith("/blog/")) {
+    } else if (path === "/que-hacer") {
+      breadcrumbs.push({
+        label: language === "es" ? "Qué hacer" : "Things to do",
+      });
+    } else if (path === "/blog") {
       breadcrumbs.push({
         label: "Blog",
       });
+    } else if (path.startsWith("/blog/")) {
+      breadcrumbs.push({
+        label: "Blog",
+        href: "/blog",
+      });
+      // Could add article title here if passed via items prop
+    } else if (path === "/aviso-legal") {
+      breadcrumbs.push({
+        label: language === "es" ? "Aviso legal" : "Legal notice",
+      });
+    } else if (path === "/politica-privacidad") {
+      breadcrumbs.push({
+        label: language === "es" ? "Privacidad" : "Privacy",
+      });
+    } else if (path === "/politica-cookies") {
+      breadcrumbs.push({
+        label: "Cookies",
+      });
+    } else if (path === "/terminos-reserva") {
+      breadcrumbs.push({
+        label: language === "es" ? "Reservas" : "Booking",
+      });
     }
+    
     return breadcrumbs;
   };
 
   const breadcrumbItems = items || generateBreadcrumbs();
 
-  // Don't show breadcrumbs if only home
-  if (breadcrumbItems.length <= 1) return null;
+  // Don't show breadcrumbs on home page or if only one item
+  if (isHomePage || breadcrumbItems.length <= 1) return null;
 
   return (
     <nav
