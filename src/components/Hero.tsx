@@ -57,15 +57,7 @@ const Hero = () => {
       id="inicio" 
       aria-label={language === "es" ? "Bienvenida a La Cabaña de la Lechuza" : "Welcome to La Cabaña de la Lechuza"} 
       className="relative h-screen min-h-[750px] flex items-center justify-center overflow-hidden"
-      itemScope 
-      itemType="https://schema.org/LodgingBusiness"
     >
-      <meta itemProp="name" content="La Cabaña de la Lechuza" />
-      <meta itemProp="description" content={t("hero.description")} />
-      <meta itemProp="address" content="Barrio la Roza s/n, 33310 Cabranes, Asturias, Spain" />
-      <meta itemProp="telephone" content="+34625081519" />
-      <meta itemProp="email" content="info@lechuzaruralasturias.es" />
-      <meta itemProp="priceRange" content="€€" />
 
       {/* Background Slideshow - First image eagerly loaded, rest lazy */}
       {heroImages.map((image, index) => (
