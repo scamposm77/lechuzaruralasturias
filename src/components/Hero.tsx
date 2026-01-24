@@ -200,9 +200,10 @@ const Hero = () => {
       <a
         href="#espacios"
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-background/60 hover:text-background transition-colors animate-float"
-        aria-label={language === "es" ? "Desplazarse hacia abajo" : "Scroll down"}
+        aria-label={language === "es" ? "Desplazarse hacia abajo para ver más contenido" : "Scroll down to see more content"}
       >
-        <ChevronDown size={36} strokeWidth={1.5} />
+        <ChevronDown size={36} strokeWidth={1.5} aria-hidden="true" />
+        <span className="sr-only">{language === "es" ? "Ver más" : "See more"}</span>
       </a>
     </section>
   );
