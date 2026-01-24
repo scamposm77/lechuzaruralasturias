@@ -34,6 +34,36 @@ const Index = () => {
   const { language } = useLanguage();
   const location = useLocation();
 
+  // Safety net: if any legacy build / cached HTML injects an extra VacationRental JSON-LD,
+  // remove duplicates at runtime so validators only see a single source of truth.
+  useEffect(() => {
+    const scripts = Array.from(
+      document.head.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]')
+    );
+
+    const isVacationRental = (script: HTMLScriptElement) => {
+      const raw = script.textContent ?? "";
+      if (!raw) return false;
+      try {
+        const parsed = JSON.parse(raw);
+        return parsed?.["@type"] === "VacationRental";
+      } catch {
+        // Fallback (in case of non-minified / unexpected formatting)
+        return /"@type"\s*:\s*"VacationRental"/i.test(raw);
+      }
+    };
+
+    const vacationScripts = scripts.filter(isVacationRental);
+    if (vacationScripts.length <= 1) return;
+
+    const preferred = document.getElementById("ld-json-vacation-rental") as HTMLScriptElement | null;
+    const keep = preferred && vacationScripts.includes(preferred) ? preferred : vacationScripts[0];
+
+    for (const s of vacationScripts) {
+      if (s !== keep) s.remove();
+    }
+  }, [language]);
+
   // Handle hash navigation when coming from another page
   useEffect(() => {
     if (location.hash) {
@@ -74,7 +104,8 @@ const Index = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "VacationRental",
-    "additionalType": "LodgingBusiness",
+    // additionalType expects a schema.org URL (Google flags plain strings as invalid enumerations)
+    "additionalType": "https://schema.org/LodgingBusiness",
     "@id": "https://www.lechuzaruralasturias.es/#vacation-rental",
     "identifier": "lechuza-rural-asturias-cabranes",
     "name": "La Cabaña de la Lechuza",
@@ -309,10 +340,11 @@ const Index = () => {
         <meta name="ICBM" content="43.4083, -5.4169" />
         
         {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
+        {/* Add stable IDs so Helmet replaces (not duplicates) scripts across re-renders */}
+        <script id="ld-json-vacation-rental" type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </script>
-        <script type="application/ld+json">
+        <script id="ld-json-breadcrumb" type="application/ld+json">
           {JSON.stringify(breadcrumbJsonLd)}
         </script>
       </Helmet>
