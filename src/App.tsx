@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import ScrollToTop from "@/components/ScrollToTop";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import Index from "./pages/Index";
 import AvisoLegal from "./pages/AvisoLegal";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
@@ -23,31 +24,33 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <HelmetProvider>
-    <LanguageProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <ScrollToTop />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/aviso-legal" element={<AvisoLegal />} />
-              <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
-              <Route path="/politica-cookies" element={<PoliticaCookies />} />
-              <Route path="/terminos-reserva" element={<TerminosReserva />} />
-              <Route path="/como-llegar" element={<ComoLlegar />} />
-              <Route path="/que-hacer" element={<QueHacer />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <CookieBanner />
-          </BrowserRouter>
-        </TooltipProvider>
-      </QueryClientProvider>
-    </LanguageProvider>
+    <ErrorBoundary>
+      <LanguageProvider>
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <ScrollToTop />
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/aviso-legal" element={<AvisoLegal />} />
+                <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
+                <Route path="/politica-cookies" element={<PoliticaCookies />} />
+                <Route path="/terminos-reserva" element={<TerminosReserva />} />
+                <Route path="/como-llegar" element={<ComoLlegar />} />
+                <Route path="/que-hacer" element={<QueHacer />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <CookieBanner />
+            </BrowserRouter>
+          </TooltipProvider>
+        </QueryClientProvider>
+      </LanguageProvider>
+    </ErrorBoundary>
   </HelmetProvider>
 );
 
