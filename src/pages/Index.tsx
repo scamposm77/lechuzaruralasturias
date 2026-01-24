@@ -73,7 +73,6 @@ const Index = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "VacationRental",
-    "additionalType": "https://schema.org/House",
     "@id": "https://www.lechuzaruralasturias.es/#vacation-rental",
     "identifier": "lechuza-rural-asturias-cabranes",
     "name": "La Cabaña de la Lechuza",
@@ -124,7 +123,6 @@ const Index = () => {
     "containsPlace": [
       {
         "@type": "Room",
-        "additionalType": "https://schema.org/Bedroom",
         "name": "El Tejo",
         "description": language === "es" ? "Habitación principal con cama King size y vistas al valle" : "Master bedroom with King size bed and valley views",
         "bed": { "@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1 },
@@ -138,7 +136,6 @@ const Index = () => {
       },
       {
         "@type": "Room",
-        "additionalType": "https://schema.org/Bedroom",
         "name": "La Pumarada",
         "description": language === "es" ? "Habitación doble con cama de matrimonio y vistas al campo" : "Double room with double bed and countryside views",
         "bed": { "@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1 },
@@ -152,7 +149,6 @@ const Index = () => {
       },
       {
         "@type": "Room",
-        "additionalType": "https://schema.org/Bedroom",
         "name": "La Lechuza",
         "description": language === "es" ? "Habitación familiar con litera" : "Family room with bunk beds",
         "bed": { "@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1 },
