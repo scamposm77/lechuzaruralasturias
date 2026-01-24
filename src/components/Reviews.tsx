@@ -88,15 +88,65 @@ const Reviews = () => {
     else goToNext();
   };
 
+  // Generate JSON-LD for reviews with proper itemReviewed
+  const reviewsJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "@id": "https://www.lechuzaruralasturias.es/#lodging-business",
+    "name": "La Cabaña de la Lechuza",
+    "image": "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
+    "url": "https://www.lechuzaruralasturias.es/",
+    "telephone": "+34625081519",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Barrio La Roza s/n",
+      "addressLocality": "Cabranes",
+      "addressRegion": "Asturias",
+      "postalCode": "33310",
+      "addressCountry": "ES"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "reviewCount": String(reviews.length)
+    },
+    "review": reviews.map((review, index) => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.name
+      },
+      "datePublished": review.date.includes("2025") 
+        ? `2025-${review.date.includes("Julio") || review.date.includes("July") ? "07" : review.date.includes("Agosto") || review.date.includes("August") ? "08" : "12"}-01`
+        : "2025-07-01",
+      "reviewBody": review.text,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": String(review.rating),
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "itemReviewed": {
+        "@type": "LodgingBusiness",
+        "@id": "https://www.lechuzaruralasturias.es/#lodging-business",
+        "name": "La Cabaña de la Lechuza"
+      }
+    }))
+  };
+
   return (
     <section 
       id="opiniones" 
       className="py-28 bg-card overflow-hidden"
       aria-label={language === "es" ? "Opiniones de huéspedes" : "Guest reviews"}
-      itemScope
-      itemType="https://schema.org/Product"
     >
-      <meta itemProp="name" content="La Cabaña de la Lechuza" />
+      {/* JSON-LD Structured Data for Reviews */}
+      <script 
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsJsonLd) }}
+      />
       
       <div className="container mx-auto px-6">
         {/* Section Header */}
@@ -108,15 +158,7 @@ const Reviews = () => {
             {t("reviews.title")}
             <span className="text-primary italic"> {t("reviews.titleAccent")}</span>
           </h2>
-          <div 
-            className="flex items-center justify-center gap-2 mb-2"
-            itemProp="aggregateRating"
-            itemScope
-            itemType="https://schema.org/AggregateRating"
-          >
-            <meta itemProp="worstRating" content="1" />
-            <meta itemProp="bestRating" content="5" />
-            <meta itemProp="reviewCount" content={String(reviews.length)} />
+          <div className="flex items-center justify-center gap-2 mb-2">
             <span className="flex" role="img" aria-label={language === "es" ? "Valoración 4.9 de 5 estrellas" : "Rating 4.9 out of 5 stars"}>
               {[...Array(5)].map((_, i) => (
                 <Star
@@ -127,7 +169,7 @@ const Reviews = () => {
                 />
               ))}
             </span>
-            <span className="font-display text-2xl text-foreground ml-2" itemProp="ratingValue">4.9</span>
+            <span className="font-display text-2xl text-foreground ml-2">4.9</span>
             <span className="font-body text-muted-foreground text-sm">· Airbnb</span>
           </div>
           <p className="font-body text-primary font-semibold">
@@ -136,7 +178,7 @@ const Reviews = () => {
         </div>
 
         {/* Reviews Carousel */}
-        <div className="relative max-w-4xl mx-auto" itemProp="review">
+        <div className="relative max-w-4xl mx-auto">
           {/* Navigation Arrows */}
           <button
             onClick={() => handleNavClick('prev')}
@@ -164,8 +206,6 @@ const Reviews = () => {
                 <article
                   key={index}
                   className="w-full flex-shrink-0 px-4"
-                  itemScope
-                  itemType="https://schema.org/Review"
                   aria-hidden={index !== currentIndex}
                 >
                   <div className="bg-background rounded-sm p-8 md:p-12 shadow-rustic relative">
@@ -176,15 +216,7 @@ const Reviews = () => {
                     />
                     
                     {/* Rating */}
-                    <div 
-                      className="flex gap-1 mb-6 justify-center"
-                      itemProp="reviewRating"
-                      itemScope
-                      itemType="https://schema.org/Rating"
-                    >
-                      <meta itemProp="worstRating" content="1" />
-                      <meta itemProp="bestRating" content="5" />
-                      <meta itemProp="ratingValue" content={String(review.rating)} />
+                    <div className="flex gap-1 mb-6 justify-center">
                       {[...Array(review.rating)].map((_, i) => (
                         <Star
                           key={i}
@@ -196,27 +228,22 @@ const Reviews = () => {
                     </div>
 
                     {/* Text */}
-                    <p className="font-body text-foreground/90 text-lg md:text-xl leading-relaxed mb-8 italic text-center max-w-2xl mx-auto" itemProp="reviewBody">
+                    <p className="font-body text-foreground/90 text-lg md:text-xl leading-relaxed mb-8 italic text-center max-w-2xl mx-auto">
                       &quot;{review.text}&quot;
                     </p>
 
                     {/* Author */}
-                    <div 
-                      className="flex items-center justify-center gap-4"
-                      itemProp="author"
-                      itemScope
-                      itemType="https://schema.org/Person"
-                    >
+                    <div className="flex items-center justify-center gap-4">
                       <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center" aria-hidden="true">
                         <span className="font-display text-primary text-lg font-semibold">
                           {review.avatar}
                         </span>
                       </div>
                       <div className="text-left">
-                        <p className="font-display text-foreground font-medium text-lg" itemProp="name">
+                        <p className="font-display text-foreground font-medium text-lg">
                           {review.name}
                         </p>
-                        <p className="font-body text-muted-foreground text-sm" itemProp="datePublished">
+                        <p className="font-body text-muted-foreground text-sm">
                           {review.date}
                         </p>
                       </div>
