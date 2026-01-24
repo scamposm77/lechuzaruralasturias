@@ -26,22 +26,16 @@ const Experience = () => {
           {/* Image */}
           <div className="relative group">
             <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <picture>
-              <source
-                srcSet={bedroomPrincipal.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
-                type="image/webp"
-              />
-              <img
-                src={bedroomPrincipal}
-                alt={language === "es" 
-                  ? "Habitación El Tejo con pared de piedra natural y decoración rústica - Casa rural La Cabaña de la Lechuza Cabranes Asturias"
-                  : "El Tejo bedroom with natural stone wall and rustic decoration - La Cabaña de la Lechuza rural house Cabranes Asturias"
-                }
-                className="relative w-full h-[450px] md:h-[550px] object-cover rounded-sm shadow-2xl"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
+            <img
+              src={bedroomPrincipal}
+              alt={language === "es" 
+                ? "Habitación El Tejo con pared de piedra natural y decoración rústica - Casa rural La Cabaña de la Lechuza Cabranes Asturias"
+                : "El Tejo bedroom with natural stone wall and rustic decoration - La Cabaña de la Lechuza rural house Cabranes Asturias"
+              }
+              className="relative w-full h-[450px] md:h-[550px] object-cover rounded-sm shadow-2xl"
+              loading="lazy"
+              decoding="async"
+            />
             <div className="absolute -bottom-8 -right-8 md:-bottom-10 md:-right-10 bg-primary text-primary-foreground p-8 md:p-10 rounded-sm shadow-xl">
               <p className="font-display text-4xl md:text-5xl">1.500m²</p>
               <p className="font-body text-sm uppercase tracking-wider opacity-90 mt-1">

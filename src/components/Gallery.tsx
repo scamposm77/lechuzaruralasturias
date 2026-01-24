@@ -140,24 +140,18 @@ const Gallery = () => {
               itemType="https://schema.org/ImageObject"
             >
               <div className={`overflow-hidden ${index === 0 ? "aspect-[2/1]" : "aspect-[4/3]"}`}>
-                <picture>
-                  <source
-                    srcSet={space.cover.replace(/\.(jpg|jpeg|png)$/i, '.webp')}
-                    type="image/webp"
-                  />
-                  <img
-                    src={space.cover}
-                    alt={language === "es" 
-                      ? `Foto ${space.name.toLowerCase()} La Cabaña de la Lechuza casa rural Cabranes Asturias - Alojamiento rural Comarca de la Sidra`
-                      : `${space.name} photo La Cabaña de la Lechuza rural house Cabranes Asturias - Rural accommodation Cider Region`
-                    }
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async"
-                    fetchPriority={index === 0 ? "high" : "low"}
-                    itemProp="contentUrl"
-                  />
-                </picture>
+                <img
+                  src={space.cover}
+                  alt={language === "es" 
+                    ? `Foto ${space.name.toLowerCase()} La Cabaña de la Lechuza casa rural Cabranes Asturias - Alojamiento rural Comarca de la Sidra`
+                    : `${space.name} photo La Cabaña de la Lechuza rural house Cabranes Asturias - Rural accommodation Cider Region`
+                  }
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority={index === 0 ? "high" : "low"}
+                  itemProp="contentUrl"
+                />
               </div>
               
               {/* Overlay */}
@@ -237,20 +231,14 @@ const Gallery = () => {
           )}
 
           {/* Main Image */}
-          <picture>
-            <source
-              srcSet={selectedSpace.images[currentIndex].replace(/\.(jpg|jpeg|png)$/i, '.webp')}
-              type="image/webp"
-            />
-            <img
-              src={selectedSpace.images[currentIndex]}
-              alt={language === "es"
-                ? `Foto ${selectedSpace.name.toLowerCase()} La Cabaña de la Lechuza casa rural Cabranes Asturias - Imagen ${currentIndex + 1}`
-                : `${selectedSpace.name} photo La Cabaña de la Lechuza rural house Cabranes Asturias - Image ${currentIndex + 1}`
-              }
-              className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
-            />
-          </picture>
+          <img
+            src={selectedSpace.images[currentIndex]}
+            alt={language === "es"
+              ? `Foto ${selectedSpace.name.toLowerCase()} La Cabaña de la Lechuza casa rural Cabranes Asturias - Imagen ${currentIndex + 1}`
+              : `${selectedSpace.name} photo La Cabaña de la Lechuza rural house Cabranes Asturias - Image ${currentIndex + 1}`
+            }
+            className="max-w-[90vw] max-h-[80vh] object-contain rounded-sm shadow-2xl"
+          />
 
           {/* Thumbnail Navigation */}
           {selectedSpace.images.length > 1 && (
