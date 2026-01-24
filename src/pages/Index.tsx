@@ -34,6 +34,36 @@ const Index = () => {
   const { language } = useLanguage();
   const location = useLocation();
 
+  // Safety net: if any legacy build / cached HTML injects an extra VacationRental JSON-LD,
+  // remove duplicates at runtime so validators only see a single source of truth.
+  useEffect(() => {
+    const scripts = Array.from(
+      document.head.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]')
+    );
+
+    const isVacationRental = (script: HTMLScriptElement) => {
+      const raw = script.textContent ?? "";
+      if (!raw) return false;
+      try {
+        const parsed = JSON.parse(raw);
+        return parsed?.["@type"] === "VacationRental";
+      } catch {
+        // Fallback (in case of non-minified / unexpected formatting)
+        return /"@type"\s*:\s*"VacationRental"/i.test(raw);
+      }
+    };
+
+    const vacationScripts = scripts.filter(isVacationRental);
+    if (vacationScripts.length <= 1) return;
+
+    const preferred = document.getElementById("ld-json-vacation-rental") as HTMLScriptElement | null;
+    const keep = preferred && vacationScripts.includes(preferred) ? preferred : vacationScripts[0];
+
+    for (const s of vacationScripts) {
+      if (s !== keep) s.remove();
+    }
+  }, [language]);
+
   // Handle hash navigation when coming from another page
   useEffect(() => {
     if (location.hash) {

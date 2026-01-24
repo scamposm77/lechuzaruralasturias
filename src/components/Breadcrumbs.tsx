@@ -77,8 +77,6 @@ const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
     <nav
       aria-label={language === "es" ? "Migas de pan" : "Breadcrumb"}
       className="bg-muted/50 border-b border-border py-3"
-      itemScope
-      itemType="https://schema.org/BreadcrumbList"
     >
       <div className="container mx-auto px-6">
         <ol className="flex items-center gap-2 text-sm font-body">
@@ -86,9 +84,6 @@ const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
             <li
               key={index}
               className="flex items-center gap-2"
-              itemProp="itemListElement"
-              itemScope
-              itemType="https://schema.org/ListItem"
             >
               {index > 0 && (
                 <ChevronRight className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
@@ -97,17 +92,15 @@ const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
                 <Link
                   to={item.href}
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-                  itemProp="item"
                 >
                   {index === 0 && <Home className="w-4 h-4" aria-hidden="true" />}
-                  <span itemProp="name">{item.label}</span>
+                  <span>{item.label}</span>
                 </Link>
               ) : (
-                <span className="text-foreground font-medium" itemProp="name">
+                <span className="text-foreground font-medium">
                   {item.label}
                 </span>
               )}
-              <meta itemProp="position" content={String(index + 1)} />
             </li>
           ))}
         </ol>

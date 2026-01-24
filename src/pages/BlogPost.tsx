@@ -120,7 +120,7 @@ const BlogPost = () => {
         <meta name="robots" content="index, follow" />
         
         {/* JSON-LD Article */}
-        <script type="application/ld+json">
+        <script id="ld-json-article" type="application/ld+json">
           {JSON.stringify(articleJsonLd)}
         </script>
       </Helmet>
