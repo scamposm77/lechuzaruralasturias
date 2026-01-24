@@ -152,9 +152,9 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="mt-10">
-              <h4 className="font-display text-foreground text-lg mb-4">
+              <h3 className="font-display text-foreground text-lg mb-4">
                 {language === "es" ? "Síguenos y Contáctanos" : "Follow & Contact Us"}
-              </h4>
+              </h3>
               <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;

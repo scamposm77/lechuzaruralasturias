@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Cookie, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const CookieBanner = () => {
@@ -38,13 +39,13 @@ const CookieBanner = () => {
           <button
             onClick={rejectCookies}
             className="absolute top-4 right-4 text-background/60 hover:text-background transition-colors"
-            aria-label={language === "es" ? "Cerrar" : "Close"}
+            aria-label={language === "es" ? "Cerrar aviso de cookies" : "Close cookie notice"}
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5" aria-hidden="true" />
           </button>
 
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-            <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+            <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center" aria-hidden="true">
               <Cookie className="w-6 h-6 text-primary" />
             </div>
 
@@ -58,12 +59,13 @@ const CookieBanner = () => {
                   : "We use essential technical cookies for the website to function. You can accept or reject optional cookies."
                 }
                 {" "}
-                <a 
-                  href="/politica-cookies" 
-                  className="text-primary hover:underline"
+                <Link 
+                  to="/politica-cookies" 
+                  className="text-primary hover:underline font-medium"
+                  aria-label={language === "es" ? "Leer más sobre nuestra política de cookies" : "Read more about our cookie policy"}
                 >
-                  {language === "es" ? "Más información" : "Learn more"}
-                </a>
+                  {language === "es" ? "Más información sobre cookies" : "Learn more about cookies"}
+                </Link>
               </p>
             </div>
 
