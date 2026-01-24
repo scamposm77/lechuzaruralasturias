@@ -124,6 +124,29 @@ const Index = () => {
     },
     "petsAllowed": false,
     "smokingAllowed": false,
+    "containsPlace": [
+      {
+        "@type": "Accommodation",
+        "name": "El Tejo",
+        "description": language === "es" ? "Habitación principal con cama King size y vistas al valle" : "Master bedroom with King size bed and valley views",
+        "bed": { "@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1 },
+        "occupancy": { "@type": "QuantitativeValue", "value": 2 }
+      },
+      {
+        "@type": "Accommodation",
+        "name": "La Pumarada",
+        "description": language === "es" ? "Habitación doble con cama de matrimonio" : "Double room with double bed",
+        "bed": { "@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1 },
+        "occupancy": { "@type": "QuantitativeValue", "value": 2 }
+      },
+      {
+        "@type": "Accommodation",
+        "name": "La Lechuza",
+        "description": language === "es" ? "Habitación familiar con litera" : "Family room with bunk beds",
+        "bed": { "@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1 },
+        "occupancy": { "@type": "QuantitativeValue", "value": 3 }
+      }
+    ],
     
     "aggregateRating": {
       "@type": "AggregateRating",
