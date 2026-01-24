@@ -103,6 +103,7 @@ const Location = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title={language === "es" ? "Mapa de ubicación de La Cabaña de la Lechuza en La Roza, Cabranes" : "Location map of La Cabaña de la Lechuza in La Roza, Cabranes"}
                 itemProp="url"
+                aria-label={language === "es" ? "Mapa interactivo de Google Maps mostrando la ubicación de la casa rural" : "Interactive Google Maps showing the rural house location"}
               />
             </div>
             <a
