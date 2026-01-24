@@ -74,6 +74,7 @@ const Index = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "VacationRental",
+    "additionalType": "LodgingBusiness",
     "@id": "https://www.lechuzaruralasturias.es/#vacation-rental",
     "identifier": "lechuza-rural-asturias-cabranes",
     "name": "La Cabaña de la Lechuza",
