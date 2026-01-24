@@ -70,58 +70,12 @@ const Index = () => {
   const currentSeo = seo[language];
 
   // JSON-LD structured data - VacationRental
-  // Rooms are embedded directly in containsPlace as an array to avoid "duplicate field" warnings
-  const roomsData = [
-    {
-      "@type": "Room",
-      "name": "El Tejo",
-      "description":
-        language === "es"
-          ? "Habitación principal con cama King size y vistas al valle"
-          : "Master bedroom with King size bed and valley views",
-      "bed": { "@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1 },
-      "occupancy": { "@type": "QuantitativeValue", "value": 2 },
-      "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "Valley Views", "value": true },
-        { "@type": "LocationFeatureSpecification", "name": "Wardrobe", "value": true },
-      ],
-    },
-    {
-      "@type": "Room",
-      "name": "La Pumarada",
-      "description":
-        language === "es"
-          ? "Habitación doble con cama de matrimonio y vistas al campo"
-          : "Double room with double bed and countryside views",
-      "bed": { "@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1 },
-      "occupancy": { "@type": "QuantitativeValue", "value": 2 },
-      "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "Countryside Views", "value": true },
-        { "@type": "LocationFeatureSpecification", "name": "Wardrobe", "value": true },
-      ],
-    },
-    {
-      "@type": "Room",
-      "name": "La Lechuza",
-      "description": language === "es" ? "Habitación familiar con litera" : "Family room with bunk beds",
-      "bed": { "@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1 },
-      "occupancy": { "@type": "QuantitativeValue", "value": 2 },
-      "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "Natural Light", "value": true },
-        { "@type": "LocationFeatureSpecification", "name": "Wardrobe", "value": true },
-      ],
-    },
-  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "VacationRental",
     "@id": "https://www.lechuzaruralasturias.es/#vacation-rental",
-    "identifier": {
-      "@type": "PropertyValue",
-      "propertyID": "RENTAL_ID",
-      "value": "lechuza-rural-asturias-cabranes"
-    },
+    "identifier": "lechuza-rural-asturias-cabranes",
     "name": "La Cabaña de la Lechuza",
     "description": currentSeo.description,
     "url": "https://www.lechuzaruralasturias.es/",
@@ -170,7 +124,7 @@ const Index = () => {
     },
     "petsAllowed": false,
     "smokingAllowed": false,
-    "containsPlace": roomsData,
+    
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.88",
