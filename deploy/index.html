@@ -9,7 +9,7 @@
     <meta name="format-detection" content="telephone=yes" />
     
     <!-- Security Headers via Meta Tags (X-Frame-Options debe ser HTTP header, no meta) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://maps.googleapis.com https://*.supabase.co wss://*.supabase.co; frame-src 'self' https://www.google.com https://maps.google.com; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://maps.googleapis.com https://*.supabase.co wss://*.supabase.co; frame-src 'self' https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self';" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="geolocation=(self), microphone=(), camera=(), payment=()" />
@@ -32,6 +32,9 @@
     <link rel="alternate" hreflang="en" href="https://www.lechuzaruralasturias.es/?lang=en" />
     <link rel="alternate" hreflang="x-default" href="https://www.lechuzaruralasturias.es/" />
     
+    <!-- Sitemap reference for search engines -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    
     <!-- Favicons -->
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -42,7 +45,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
     <!-- Preload hero image for faster LCP -->
-    <link rel="preload" as="image" href="/assets/exterior/ext-00-portada.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/exterior/ext-00-portada.jpg" fetchpriority="high" type="image/jpeg" />
     
     <!-- Preload critical fonts inline to avoid render blocking -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
@@ -76,99 +79,6 @@
     <!-- Google Verification -->
     <meta name="google-site-verification" content="UGMJNM1_gJ6ZFL1ZaSIOjxhuaPdjiOes7JXb9pjjSNU" />
 
-    <!-- JSON-LD Structured Data - VacationRental -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "VacationRental",
-      "@id": "https://www.lechuzaruralasturias.es/#vacation-rental",
-      "name": "La Cabaña de la Lechuza",
-      "description": "Casa rural con encanto en Asturias - Alojamiento para 7 personas en la Comarca de la Sidra. 3 habitaciones, jardín privado de 1500m² con tejo centenario, chimenea de pellets y vistas panorámicas al valle.",
-      "url": "https://www.lechuzaruralasturias.es/",
-      "telephone": "+34625081519",
-      "email": "info@lechuzaruralasturias.es",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Barrio La Roza s/n",
-        "addressLocality": "Cabranes",
-        "addressRegion": "Asturias",
-        "postalCode": "33310",
-        "addressCountry": "ES"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 43.4083,
-        "longitude": -5.4169
-      },
-      "image": [
-        "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
-        "https://www.lechuzaruralasturias.es/assets/exterior/ext-03.jpg",
-        "https://www.lechuzaruralasturias.es/assets/exterior/ext-09.jpg",
-        "https://www.lechuzaruralasturias.es/assets/cocina/cocina-01.jpg"
-      ],
-      "amenityFeature": [
-        {"@type": "LocationFeatureSpecification", "name": "WiFi gratuito", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Chimenea de pellets", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Jardín privado 1500m²", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Parking privado", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Cocina equipada", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Smart TV Chromecast", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Porche cubierto 35m²", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Vistas panorámicas", "value": true}
-      ],
-      "numberOfRooms": 3,
-      "numberOfBathroomsTotal": 2,
-      "floorSize": {
-        "@type": "QuantitativeValue",
-        "value": 140,
-        "unitCode": "MTK"
-      },
-      "occupancy": {
-        "@type": "QuantitativeValue",
-        "maxValue": 7
-      },
-      "petsAllowed": false,
-      "smokingAllowed": false,
-      "priceRange": "€100-200/noche",
-      "checkinTime": "18:00",
-      "checkoutTime": "11:00",
-      "containsPlace": [
-        {
-          "@type": "Room",
-          "name": "El Tejo",
-          "description": "Habitación principal con cama King size (160x200) y vistas al valle",
-          "bed": {"@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1},
-          "occupancy": {"@type": "QuantitativeValue", "value": 2}
-        },
-        {
-          "@type": "Room",
-          "name": "La Pumarada",
-          "description": "Habitación doble con cama de matrimonio (135x190) y vistas al campo",
-          "bed": {"@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1},
-          "occupancy": {"@type": "QuantitativeValue", "value": 2}
-        },
-        {
-          "@type": "Room",
-          "name": "La Lechuza",
-          "description": "Habitación con litera de camas individuales",
-          "bed": {"@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1},
-          "occupancy": {"@type": "QuantitativeValue", "value": 2}
-        }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.88",
-        "bestRating": "5",
-        "reviewCount": "25"
-      },
-      "sameAs": [
-        "https://www.instagram.com/lechuza.casaruralasturias",
-        "https://www.facebook.com/profile.php?id=61586207769517",
-        "https://www.airbnb.es/rooms/1134703286904548225"
-      ]
-    }
-    </script>
-
     <!-- JSON-LD - FAQPage for SEO -->
     <script type="application/ld+json">
     {
@@ -180,7 +90,7 @@
           "name": "¿Cuántas personas caben en La Cabaña de la Lechuza?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "La casa tiene capacidad para 7 personas en 3 habitaciones: El Tejo (cama King size, 2 personas), La Pumarada (cama matrimonio, 2 personas) y La Lechuza (litera, 2 personas). Además hay sofá cama en el salón."
+            "text": "La casa tiene capacidad para 7 personas en 3 habitaciones: El Tejo (cama King size, 2 personas), La Pumarada (cama matrimonio, 2 personas) y La Lechuza (litera, 2 personas), más sofá cama en el salón."
           }
         },
         {
@@ -218,75 +128,7 @@
       ]
     }
     </script>
-
-    <!-- JSON-LD - BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Inicio",
-          "item": "https://www.lechuzaruralasturias.es"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Qué hacer",
-          "item": "https://www.lechuzaruralasturias.es/que-hacer"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Blog",
-          "item": "https://www.lechuzaruralasturias.es/blog"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Cómo llegar",
-          "item": "https://www.lechuzaruralasturias.es/como-llegar"
-        }
-      ]
-    }
-    </script>
-
-    <!-- JSON-LD - LocalBusiness -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LodgingBusiness",
-      "name": "La Cabaña de la Lechuza",
-      "image": "https://www.lechuzaruralasturias.es/assets/exterior/ext-00-portada.jpg",
-      "@id": "https://www.lechuzaruralasturias.es/#lodging-business",
-      "url": "https://www.lechuzaruralasturias.es/",
-      "telephone": "+34625081519",
-      "priceRange": "€€",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Barrio La Roza s/n",
-        "addressLocality": "Cabranes",
-        "postalCode": "33310",
-        "addressRegion": "Asturias",
-        "addressCountry": "ES"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 43.4083,
-        "longitude": -5.4169
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "hasMap": "https://maps.app.goo.gl/RAUYH5vjUNvub4Nn9"
-    }
-    </script>
-    <script type="module" crossorigin src="/assets/index-mETF_Ju8.js"></script>
+    <script type="module" crossorigin src="/assets/index-DXPvpTKs.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-BIxjQDMn.js">
     <link rel="modulepreload" crossorigin href="/assets/ui-C7lcbzG5.js">
     <link rel="stylesheet" crossorigin href="/assets/index-Drcx8--I.css">
