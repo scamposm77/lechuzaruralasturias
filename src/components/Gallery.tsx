@@ -247,14 +247,14 @@ const Gallery = () => {
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`flex-shrink-0 w-16 h-12 rounded overflow-hidden transition-all duration-300 ${
+                  className={`flex-shrink-0 min-w-[44px] min-h-[44px] w-16 h-12 rounded overflow-hidden transition-all duration-300 ${
                     idx === currentIndex 
                       ? "ring-2 ring-primary opacity-100 scale-110" 
                       : "opacity-50 hover:opacity-80"
                   }`}
                   role="tab"
                   aria-selected={idx === currentIndex}
-                  aria-label={`${t("gallery.thumbnail")} ${idx + 1}`}
+                  aria-label={`${t("gallery.thumbnail")} ${idx + 1}${idx === currentIndex ? (language === "es" ? " (actual)" : " (current)") : ""}`}
                 >
                   <img
                     src={img}

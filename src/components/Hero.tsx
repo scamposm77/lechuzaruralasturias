@@ -131,9 +131,10 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-4 animate-fade-up opacity-0 delay-400">
           <a
             href="#contacto"
-            className="group px-6 md:px-10 py-2.5 md:py-4 bg-primary text-primary-foreground rounded-sm font-body text-[10px] md:text-sm font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+            className="group px-6 md:px-10 py-2.5 md:py-4 bg-primary/95 text-background rounded-sm font-body text-[10px] md:text-sm font-semibold uppercase tracking-wider hover:bg-primary transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
             aria-label={language === "es" ? "Ir al formulario de reserva" : "Go to booking form"}
           >
+            <span className="sr-only">{language === "es" ? "Reservar ahora - " : "Book now - "}</span>
             {t("hero.bookNow")}
           </a>
           <a
@@ -171,20 +172,26 @@ const Hero = () => {
         </div>
 
         {/* Slideshow Indicators */}
-        <div className="mt-12 flex justify-center gap-2" role="tablist" aria-label={language === "es" ? "Selector de imágenes" : "Image selector"}>
+        <div className="mt-12 flex justify-center gap-3" role="tablist" aria-label={language === "es" ? "Selector de imágenes" : "Image selector"}>
           {heroImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className={`min-w-[44px] min-h-[44px] flex items-center justify-center transition-all duration-300 ${
                 index === currentIndex
-                  ? "bg-background w-8"
-                  : "bg-background/40 hover:bg-background/60"
+                  ? "opacity-100"
+                  : "opacity-60 hover:opacity-80"
               }`}
-              aria-label={`${t("hero.viewImage")} ${index + 1}`}
+              aria-label={`${t("hero.viewImage")} ${index + 1}${index === currentIndex ? (language === "es" ? " (actual)" : " (current)") : ""}`}
               aria-selected={index === currentIndex}
               role="tab"
-            />
+            >
+              <span className={`block rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? "bg-background w-8 h-2"
+                  : "bg-background/40 w-2 h-2"
+              }`} />
+            </button>
           ))}
         </div>
       </div>

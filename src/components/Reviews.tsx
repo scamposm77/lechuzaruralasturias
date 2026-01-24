@@ -117,7 +117,7 @@ const Reviews = () => {
             <meta itemProp="worstRating" content="1" />
             <meta itemProp="bestRating" content="5" />
             <meta itemProp="reviewCount" content={String(reviews.length)} />
-            <div className="flex" aria-label={language === "es" ? "Valoración 4.9 de 5 estrellas" : "Rating 4.9 out of 5 stars"}>
+            <div className="flex" role="img" aria-label={language === "es" ? "Valoración 4.9 de 5 estrellas" : "Rating 4.9 out of 5 stars"}>
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
