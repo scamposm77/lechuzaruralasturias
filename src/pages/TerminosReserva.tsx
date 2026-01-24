@@ -8,6 +8,7 @@ const TerminosReserva = () => {
   if (language === "en") {
     return <>
         <Helmet>
+          <html lang="en" />
           <title>Booking Terms | La Cabaña de la Lechuza - Rural House Asturias</title>
           <meta name="description" content="Booking terms and conditions of La Cabaña de la Lechuza, rural house in Cabranes, Asturias. Cancellation policy, payment conditions and house rules." />
           <meta name="robots" content="noindex, follow" />
@@ -23,7 +24,7 @@ const TerminosReserva = () => {
             </div>
           </header>
 
-          <main className="container mx-auto px-6 py-16 max-w-4xl">
+          <main role="main" className="container mx-auto px-6 py-16 max-w-4xl">
             <h1 className="font-display text-foreground text-4xl md:text-5xl mb-4">
               Booking Terms and Conditions
             </h1>
@@ -138,6 +139,7 @@ const TerminosReserva = () => {
   }
   return <>
       <Helmet>
+        <html lang="es" />
         <title>Términos de Reserva | La Cabaña de la Lechuza - Casa Rural Asturias</title>
         <meta name="description" content="Términos y condiciones de reserva de La Cabaña de la Lechuza, casa rural en Cabranes, Asturias. Política de cancelación, condiciones de pago y normas de la casa." />
         <meta name="robots" content="noindex, follow" />
@@ -153,7 +155,7 @@ const TerminosReserva = () => {
           </div>
         </header>
 
-        <main className="container mx-auto px-6 py-16 max-w-4xl">
+        <main role="main" className="container mx-auto px-6 py-16 max-w-4xl">
           <h1 className="font-display text-foreground text-4xl md:text-5xl mb-4">
             Términos y Condiciones de Reserva
           </h1>

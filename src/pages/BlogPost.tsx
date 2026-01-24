@@ -87,6 +87,7 @@ const BlogPost = () => {
   return (
     <>
       <Helmet>
+        <html lang={language} />
         <title>{titleEs} | La Cabaña de la Lechuza</title>
         <meta name="description" content={excerptEs} />
         <link rel="canonical" href={`https://www.lechuzaruralasturias.es/blog/${post.slug}/`} />
@@ -127,7 +128,7 @@ const BlogPost = () => {
       <div className="min-h-screen bg-background">
         <Header />
         
-        <main className="pt-32 pb-20">
+        <main role="main" className="pt-32 pb-20">
           <article className="container mx-auto px-6 max-w-4xl">
             {/* Back link */}
             <Link 
