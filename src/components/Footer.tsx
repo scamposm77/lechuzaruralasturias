@@ -134,12 +134,6 @@ const Footer = () => {
               </a>
             </div>
             
-            <div className="mt-8">
-              <p className="font-body text-background/40 text-xs">
-                {t("footer.nearVillaviciosa")}<br />
-                {t("footer.nearBeaches")}
-              </p>
-            </div>
           </div>
         </div>
 
