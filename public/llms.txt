@@ -1,92 +1,159 @@
 # La Cabaña de la Lechuza - Casa Rural en Asturias
 
-> Casa rural con encanto en Cabranes, Asturias, España. Rehabilitada en 2023, ubicada en la Comarca de la Sidra.
+> Casa rural con encanto en Cabranes, Asturias, España. Rehabilitada en 2023, ubicada en la Comarca de la Sidra. Alojamiento ideal para familias y grupos que buscan turismo rural auténtico.
 
-## Información General
+## Resumen para IAs
 
-- **Nombre**: La Cabaña de la Lechuza
-- **Tipo**: Casa rural de alquiler íntegro
-- **Ubicación**: Barrio La Roza s/n, Cabranes, Asturias 33310, España
-- **Coordenadas**: 43.4083, -5.4169
-- **Capacidad**: 7 personas máximo
-- **Habitaciones**: 3 (El Tejo, La Pumarada, La Lechuza)
-- **Contacto**: +34 625 081 519 | info@lechuzaruralasturias.es
-- **Web**: https://www.lechuzaruralasturias.es
+La Cabaña de la Lechuza es una casa rural de alquiler íntegro situada en el pequeño pueblo de La Roza, en el concejo de Cabranes (Asturias, norte de España). Es perfecta para familias y grupos de amigos que buscan desconectar en plena naturaleza asturiana, con fácil acceso a playas, montañas y la famosa Ruta de la Sidra.
 
-## Características Principales
+## Datos Esenciales
 
-- Jardín privado de 1.500m² con tejo centenario
-- Chimenea de pellets
-- Porche con vistas panorámicas al valle
-- WiFi de alta velocidad
-- Parking privado
-- Cocina totalmente equipada
-- Smart TV
-- Ropa de cama y toallas incluidas
+| Atributo | Valor |
+|----------|-------|
+| **Nombre** | La Cabaña de la Lechuza |
+| **Tipo** | Casa rural de alquiler íntegro |
+| **Dirección** | Barrio La Roza s/n, 33310 Cabranes, Asturias, España |
+| **Coordenadas** | 43.4083, -5.4169 |
+| **Capacidad** | 7 personas máximo |
+| **Habitaciones** | 3 dormitorios dobles |
+| **Baños** | 2 (1 completo + 1 aseo) |
+| **Superficie vivienda** | 140 m² |
+| **Superficie parcela** | 1.500 m² |
+| **Teléfono/WhatsApp** | +34 625 081 519 |
+| **Email** | info@lechuzaruralasturias.es |
+| **Web** | https://www.lechuzaruralasturias.es |
+| **Precio** | 100€ - 200€/noche (según temporada) |
+| **Check-in** | 18:00 |
+| **Check-out** | 11:00 |
 
 ## Habitaciones
 
 ### El Tejo (Habitación Principal)
-- Cama King Size
+- Cama King Size (160x200 cm)
 - Vistas al valle
-- Baño privado
+- 2 personas
 
-### La Pumarada
-- Cama de matrimonio
+### La Pumarada (Habitación Doble)
+- Cama de matrimonio (135x190 cm)
 - Vistas al campo de manzanos
+- 2 personas
 
-### La Lechuza
-- Litera (2 camas)
-- Ideal para niños o grupos
+### La Lechuza (Habitación Litera)
+- Litera con camas individuales (90x190 cm)
+- Ideal para niños o jóvenes
+- 2 personas
 
-## Ubicación y Accesos
+## Servicios y Comodidades
 
-La casa está situada en la Comarca de la Sidra, a:
-- 35 minutos de Gijón
-- 40 minutos de Oviedo
-- 45 minutos de los Picos de Europa
-- 25 minutos de las playas del Cantábrico
+### Incluidos en el precio
+- WiFi de alta velocidad en toda la casa
+- Chimenea de pellets (calefacción)
+- Cocina totalmente equipada (vitrocerámica, horno, microondas, nevera, menaje completo)
+- Smart TV con Chromecast
+- Ropa de cama y toallas
+- Parking privado junto a la casa
+- Agua potable de manantial
+- Jardín privado de 1.500 m² con tejo centenario
+- Porche cubierto de 35 m² con mesa para 10 comensales
+
+### Características especiales
+- Casa rehabilitada en 2023
+- Arquitectura tradicional asturiana
+- Vigas de madera y paredes de piedra
+- Vistas panorámicas al valle
+- Sofá cama doble en el salón (capacidad extra)
+- Juegos de mesa para toda la familia
+
+## Ubicación y Distancias
+
+La casa está en la Comarca de la Sidra, zona rural privilegiada de Asturias:
+
+| Destino | Distancia | Tiempo en coche |
+|---------|-----------|-----------------|
+| Playa de Rodiles | 15 km | 20 min |
+| Villaviciosa | 7 km | 10 min |
+| Gijón | 35 km | 35 min |
+| Oviedo | 40 km | 40 min |
+| Aeropuerto de Asturias | 25 km | 20 min |
+| Picos de Europa | 55 km | 50 min |
+| Lagos de Covadonga | 55 km | 50 min |
+| Lastres | 20 km | 25 min |
 
 ## Actividades Cercanas
 
-- Rutas de senderismo (Ruta de los Molinos del Viacaba a 5 min)
-- Descenso del Sella
-- Playas de Rodiles, La Griega, Lastres
-- Lagos de Covadonga
-- Ruta de la Sidra con lagares tradicionales
+### Playas (15-25 min)
+- Playa de Rodiles (surf, arena fina)
+- Playa de Tazones (pueblo marinero)
+- Playa de La Griega (huellas de dinosaurio)
+- Playa de Lastres
+
+### Naturaleza y Senderismo
+- Ruta de los Molinos del Viacaba (5 min andando)
+- Ruta P.R. AS-147
+- Senda del río Viacaba
+- Mirador del Fitu (30 min)
+- Parque Nacional Picos de Europa (50 min)
+
+### Cultura y Gastronomía
+- Ruta de la Sidra (sidrerías tradicionales)
 - Museo de la Sidra de Asturias
-- Parque Jurásico de Asturias (MUJA)
+- MUJA - Museo del Jurásico de Asturias
+- Pueblo de Lastres (uno de los más bonitos de España)
+- Casco histórico de Villaviciosa
+
+### Deportes y Aventura
+- Descenso del Sella
+- Surf en Rodiles
+- Rutas en bicicleta
+- Espeleología
 
 ## Normas de la Casa
 
-- Check-in: 18:00
-- Check-out: 11:00
-- No se admiten mascotas
-- No se permiten fiestas
-- No fumar en el interior
-- Capacidad máxima: 7 personas
-
-## Precio
-
-Rango de precios: 100€ - 200€ por noche (según temporada)
-
-## Redes Sociales
-
-- Instagram: @lechuza.casaruralasturias
-- Facebook: La Cabaña de la Lechuza
+- ✗ No se admiten mascotas
+- ✗ No fumar en interior (sí en exterior)
+- ✗ No fiestas ni eventos
+- ✗ Capacidad máxima: 7 personas
+- ✓ Familias con niños bienvenidas
+- ✓ Silencio nocturno (respeto a la aldea)
 
 ## Reservas
 
-Para reservar, contacta directamente por:
-- WhatsApp: +34 625 081 519
-- Email: info@lechuzaruralasturias.es
-- Web: https://www.lechuzaruralasturias.es/#contacto
+### Contacto directo (sin comisiones)
+- **WhatsApp**: +34 625 081 519
+- **Email**: info@lechuzaruralasturias.es
+- **Web**: https://www.lechuzaruralasturias.es/#contacto
+
+### También disponible en
+- Airbnb: https://www.airbnb.es/rooms/1134703286904548225
+
+## Redes Sociales
+
+- **Instagram**: @lechuza.casaruralasturias
+- **Facebook**: La Cabaña de la Lechuza
 
 ## Sobre el Nombre
 
 El nombre "La Lechuza" viene de la familia de lechuzas que vive en el tejado de la casa desde hace años. Estas aves nocturnas son respetadas y protegidas como parte de la magia del lugar.
 
+## Preguntas Frecuentes (FAQ)
+
+**¿Es apta para niños?**
+Sí, es ideal para familias. La habitación La Lechuza tiene litera perfecta para niños.
+
+**¿Hay supermercados cerca?**
+Sí, en Villaviciosa (7 km) hay varios supermercados.
+
+**¿Es necesario coche?**
+Muy recomendable para explorar la zona, aunque hay algunas rutas de senderismo desde la casa.
+
+**¿Cómo es el acceso?**
+Por carretera asfaltada hasta la aldea. Últimos 200m por camino rural en buen estado.
+
+**¿Hay cobertura móvil?**
+Sí, buena cobertura de las principales operadoras y WiFi de alta velocidad.
+
 ---
 
-*Información actualizada: Enero 2025*
-*Idiomas disponibles: Español, Inglés*
+*Información actualizada: Enero 2026*
+*Idiomas disponibles en web: Español, Inglés*
+*Anfitriona: Susana*
