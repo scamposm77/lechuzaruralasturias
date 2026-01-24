@@ -1,4 +1,4 @@
-import{w as h,x as g,j as e,am as x,S as f,p as b,I as y,F as j}from"./ui-C7lcbzG5.js";import{r as v}from"./vendor-BIxjQDMn.js";import{a as w,u as N}from"./index-DXPvpTKs.js";const z=()=>{const{toast:i}=w(),{t:a,language:r}=N(),[o,c]=v.useState({name:"",email:"",phone:"",dates:"",guests:"",message:""}),d=t=>{t.preventDefault();const n=encodeURIComponent(r==="es"?"Consulta sobre La Cabaña de la Lechuza":"Inquiry about La Cabaña de la Lechuza"),l=encodeURIComponent(`${r==="es"?"Nombre":"Name"}: ${o.name}
+import{w as h,x as g,j as e,am as x,S as f,p as b,I as y,F as j}from"./ui-C7lcbzG5.js";import{r as v}from"./vendor-BIxjQDMn.js";import{a as w,u as N}from"./index-CXaBvCVi.js";const z=()=>{const{toast:i}=w(),{t:a,language:r}=N(),[o,c]=v.useState({name:"",email:"",phone:"",dates:"",guests:"",message:""}),d=t=>{t.preventDefault();const n=encodeURIComponent(r==="es"?"Consulta sobre La Cabaña de la Lechuza":"Inquiry about La Cabaña de la Lechuza"),l=encodeURIComponent(`${r==="es"?"Nombre":"Name"}: ${o.name}
 Email: ${o.email}
 ${r==="es"?"Teléfono":"Phone"}: ${o.phone}
 ${r==="es"?"Fechas":"Dates"}: ${o.dates}
