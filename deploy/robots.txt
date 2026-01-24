@@ -101,8 +101,9 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-# Bots de SEO/análisis (bloqueados para evitar sobrecarga)
-User-agent: MJ12bot
+# Bytedance (bloqueado)
+User-agent: Bytespider
+Disallow: /
 Disallow: /
 
 User-agent: AhrefsBot
