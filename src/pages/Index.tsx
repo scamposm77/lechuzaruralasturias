@@ -164,7 +164,7 @@ const Index = () => {
     }
   };
 
-  // Breadcrumb JSON-LD - Main navigation pages
+  // Breadcrumb JSON-LD - Main navigation pages (sin trailing slash para consistencia)
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -173,25 +173,25 @@ const Index = () => {
         "@type": "ListItem",
         "position": 1,
         "name": language === "es" ? "Inicio" : "Home",
-        "item": "https://www.lechuzaruralasturias.es/"
+        "item": "https://www.lechuzaruralasturias.es"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": language === "es" ? "Qué Hacer" : "What to Do",
-        "item": "https://www.lechuzaruralasturias.es/que-hacer/"
+        "item": "https://www.lechuzaruralasturias.es/que-hacer"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Blog",
-        "item": "https://www.lechuzaruralasturias.es/blog/"
+        "item": "https://www.lechuzaruralasturias.es/blog"
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": language === "es" ? "Cómo Llegar" : "Directions",
-        "item": "https://www.lechuzaruralasturias.es/como-llegar/"
+        "item": "https://www.lechuzaruralasturias.es/como-llegar"
       }
     ]
   };

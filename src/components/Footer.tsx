@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Heart, Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
@@ -150,30 +151,30 @@ const Footer = () => {
             <span className="flex items-center gap-1">{t("footer.madeWith")} <Heart className="w-3 h-3 md:w-4 md:h-4 text-accent fill-accent" aria-hidden="true" /> {t("footer.inAsturias")}</span>
           </p>
           <nav className="flex flex-wrap justify-center gap-4 md:gap-8" aria-label={language === "es" ? "Enlaces legales" : "Legal links"}>
-            <a 
-              href="/politica-privacidad"
+            <Link 
+              to="/politica-privacidad"
               className="font-body text-background/70 text-sm hover:text-background transition-colors"
             >
               {t("footer.privacy")}
-            </a>
-            <a 
-              href="/aviso-legal"
+            </Link>
+            <Link 
+              to="/aviso-legal"
               className="font-body text-background/70 text-sm hover:text-background transition-colors"
             >
               {t("footer.legal")}
-            </a>
-            <a 
-              href="/politica-cookies"
+            </Link>
+            <Link 
+              to="/politica-cookies"
               className="font-body text-background/70 text-sm hover:text-background transition-colors"
             >
               {language === "es" ? "Política de Cookies" : "Cookie Policy"}
-            </a>
-            <a 
-              href="/terminos-reserva"
+            </Link>
+            <Link 
+              to="/terminos-reserva"
               className="font-body text-background/70 text-sm hover:text-background transition-colors"
             >
               {language === "es" ? "Condiciones de Reserva" : "Booking Terms"}
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

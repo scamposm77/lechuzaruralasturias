@@ -11,10 +11,19 @@ const ComoLlegar = () => {
   if (language === "en") {
     return <>
         <Helmet>
+          <html lang="en" />
           <title>How to Get There | La Cabaña de la Lechuza - Rural House in Cabranes, Asturias</title>
           <meta name="description" content="Directions and route to our rural house in La Roza, Cabranes. Includes video tutorial, Google Maps, Waze link and tips for the mountain road." />
           <meta name="keywords" content="how to get to rural house Cabranes, route La Roza Asturias, directions rural house Asturias, Cider Region map, GPS rural house" />
           <link rel="canonical" href="https://www.lechuzaruralasturias.es/como-llegar" />
+          <link rel="alternate" hrefLang="es" href="https://www.lechuzaruralasturias.es/como-llegar" />
+          <link rel="alternate" hrefLang="en" href="https://www.lechuzaruralasturias.es/como-llegar?lang=en" />
+          <link rel="alternate" hrefLang="x-default" href="https://www.lechuzaruralasturias.es/como-llegar" />
+          <meta property="og:title" content="How to Get There | La Cabaña de la Lechuza" />
+          <meta property="og:description" content="Directions and route to our rural house in La Roza, Cabranes. Includes video tutorial and GPS navigation." />
+          <meta property="og:url" content="https://www.lechuzaruralasturias.es/como-llegar" />
+          <meta property="og:type" content="website" />
+          <meta name="robots" content="index, follow" />
         </Helmet>
 
         <div className="min-h-screen bg-background">
@@ -246,10 +255,19 @@ const ComoLlegar = () => {
   // Spanish version (default)
   return <>
       <Helmet>
+        <html lang="es" />
         <title>Cómo Llegar a La Cabaña de la Lechuza | Casa Rural en Cabranes, Asturias</title>
         <meta name="description" content="Indicaciones y ruta para llegar a nuestra casa rural en La Roza, Cabranes. Incluye video tutorial, mapa de Google Maps, enlace a Waze y consejos para la carretera de montaña." />
         <meta name="keywords" content="cómo llegar casa rural Cabranes, ruta La Roza Asturias, indicaciones casa rural Asturias, mapa Comarca de la Sidra, GPS casa rural" />
         <link rel="canonical" href="https://www.lechuzaruralasturias.es/como-llegar" />
+        <link rel="alternate" hrefLang="es" href="https://www.lechuzaruralasturias.es/como-llegar" />
+        <link rel="alternate" hrefLang="en" href="https://www.lechuzaruralasturias.es/como-llegar?lang=en" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.lechuzaruralasturias.es/como-llegar" />
+        <meta property="og:title" content="Cómo Llegar | La Cabaña de la Lechuza" />
+        <meta property="og:description" content="Indicaciones y ruta para llegar a nuestra casa rural. Video tutorial, Google Maps y Waze." />
+        <meta property="og:url" content="https://www.lechuzaruralasturias.es/como-llegar" />
+        <meta property="og:type" content="website" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
