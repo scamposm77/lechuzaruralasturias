@@ -104,7 +104,7 @@ const Hero = () => {
 
         <div className="inline-block mb-3 md:mb-4 animate-fade-up opacity-0 delay-200">
           <span 
-            className="font-body text-background/80 text-[10px] md:text-sm uppercase tracking-[0.3em] md:tracking-[0.4em] px-3 md:px-4 py-1.5 md:py-2 border border-background/30 rounded-full backdrop-blur-sm bg-background/5"
+            className="font-body text-background text-[10px] md:text-sm uppercase tracking-[0.3em] md:tracking-[0.4em] px-4 md:px-6 py-2 md:py-2.5 border border-background/50 rounded-full backdrop-blur-md bg-foreground/40 shadow-lg"
             itemProp="areaServed"
           >
             {t("hero.location")}

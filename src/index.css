@@ -16,8 +16,8 @@
     --popover: 42 35% 96%;
     --popover-foreground: 25 30% 12%;
 
-    /* Warm amber primary - HSL 28° 70% 28% = #794016 - Contrast 8.1:1 on white (WCAG AAA) */
-    --primary: 28 70% 28%;
+    /* Warm orange primary - HSL 24° 85% 38% - Contrast 4.8:1 on white (WCAG AA) */
+    --primary: 24 85% 38%;
     --primary-foreground: 42 35% 98%;
 
     /* Forest green secondary - darkened for contrast */
