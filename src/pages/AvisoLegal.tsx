@@ -9,6 +9,7 @@ const AvisoLegal = () => {
     return (
       <>
         <Helmet>
+          <html lang="en" />
           <title>Legal Notice | La Cabaña de la Lechuza - Rural House Asturias</title>
           <meta name="description" content="Legal notice of La Cabaña de la Lechuza, vacation rental in Cabranes, Asturias. Information about terms of use, booking conditions and cancellation policy." />
           <meta name="robots" content="noindex, follow" />
@@ -29,7 +30,7 @@ const AvisoLegal = () => {
           </header>
 
           {/* Content */}
-          <main className="container mx-auto px-6 py-16 max-w-4xl">
+          <main role="main" className="container mx-auto px-6 py-16 max-w-4xl">
             <h1 className="font-display text-foreground text-4xl md:text-5xl mb-4">
               Legal Notice
             </h1>
@@ -372,6 +373,7 @@ const AvisoLegal = () => {
   return (
     <>
       <Helmet>
+        <html lang="es" />
         <title>Aviso Legal | La Cabaña de la Lechuza - Casa Rural Asturias</title>
         <meta name="description" content="Aviso legal de La Cabaña de la Lechuza, vivienda vacacional en Cabranes, Asturias. Información sobre condiciones de uso, reservas y política de cancelación." />
         <meta name="robots" content="noindex, follow" />
@@ -392,7 +394,7 @@ const AvisoLegal = () => {
         </header>
 
         {/* Content */}
-        <main className="container mx-auto px-6 py-16 max-w-4xl">
+        <main role="main" className="container mx-auto px-6 py-16 max-w-4xl">
           <h1 className="font-display text-foreground text-4xl md:text-5xl mb-4">
             Aviso Legal
           </h1>

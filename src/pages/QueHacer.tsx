@@ -253,6 +253,7 @@ const QueHacer = () => {
   return (
     <>
       <Helmet>
+        <html lang={language} />
         <title>{currentSeo.title}</title>
         <meta name="description" content={currentSeo.description} />
         <link rel="canonical" href="https://www.lechuzaruralasturias.es/que-hacer/" />
@@ -272,7 +273,7 @@ const QueHacer = () => {
       <div className="min-h-screen bg-background">
         <Header />
         
-        <main className="pt-32 pb-20">
+        <main role="main" className="pt-32 pb-20">
           <div className="container mx-auto px-6">
             {/* Header Section */}
             <div className="text-center mb-16">

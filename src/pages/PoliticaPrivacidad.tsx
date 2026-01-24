@@ -9,6 +9,7 @@ const PoliticaPrivacidad = () => {
     return (
       <>
         <Helmet>
+          <html lang="en" />
           <title>Privacy Policy | La Cabaña de la Lechuza - Rural House Asturias</title>
           <meta name="description" content="Privacy and data protection policy of La Cabaña de la Lechuza, rural house in Cabranes, Asturias. Information about data processing according to GDPR." />
           <meta name="robots" content="noindex, follow" />
@@ -29,7 +30,7 @@ const PoliticaPrivacidad = () => {
           </header>
 
           {/* Content */}
-          <main className="container mx-auto px-6 py-16 max-w-4xl">
+          <main role="main" className="container mx-auto px-6 py-16 max-w-4xl">
             <h1 className="font-display text-foreground text-4xl md:text-5xl mb-4">
               Privacy and Data Protection Policy
             </h1>
@@ -313,6 +314,7 @@ const PoliticaPrivacidad = () => {
   return (
     <>
       <Helmet>
+        <html lang="es" />
         <title>Política de Privacidad | La Cabaña de la Lechuza - Casa Rural Asturias</title>
         <meta name="description" content="Política de privacidad y protección de datos de La Cabaña de la Lechuza, casa rural en Cabranes, Asturias. Información sobre tratamiento de datos según RGPD." />
         <meta name="robots" content="noindex, follow" />
@@ -333,7 +335,7 @@ const PoliticaPrivacidad = () => {
         </header>
 
         {/* Content */}
-        <main className="container mx-auto px-6 py-16 max-w-4xl">
+        <main role="main" className="container mx-auto px-6 py-16 max-w-4xl">
           <h1 className="font-display text-foreground text-4xl md:text-5xl mb-4">
             Política de Privacidad y Protección de Datos
           </h1>
