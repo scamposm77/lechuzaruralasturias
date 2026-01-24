@@ -104,8 +104,23 @@
   </FilesMatch>
 </IfModule>
 
-# Cabeceras de seguridad
+# Cabeceras de seguridad completas
 <IfModule mod_headers.c>
+  # Content Security Policy (CSP) - XSS protection
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://maps.googleapis.com; frame-src 'self' https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self';"
+  
+  # HSTS - forzar HTTPS (1 año, preload ready)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  
+  # Cross-Origin-Opener-Policy (COOP) - aislamiento de orígenes
+  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  
+  # Cross-Origin-Embedder-Policy (COEP) - solo si no usas iframes externos
+  # Header always set Cross-Origin-Embedder-Policy "require-corp"
+  
+  # Cross-Origin-Resource-Policy (CORP)
+  Header always set Cross-Origin-Resource-Policy "same-site"
+  
   # Prevenir MIME sniffing
   Header always set X-Content-Type-Options "nosniff"
   
@@ -119,10 +134,7 @@
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   
   # Permissions Policy
-  Header always set Permissions-Policy "geolocation=(self), microphone=(), camera=()"
-  
-  # HSTS - forzar HTTPS
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set Permissions-Policy "geolocation=(self), microphone=(), camera=(), payment=()"
 </IfModule>
 
 # ETags optimization

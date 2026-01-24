@@ -117,7 +117,7 @@ const Reviews = () => {
             <meta itemProp="worstRating" content="1" />
             <meta itemProp="bestRating" content="5" />
             <meta itemProp="reviewCount" content={String(reviews.length)} />
-            <div className="flex" role="img" aria-label={language === "es" ? "Valoración 4.9 de 5 estrellas" : "Rating 4.9 out of 5 stars"}>
+            <span className="flex" role="img" aria-label={language === "es" ? "Valoración 4.9 de 5 estrellas" : "Rating 4.9 out of 5 stars"}>
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
@@ -126,7 +126,7 @@ const Reviews = () => {
                   aria-hidden="true"
                 />
               ))}
-            </div>
+            </span>
             <span className="font-display text-2xl text-foreground ml-2" itemProp="ratingValue">4.9</span>
             <span className="font-body text-muted-foreground text-sm">· Airbnb</span>
           </div>
@@ -227,21 +227,26 @@ const Reviews = () => {
             </div>
           </div>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center gap-3 mt-8" role="tablist">
+          {/* Dots Indicator - Touch target minimum 44px */}
+          <div className="flex justify-center gap-2 mt-8" role="tablist">
             {reviews.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-primary w-8"
-                    : "bg-primary/30 hover:bg-primary/50"
-                }`}
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label={`${language === "es" ? "Ir a reseña" : "Go to review"} ${index + 1}`}
                 aria-selected={index === currentIndex}
                 role="tab"
-              />
+              >
+                <span 
+                  className={`block rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? "bg-primary w-8 h-3"
+                      : "bg-primary/30 hover:bg-primary/50 w-3 h-3"
+                  }`}
+                  aria-hidden="true"
+                />
+              </button>
             ))}
           </div>
         </div>
