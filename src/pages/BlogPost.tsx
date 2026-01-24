@@ -45,25 +45,83 @@ const BlogPost = () => {
     relatedArticles: "Artículos relacionados / Related articles"
   };
 
+  // JSON-LD Article structured data
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": titleEs,
+    "alternativeHeadline": titleEn,
+    "description": excerptEs,
+    "image": post.coverImage.startsWith('http') ? post.coverImage : `https://www.lechuzaruralasturias.es${post.coverImage}`,
+    "datePublished": post.publishedAt,
+    "dateModified": post.publishedAt,
+    "author": {
+      "@type": "Person",
+      "name": post.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "La Cabaña de la Lechuza",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.lechuzaruralasturias.es/assets/logo-lechuza.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.lechuzaruralasturias.es/blog/${post.slug}/`
+    },
+    "keywords": post.tags.join(", "),
+    "inLanguage": ["es", "en"],
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "Blog La Cabaña de la Lechuza",
+      "url": "https://www.lechuzaruralasturias.es/blog/"
+    }
+  };
+
+  const ogImageUrl = post.coverImage.startsWith('http') 
+    ? post.coverImage 
+    : `https://www.lechuzaruralasturias.es${post.coverImage}`;
+
   return (
     <>
       <Helmet>
         <title>{titleEs} | La Cabaña de la Lechuza</title>
-        <meta name="description" content={`${excerptEs} ${excerptEn}`} />
-        <link rel="canonical" href={`https://www.lechuzaruralasturias.es/blog/${post.slug}`} />
+        <meta name="description" content={excerptEs} />
+        <link rel="canonical" href={`https://www.lechuzaruralasturias.es/blog/${post.slug}/`} />
+        <link rel="alternate" hrefLang="es" href={`https://www.lechuzaruralasturias.es/blog/${post.slug}/`} />
+        <link rel="alternate" hrefLang="en" href={`https://www.lechuzaruralasturias.es/blog/${post.slug}/?lang=en`} />
+        <link rel="alternate" hrefLang="x-default" href={`https://www.lechuzaruralasturias.es/blog/${post.slug}/`} />
         
         {/* Open Graph */}
-        <meta property="og:title" content={`${titleEs} / ${titleEn}`} />
+        <meta property="og:title" content={titleEs} />
         <meta property="og:description" content={excerptEs} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://www.lechuzaruralasturias.es/blog/${post.slug}`} />
-        <meta property="og:image" content={post.coverImage} />
+        <meta property="og:url" content={`https://www.lechuzaruralasturias.es/blog/${post.slug}/`} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:locale:alternate" content="en_GB" />
         <meta property="article:published_time" content={post.publishedAt} />
         <meta property="article:author" content={post.author} />
         {post.tags.map(tag => (
           <meta key={tag} property="article:tag" content={tag} />
         ))}
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={titleEs} />
+        <meta name="twitter:description" content={excerptEs} />
+        <meta name="twitter:image" content={ogImageUrl} />
+        
         <meta name="robots" content="index, follow" />
+        
+        {/* JSON-LD Article */}
+        <script type="application/ld+json">
+          {JSON.stringify(articleJsonLd)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">

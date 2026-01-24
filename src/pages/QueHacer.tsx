@@ -255,10 +255,17 @@ const QueHacer = () => {
       <Helmet>
         <title>{currentSeo.title}</title>
         <meta name="description" content={currentSeo.description} />
-        <link rel="canonical" href="https://www.lechuzaruralasturias.es/que-hacer" />
+        <link rel="canonical" href="https://www.lechuzaruralasturias.es/que-hacer/" />
+        <link rel="alternate" hrefLang="es" href="https://www.lechuzaruralasturias.es/que-hacer/" />
+        <link rel="alternate" hrefLang="en" href="https://www.lechuzaruralasturias.es/que-hacer/?lang=en" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.lechuzaruralasturias.es/que-hacer/" />
         <meta property="og:title" content={currentSeo.title} />
         <meta property="og:description" content={currentSeo.description} />
-        <meta property="og:url" content="https://www.lechuzaruralasturias.es/que-hacer" />
+        <meta property="og:url" content="https://www.lechuzaruralasturias.es/que-hacer/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.lechuzaruralasturias.es/assets/quehacer/playa-rodiles.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta name="robots" content="index, follow" />
       </Helmet>
 

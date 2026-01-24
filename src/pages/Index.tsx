@@ -164,7 +164,7 @@ const Index = () => {
     }
   };
 
-  // Breadcrumb JSON-LD
+  // Breadcrumb JSON-LD - Main navigation pages
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -173,19 +173,25 @@ const Index = () => {
         "@type": "ListItem",
         "position": 1,
         "name": language === "es" ? "Inicio" : "Home",
-        "item": "https://www.lechuzaruralasturias.es"
+        "item": "https://www.lechuzaruralasturias.es/"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Cabranes",
-        "item": "https://www.lechuzaruralasturias.es/#ubicacion"
+        "name": language === "es" ? "Qué Hacer" : "What to Do",
+        "item": "https://www.lechuzaruralasturias.es/que-hacer/"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": language === "es" ? "Habitaciones" : "Rooms",
-        "item": "https://www.lechuzaruralasturias.es/#habitaciones"
+        "name": "Blog",
+        "item": "https://www.lechuzaruralasturias.es/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": language === "es" ? "Cómo Llegar" : "Directions",
+        "item": "https://www.lechuzaruralasturias.es/como-llegar/"
       }
     ]
   };
