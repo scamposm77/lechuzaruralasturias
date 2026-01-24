@@ -9,6 +9,7 @@ const PoliticaCookies = () => {
     return (
       <>
         <Helmet>
+          <html lang="en" />
           <title>Cookie Policy | La Cabaña de la Lechuza - Rural House Asturias</title>
           <meta name="description" content="Cookie policy of La Cabaña de la Lechuza, rural house in Cabranes, Asturias. Information about cookies used on this website." />
           <meta name="robots" content="noindex, follow" />
@@ -27,7 +28,7 @@ const PoliticaCookies = () => {
             </div>
           </header>
 
-          <main className="container mx-auto px-6 py-16 max-w-4xl">
+          <main role="main" className="container mx-auto px-6 py-16 max-w-4xl">
             <h1 className="font-display text-foreground text-4xl md:text-5xl mb-4">
               Cookie Policy
             </h1>
@@ -115,6 +116,7 @@ const PoliticaCookies = () => {
   return (
     <>
       <Helmet>
+        <html lang="es" />
         <title>Política de Cookies | La Cabaña de la Lechuza - Casa Rural Asturias</title>
         <meta name="description" content="Política de cookies de La Cabaña de la Lechuza, casa rural en Cabranes, Asturias. Información sobre las cookies utilizadas en este sitio web." />
         <meta name="robots" content="noindex, follow" />
@@ -133,7 +135,7 @@ const PoliticaCookies = () => {
           </div>
         </header>
 
-        <main className="container mx-auto px-6 py-16 max-w-4xl">
+        <main role="main" className="container mx-auto px-6 py-16 max-w-4xl">
           <h1 className="font-display text-foreground text-4xl md:text-5xl mb-4">
             Política de Cookies
           </h1>

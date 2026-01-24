@@ -13,13 +13,14 @@ const NotFound = () => {
   return (
     <>
       <Helmet>
+        <html lang="es" />
         <title>Página no encontrada | La Cabaña de la Lechuza</title>
         <meta name="description" content="La página que buscas no existe. Vuelve a la página principal de La Cabaña de la Lechuza, casa rural en Asturias." />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href="https://www.lechuzaruralasturias.es/" />
       </Helmet>
       
-      <div className="flex min-h-screen items-center justify-center bg-muted px-4">
+      <main role="main" className="flex min-h-screen items-center justify-center bg-muted px-4">
         <div className="text-center max-w-md">
           <h1 className="mb-2 text-8xl font-display text-primary">404</h1>
           <h2 className="mb-4 text-2xl font-display text-foreground">Página no encontrada</h2>
@@ -50,7 +51,7 @@ const NotFound = () => {
             </Link>
           </p>
         </div>
-      </div>
+      </main>
     </>
   );
 };

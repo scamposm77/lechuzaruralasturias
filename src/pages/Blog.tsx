@@ -32,6 +32,7 @@ const Blog = () => {
   return (
     <>
       <Helmet>
+        <html lang="es" />
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <link rel="canonical" href="https://www.lechuzaruralasturias.es/blog/" />
@@ -51,7 +52,7 @@ const Blog = () => {
       <div className="min-h-screen bg-background">
         <Header />
         
-        <main className="pt-32 pb-20">
+        <main role="main" className="pt-32 pb-20">
           <div className="container mx-auto px-6">
             {/* Header */}
             <div className="text-center mb-16">

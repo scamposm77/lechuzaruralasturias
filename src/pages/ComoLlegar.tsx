@@ -38,7 +38,7 @@ const ComoLlegar = () => {
             </div>
           </div>
 
-          <main className="container mx-auto px-6 py-12 max-w-4xl">
+          <main role="main" className="container mx-auto px-6 py-12 max-w-4xl">
             {/* Intro */}
             <section className="mb-12">
               <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
@@ -282,7 +282,7 @@ const ComoLlegar = () => {
           </div>
         </div>
 
-        <main className="container mx-auto px-6 py-12 max-w-4xl">
+        <main role="main" className="container mx-auto px-6 py-12 max-w-4xl">
           {/* Intro */}
           <section className="mb-12">
             <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
