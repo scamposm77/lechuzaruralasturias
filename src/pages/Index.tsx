@@ -115,7 +115,7 @@ const Index = () => {
     },
     "occupancy": {
       "@type": "QuantitativeValue",
-      "maxValue": 6
+      "maxValue": 7
     },
     "petsAllowed": false,
     "smokingAllowed": false,
