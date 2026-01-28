@@ -34,34 +34,45 @@ const Index = () => {
   const { language } = useLanguage();
   const location = useLocation();
 
-  // Safety net: if any legacy build / cached HTML injects an extra VacationRental JSON-LD,
-  // remove duplicates at runtime so validators only see a single source of truth.
+  // Safety net: ensure there is NEVER more than one VacationRental JSON-LD on the page.
+  // Some validators surface this as: "El campo containsPlace está duplicado".
   useEffect(() => {
-    const scripts = Array.from(
-      document.head.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]')
-    );
-
     const isVacationRental = (script: HTMLScriptElement) => {
       const raw = script.textContent ?? "";
       if (!raw) return false;
       try {
         const parsed = JSON.parse(raw);
-        return parsed?.["@type"] === "VacationRental";
+        if (parsed?.["@type"] === "VacationRental") return true;
+        // Handle JSON-LD graphs too
+        if (Array.isArray(parsed?.["@graph"])) {
+          return parsed["@graph"].some((n: any) => n?.["@type"] === "VacationRental");
+        }
+        return false;
       } catch {
-        // Fallback (in case of non-minified / unexpected formatting)
         return /"@type"\s*:\s*"VacationRental"/i.test(raw);
       }
     };
 
-    const vacationScripts = scripts.filter(isVacationRental);
-    if (vacationScripts.length <= 1) return;
+    const dedupe = () => {
+      const scripts = Array.from(
+        document.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]')
+      );
 
-    const preferred = document.getElementById("ld-json-vacation-rental") as HTMLScriptElement | null;
-    const keep = preferred && vacationScripts.includes(preferred) ? preferred : vacationScripts[0];
+      const vacationScripts = scripts.filter(isVacationRental);
+      if (vacationScripts.length <= 1) return;
 
-    for (const s of vacationScripts) {
-      if (s !== keep) s.remove();
-    }
+      const preferred = document.getElementById("ld-json-vacation-rental") as HTMLScriptElement | null;
+      const keep = preferred && vacationScripts.includes(preferred) ? preferred : vacationScripts[0];
+
+      for (const s of vacationScripts) {
+        if (s !== keep) s.remove();
+      }
+    };
+
+    // Run now + right after Helmet commits
+    dedupe();
+    const t = window.setTimeout(dedupe, 0);
+    return () => window.clearTimeout(t);
   }, [language]);
 
   // Handle hash navigation when coming from another page
@@ -175,7 +186,7 @@ const Index = () => {
         "@type": "Accommodation",
         "name": "La Pumarada",
         "description": language === "es" ? "Habitación doble con cama de matrimonio" : "Double room with double bed",
-        "bed": { "@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1 },
+        "bed": { "@type": "BedDetails", "typeOfBed": language === "es" ? "Cama de matrimonio" : "Double bed", "numberOfBeds": 1 },
         "occupancy": { "@type": "QuantitativeValue", "value": 2 },
         "numberOfBedrooms": 1,
         "numberOfBathroomsTotal": 0,
