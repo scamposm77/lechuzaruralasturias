@@ -104,9 +104,10 @@ const Index = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "VacationRental",
-    // additionalType expects a schema.org URL (Google flags plain strings as invalid enumerations)
-    "additionalType": "https://schema.org/LodgingBusiness",
-    "@id": "https://www.lechuzaruralasturias.es/#vacation-rental",
+    // NOTE: We intentionally avoid `additionalType` because Google has been flagging it as an
+    // invalid enumeration for this type, and it's optional.
+    // NOTE: We intentionally omit `@id` so Google won't merge multiple instances of this entity
+    // (e.g. due to cached/legacy HTML) which is what often triggers "containsPlace duplicado".
     "identifier": "lechuza-rural-asturias-cabranes",
     "name": "La Cabaña de la Lechuza",
     "description": currentSeo.description,
@@ -162,21 +163,37 @@ const Index = () => {
         "name": "El Tejo",
         "description": language === "es" ? "Habitación principal con cama King size y vistas al valle" : "Master bedroom with King size bed and valley views",
         "bed": { "@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "value": 2 }
+        "occupancy": { "@type": "QuantitativeValue", "value": 2 },
+        "numberOfBedrooms": 1,
+        "numberOfBathroomsTotal": 0,
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Cama King size" : "King size bed", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Vistas al valle" : "Valley views", "value": true }
+        ]
       },
       {
         "@type": "Accommodation",
         "name": "La Pumarada",
         "description": language === "es" ? "Habitación doble con cama de matrimonio" : "Double room with double bed",
         "bed": { "@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "value": 2 }
+        "occupancy": { "@type": "QuantitativeValue", "value": 2 },
+        "numberOfBedrooms": 1,
+        "numberOfBathroomsTotal": 0,
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Cama de matrimonio" : "Double bed", "value": true }
+        ]
       },
       {
         "@type": "Accommodation",
         "name": "La Lechuza",
         "description": language === "es" ? "Habitación familiar con litera" : "Family room with bunk beds",
         "bed": { "@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "value": 3 }
+        "occupancy": { "@type": "QuantitativeValue", "value": 3 },
+        "numberOfBedrooms": 1,
+        "numberOfBathroomsTotal": 0,
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Litera" : "Bunk bed", "value": true }
+        ]
       }
     ],
     
