@@ -154,59 +154,40 @@ const Index = () => {
       { "@type": "LocationFeatureSpecification", "name": "Porch", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true },
     ],
-    "numberOfRooms": 3,
-    "numberOfBedrooms": 3,
-    "numberOfBathroomsTotal": 2,
-    "floorSize": {
-      "@type": "QuantitativeValue",
-      "value": 140,
-      "unitCode": "MTK",
-    },
-    "occupancy": {
-      "@type": "QuantitativeValue",
-      "maxValue": 7,
-    },
     "petsAllowed": false,
     "smokingAllowed": false,
-    "containsPlace": [
-      {
-        "@type": "Accommodation",
-        "name": "El Tejo",
-        "description": language === "es" ? "Habitación principal con cama King size y vistas al valle" : "Master bedroom with King size bed and valley views",
-        "bed": { "@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "value": 2 },
-        "numberOfBedrooms": 1,
-        "numberOfBathroomsTotal": 0,
-        "amenityFeature": [
-          { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Cama King size" : "King size bed", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Vistas al valle" : "Valley views", "value": true }
-        ]
+    // Google expects a SINGLE Accommodation object, not an array of rooms.
+    // The bed array contains all beds in the entire property.
+    "containsPlace": {
+      "@type": "Accommodation",
+      "additionalType": "EntirePlace",
+      "name": "La Cabaña de la Lechuza",
+      "description": language === "es" 
+        ? "Casa rural completa con 3 habitaciones: El Tejo (King size), La Pumarada (matrimonio), La Lechuza (litera)" 
+        : "Entire rural house with 3 bedrooms: El Tejo (King size), La Pumarada (double), La Lechuza (bunk beds)",
+      "bed": [
+        { "@type": "BedDetails", "typeOfBed": "King", "numberOfBeds": 1 },
+        { "@type": "BedDetails", "typeOfBed": "Double", "numberOfBeds": 1 },
+        { "@type": "BedDetails", "typeOfBed": "Bunk", "numberOfBeds": 1 }
+      ],
+      "occupancy": { "@type": "QuantitativeValue", "value": 7 },
+      "numberOfBedrooms": 3,
+      "numberOfBathroomsTotal": 2,
+      "numberOfRooms": 5,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 140,
+        "unitCode": "MTK"
       },
-      {
-        "@type": "Accommodation",
-        "name": "La Pumarada",
-        "description": language === "es" ? "Habitación doble con cama de matrimonio" : "Double room with double bed",
-        "bed": { "@type": "BedDetails", "typeOfBed": language === "es" ? "Cama de matrimonio" : "Double bed", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "value": 2 },
-        "numberOfBedrooms": 1,
-        "numberOfBathroomsTotal": 0,
-        "amenityFeature": [
-          { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Cama de matrimonio" : "Double bed", "value": true }
-        ]
-      },
-      {
-        "@type": "Accommodation",
-        "name": "La Lechuza",
-        "description": language === "es" ? "Habitación familiar con litera" : "Family room with bunk beds",
-        "bed": { "@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "value": 3 },
-        "numberOfBedrooms": 1,
-        "numberOfBathroomsTotal": 0,
-        "amenityFeature": [
-          { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Litera" : "Bunk bed", "value": true }
-        ]
-      }
-    ],
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "wifi", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "parking", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "fireplace", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "kitchen", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "garden", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "patio", "value": true }
+      ]
+    },
     
     "aggregateRating": {
       "@type": "AggregateRating",
