@@ -165,8 +165,9 @@ const Index = () => {
         "bed": { "@type": "BedDetails", "typeOfBed": "King size", "numberOfBeds": 1 },
         "occupancy": { "@type": "QuantitativeValue", "value": 2 },
         "numberOfBedrooms": 1,
-        "numberOfBathroomsTotal": 0,
+        "numberOfBathroomsTotal": 1,
         "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Cama King size" : "King size bed", "value": true },
           { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Vistas al valle" : "Valley views", "value": true }
         ]
       },
@@ -179,7 +180,7 @@ const Index = () => {
         "numberOfBedrooms": 1,
         "numberOfBathroomsTotal": 0,
         "amenityFeature": [
-          { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Luz natural" : "Natural light", "value": true }
+          { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Cama de matrimonio" : "Double bed", "value": true }
         ]
       },
       {
@@ -189,7 +190,7 @@ const Index = () => {
         "bed": { "@type": "BedDetails", "typeOfBed": "Bunk bed", "numberOfBeds": 1 },
         "occupancy": { "@type": "QuantitativeValue", "value": 3 },
         "numberOfBedrooms": 1,
-        "numberOfBathroomsTotal": 0,
+        "numberOfBathroomsTotal": 1,
         "amenityFeature": [
           { "@type": "LocationFeatureSpecification", "name": language === "es" ? "Litera" : "Bunk bed", "value": true }
         ]
