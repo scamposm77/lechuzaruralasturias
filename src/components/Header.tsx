@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logoLechuza from "@/assets/logo-lechuza.png";
+import logoLechuzaWebp from "@/assets/logo-lechuza-small.webp";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -68,16 +69,21 @@ const Header = () => {
           }`}
           aria-label="La Cabaña de la Lechuza - Ir a página de inicio"
         >
-          <img
-            src={logoLechuza}
-            alt="Logo La Cabaña de la Lechuza - Casa rural con encanto en Cabranes, Asturias"
-            onClick={handleLogoClick}
-            width={48}
-            height={54}
-            className={`h-10 md:h-12 w-auto cursor-pointer transition-transform duration-300 ${
-              isLogoClicked ? "scale-150" : "hover:scale-110"
-            }`}
-          />
+          <picture>
+            <source srcSet={logoLechuzaWebp} type="image/webp" />
+            <img
+              src={logoLechuza}
+              alt="Logo La Cabaña de la Lechuza - Casa rural con encanto en Cabranes, Asturias"
+              onClick={handleLogoClick}
+              width={48}
+              height={54}
+              fetchPriority="high"
+              decoding="async"
+              className={`h-10 md:h-12 w-auto cursor-pointer transition-transform duration-300 ${
+                isLogoClicked ? "scale-150" : "hover:scale-110"
+              }`}
+            />
+          </picture>
           <span className="hidden sm:inline">La Cabaña de la Lechuza</span>
         </Link>
 

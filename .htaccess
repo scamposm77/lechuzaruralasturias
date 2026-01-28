@@ -79,28 +79,33 @@
   ExpiresByType application/json "access plus 0 seconds"
 </IfModule>
 
-# Cache-Control headers
+# Cache-Control headers - MUST be before other Header rules
 <IfModule mod_headers.c>
-  # Recursos estáticos con hash - inmutables
-  <FilesMatch "\.(js|css)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
-  
-  # Imágenes
-  <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|svg|ico)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
-  
-  # Fuentes
-  <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
-  
-  # HTML - no cache para SPA
+  # HTML - no cache para SPA (CRITICAL: this must come first)
   <FilesMatch "\.html$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
     Header set Expires "0"
+  </FilesMatch>
+  
+  # Recursos estáticos con hash - inmutables (1 año)
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Imágenes - cache largo (1 año)
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Fuentes - cache largo (1 año)
+  <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Videos
+  <FilesMatch "\.(mp4|webm|ogg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 </IfModule>
 
