@@ -104,9 +104,10 @@ const Index = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "VacationRental",
-    // additionalType expects a schema.org URL (Google flags plain strings as invalid enumerations)
-    "additionalType": "https://schema.org/LodgingBusiness",
-    "@id": "https://www.lechuzaruralasturias.es/#vacation-rental",
+    // NOTE: We intentionally avoid `additionalType` because Google has been flagging it as an
+    // invalid enumeration for this type, and it's optional.
+    // NOTE: We intentionally omit `@id` so Google won't merge multiple instances of this entity
+    // (e.g. due to cached/legacy HTML) which is what often triggers "containsPlace duplicado".
     "identifier": "lechuza-rural-asturias-cabranes",
     "name": "La Cabaña de la Lechuza",
     "description": currentSeo.description,
