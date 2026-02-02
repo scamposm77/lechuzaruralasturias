@@ -39,7 +39,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    sourcemap: mode === "development",
+    // Enable source maps for production debugging (hidden from DevTools but available for error tracking)
+    sourcemap: "hidden",
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {

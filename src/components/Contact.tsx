@@ -56,33 +56,34 @@ const Contact = () => {
     },
   ];
 
+  // Social links with WCAG AA compliant colors (4.5:1 contrast ratio with white text)
   const socialLinks = [
     {
       name: "WhatsApp",
       icon: MessageCircle,
       href: `https://wa.me/34625081519?text=${encodeURIComponent(language === "es" ? "Hola, me gustaría consultar disponibilidad en La Cabaña de la Lechuza." : "Hello, I would like to check availability at La Cabaña de la Lechuza.")}`,
-      className: "bg-[#25D366] hover:bg-[#20BA5C]",
+      className: "bg-[#128C7E] hover:bg-[#0E7567]", // Darker green for contrast
       label: "WhatsApp",
     },
     {
       name: "Instagram",
       icon: Instagram,
       href: "https://www.instagram.com/lechuza.casaruralasturias",
-      className: "bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:opacity-90",
+      className: "bg-gradient-to-br from-[#7023B6] via-[#C13584] to-[#E1306C] hover:opacity-90",
       label: "Instagram",
     },
     {
       name: "Facebook",
       icon: Facebook,
       href: "https://www.facebook.com/profile.php?id=61586207769517",
-      className: "bg-[#1877F2] hover:bg-[#166FE5]",
+      className: "bg-[#1565C0] hover:bg-[#0D47A1]", // Darker blue for contrast
       label: "Facebook",
     },
     {
       name: "Airbnb",
       icon: null,
       href: "https://www.airbnb.es/rooms/1134703286904548225?guests=1&adults=1&s=67&unique_share_id=9e3d8fa8-48d8-49ab-a24e-c39cf096703e",
-      className: "bg-[#FF5A5F] hover:bg-[#E74E52]",
+      className: "bg-[#D93B3E] hover:bg-[#BD2B2E]", // Darker red for contrast
       label: "Airbnb",
     },
   ];

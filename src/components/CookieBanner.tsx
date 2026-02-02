@@ -61,7 +61,7 @@ const CookieBanner = () => {
                 {" "}
                 <Link 
                   to="/politica-cookies" 
-                  className="text-primary hover:underline font-medium"
+                  className="text-[#8BC34A] hover:text-[#9CCC65] underline font-semibold"
                   aria-label={language === "es" ? "Leer más sobre nuestra política de cookies" : "Read more about our cookie policy"}
                 >
                   {language === "es" ? "Más información sobre cookies" : "Learn more about cookies"}
