@@ -93,6 +93,15 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'DM Serif Display', serif;
   }
+
+  /* Fix Chrome deprecation warning: H1UserAgentFontSizeInSection
+     Explicitly set H1 font-size in sectioning elements to avoid user-agent defaults */
+  section h1,
+  article h1,
+  aside h1,
+  nav h1 {
+    font-size: 2em;
+  }
 }
 
 @layer utilities {
